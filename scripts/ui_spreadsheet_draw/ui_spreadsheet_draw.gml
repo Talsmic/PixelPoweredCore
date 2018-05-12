@@ -5,7 +5,7 @@
 var mode = argument0;
 var X = argument1;
 var Y = argument2;
-		
+/*		
 draw_set_font(ft_EvoSmallcaps_6);
 //Find Correct Data
 switch ( mode ) {

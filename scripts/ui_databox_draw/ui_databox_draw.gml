@@ -1,7 +1,7 @@
 ///ui_databox_draw(#);
 /// @arg #
 var ref = argument0;
-
+/*
 //Draw Databox
 switch ( Databox_Type[ref] ) {
 	

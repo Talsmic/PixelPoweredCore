@@ -4,7 +4,7 @@ var command = argument0;
 //Sanitise command
 command = string_lettersdigits( command );
 command = string_lower( command );
-
+/*
 switch ( command ) {
 		
 	#region Move Focus Point and Scroll

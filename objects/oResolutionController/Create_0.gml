@@ -5,16 +5,18 @@
 	Most stuff you can do with this controller is optional and adjustable.
 	
 	These macros set the defaults, but the controller can change them once running
-	*/#macro	RESOLUTION_IDEAL_WIDTH				480;	/*
-	*/#macro	RESOLUTION_IDEAL_HEIGHT				270;	/*
-	*/#macro	RESOLUTION_MIN_WIDTH				200;	/*
-	*/#macro	RESOLUTION_MIN_HEIGHT				200;	/*
-	*/#macro	RESOLUTION_MAX_WIDTH				1000;	/*
-	*/#macro	RESOLUTION_MAX_HEIGHT				1000;	/*
-	*/#macro	RESOLUTION_DEF_FULLSCREEN			false;	/*
-	*/#macro	RESOLUTION_DEF_MAGNIFICATION		2;		/*
-	*/#macro	RESOLUTION_DEF_MAGNIFICATIONLOCK	true;	/*
-	*/#macro	RESOLUTION_DEF_VSYNC				false;	/*
+	*/
+	#macro	RESOLUTION_IDEAL_WIDTH				480;	
+	#macro	RESOLUTION_IDEAL_HEIGHT				270;	
+	#macro	RESOLUTION_MIN_WIDTH				200;	
+	#macro	RESOLUTION_MIN_HEIGHT				200;	
+	#macro	RESOLUTION_MAX_WIDTH				1000;	
+	#macro	RESOLUTION_MAX_HEIGHT				1000;	
+	#macro	RESOLUTION_DEF_FULLSCREEN			false;	
+	#macro	RESOLUTION_DEF_MAGNIFICATION		2;		
+	#macro	RESOLUTION_DEF_MAGNIFICATIONLOCK	true;	
+	#macro	RESOLUTION_DEF_VSYNC				false;	
+	/*
 ==============================================================================*/	
 
 //Create all the Instance level variables and sets them to defaults

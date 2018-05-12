@@ -8,6 +8,7 @@
 	[Edited 24/4/2018]
 	Draws the icon for the required skill at the provided location
 */
+/*
 var X = argument0;
 var Y = argument1;
 var icon_size = argument2;
