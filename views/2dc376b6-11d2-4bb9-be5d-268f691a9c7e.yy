@@ -8,7 +8,7 @@
         "630454cc-247f-4210-88f1-ca346c80cdd5"
     ],
     "filterType": "GMScript",
-    "folderName": "oSettingsConainer",
+    "folderName": "[Module: settings.ini]",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

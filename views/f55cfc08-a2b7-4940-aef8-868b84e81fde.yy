@@ -9,7 +9,7 @@
         "58a57b59-239b-4f15-a88c-7ab3753843a4"
     ],
     "filterType": "GMScript",
-    "folderName": "oFocusController",
+    "folderName": "[Module: Focus Controller]",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

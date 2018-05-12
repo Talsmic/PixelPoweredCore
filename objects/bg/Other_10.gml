@@ -1,4 +1,4 @@
-/// @desc Variables for a Background
+/// @desc Variables for a Background Layer
 
 BG_Sprite[bgid] = bg_default;
 BG_Frame[bgid] = 1;

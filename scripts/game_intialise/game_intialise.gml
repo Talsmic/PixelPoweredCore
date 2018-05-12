@@ -6,30 +6,13 @@
 */
 
 
-//=[Focus Controller]===========================================================
-//Enable the focus system
-if ( MANAGE_FOCUS ) {	
-	if ( !object_exists(oFocusController) ) {
-		instance_create_depth(-1,-1,-1,oFocusController);
-		};
-	};
-	
-//=[Settings Container / settings.ini]==========================================
+//=[Create Controllers for PPC Modules]=========================================
+//Enable the Focus system
+if ( PPC_FOCUS_Enable ) { if ( !instance_exists(oFocusController) ) {instance_create_depth(-1,-1,-1,oFocusController) }	};
 //Create a settings container
-if ( MANAGE_OPTIONS ) {	
-	if ( !object_exists(oSettingsContainer) ) {
-		instance_create_depth(-1,-1,-1,oSettingsContainer);
-		};
-	};
-
-//=[Resolution Controller]======================================================
-//Enable the Resolution Controller
-if ( MANAGE_RESOLUTION ) {
-	//Create an oResolutionController unless one already exists
-	if ( !object_exists(oResolutionController) ) {
-		instance_create_depth(-1,-1,-1,oResolutionController);
-		};
-	};
+if ( PPC_SETTINGS_Enable ) { if ( !instance_exists(oSettingsContainer) ) {instance_create_depth(-1,-1,-1,oSettingsContainer) }	};
+//Enable the Resolution system
+if ( PPRES_Enable ) { if ( !instance_exists(oResolutionController) ) {instance_create_depth(-1,-1,-1,oResolutionController) }	};
 
 /*[PPC Dependancies]============================================================
-	[Object]	oResolutionController
+[wip]
