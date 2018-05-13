@@ -12,10 +12,10 @@ if ( argument_count > 0 ) { usesettings = argument[0] };
 
 //Options Variables will be changed if a settings.ini is loaded
 if ( !usesettings or !oSettingsContainer ) {
-	Options_Fullscreen =			RESOLUTION_DEF_FULLSCREEN;
-	Options_Magnification =			RESOLUTION_DEF_MAGNIFICATION;
-	Options_LockedMagnification =	RESOLUTION_DEF_MAGNIFICATIONLOCK;
-	Options_Vsync =					RESOLUTION_DEF_VSYNC;
+	Options_Fullscreen =			ppres_DEF_FULLSCREEN;
+	Options_Magnification =			ppres_DEF_MAGNIFICATION;
+	Options_LockedMagnification =	ppres_DEF_MAGNIFICATIONLOCK;
+	Options_Vsync =					ppres_DEF_VSYNC;
 	};	
 else {
 	Options_Fullscreen =			oSettingsContainer.Options_Fullscreen;
@@ -25,12 +25,12 @@ else {
 	};
 Options_ResolutionSnap = false; //Should the game snap resolution every frame?
 
-Resolution_IdealWidth		= RESOLUTION_IDEAL_WIDTH;
-Resolution_IdealHeight		= RESOLUTION_IDEAL_HEIGHT;
-Resolution_MinWidth			= RESOLUTION_MIN_WIDTH;
-Resolution_MinHeight		= RESOLUTION_MIN_HEIGHT;
-Resolution_MaxWidth			= RESOLUTION_MAX_WIDTH;
-Resolution_MaxHeight		= RESOLUTION_MAX_HEIGHT;
+Resolution_IdealWidth		= ppres_IDEAL_WIDTH;
+Resolution_IdealHeight		= ppres_IDEAL_HEIGHT;
+Resolution_MinWidth			= ppres_MIN_WIDTH;
+Resolution_MinHeight		= ppres_MIN_HEIGHT;
+Resolution_MaxWidth			= ppres_MAX_WIDTH;
+Resolution_MaxHeight		= ppres_MAX_HEIGHT;
 
 Resolution_Magnification	= 3;
 
