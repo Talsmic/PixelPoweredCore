@@ -1,4 +1,4 @@
-///focus_set(focus_level,canincrease,candecrease);
+///alterfocus(focus_level,canincrease,candecrease);
 /// @arg focus_level
 /// @arg can_increase
 /// @arg can_decrease

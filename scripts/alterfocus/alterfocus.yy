@@ -1,8 +1,8 @@
 {
-    "id": "b6e72f88-72d7-4583-9cef-5526a30143b6",
+    "id": "b8e6b7d3-043a-40d4-9adc-a78f5ae1b201",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "note_alteredscripts",
+    "name": "alterfocus",
     "IsCompatibility": false,
     "IsDnD": false
 }

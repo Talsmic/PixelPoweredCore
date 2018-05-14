@@ -9,3 +9,4 @@ beat[3] = 0;			//Frame count
 beat[4] = 1;			//Direction to Beat
 
 return beat;
+

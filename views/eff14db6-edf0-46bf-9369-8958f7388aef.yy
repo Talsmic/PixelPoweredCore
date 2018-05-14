@@ -10,7 +10,7 @@
         "da4128a5-7fcf-47ef-937c-697a11fe150f"
     ],
     "filterType": "GMScript",
-    "folderName": "Glow",
+    "folderName": "Sprite Glow",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

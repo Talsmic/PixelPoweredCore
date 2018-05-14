@@ -12,7 +12,7 @@
         "2ebed151-e5d1-447b-943d-15f27a1314c4"
     ],
     "filterType": "GMScript",
-    "folderName": "[Parse]",
+    "folderName": "[Parsing Functions]",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

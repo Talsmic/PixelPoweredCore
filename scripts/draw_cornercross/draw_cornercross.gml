@@ -3,10 +3,6 @@
 /// @arg y
 /// @arg sprite		
 /// @arg state
-/*	
-	[Edited 24/4/2018] (Variant of draw_tilebox_ext)
-	Draws a coloured, semi-termparent UI box with rounded corners 
-*/
 
 var X = argument0; 
 var Y = argument1;

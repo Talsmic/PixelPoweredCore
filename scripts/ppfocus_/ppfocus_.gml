@@ -17,13 +17,14 @@
 	#macro PPC_FOCUS_FocusFog			1 //true
 	#macro PPC_FOCUS_FocusFog_Colour	c_white //colour_code
 	#macro PPC_FOCUS_FocusFog_Alpha		0.5
+	#macro PPC_FOCUS_FocusFog_AlphaRise	0.1
 
 /*=[Module Components]==========================================================
 ---[Objects]--------------------------------------------------------------------
 	oFocusController								[Functional and Documented]
 	
 ---[Scripts]--------------------------------------------------------------------
-	focus_set();									[Functional and Documented]
+	alterfocus();									[Functional and Documented]
 	infocus();										[Functional and Documented]
 	setdepth();										[Functional and Documented]
 	
