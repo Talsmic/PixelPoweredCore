@@ -130,10 +130,10 @@
 	oResolutionController							[Functional and Documented]
 	
 ---[Scripts]--------------------------------------------------------------------
-	ppres_setresolution_default();					[Functional and Documented]
+	ppres_setresolution_default([0]);				[Functional and Documented]
 	ppres_adapt_resolution();						[Functional and Documented]
-	ppres_flex_view();								[Functional and Documented]
-	ppres_room_anchors();							[Functional and Documented]
+	ppres_flex_view([0],[1]);						[Functional and Documented]
+	ppres_room_anchors([0]);						[Functional and Documented]
 	ppres_draw_gamesurface();						[Undocumented]
 	guimouse_get_[x/y]();							[Functional and Documented]
 	window_get_[width/height]_safe();				[Functional and Documented]

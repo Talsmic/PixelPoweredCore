@@ -8,6 +8,3 @@
 
 FocusCurrent = 10;	//Current focus is the stored level of focus
 FocusCheck = 10;	//Check focus is the currently being written to variable
-
-/*[PPC Dependancies]============================================================
-	None, but the focus system won't work without an instance of this object

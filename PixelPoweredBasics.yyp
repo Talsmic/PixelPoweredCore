@@ -895,14 +895,6 @@
             }
         },
         {
-            "Key": "67e90f40-ecaa-4870-a1e5-f823437bf43a",
-            "Value": {
-                "id": "f6bd9595-f700-48e6-a7bb-3eabd277d25c",
-                "resourcePath": "objects\\oSimpleMover\\oSimpleMover.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "69a0903e-d2c4-4649-829c-37f97adcef4e",
             "Value": {
                 "id": "5f11bed8-18be-4c8f-9b62-528591df1db4",
@@ -1263,14 +1255,6 @@
             }
         },
         {
-            "Key": "9ce43169-af1c-4585-bd29-92e28f34120e",
-            "Value": {
-                "id": "f1efa0cc-25d1-468c-8a80-e55c85a8efad",
-                "resourcePath": "views\\9ce43169-af1c-4585-bd29-92e28f34120e.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
             "Key": "9dcfc1e3-b0fe-4624-8c98-6d39beb06771",
             "Value": {
                 "id": "f411ca03-0316-4952-9c3d-44d972b01d6d",
@@ -1500,14 +1484,6 @@
                 "id": "8a03fa78-c2fc-4b13-8514-86798e6f6615",
                 "resourcePath": "scripts\\draw_tooltip_basic_justified\\draw_tooltip_basic_justified.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "c20120e6-e19e-4b8b-92d9-3eafbcdfe094",
-            "Value": {
-                "id": "bb394a4c-9a75-4a05-8067-b647274e0f9d",
-                "resourcePath": "views\\c20120e6-e19e-4b8b-92d9-3eafbcdfe094.yy",
-                "resourceType": "GMFolder"
             }
         },
         {

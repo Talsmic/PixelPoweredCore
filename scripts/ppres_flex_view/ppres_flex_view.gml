@@ -2,7 +2,7 @@
 /// @arg [view] {integer:ViewID}	(Defaults to view_current)
 /// @arg [room] {integer:RoomID}	(Defaults to room)
 /*
-	[PPC][Module:ResolutionController]
+	[PPC][Module:Resolution]
 	Adjusts the view to fit the current resolution and room
 */
 var flex_view = view_current;
