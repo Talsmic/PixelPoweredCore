@@ -12,3 +12,4 @@ BG_Tile[bgid,UP] = true;
 BG_Tile[bgid,DOWN] = true;
 BG_Tile[bgid,LEFT] = true;
 BG_Tile[bgid,RIGHT] = true;
+BG_Tile[bgid,5] = true; //Fill

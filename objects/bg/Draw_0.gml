@@ -58,7 +58,7 @@ for ( bgid=1; bgid<=Backgrounds ; bgid++ ) {
 	//Tile
 	var draw_y = height;
 	var draw_x = width;
-	/*
+	
 	//TILE UP
 	if ( BG_Tile[bgid,UP] ) {
 		for ( var i=1 ; draw_y+height>0 ; i++ ) {
@@ -66,14 +66,16 @@ for ( bgid=1; bgid<=Backgrounds ; bgid++ ) {
 			DrawX = windowX+anchorX; DrawIDX = 0;
 			DrawY = windowY+draw_y; DrawIDY = i;
 			event_user(1);
-			if ( BG_Tile[bgid,LEFT] ) {
+			draw_x = width;
+			if ( BG_Tile[bgid,LEFT] and BG_Tile[bgid,5] ) {
 				for ( var j=1 ; draw_x+width>0 ; j++ ) {
 					draw_x = anchorX - width * j;
 					DrawX = windowX+draw_x; DrawIDX = -j;
 					event_user(1);
 					};
 				};
-			if ( BG_Tile[bgid,RIGHT] ) {
+			draw_x = width;
+			if ( BG_Tile[bgid,RIGHT] and BG_Tile[bgid,5] ) {
 				for ( var j=1 ; draw_x<draw_space_width ; j++ ) {
 					draw_x = anchorX + width * j
 					DrawX = windowX+draw_x; DrawIDX = j;
@@ -84,20 +86,24 @@ for ( bgid=1; bgid<=Backgrounds ; bgid++ ) {
 		};
 		
 	//TILE DOWN
+	draw_y = height;
+	draw_x = width;
 	if ( BG_Tile[bgid,DOWN] ) {
 		for ( var i=1 ; draw_y<draw_space_y+draw_space_height ; i++ ) {
 			draw_y = anchorY + height * i
 			DrawX = windowX+anchorX; DrawIDX = 0;
 			DrawY = windowY+draw_y; DrawIDY = -i;
 			event_user(1);
-			if ( BG_Tile[bgid,LEFT] ) {
+			draw_x = width;
+			if ( BG_Tile[bgid,LEFT] and BG_Tile[bgid,5] ) {
 				for ( var j=1 ; draw_x+width>0 ; j++ ) {
 					draw_x = anchorX - width * j;
 					DrawX = windowX+draw_x; DrawIDX = -j;
 					event_user(1);
 					};
 				};
-			if ( BG_Tile[bgid,RIGHT] ) {
+			draw_x = width;	
+			if ( BG_Tile[bgid,RIGHT] and BG_Tile[bgid,5] ) {
 				for ( var j=1 ; draw_x<draw_space_x+draw_space_width ; j++ ) {
 					draw_x = anchorX + width * j
 					DrawX = windowX+draw_x; DrawIDX = j;
@@ -109,6 +115,7 @@ for ( bgid=1; bgid<=Backgrounds ; bgid++ ) {
 		
 	//TILE LEFT
 	if ( BG_Tile[bgid,LEFT] ) {
+		draw_x = width;
 		for ( var j=1 ; draw_x+width>0 ; j++ ) {
 			draw_x = anchorX - width * j;
 			DrawX = windowX+draw_x; DrawIDX = -j;
@@ -119,6 +126,7 @@ for ( bgid=1; bgid<=Backgrounds ; bgid++ ) {
 		
 	//TILE RIGHT
 	if ( BG_Tile[bgid,RIGHT] ) {
+		draw_x = width;
 		for ( var j=1 ; draw_x<draw_space_x+draw_space_width ; j++ ) {
 			draw_x = anchorX + width * j
 			DrawX = windowX+draw_x; DrawIDX = j;
@@ -126,5 +134,5 @@ for ( bgid=1; bgid<=Backgrounds ; bgid++ ) {
 			event_user(1);
 			};
 		};
-		*/
+		
 	};

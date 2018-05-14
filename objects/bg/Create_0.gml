@@ -5,7 +5,7 @@ FlatBack_Alpha = 1;
 DrawNormal = true;
 DrawGUI = false;
 AnchorView = false;
-DrawAnchor = true;
+DrawAnchor = false;
 
 Backgrounds = 1;
 bgid = 1;
