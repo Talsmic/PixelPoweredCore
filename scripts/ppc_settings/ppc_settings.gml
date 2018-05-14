@@ -6,9 +6,7 @@
 	These macros enable or disable parts of those systems
 	*/
 //=[Module: Focus Controller]===================================================
-	#macro PPC_FOCUS_Enable 			1	// oFocusController
-	#macro PPC_FOCUS_ManageDepth		1	
-	#macro PPC_FOCUS_DepthLayers		1	
+
 	
 //=[Module: settings.ini]=======================================================
 	#macro PPSETTINGS_Enable  			1	// oSettingsContainer

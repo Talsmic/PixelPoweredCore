@@ -1,7 +1,7 @@
 ///ppres_room_anchors([room]);
 /// @arg [room] {integer:RoomID}	(Defaults to room)
 /*
-	[PPC][Module:ResolutionController]
+	[PPC][Module:Resolution]
 	Checks for room specific resolution anchors
 	> Returns [Array] = [anchors_exist,anchor_x,anchor_y];
 */

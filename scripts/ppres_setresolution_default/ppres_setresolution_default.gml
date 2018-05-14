@@ -1,7 +1,7 @@
 ///ppres_setresolution_default([usesettings]);
 /// @arg [usesettings] {Boolean}	(Defaults to PPC_SETTINGS_Enable)
 /*
-	[PPC][Module:ResolutionController]
+	[PPC][Module:Resolution]
 	Creates all the variables that oResolutionController needs to function, 
 	setting them to their defaults.
 */

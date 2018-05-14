@@ -1,6 +1,6 @@
 ///guimouse_get_y();
 /*
-	[PPC][Module:ResolutionController]
+	[PPC][Module:Resolution]
 	>Returns {integer} Mouse y position on the GUI layer 
 */
 var output = window_mouse_get_y(); //Default to the Window Position of the mouse

@@ -107,7 +107,7 @@
 	//with the key+mod combo
 	#macro PPRES_Fullscreen_ToggleEnable	1 //true
 	#macro PPRES_Fullscreen_ToggleKey		vk_enter 
-	#macro PPRES_Fullscreen_ToggleModifier	vk_shift // 0 to disable
+	#macro PPRES_Fullscreen_ToggleModifier	vk_alt // 0 to disable
 	//Should the game boot in fullscreen mode?
 	#macro PPRES_Fullscreen_AtBoot			0 //false
 	//What magnification level should the game boot with?

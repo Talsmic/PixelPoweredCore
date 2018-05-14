@@ -1,6 +1,6 @@
 ///guimouse_get_x();
 /*
-	[PPC][Module:ResolutionController]
+	[PPC][Module:Resolution]
 	>Returns {integer} Mouse x position on the GUI layer 
 */
 var output = window_mouse_get_x(); //Default to the Window Position of the mouse
