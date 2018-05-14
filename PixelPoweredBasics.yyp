@@ -130,7 +130,7 @@
             "Key": "0cb51aea-f80c-4310-b8a4-dbb784d92c60",
             "Value": {
                 "id": "5258c715-c872-4496-9fd5-90c83d9ad2b4",
-                "resourcePath": "objects\\oPPCMasterDrawer\\oPPCMasterDrawer.yy",
+                "resourcePath": "objects\\debugPPCMasterDrawer\\debugPPCMasterDrawer.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -524,6 +524,14 @@
                 "id": "60d69096-040c-4933-8cad-87628fa2bd1c",
                 "resourcePath": "scripts\\ppc_settings\\ppc_settings.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "3e778d31-5a54-490c-8938-34b0b297650b",
+            "Value": {
+                "id": "c289a690-2111-4334-8362-265c8a430f07",
+                "resourcePath": "views\\3e778d31-5a54-490c-8938-34b0b297650b.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -2016,16 +2024,6 @@
         }
     ],
     "script_order": [
-        "f022dde7-b0ec-4674-8307-b344642ad90e",
-        "23d61730-a252-42e0-8c26-385b55d9fa83",
-        "0f4f448f-ef71-45a1-ae2d-03b1f83452e3",
-        "5423d2a0-5c65-40cd-b3d2-b307de10de77",
-        "bca18c29-b73e-448d-8ed3-7ad576a645c5",
-        "bdcea45b-52c5-4a24-ab1e-88686e1d970a",
-        "02cde600-aa91-4b9d-88a1-72dd4cedba12",
-        "59d25d09-8335-4645-98dc-2a221a6987ed",
-        "d35a9452-84f7-4584-8cde-305b2e490e64",
-        "0436c581-a016-4d73-aefd-d7ccf17c2eb6",
         "b6e72f88-72d7-4583-9cef-5526a30143b6",
         "0c299c87-8139-43ad-b8fb-ce114908d645",
         "3babf65b-4676-4800-903f-3ff934fb0364",
@@ -2048,6 +2046,16 @@
         "c4b5f776-4e7f-4d55-8cc0-7434a84f2f73",
         "45893034-8638-44a2-9862-1f6318597a22",
         "9064c2a7-7351-4d2c-83e7-aad20289f089",
+        "f022dde7-b0ec-4674-8307-b344642ad90e",
+        "23d61730-a252-42e0-8c26-385b55d9fa83",
+        "0f4f448f-ef71-45a1-ae2d-03b1f83452e3",
+        "5423d2a0-5c65-40cd-b3d2-b307de10de77",
+        "bca18c29-b73e-448d-8ed3-7ad576a645c5",
+        "bdcea45b-52c5-4a24-ab1e-88686e1d970a",
+        "02cde600-aa91-4b9d-88a1-72dd4cedba12",
+        "59d25d09-8335-4645-98dc-2a221a6987ed",
+        "d35a9452-84f7-4584-8cde-305b2e490e64",
+        "0436c581-a016-4d73-aefd-d7ccf17c2eb6",
         "c01573aa-ec23-4060-9d96-4f9f8ce8cc1b",
         "17c61be5-94b0-454e-83ee-aff0d519b833",
         "e59b4a70-1a1e-4e0f-8993-914e37df7446",

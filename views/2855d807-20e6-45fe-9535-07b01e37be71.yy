@@ -7,8 +7,7 @@
         "8d844579-ec86-483c-aaf3-303218a9dd8c",
         "2697e592-ddfd-4e6d-8f39-0478f414b681",
         "5d74a2af-c831-4d1c-93e0-4d1dbc39123b",
-        "02d93290-845e-49ee-9937-f556dd826923",
-        "0cb51aea-f80c-4310-b8a4-dbb784d92c60"
+        "02d93290-845e-49ee-9937-f556dd826923"
     ],
     "filterType": "GMObject",
     "folderName": "[PPC][PixelPoweredObjects]",

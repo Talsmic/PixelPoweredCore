@@ -2,7 +2,7 @@
     "id": "0cb51aea-f80c-4310-b8a4-dbb784d92c60",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "oPPCMasterDrawer",
+    "name": "debugPPCMasterDrawer",
     "eventList": [
         {
             "id": "de68bd0e-c3b0-48f7-a9af-5c95f1ccb8e0",

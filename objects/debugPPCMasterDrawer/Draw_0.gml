@@ -1,4 +1,4 @@
-draw_self();
+if DrawAnchor { draw_plane_coloured(x-1,y-1,2,2,c_red,0.8) };
 
 //Loop through all stored DrawCommands
 for ( var i=0 ; i<array_length_1d(DrawCommand) ; i++ ) {

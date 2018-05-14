@@ -16,7 +16,7 @@
         "0436c581-a016-4d73-aefd-d7ccf17c2eb6"
     ],
     "filterType": "GMScript",
-    "folderName": "[Module: ResolutionController]",
+    "folderName": "[Module: Resolution]",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

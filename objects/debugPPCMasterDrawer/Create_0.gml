@@ -46,6 +46,7 @@ for ( var i=0 ; i<max_arguments ; i++ ) {
 	};
 	
 //Other Important Variables
+DrawAnchor = true;
 RequiredArguments = 0;
 toDraw_Command = "";
 for ( var j=0 ; j<max_drawcommandarguments ; j++ ) {
@@ -54,7 +55,7 @@ for ( var j=0 ; j<max_drawcommandarguments ; j++ ) {
 
 //Tabset that tracks the command to draw on the GUI
 ui_tabset_create(1,max_drawcommands);
-	Tabset_X[1] = 500;
-	Tabset_Y[1] = 500;
+	Tabset_X[1] = 200;
+	Tabset_Y[1] = 200;
 
 /*[WIP]

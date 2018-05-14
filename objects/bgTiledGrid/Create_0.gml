@@ -4,10 +4,10 @@ FlatBack = false;
 
 Grid_Size = 32; //8, 16, 24 or 32
 Grid_Colour = c_white;
-Grid_Shading = 1; //0 for light, 1 for dark
-Grid_Alpha = 1;
+Grid_Shading = 0; //0 for light, 1 for dark
+Grid_Alpha = 0.5;
 Grid_Layer = 0; //0 for Standard, 1 for GUI
-Grid_Draw_CoOrds = true;
+Grid_Draw_CoOrds = false;
 Grid_SquaresX = -1; //-1 for infinite
 Grid_SquaresY = -1; //-1 for infinite
 
