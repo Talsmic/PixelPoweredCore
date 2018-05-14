@@ -1,5 +1,5 @@
 ///ppres_room_anchors([room]);
-/// @arg [room] {Integer:RoomID}	(Defaults to room)
+/// @arg [room] {integer:RoomID}	(Defaults to room)
 /*
 	[PPC][Module:ResolutionController]
 	Checks for room specific resolution anchors
@@ -15,11 +15,11 @@ switch ( room ) {
 		output[0] = false;	//No Anchors
 		break;
 		
-	case rm_PPCPlayground:		
+	//case rm_PPCPlayground:		
 		output[0] = true;	//Found Anchors
-		output[1] = 240; 	//X Anchor
-		output[2] = 135;	//Y Anchor
-		break;	
+		output[1] = 0; 	//X Anchor
+		output[2] = 0;	//Y Anchor
+		//break;	
 		
 	};
 	

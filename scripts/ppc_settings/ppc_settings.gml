@@ -11,8 +11,8 @@
 	#macro PPC_FOCUS_DepthLayers		1	
 	
 //=[Module: settings.ini]=======================================================
-	#macro PPC_SETTINGS_Enable  		1	// oSettingsContainer
-	#macro PPC_SETTINGS_LoadOnOpen		1
-	#macro PPC_SETTINGS_SaveOnExit 		1	
+	#macro PPSETTINGS_Enable  			1	// oSettingsContainer
+	#macro PPSETTINGS_LoadOnOpen		1
+	#macro PPSETTINGS_SaveOnExit 		1	
 	
 	

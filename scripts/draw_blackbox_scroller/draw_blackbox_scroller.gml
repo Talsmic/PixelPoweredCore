@@ -43,7 +43,7 @@ switch ( state ) {
 		break;
 	case eButtonState.mouseover:
 		draw_colour = c_shadow_dark;
-		iconoffset = oGlobalController.Beat[0]*2 -1;
+		iconoffset = oResolutionController.Beat[0]*2 -1;
 		break;
 	};
 

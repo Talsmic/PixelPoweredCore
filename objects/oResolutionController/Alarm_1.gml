@@ -2,6 +2,6 @@
 
 //Correct Resolution
 if ( Options_ResolutionSnap ) { ResolutionSnapNextFrame = true };
-adapt_resolution();
+ppres_adapt_resolution();
 
-alarm[1] = 10;
+alarm[1] = PPRES_RefreshRate;

@@ -1,3 +1,3 @@
-/// @desc Draw Surfaces
+/// @desc Overwrite Drawing Game Surface
 
-draw_game_surface();
+if PPRES_AppSurfaceHijack { ppres_draw_gamesurface() };

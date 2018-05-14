@@ -7,11 +7,13 @@
         "f022dde7-b0ec-4674-8307-b344642ad90e",
         "23d61730-a252-42e0-8c26-385b55d9fa83",
         "0f4f448f-ef71-45a1-ae2d-03b1f83452e3",
-        "bdcea45b-52c5-4a24-ab1e-88686e1d970a",
         "5423d2a0-5c65-40cd-b3d2-b307de10de77",
         "bca18c29-b73e-448d-8ed3-7ad576a645c5",
+        "bdcea45b-52c5-4a24-ab1e-88686e1d970a",
         "02cde600-aa91-4b9d-88a1-72dd4cedba12",
-        "59d25d09-8335-4645-98dc-2a221a6987ed"
+        "59d25d09-8335-4645-98dc-2a221a6987ed",
+        "d35a9452-84f7-4584-8cde-305b2e490e64",
+        "0436c581-a016-4d73-aefd-d7ccf17c2eb6"
     ],
     "filterType": "GMScript",
     "folderName": "[Module: ResolutionController]",

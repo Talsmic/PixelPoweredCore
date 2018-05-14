@@ -1,4 +1,4 @@
-///save_settings()
+///ppsettings_save()
 /*
 	[PPC][Controller Function]
 	Saves in game options to settings.ini

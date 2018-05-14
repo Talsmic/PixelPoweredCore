@@ -1,14 +1,19 @@
 ///guimouse_get_x();
 /*
-	[PPC][Controller Function][ResolutionController]
-	>Returns {integer} Mouse position on the GUI layer 
+	[PPC][Module:ResolutionController]
+	>Returns {integer} Mouse x position on the GUI layer 
 */
+var output = window_mouse_get_x(); //Default to the Window Position of the mouse
 
-return floor( window_mouse_get_x() / oResolutionController.Resolution_Magnification ) + oResolutionController.Resolution_GUIxOffset;
+//If GUI Mouse tracking is enabled, divide by oResolutionController.Resolution_Magnification
+if ( PPRES_GUIMouse ) { output = output div oResolutionController.Resolution_Magnification };
+
+return output;
 
 
 /*=[Notes]======================================================================
-	-	This produces a different result than window_mouse_get_x(), because
+	-	This will produce a different result than window_mouse_get_x(), because
 		it takes in to account both the scaling and gui offset the Resolution 
 		Controller is applying.
-	-	If you're not using oResolutionController,  window_mouse_get_x() is fine
+	-	If you're not using oResolutionController,  window_mouse_get_x() will
+		get you the number you need correctly.

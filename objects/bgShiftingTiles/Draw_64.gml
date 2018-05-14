@@ -1,8 +1,8 @@
 //Find Dimensions
 var draw_space_x = camera_get_view_x(view_camera[view_current]);
 var draw_space_y = camera_get_view_y(view_camera[view_current]);
-var draw_space_width = oGlobalController.Resolution_CompleteWidth;
-var draw_space_height = oGlobalController.Resolution_CompleteHeight;
+var draw_space_width = oResolutionController.Resolution_CompleteWidth;
+var draw_space_height = oResolutionController.Resolution_CompleteHeight;
 var windowX = 0;
 var windowY = 0;
 if ( AnchorView ) {

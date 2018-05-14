@@ -10,9 +10,10 @@
 //Enable the Focus system
 if ( PPC_FOCUS_Enable ) { if ( !instance_exists(oFocusController) ) {instance_create_depth(-1,-1,-1,oFocusController) }	};
 //Create a settings container
-if ( PPC_SETTINGS_Enable ) { if ( !instance_exists(oSettingsContainer) ) {instance_create_depth(-1,-1,-1,oSettingsContainer) }	};
+if ( PPSETTINGS_Enable ) { if ( !instance_exists(oSettingsContainer) ) {instance_create_depth(-1,-1,-1,oSettingsContainer) }	};
 //Enable the Resolution system
-if ( ppres_Enable ) { if ( !instance_exists(oResolutionController) ) {instance_create_depth(-1,-1,-1,oResolutionController) }	};
+global.GUI_MouseX = 0; global.GUI_MouseY = 0;
+if ( PPRES_Enable ) { if ( !instance_exists(oResolutionController) ) {instance_create_depth(-1,-1,-1,oResolutionController) }	};
 
 /*[PPC Dependancies]============================================================
 [wip]

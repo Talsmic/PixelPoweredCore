@@ -2,6 +2,7 @@
 /// @arg mode
 /// @arg x
 /// @arg y
+/*
 var mode = argument0;
 var X = argument1;
 var Y = argument2;
@@ -35,16 +36,16 @@ switch ( mode ) {
 							Options_LockedMagnification,
 							Options_Vsync,
 							" ",
-							oGlobalController.Resolution_Magnification, 
-							string(oGlobalController.Resolution_IdealWidth)+", "+string(oGlobalController.Resolution_IdealHeight), 
-							string(oGlobalController.Resolution_MinWidth)+", "+string(oGlobalController.Resolution_MinHeight), 
-							string(oGlobalController.Resolution_MaxWidth)+", "+string(oGlobalController.Resolution_MaxHeight), 
-							string(oGlobalController.Resolution_CompleteWidth)+", "+string(oGlobalController.Resolution_CompleteHeight), 
-							string(oGlobalController.Resolution_PlayableWidth)+", "+string(oGlobalController.Resolution_PlayableHeight), 
-							string(oGlobalController.Resolution_PadWidth)+", "+string(oGlobalController.Resolution_PadHeight), 
-							string(oGlobalController.Resolution_GUIxOffset)+", "+string(oGlobalController.Resolution_GUIyOffset),
-							oGlobalController.Resolution_GUIsnap, 
-							string(oGlobalController.Resolution_ViewWidth)+", "+string(oGlobalController.Resolution_ViewHeight) 
+							oResolutionController.Resolution_Magnification, 
+							string(oResolutionController.PPRES_IdealWidth)+", "+string(oResolutionController.Resolution_IdealHeight), 
+							string(oResolutionController.Resolution_MinWidth)+", "+string(oResolutionController.Resolution_MinHeight), 
+							string(oResolutionController.Resolution_MaxWidth)+", "+string(oResolutionController.Resolution_MaxHeight), 
+							string(oResolutionController.Resolution_CompleteWidth)+", "+string(oResolutionController.Resolution_CompleteHeight), 
+							string(oResolutionController.Resolution_PlayableWidth)+", "+string(oResolutionController.Resolution_PlayableHeight), 
+							string(oResolutionController.Resolution_PadWidth)+", "+string(oResolutionController.Resolution_PadHeight), 
+							string(oResolutionController.Resolution_GUIxOffset)+", "+string(oResolutionController.Resolution_GUIyOffset),
+							oResolutionController.Resolution_GUIsnap, 
+							string(oResolutionController.Resolution_ViewWidth)+", "+string(oResolutionController.Resolution_ViewHeight) 
 							];
 		var col_width = [120,50];
 		break; #endregion

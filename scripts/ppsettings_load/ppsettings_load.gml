@@ -1,4 +1,4 @@
-///load_settings()
+///ppsettings_load()
 /*
 	[PPC][Controller Function]
 	Loads in game options controlled by settings.ini
