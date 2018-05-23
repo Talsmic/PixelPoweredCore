@@ -61,7 +61,7 @@ switch ( Listbox_Mode ) {
 			//Draw Focus
 			if ( i == Listbox_Position ) { draw_icon_halo(_x,_y,24,c_orange,icon_rarity,eSkillButtonState.detect,0.75) };		
 			//Draw ID
-			if ( Listbox_ShowID ) { draw_text_outline(_x+14,_y+6,i,c_lightgray,c_darkgray) };	
+			if ( Listbox_ShowID ) { draw_text_outline(_x+14,_y+6,i,c_gray9,c_gray2) };	
 			//Progress Locations
 			_x += 30;
 			if ( _x > Listbox_X+Listbox_Row_Length*30 ) { _x = Listbox_X+18; _y += 31 };
@@ -77,14 +77,14 @@ switch ( Listbox_Mode ) {
 			if ( array_length_1d(Listbox_ListColour) < i ) { Listbox_ListColour[i] = c_white };		
 			//Draw Focus
 			if ( i == Listbox_Position ) {	
-				draw_plane(_x-4,_y-1,Listbox_WordWidth+6,11,c_midgray,0.3);
-				draw_plane(_x-4,_y,Listbox_WordWidth+6,9,c_darkgray,1); 
+				draw_plane(_x-4,_y-1,Listbox_WordWidth+6,11,c_gray7,0.3);
+				draw_plane(_x-4,_y,Listbox_WordWidth+6,9,c_gray2,1); 
 				};
 			//Clip strings and Draw List
 			var drawstring = Listbox_ListWords[i];
 			if ( Listbox_ShowID ) { 	
 				if ( string_width(drawstring) > Listbox_WordWidth - 30 ) { drawstring = string_delete(drawstring,14,100)+"...";}; //Clip Extra long words
-				draw_text_flatcolour(_x,_y,"["+string(i)+"]:",c_lightgray,1);
+				draw_text_flatcolour(_x,_y,"["+string(i)+"]:",c_gray9,1);
 				draw_text_flatcolour(_x+30,_y,drawstring,find_colour(Listbox_ListColour[i]),1);
 				};	
 			else { 

@@ -50,15 +50,15 @@ ui_ListBackground_draw();
 set_font(ft_EvoTooltip_6_Bold);
 function_nameA = string_clip(function_nameA,ui_ListBackground_get_width()-8,"...");
 var function_nameB = string_clip(function_name,ui_ListBackground_get_width()-8,"...");
-draw_text_flatcolour(box_x+4,box_y+2,function_nameA,c_lightgray,1);
+draw_text_flatcolour(box_x+4,box_y+2,function_nameA,c_gray9,1);
 draw_text_flatcolour(box_x+4,box_y+2,function_nameB,c_orange,1);
 
 //Draw Table Contents
 set_align(fa_center);
 draw_array_vertical(box_x+12,box_y+1,col0,c_white,1,12);
 set_font(ft_EvoTooltip_6_Condensed);
-draw_array_vertical(box_x+48,box_y+1,col2,c_lightgray,1,12);
-draw_array_vertical(box_x+92,box_y+1,col1,c_lightgray,1,12);
+draw_array_vertical(box_x+48,box_y+1,col2,c_gray9,1,12);
+draw_array_vertical(box_x+92,box_y+1,col1,c_gray9,1,12);
 set_align(fa_right);
 draw_array_vertical(box_x+ui_ListBackground_get_width()-4,box_y+1,col3,c_white,1,12,92);
 set_align(fa_left);

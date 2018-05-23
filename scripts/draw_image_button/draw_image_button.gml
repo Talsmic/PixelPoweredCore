@@ -46,7 +46,7 @@ if ( pop ) {
 draw_sprite_flatcolour(sprite_id,image_id,draw_x,draw_y-pop,colour,alpha); 
 switch ( state ) {	
 	case eButtonState.disabled:		
-		draw_sprite_flatcolour(sprite_id,image_id,draw_x,draw_y-pop,c_midgray,alpha*0.3); break;
+		draw_sprite_flatcolour(sprite_id,image_id,draw_x,draw_y-pop,c_gray7,alpha*0.3); break;
 	case eButtonState.pressed:
 	case eButtonState.mouseover:
 		draw_sprite_flatcolour(sprite_id,image_id,draw_x,draw_y-pop,c_white,alpha*0.3); break;			

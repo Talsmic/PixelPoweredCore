@@ -67,8 +67,8 @@ ui_ListBackground_create(0,box_x,box_y,-1,-1,box_columns,box_rows);
 	ListBackground_ColumnAlpha[0, 1] = 0;
 	ListBackground_ColumnAlpha[0, 2] = 0.5;
 	ListBackground_ColumnAlpha[0, 3] = 0.3;
-	ListBackground_ColumnColour[0, 1] = c_midgray
-	ListBackground_ColumnColour[0, 2] = c_midgray
+	ListBackground_ColumnColour[0, 1] = c_gray7
+	ListBackground_ColumnColour[0, 2] = c_gray7
 	ListBackground_ColumnColour[0, 3] = c_white
 	ListBackground_ColumnMouseovers[0, 3] = 2;
 ui_ListBackground_draw();
@@ -83,8 +83,8 @@ draw_array_vertical(box_x+82,box_y+ListBackground_Pad_Top[0]+12*rA,boxB_col1,c_b
 draw_array_vertical(box_x+82,box_y+ListBackground_Pad_Top[0]-1,boxA_col1,c_nature,1,12,78);
 draw_array_vertical(box_x+82,box_y+ListBackground_Pad_Top[0]+12*rA,boxB_col1,c_water,1,12,78);
 set_align(fa_center);
-draw_array_vertical(box_x+108,box_y+ListBackground_Pad_Top[0],boxA_col2,c_lightgray,1,12);
-draw_array_vertical(box_x+108,box_y+ListBackground_Pad_Top[0]+12*rA,boxB_col2,c_lightgray,1,12);
+draw_array_vertical(box_x+108,box_y+ListBackground_Pad_Top[0],boxA_col2,c_gray9,1,12);
+draw_array_vertical(box_x+108,box_y+ListBackground_Pad_Top[0]+12*rA,boxB_col2,c_gray9,1,12);
 set_align(fa_left);
 set_font(ft_EvoTooltip_6_Condensed);
 draw_array_vertical(box_x+136,box_y+ListBackground_Pad_Top[0],boxA_col3,c_white,1,12,48);

@@ -43,5 +43,5 @@ draw_text_flatcolour(box_x+4,box_y+2,"[GML] View Camera",c_orange,1);
 //Draw Table Contents
 draw_array_vertical(box_x+4,box_y+13,col1,c_orange,1,12);
 set_align(fa_right);
-draw_array_vertical(box_x+ui_ListBackground_get_width()-4,box_y+13,col2,c_lightgray,1,12);
+draw_array_vertical(box_x+ui_ListBackground_get_width()-4,box_y+13,col2,c_gray9,1,12);
 set_align(fa_left);

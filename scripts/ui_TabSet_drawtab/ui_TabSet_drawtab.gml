@@ -44,7 +44,7 @@ switch ( state ) {
 		break;
 	
 	case eButtonState.disabled:
-		text_colour = c_midgray;
+		text_colour = c_gray7;
 		tab_alpha = 0.5;
 		break;
 		

@@ -12,7 +12,7 @@
         "8adca63d-dca9-49f7-803d-e750f12b4ef3"
     ],
     "filterType": "GMSprite",
-    "folderName": "[ObjectIcons]",
+    "folderName": "[Object Icons]",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

@@ -14,6 +14,22 @@
 */
 
 //Colours
+//Gray Shades
+#macro c_gray1			$111111
+#macro c_gray2			$222222
+#macro c_gray3			$333333
+#macro c_gray4			$444444
+#macro c_gray5			$555555
+#macro c_gray6			$666666
+#macro c_gray7			$777777
+#macro c_gray8			$888888
+#macro c_gray9			$999999
+#macro c_gray10			$AAAAAA
+#macro c_gray11			$BBBBBB
+#macro c_gray12			$CCCCCC
+#macro c_gray13			$EEEEEE
+
+/*[Evolutionary Colours]======================================================*/
 //Elements
 #macro c_physical		$666600
 #macro c_fire			$0000CC
@@ -50,9 +66,4 @@
 #macro c_speed_light	$56BAF9
 #macro c_recovery_light	$40BC7D
 #macro c_potency_light	$A762C4
-//Other
-#macro c_white_dark		$AFAFAF
-#macro c_lightgray		$999999
-#macro c_midgray		$505050
-#macro c_nullgray		$323232
-#macro c_darkgray		$151515
+/*============================================================================*/

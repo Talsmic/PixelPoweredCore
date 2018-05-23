@@ -19,7 +19,7 @@ ListBackground_RowCount[ref] = 1;		if argument_count > 6 { ListBackground_RowCou
 for ( var i=0; i<=ListBackground_ColumnCount[ref]; i++ ) {
 	ListBackground_ColumnSize[ref, i] = -1; 
 	if ( i mod 2 > 0 ) { ListBackground_ColumnColour[ref, i] = c_white	}
-				  else { ListBackground_ColumnColour[ref, i] = c_lightgray };
+				  else { ListBackground_ColumnColour[ref, i] = c_gray9 };
 	if ( i == 0 )	   { ListBackground_ColumnColour[ref, i] = c_orange	};
 	ListBackground_ColumnAlpha[ref, i] = 0.2; 
 	if ( i == 0 )	   { ListBackground_ColumnAlpha[ref, i] = 0.4	};
@@ -31,7 +31,7 @@ ListBackground_HeaderColumn[ref] = false;
 for ( var i=0; i<=ListBackground_RowCount[ref]; i++ ) {
 	ListBackground_RowSize[ref, i] = -1; 
 	if ( i mod 2 > 0 ) { ListBackground_RowColour[ref, i] = c_white	}
-				  else { ListBackground_RowColour[ref, i] = c_lightgray };
+				  else { ListBackground_RowColour[ref, i] = c_gray9 };
 	if ( i == 0 )	   { ListBackground_RowColour[ref, i] = c_orange	};
 	ListBackground_RowAlpha[ref, i] = 0; 
 	if ( i == 0 )	   { ListBackground_RowAlpha[ref, i] = 0.4	};

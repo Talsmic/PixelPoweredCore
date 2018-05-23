@@ -36,8 +36,8 @@ if state == eButtonState.detect { state = checkstate_withregion(button_region) }
 
 //Draw
 if state = eButtonState.disabled {
-	draw_text_flatcolour( draw_x+1, draw_y, text, c_darkgray, 0.8 );
-	draw_text_flatcolour( draw_x, draw_y, text, c_midgray, 0.8 );
+	draw_text_flatcolour( draw_x+1, draw_y, text, c_gray2, 0.8 );
+	draw_text_flatcolour( draw_x, draw_y, text, c_gray7, 0.8 );
 	}
 else if state = eButtonState.pressed {
 	draw_text_flatcolour( draw_x+1, draw_y, text, colour_ol, 0.8 );

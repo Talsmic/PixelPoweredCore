@@ -29,9 +29,9 @@ TabSet_CycleKey = vk_tab;
 TabSet_DrawAnchor[ref] = false;
 Tabset_Tileset[ref] = spr_plainbox_4v4;
 TabSet_Colour_Tab[ref] =	   c_black;
-TabSet_Colour_TabHover[ref] =  c_darkgray;
+TabSet_Colour_TabHover[ref] =  c_gray2;
 TabSet_Colour_TabFocus[ref] =  c_black;
-TabSet_Colour_Text[ref] =	   c_lightgray;
+TabSet_Colour_Text[ref] =	   c_gray9;
 TabSet_Colour_TextHover[ref] = c_orange;
 TabSet_Colour_TextFocus[ref] = c_white;
 

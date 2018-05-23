@@ -25,9 +25,9 @@ draw_text_flatcolour(box_x+4,box_y+2,"Breakpoints:",c_orange,1);
 //Draw Table Contents
 var highlight = resolution_get_scale();
 set_align(fa_right);
-draw_array_vertical(box_x+ui_ListBackground_get_width()*0.5-4,box_y+13,col1,c_lightgray,1,12);
+draw_array_vertical(box_x+ui_ListBackground_get_width()*0.5-4,box_y+13,col1,c_gray9,1,12);
 draw_text_flatcolour(box_x+ui_ListBackground_get_width()*0.5-4,box_y+13+12*highlight,col1[highlight],c_shadow_light,1);
 set_align(fa_left);
-draw_array_vertical(box_x+ui_ListBackground_get_width()*0.5+4,box_y+13,col2,c_lightgray,1,12);
+draw_array_vertical(box_x+ui_ListBackground_get_width()*0.5+4,box_y+13,col2,c_gray9,1,12);
 draw_text_flatcolour(box_x+ui_ListBackground_get_width()*0.5+4,box_y+13+12*highlight,col2[highlight],c_shadow_light,1);
 

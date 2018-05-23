@@ -6,8 +6,7 @@
     "children": [
         "27b2af2a-4d1d-4e1f-86af-868f082d1ce8",
         "33488583-4558-4fcd-b171-c791485d515f",
-        "64e09ec1-8561-450f-87c9-8f4d514fc3a9",
-        "378781bb-91c6-4452-81c9-b021a6f63979"
+        "64e09ec1-8561-450f-87c9-8f4d514fc3a9"
     ],
     "filterType": "GMScript",
     "folderName": "[Module: UI Structures]",
