@@ -1,15 +1,16 @@
 ///ppres_setresolution_default([usesettings]);
-/// @arg [usesettings] {Boolean}	(Defaults to PPC_SETTINGS_Enable)
+/// @arg [usesettings] {boolean}	(default: PPC_SETTINGS_Enable)
 /*
 	[PPC][Module:Resolution]
 	Creates all the variables that oResolutionController needs to function, 
 	setting them to their defaults.
 */
-var usesettings = PPSETTINGS_Enable; 
-if ( argument_count > 0 ) { usesettings = argument[0] };
+#region Arguments
+var usesettings = argument_count > 0 ? argument[0] : true;
+#endregion
 
 //Options Variables will be changed if a settings.ini is loaded
-if ( !usesettings or !oSettingsContainer ) {
+if ( !usesettings or !instance_exists(oSettingsContainer) ) {
 	Options_Fullscreen =			PPRES_Fullscreen_AtBoot;
 	Options_Magnification =			PPRES_Magnification_AtBoot;
 	Options_LockedMagnification =	PPRES_Magnification_Lock;
@@ -41,7 +42,10 @@ FloatingPixels_Height		= 0;
 
 ResolutionSnapNextFrame = true; //Should the resolution snap at the next frame?
 ResolutionCenterNextFrame = false;
-ResolutionSnap_Magnification = 2; //Default Zoom
+ResolutionSnap_Magnification = Options_Magnification; //Default Zoom
+
+Breakpoints_Width			= [0,0,0,0];
+Breakpoints_Height			= [0,0,0,0];
 
 /*=[Notes]======================================================================
 	-	This function can be run at any time to reset a oResolutionController, 

@@ -1,8 +1,8 @@
 //Check Keypress
-MoveLeft =	keyboard_check( ord("A") );
-MoveRight = keyboard_check( ord("D") );
-MoveUp =	keyboard_check( ord("W") );
-MoveDown =	keyboard_check( ord("S") );
+var MoveLeft =	keyboard_check( ord("A") );
+var MoveRight = keyboard_check( ord("D") );
+var MoveUp =	keyboard_check( ord("W") );
+var MoveDown =	keyboard_check( ord("S") );
 
 //Move
 if ( MoveLeft )		{	x -= MovementSpeed; image_angle = 90;	};

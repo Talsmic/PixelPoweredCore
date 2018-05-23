@@ -13,7 +13,7 @@ var width = 0;
 var x_position = 0;
 
 //Find Dimensions
-for ( var i=1 ; i<array_length_1d(text_array) ; i++ ) {
+for ( var i=1; i<array_length_1d(text_array); i++ ) {
 	//Hashed Linebreaks
 	if ( text_array[i] == "#" or text_array[i] == "# " or text_array[i] == " # ") {
 		x_position = 0; //Reset x

@@ -1,5 +1,5 @@
 {
-    "id": "58c2d368-4e61-479e-b739-7a48db052bab",
+    "id": "c19ac57a-f3b7-4cd3-8f2f-5fa3359491fa",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "draw_blackbox",

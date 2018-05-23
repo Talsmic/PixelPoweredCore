@@ -5,6 +5,7 @@
 	Most stuff you can do with this controller is optional and adjustable, see
 	ppres_();
 ==============================================================================*/	
+event_inherited();
 
 //Create all the Instance level variables and sets them to defaults
 ppres_setresolution_default();
@@ -14,8 +15,9 @@ window_set_colour(Resolution_MarginColour);
 
 //Apply Resolution Settings
 ResolutionSnap_Magnification = Options_Magnification;
+ResolutionSnapNextFrame = true;
 display_reset(0, Options_Vsync);
-event_user(1); //call the Resolution Correction event
+event_perform(ev_alarm,1); //call the Resolution Correction event
 
 //Enforce Minimum Window Sizes
 if PPRES_MinWindowWidth { window_set_min_width( PPRES_MinWindowWidth ) };

@@ -1,58 +1,57 @@
-///setdepth([depth_layer],[depth_offset],[focus_level]);
-/// @arg [depth_layer] {integer:ObjectID}	(Defaults to id)
-/// @arg [depth_offset] {integer:ObjectID}	(Defaults to id)
-/// @arg [focus_level] {integer:ObjectID}	(Defaults to id)
+///setdepth([depth_layer],[depth_offset],[focus_layer]);
+/// @arg [depth_layer]  {eDepthLayer}	(default: eDepthLayer.standard)
+/// @arg [depth_offset] {integer}		(default: 0)
+/// @arg [focus_layer]  {real|1..10}	(default: 10)
 /*
-	[PPC][Module:Focus]
+	[PixelPowered Module: Focus]
+	>>Returns {integer} new object depth
+	>>Pushes {integer} to object.depth
 	This is a pretty standard depth = -y system with additional hooks to sort
 	that depth by a couple of predetermined layers
 */
-
-//Fail to run if depth management is disabled
-if !PPC_FOCUS_ManageDepth { return 0 };
-
-//Variable defaults
-var depth_layer = DEPTHLAYER_PLAYFIELD
-var focus_level = 10;
-var depth_offset = 0;
-
-//Check for object stored variables
-if ( variable_instance_exists(id,"FocusLevel") ) { focus_level = FocusLevel }; 
-if ( variable_instance_exists(id,"DepthOffset") ) { depth_offset = DepthOffset };
-
-//Parameters overrule stored values
-if ( argument_count > 0 ) { depth_layer = argument[0] } ;
-if ( argument_count > 1 ) { focus_level = argument[1] } ;
-if ( argument_count > 2 ) { depth_offset = argument[2] } ;
+if !instance_exists(oFocusController) return depth;//[!Break!]~~~~~~~~~~~~~~~~~>
+if !oFocusController.Setting_ManageDepth return depth;//[!Break!]~~~~~~~~~~~~~~>
+#region Arguments
+//Defaults < InstanceVariables < Parameters
+if has_objv("Layer_Interaction") and !has_objv("Layer_Depth") { Layer_Depth = Layer_Interaction };
+var depth_layer =	argument_count > 0 ? argument[0] : objv("Layer_Depth",eDepthLayer.standard);
+var depth_offset =	argument_count > 1 ? argument[1] : objv("Layer_Depth_Offset",0);
+var focus_layer =	argument_count > 2 ? argument[2] : objv("Layer_Focus",oFocusController.Setting_Focus_Floor);
+var output = depth;
+#endregion
 
 //Turn off depth layers if disabled
-if !PPC_FOCUS_DepthLayers { depth_layer = DEPTHLAYER_PLAYFIELD } ;
-
-//Default to not changing depth
-var output = depth;
+if !oFocusController.Setting_DepthLayers { depth_layer = eDepthLayer.standard };
 
 switch ( depth_layer ) {
 	
-	case DEPTHLAYER_PLAYFIELD:
+	case eDepthLayer.background:
+		//Backgrounds have a fixed depth
+		output = room_height + 1;	
+		output += depth_offset;
+		break;
+	
+	default:
+	case eDepthLayer.standard:
 		//Depths 0+ are playfield depths
 		//Playfield depths are assigned by y axis
 		output = room_height - y;	
 		output += depth_offset;
 		break;
 		
-	case DEPTHLAYER_GUI:
+	case eDepthLayer.GUI:
 		//Depths 0 to -100 are GUI depths
 		//UI depths are assigned by inverted focus level
 		output = -100;
-		output += focus_level*10;		
+		output += focus_layer*10;		
 		output += depth_offset;
 		break;
 		
-	case DEPTHLAYER_DEBUG:
+	case eDepthLayer.debug:
 		//Depths -100 to -200 are Debug depths
 		//Debug depths are assigned by inverted focus level
 		output = -200;
-		output += focus_level*10;		
+		output += focus_layer*10;		
 		output += depth_offset;
 		break;
 		

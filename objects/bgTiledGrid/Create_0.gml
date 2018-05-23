@@ -11,10 +11,10 @@ Grid_Draw_CoOrds = false;
 Grid_SquaresX = -1; //-1 for infinite
 Grid_SquaresY = -1; //-1 for infinite
 
-BG_Tile[1,UP] =		0//false;
-BG_Tile[1,DOWN] =	1//true;
-BG_Tile[1,LEFT] =	0//false;
-BG_Tile[1,RIGHT] =	1//true;
+BG_Tile[1,UP] =		false;
+BG_Tile[1,DOWN] =	true;
+BG_Tile[1,LEFT] =	false;
+BG_Tile[1,RIGHT] =	true;
 BG_Tile[1,5] = true; //fill
 
 BG_AnchorH[1] = -1;

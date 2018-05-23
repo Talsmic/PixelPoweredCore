@@ -18,7 +18,7 @@ var horizontal_justification = argument4;
 var vertical_justification = argument5;
 
 //Parse and find dimensions
-draw_set_font(ft_EvoTooltip_6);
+set_font(ft_EvoTooltip_6);
 parse_text(tt_body,c_white);
 var width = parsed_text_width(max_width-8);
 var height = parsed_text_height(max_width-8,9);
@@ -46,7 +46,7 @@ switch ( vertical_justification ) {
 	};
 
 //Draw Box
-draw_blackbox(tt_x,tt_y,width,height);
+draw_simplebox(tt_x,tt_y,width,height);
 
 //Draw Text
 draw_parsed_text(tt_x+4,tt_y+4,max_width-8,9);

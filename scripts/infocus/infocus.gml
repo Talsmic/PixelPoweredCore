@@ -1,21 +1,23 @@
 ///infocus([object]);
-/// @arg [object] {integer:ObjectID}	(Defaults to id)
+/// @arg [object] {ObjectID}	(default: id)
 /*
-	[PPC][Module:Focus]
+	[PixelPowered Module: Focus]
+	>>Returns {boolean}
 	Checks if an object is in focus
 */
-var object_id = id;
-if ( argument_count > 0 ) { object_id = argument[0] };
+if !instance_exists(oFocusController) return true;//[!Break!]~~~~~~~~~~~~~~~~~~>
+if !oFocusController.Setting_ManageFocus return true;//[!Break!]~~~~~~~~~~~~~~~>
+#region Arguments
+var object_id =	argument_count > 0 ? argument[0] : id;
+#endregion
 
 //If Focus isn't being tracked on the object, it can be interacted with no 
 //matter what, so return true
-if ( variable_instance_exists(object_id,"FocusLevel") == false ) { return true }; 
+if !has_objv("Layer_Focus",object_id) return true;//[!Break!]~~~~~~~~~~~~~~~~~~>
 
 //If Focus is being tracked and is too low for the object, return false, it 
 //can't be interacted with
-if ( oFocusController.FocusCurrent < object_id.FocusLevel ) { return false };
-
-//Otherwise, assume the object is in focus and return true
+if ( oFocusController.Focus_Current < object_id.Layer_Focus ) return false;
 return true;
 
 /*=[Notes]======================================================================

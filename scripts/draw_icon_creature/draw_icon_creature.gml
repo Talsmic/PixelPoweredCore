@@ -17,9 +17,9 @@ var icon_colour = find_colour(argument4);
 var icon_state = argument5;
 
 //State Detection
-if ( icon_state == eSkillButtonState.detectGUI ) {
+if ( icon_state == eSkillButtonState.detect ) {
 	if ( infocus() ) {
-		if ( mouse_in_region_gui( define_region_icon( X,Y,icon_size ) ) ) {
+		if ( mouse_in_region( region_bysprite( X,Y,icon_size ) ) ) {
 			if ( mouse_check_button(mb_left) ) {
 				icon_state = eSkillButtonState.pressed
 				}

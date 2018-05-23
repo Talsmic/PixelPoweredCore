@@ -4,12 +4,10 @@
     "mvc": "1.1",
     "name": "41202952-7351-4d0e-b4db-ff281280902d",
     "children": [
-        "4714a9fb-0ea2-4001-b50c-dc960f301f22",
-        "288b293b-c54a-4f3d-8ff0-44d7fee3dcdb",
-        "c4ca9eaf-01fb-47af-a64f-3212b63fb901",
-        "f93ab571-1a86-4683-af79-00b049b40741",
-        "d72bd965-1fde-404a-94e0-3a037bcfdf1c",
-        "64e09ec1-8561-450f-87c9-8f4d514fc3a9"
+        "27b2af2a-4d1d-4e1f-86af-868f082d1ce8",
+        "33488583-4558-4fcd-b171-c791485d515f",
+        "64e09ec1-8561-450f-87c9-8f4d514fc3a9",
+        "378781bb-91c6-4452-81c9-b021a6f63979"
     ],
     "filterType": "GMScript",
     "folderName": "[Module: UI Structures]",

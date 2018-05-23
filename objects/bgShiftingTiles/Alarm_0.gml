@@ -8,7 +8,7 @@ repeat 3 {
 		};
 	};
 
-for ( var i=0 ; i<array_length_1d(ShiftingTiles_ColumnHeight) ; i++) {
+for ( var i=0; i<array_length_1d(ShiftingTiles_ColumnHeight); i++) {
 	var aimheight = irandom_range(ShiftingTiles_MinRows,ShiftingTiles_MaxRows);
 	if ( aimheight > ShiftingTiles_ColumnHeight[i] ) { ShiftingTiles_ColumnHeight[i]++ };
 	if ( aimheight < ShiftingTiles_ColumnHeight[i] ) { ShiftingTiles_ColumnHeight[i]-- };

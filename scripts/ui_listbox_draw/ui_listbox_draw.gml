@@ -24,17 +24,17 @@ var range_end = range_start + Listbox_Row_Length * Listbox_Column_Length - 1;
 if ( range_end > Listbox_List_Length ) { range_end = Listbox_List_Length };
 
 //Draw Box
-draw_blackbox(Listbox_X,Listbox_Y,box_width,box_height);
+draw_simplebox(Listbox_X,Listbox_Y,box_width,box_height);
 //Draw Scrollbars
 if ( Listbox_List_Length > Listbox_Row_Length * Listbox_Column_Length ) {	
 	if ( Listbox_Row_Starting == 1 and !Listbox_ScrollLoop ) {	
-		draw_blackbox_scroller(Listbox_X,Listbox_Y,box_width,UP,eSkillButtonState.disabled)	};
+		draw_tilebox_scrollbar(Listbox_X,Listbox_Y,box_width,UP,eSkillButtonState.disabled)	};
 	else {		
-		draw_blackbox_scroller(Listbox_X,Listbox_Y,box_width,UP,eSkillButtonState.detectGUI)	};
+		draw_tilebox_scrollbar(Listbox_X,Listbox_Y,box_width,UP,eSkillButtonState.detect)	};
 	if ( Listbox_Row_Starting > ceil( Listbox_List_Length / Listbox_Row_Length ) - Listbox_Column_Length and !Listbox_ScrollLoop ) {	
-		draw_blackbox_scroller(Listbox_X,Listbox_Y+box_height-4,box_width,DOWN,eSkillButtonState.disabled)	};
+		draw_tilebox_scrollbar(Listbox_X,Listbox_Y+box_height-4,box_width,DOWN,eSkillButtonState.disabled)	};
 	else {	
-		draw_blackbox_scroller(Listbox_X,Listbox_Y+box_height-4,box_width,DOWN,eSkillButtonState.detectGUI)	};	
+		draw_tilebox_scrollbar(Listbox_X,Listbox_Y+box_height-4,box_width,DOWN,eSkillButtonState.detect)	};	
 	};
 	
 //Draw List
@@ -42,43 +42,43 @@ switch ( Listbox_Mode ) {
 	
 	case "Icons": #region
 		var _x = Listbox_X+18; var _y = Listbox_Y+21; 
-		draw_set_font(ft_EvoTooltip_6_Bold);
-		draw_set_halign(fa_right);
-		for ( var i=range_start ; i<=range_end ; i++ ) {
+		set_font(ft_EvoTooltip_6_Bold);
+		set_align(fa_right);
+		for ( var i=range_start; i<=range_end; i++ ) {
 			//Replace missing colours
 			if ( array_length_1d(Listbox_ListColour) < i ) { Listbox_ListColour[i] = c_white };			
 			//Draw Icon
 			var icon_rarity = "B";
 			if ( Listbox_IconType = "Skill" ) {
-				draw_icon_skill(_x,_y,24,Listbox_ListIcon[i],Listbox_ListColour[i],"B",eSkillButtonState.detectGUI) };
+				draw_icon_skill(_x,_y,24,Listbox_ListIcon[i],Listbox_ListColour[i],"B",eSkillButtonState.detect) };
 			if ( Listbox_IconType = "DB_Skill" ) {
-				draw_icon_dbskill(_x,_y,24,Listbox_ListIcon[i],eSkillButtonState.detectGUI);
+				draw_icon_dbskill(_x,_y,24,Listbox_ListIcon[i],eSkillButtonState.detect);
 				icon_rarity = db_record_get("db_Skills",Listbox_ListIcon[i],"rarity") };
 			if ( Listbox_IconType = "Creature" ) {
-				draw_icon_creature(_x,_y,24,Listbox_ListIcon[i],Listbox_ListColour[i],eSkillButtonState.detectGUI) };
+				draw_icon_creature(_x,_y,24,Listbox_ListIcon[i],Listbox_ListColour[i],eSkillButtonState.detect) };
 			if ( Listbox_IconType = "DB_Creature" ) {
-				draw_icon_dbcreature(_x,_y,24,Listbox_ListIcon[i],eSkillButtonState.detectGUI) };
+				draw_icon_dbcreature(_x,_y,24,Listbox_ListIcon[i],eSkillButtonState.detect) };
 			//Draw Focus
-			if ( i == Listbox_Position ) { draw_icon_halo(_x,_y,24,c_orange,icon_rarity,eSkillButtonState.detectGUI,0.75) };		
+			if ( i == Listbox_Position ) { draw_icon_halo(_x,_y,24,c_orange,icon_rarity,eSkillButtonState.detect,0.75) };		
 			//Draw ID
-			if ( Listbox_ShowID ) { draw_text_outline_coloured(_x+14,_y+6,i,c_lightgray,c_darkgray) };	
+			if ( Listbox_ShowID ) { draw_text_outline(_x+14,_y+6,i,c_lightgray,c_darkgray) };	
 			//Progress Locations
 			_x += 30;
 			if ( _x > Listbox_X+Listbox_Row_Length*30 ) { _x = Listbox_X+18; _y += 31 };
 			};
-		draw_set_halign(fa_left);
+		set_align(fa_left);
 		break; #endregion
 		
 	case "Words": #region
 		var _x = Listbox_X+4; var _y = Listbox_Y+6; 
-		draw_set_font(ft_EvoTooltip_6_Bold);
-		for ( var i=range_start ; i<=range_end ; i++ ) {
+		set_font(ft_EvoTooltip_6_Bold);
+		for ( var i=range_start; i<=range_end; i++ ) {
 			//Replace missing colours
 			if ( array_length_1d(Listbox_ListColour) < i ) { Listbox_ListColour[i] = c_white };		
 			//Draw Focus
 			if ( i == Listbox_Position ) {	
-				draw_plane_coloured(_x-4,_y-1,Listbox_WordWidth+6,11,c_midgray,0.3);
-				draw_plane_coloured(_x-4,_y,Listbox_WordWidth+6,9,c_darkgray,1); 
+				draw_plane(_x-4,_y-1,Listbox_WordWidth+6,11,c_midgray,0.3);
+				draw_plane(_x-4,_y,Listbox_WordWidth+6,9,c_darkgray,1); 
 				};
 			//Clip strings and Draw List
 			var drawstring = Listbox_ListWords[i];

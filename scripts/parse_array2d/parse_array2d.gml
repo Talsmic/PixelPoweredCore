@@ -1,50 +1,53 @@
-///parse_array2d(text,spacer,spacer2);
-/// @arg text		
-/// @arg spacer	
-/// @arg spacer2
+///parse_array2d(text,[spacerA],[spacerB]);
+/// @arg text		{string}	
+/// @arg [spacerA]	{string}	(default: "|")
+/// @arg [spacerB]	{string}	(default: ",")
 /*
-	[Edited 24/4/2018]
-	Converts a string of text into a 2d array
+	Converts a string of text into a grid
 */
+#region Arguments
+if argument_count < 1 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~>
+var text =	 argument[0];
+var spacerA = argument_count > 1 ? argument[1] : "|";
+var spacerB = argument_count > 2 ? argument[2] : ",";
+#endregion
 
-var text = argument0;
-var spacer = string(argument1);
-var sw = string_length(spacer);
-var spacer2 = string(argument2);
-var sw2 = string_length(spacer2);
-var parse_reference = 1;
-
-ParsedArray2D = 0; //Clear Old Data
+var parsed_array = 0;
+var spacer_size = string_length(spacerA);
+var parse_ref = 1;
+var position = 0;
 
 //Parse Height
-repeat 100 {
+do {
 	//Find the next spacer
-	var position = string_pos(spacer,text);
+	position = string_pos(spacerB,text);
 	//Cut
-	if ( position ) {
-		ParsedArray2D[parse_reference,0] = string_copy(text,0,position-1);
-		text = string_delete(text,1,position+sw-1);
-		parse_reference++;
+	if position {
+		parsed_array[parse_ref] = string_copy(text,0,position-1);
+		text = string_delete(text,1,position+spacer_size-1);
+		parse_ref++;
 		};
-	//If no spacers are found, end the parse.
-	if ( position == 0 ) { 
-		ParsedArray2D[parse_reference,0] = text;
-		parse_reference++;
+	else { 
+		parsed_array[parse_ref] = text;
+		parse_ref++;
 		break; 
 		};
-	};
-	
+	}
+until ( text == "" or !position );
+
+spacer_size = string_length(spacerB);
+position = 0;
+
 //Parse Length
-var i; var j;
-var temp_array;
-for ( i=1 ; i<array_height_2d(ParsedArray2D) ;  i++ ) {
-	temp_array = parse_array1d(ParsedArray2D[i,0],spacer2);
-	for ( j=1 ; j<array_length_1d(temp_array) ;  j++ ) {
-		ParsedArray2D[i,j] = temp_array[j];
+var i,j,temp_array;
+for ( i=1 ; i<array_height_2d(parsed_array) ;  i++ ) {
+	temp_array = parse_array1d(parsed_array[i,0],spacerB);
+	for ( j=1; j<array_length_1d(temp_array);  j++ ) {
+		parsed_array[i,j] = temp_array[j];
 		};
 	};
 
 //Save parse and Return
-global.ParsedArray2D = 0; //Clear Old Data
-global.ParsedArray2D = ParsedArray2D; 
-return ParsedArray2D;
+global.ParsedArray = 0; //Clear Old Data
+global.ParsedArray = parsed_array; 
+return parsed_array;

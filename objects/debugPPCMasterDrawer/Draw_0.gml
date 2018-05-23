@@ -1,13 +1,20 @@
-if DrawAnchor { draw_plane_coloured(x-1,y-1,2,2,c_red,0.8) };
 
+for ( var i=1; i<array_length_1d(FunctionName); i++ ) {
+	function_execute(FunctionName[i],FunctionArguments[i]);
+	};
+
+
+if DrawAnchor { draw_plane(x-1,y-1,2,2,c_red,0.8) };
+
+/*
 //Loop through all stored DrawCommands
-for ( var i=0 ; i<array_length_1d(DrawCommand) ; i++ ) {
+for ( var i=0; i<array_length_1d(DrawCommand); i++ ) {
 	//Store the Command
 	toDraw_Command = DrawCommand[i];
 	//Check Required Arguments
 	event_user(1);
 	//Loop through Arguments
-	for ( var j=0 ; j<array_length_1d(RequiredArguments) ; j++ ) {
+	for ( var j=0; j<array_length_1d(RequiredArguments); j++ ) {
 		//Store the Arguments (not just the reference to the arguments)
 		switch (RequiredArguments[j]) {	
 			default:		tD_A[j] = 0;									break;			

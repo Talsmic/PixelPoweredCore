@@ -51,11 +51,11 @@
 ===[Settings]===================================================================
 ---[Core Systems]-------------------------------------------------------------*/
 	//Enable/Disable the entire Resolution module
-	#macro PPRES_Enable 				1 //true
+	#macro PPRES_OnIntitialise			true
 	//Enable/Disable GUI Mouse tracking corrections
-	#macro PPRES_GUIMouse				1 //true
+	#macro PPRES_GUIMouse				true
 	//Enable/Disable Cursor graphics
-	#macro PPRES_Cursor  				1 //true
+	#macro PPRES_Cursor  				true
 	//[PLEASE LEAVE THIS ENABLED UNLESS YOU ARE AN ADVANCED USER]
 	//When this is enabled, the oResolutionController will sieze control of 
 	//responsibility for drawing the all important Application Surface.
@@ -64,7 +64,7 @@
 	//If you are already controlling the drawing of the surface you may want to 
 	//disable this. If you do, please look at the adjustments the function
 	//ppres_draw_gamesurface(); makes and account for them in your own code.
-	#macro PPRES_AppSurfaceHijack		1 //true	
+	#macro PPRES_AppSurfaceHijack		true	
 	
 /*--[Refresh Triggers]--------------------------------------------------------*/
 	//How often the controller adapts resolution sizes
@@ -73,7 +73,7 @@
 	#macro PPRES_RefreshRate 			60 //every X steps
 	//Enable/Disable to check every step for window size changes and force an
 	//adapt resolution trigger
-	#macro PPRES_RefreshOnWindowResize	true //true
+	#macro PPRES_RefreshOnWindowResize	true
 	
 /*--[Resolution Sizes]--------------------------------------------------------*/	
 	//Ideal Width & Height is the resolution your game is designed to use
@@ -88,8 +88,8 @@
 	#macro PPRES_MaxHeight				960 //pixels
 	//Minimum window can be resized to
 	// -1 to disable any minimum window sizing
-	#macro PPRES_MinWindowWidth			480 //pixels
-	#macro PPRES_MinWindowHeight		270 //pixels
+	#macro PPRES_MinWindowWidth			384 //pixels
+	#macro PPRES_MinWindowHeight		288 //pixels
 	
 /*--[GUI Layer]---------------------------------------------------------------*/	
 	//Set PPRES_GUIScaling to 0 or below to enable adaptable GUI scaling, 
@@ -98,30 +98,30 @@
 	//if you want it to always have a fixed magnification [NOT RECOMMENDED] 
 	#macro PPRES_GUIScaling				0 //adaptable enabled
 	//Enable this to lock the GUI layer inside the margins
-	#macro PPRES_GUISnap				0 //false
+	#macro PPRES_GUISnap				false
 	
 /*--[Other Settings]----------------------------------------------------------*/
 	//Enable/Disable fullscreen toggling with Shift+Enter.
 	//You should disable fullscreen switching in the GameMaker options and only
 	//rely on this setting. You can customise the key combo to toggle fullscreen
 	//with the key+mod combo
-	#macro PPRES_Fullscreen_ToggleEnable	1 //true
+	#macro PPRES_Fullscreen_ToggleEnable	true
 	#macro PPRES_Fullscreen_ToggleKey		vk_enter 
 	#macro PPRES_Fullscreen_ToggleModifier	vk_alt // 0 to disable
 	//Should the game boot in fullscreen mode?
-	#macro PPRES_Fullscreen_AtBoot			0 //false
+	#macro PPRES_Fullscreen_AtBoot			false
 	//What magnification level should the game boot with?
 	#macro PPRES_Magnification_AtBoot		2		
 	//The range of scalings the controller can access
 	#macro PPRES_Magnification_Min			1 //Minimum 1		
-	#macro PPRES_Magnification_Max			5		
+	#macro PPRES_Magnification_Max			6		
 	//Enable/Disable players to change magnfication level by scaling the screen
-	#macro PPRES_Magnification_Lock			0 //false	
+	#macro PPRES_Magnification_Lock			false	
 	//Enable/Disable if the resolution always attempts to snap to an ideal
 	//after a player has adjusted it
-	#macro PPRES_Magnification_RubberBanding	0 //false	
+	#macro PPRES_Magnification_RubberBanding	false	
 	//Enable/Disable vsync
-	#macro PPRES_VsyncAtBoot				0 //false
+	#macro PPRES_VsyncAtBoot				false
 	//Margin Colours
 	#macro PPRES_MarginColours				c_gray //colourcode
 

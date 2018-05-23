@@ -15,47 +15,54 @@
 
 //How large is the array that stores DrawCommands?
 var max_drawcommands = 3;
-var max_drawcommandarguments = 10;
+var max_drawcommandarguments = 8;
 //How large is the array that stores possible Arguments?
-var max_arguments = 10;
+var max_storedarguments = 5;
 
-//Create the array for DrawCommands
-for ( var i=0 ; i<max_drawcommands ; i++ ) {
-	DrawCommand[i] = " ";
-	for ( var j=0 ; j<max_drawcommandarguments ; j++ ) {
-		ArgumentReference[i,j] = 0;
+#region Create UI Elements
+//[Slave[1]] TabSet
+Slave[1] = instance_create_as_slave(x,y,uiTabSet);
+	with (Slave[1]) { ui_TabSet_alter_tabs(1,1+max_drawcommands,[11,48,1]) };
+	Slave[1].WindowAnchor_X = fa_left;
+	Slave[1].WindowAnchor_X_pad = 2;
+	Slave[1].WindowAnchor_Y = fa_bottom;
+	Slave[1].TabSet_AttachToSide[1] = TOP;
+	Slave[1].TabSet_Tab_Name[1,1] = "Adjust";
+	Slave[1].Pointer_Tabset[1] = 2;
+	for ( var i=1; i<=max_drawcommands; i++ ) {
+		Slave[1].TabSet_Tab_Width[1,i+1] = 68;
+		Slave[1].TabSet_Tab_Name[1,i+1] = "Function "+string(i);
+		};
+	
+//[Slave[2]] FunctionBox
+Slave[2] = instance_create_as_slave(x,y,uiFunctionBox);
+	Slave[2].WindowAnchor_X = fa_right;
+	Slave[2].WindowAnchor_X_pad = 4;
+	Slave[2].WindowAnchor_Y = fa_bottom;
+	Slave[2].WindowAnchor_Y_pad = 20;
+
+#endregion
+
+#region Create Function & Argument Storage
+//Create the array for Functions
+for ( var i=1; i<=max_drawcommands; i++ ) {
+	FunctionName[i] = "draw_simplebox";
+	FunctionArguments[i] = [10*i,10*i,10*i,10*i];
+	for ( var j=0; j<max_drawcommandarguments; j++ ) {
+		FunctionArgumentClass[i,j] = "integer";
+		FunctionArgumentSubClass[i,j] = "x";
+		FunctionArgumentReference[i,j] = i;
 		};
 	};
-DrawCommand[0] = "draw_splane_coloured"; //Set DrawCommand[0] to an example
 
-//Create the array for Arguments
+//Create the arrays for Arguments
 //0 in each array is a constant, the user can't edit it
-for ( var i=0 ; i<max_arguments ; i++ ) {
-	Arg_X[i] = 20+20*i;
-	Arg_Y[i] = 20+20*i;
-	Arg_Width[i] = 50+20*i;
-	Arg_Height[i] = 40+20*i;
-	Arg_Colour[i] = find_colour(i);
-	Arg_Alpha[i] = 1 - 0.2*i
-	Arg_String[i] = "Test String #"+string(i)+string(i)+string(i);
-	Arg_Sprite[i] = spr_genomestar;
-	Arg_Image[i] = 0;
-	Arg_Size[i] = 3+i;
-	Arg_Boolean[i] = 0;
-	//[WIP] There are many more arguments this could ask for
-	};
+masterdrawer_storearguments(max_storedarguments);
+
+#endregion
 	
 //Other Important Variables
 DrawAnchor = true;
-RequiredArguments = 0;
-toDraw_Command = "";
-for ( var j=0 ; j<max_drawcommandarguments ; j++ ) {
-	tD_A[j] = 0;
-	};
-
-//Tabset that tracks the command to draw on the GUI
-ui_tabset_create(1,max_drawcommands);
-	Tabset_X[1] = 200;
-	Tabset_Y[1] = 200;
-
-/*[WIP]
+InputArgument = -1;
+alarm[0] = 60;
+alarm[1] = 5;

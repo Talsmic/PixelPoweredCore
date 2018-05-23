@@ -10,9 +10,9 @@ var sprite = argument2;
 var state = argument3;
 
 //State Detection
-if ( state == eSkillButtonState.detectGUI ) {
+if ( state == eSkillButtonState.detect ) {
 	if ( infocus() ) {
-		if ( mouse_in_region_gui( define_region( X-sprite_get_width(sprite),Y,sprite_get_width(sprite),sprite_get_height(sprite) ) ) ) {
+		if ( mouse_in_region( region_bysize( X-sprite_get_width(sprite),Y,sprite_get_width(sprite),sprite_get_height(sprite) ) ) ) {
 			if ( mouse_check_button(mb_left) ) {
 				state = eSkillButtonState.pressed
 				}

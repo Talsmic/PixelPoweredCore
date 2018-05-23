@@ -1,40 +1,48 @@
-///ui_tabset_create(#,tabs);
-/// @arg #
-/// @arg tabs
-var ref = argument0;
-var tabs = argument1;
+///ui_TabSet_create([TabSetID],[tabs],[x],[y],[attach_side],[flow_direction],[tab_rotation],[tab_size]);
+/// @arg [TabSetID]			{integer}	(default: 0)
+/// @arg [tabs]				{array}		(default: 1)
+/// @arg [x]				{real}		(default: id.x)
+/// @arg [y]				{real}		(default: id.y)
+/// @arg [attach_side]		{Direction}	(default: BOTTOM)
+/// @arg [flow_direction]	{Direction}	(default: LEFT)
+/// @arg [tab_rotation]		{Angle}		(default: ANGLE_UP)
+/// @arg [tab_size[w|h|sep]] {array}	(default: [10,11,1]) [min_width,height,seperation]
+#region Arguments
+var ref =						argument_count > 0 ? argument[0] : 0;
+var tabs =						argument_count > 1 ? argument[1] : 1;
+TabSet_X[ref] =					argument_count > 2 ? argument[2] : x;
+TabSet_Y[ref] =					argument_count > 3 ? argument[3] : y;
+TabSet_AttachToSide[ref] =		argument_count > 4 ? argument[4] : BOTTOM;
+TabSet_TabFlowDirection[ref] =	argument_count > 5 ? argument[5] : LEFT;
+TabSet_Rotation[ref] =			argument_count > 6 ? argument[6] : ANGLE_UP;
+var tab_array =					argument_count > 7 ? fix_array_1d(argument[7], 3, 3, [40,11,1]) : [40,11,1];
+var tab_width_min =				tab_array[0];
+TabSet_TabHeight[ref] =			tab_array[1];
+TabSet_TabSpace[ref] =			tab_array[2];
+#endregion
 
-//A TabSet is a small, special list with a pointer
-//Because you may want multiple tabsets in a single object and they are mostly static,
-//use reference numbers to differentiate them.
+Pointer_Tabset[ref] = 1;
 
-//Databox types:
-// "DB_Skill"		Displays the database info of a skill
+TabSet_Font[ref] = ft_EvoTooltip_6_Bold;
+TabSet_CycleKey = vk_tab;
 
-//Requires the following variables to be pre-established:
-Tabset_Pointer[ref] = 1;
+TabSet_DrawAnchor[ref] = false;
+Tabset_Tileset[ref] = spr_plainbox_4v4;
+TabSet_Colour_Tab[ref] =	   c_black;
+TabSet_Colour_TabHover[ref] =  c_darkgray;
+TabSet_Colour_TabFocus[ref] =  c_black;
+TabSet_Colour_Text[ref] =	   c_lightgray;
+TabSet_Colour_TextHover[ref] = c_orange;
+TabSet_Colour_TextFocus[ref] = c_white;
 
-Tabset_X[ref] = x;
-Tabset_Y[ref] = y;
+var tabcount = notas_array(tabs);
 
-Tabset_TabWidth[ref] = 40;
-Tabset_TabHeight[ref] = 11;
-Tabset_Font[ref] = ft_EvoTooltip_6_Bold;
-Tabset_FontHeight[ref] = 6;
-Tabset_TabSpace[ref] = 1;
-
-Tabset_AttachToSide[ref] = UP;
-Tabset_ListDirection[ref] = LEFT;
-Tabset_Rotation[ref] = ANGLE_UP;
-
-Tabset_Colour_Tab[ref] = c_black;
-Tabset_Colour_TabHover[ref] = c_darkgray;
-Tabset_Colour_TabFocus[ref] = c_black;
-Tabset_Colour_Text[ref] = c_lightgray;
-Tabset_Colour_TextHover[ref] = c_orange;
-Tabset_Colour_TextFocus[ref] = c_white;
-
-for ( var i=1 ; i<=tabs ; i++ ) {
-	Tabset_List[ref,i] = "Tab"+string(i);
-	Tabset_TabEnabled[ref,i] = true;
+set_font(ft_EvoTooltip_6_Bold);
+for ( var i=1; i<=tabcount; i++ ) {
+	TabSet_Tab_Name[ref, i] = is_array(tabs) ? tabs[i] : "Tab"+string(i);
+	TabSet_Tab_Width[ref, i] = string_width(TabSet_Tab_Name[ref, i]) + 6;
+	if (TabSet_Tab_Width[ref, i] < tab_width_min) { TabSet_Tab_Width[ref, i] = tab_width_min };
+	TabSet_Tab_Enabled[ref, i] = true;
 	};
+	
+return ref;

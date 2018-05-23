@@ -30,7 +30,7 @@
 	- Order names in ways that make sense, based on the order you need to gather 
 	  the information as you read it.
 -[Variables]--------------------------------------------------------------------
-	var localvariable			all lower case
+	var objvariable			all lower case
 	InstanceVariable			Start with a capital, new captial ForEachWord
 	global.GlobalVariable		As with InstanceVariables	
 	MACROS						ALL CAPITALS
@@ -83,7 +83,7 @@ if ( condition ) {
 	  deleted at some point
 	- Avoid using globals if a controller is a better solution
 	- Full stops are only used for sentences
-	- GMS does not require lines end with ;
+	- GMS does not require lines end with;
 	  It's still good practice, so still do it
 
 	Some stuff isn't really that important but is technically style guide 

@@ -1,4 +1,4 @@
 /// @desc KeyUp
-/*FocusCheck*/	if ( !infocus() ) { return };	/*FocusCheck*/
+if !infocus() exit;
 
 ui_listbox_keyrelease();

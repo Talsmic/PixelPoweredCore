@@ -1,5 +1,5 @@
 ///find_colour(colour);
-/// @arg colour
+/// @arg colour	{c_code}
 var colour = string(argument0);
 //Cleanse Input
 colour = string_replace_all(colour, "c_", "");
@@ -48,4 +48,5 @@ switch (colour) {
     case "frost":		return c_frost;
     case "electric":	return c_electric;
     case "magic":		return c_magic;	
+	
 	};

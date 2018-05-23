@@ -1,16 +1,31 @@
-///draw_blackbox(x,y,width,height);
-/// @arg x			
-/// @arg y
-/// @arg width		
-/// @arg height
+///draw_blackbox(x,y,width,height,[{corner_array}],[{trim_array}]);
+/// @arg x				{real}
+///	@arg y				{real}
+/// @arg width			{real}
+/// @arg height			{real}
+/// @arg [corner_array]	{array|booleans}	(default: [0,0,0,0]}
+/// @arg [trim_array]	{array|booleans}	(default: [0,1,1,1,1,1,1,1,1,1]}
 /*
-	[Edited 24/4/2018] (Variant of draw_tilebox_ext)
-	Draws a coloured, semi-termparent UI box with rounded corners 
+	>>Returns a region of the ui box dimensions
+	>>Draws a ui box of [width],[height] at [x],[y], with optional sharp corners
+	Uses the spr_plainbox_4v4 sprite
+	Optionally, of [spriteset], [colour] and [alpha]
+	
+	Spritesets use the image_index format of:
+		[1/10][   2   ][3/11]
+		[ 4 ][    5    ][ 6 ]
+		[7/12][   8   ][9/13]
 */
+#region Arguments
+if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~>
+var draw_x =	argument[0]; 
+var draw_y =	argument[1];
+var width =		argument[2]; 
+var height =	argument[3];
+var corner_a =	argument_count > 4 ? argument[4] : [0,0,0,0];
+var trim_array = argument_count > 5 ? fix_array_1d(argument[5],9,9,false) : [0,1,1,1,1,1,1,1,1,1];
+#endregion
 
-var X = argument0; 
-var Y = argument1;
-var width = argument2; 
-var height = argument3;
+draw_tilebox(draw_x,draw_y,width,height,c_black,0.8,spr_plainbox_4v4,corner_a,trim_array);
 
-draw_tilebox_ext(X,Y,width,height,spr_blackbox,c_white,0.8);
+return [draw_x,draw_y,draw_x+width,draw_y+height,width,height];

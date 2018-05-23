@@ -12,7 +12,7 @@ var hex_reference = "0123456789ABCDEF";
 if ( input <= 0 ) { var output = "" } 
 		     else { var output = "00" }; 
 
-while (input) {
+while ( input ) {
     var byte = input & 255;
     var byte_A = string_char_at( hex_reference, (byte div 16) + 1 );
     var byte_B = string_char_at( hex_reference, (byte mod 16) + 1 );

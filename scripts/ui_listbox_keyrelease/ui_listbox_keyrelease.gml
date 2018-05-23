@@ -1,5 +1,5 @@
 ///ui_listbox_keyrelease();
-/*FocusCheck*/	if ( !infocus() ) { return };	/*FocusCheck*/
+if !infocus() exit;
 		
 var KeyLeft = keyboard_check_released(vk_left);
 var KeyRight = keyboard_check_released(vk_right);

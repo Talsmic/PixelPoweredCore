@@ -19,21 +19,21 @@ var window_height = window_get_height_safe();
 	You can also force the game to ignore these by setting 
 	Options_LockedMagnification to true, which will tell the controller to use 
 	Options_Magnification to dictate scaling instead.*/
-var breakpoints_width = [ 0, PPRES_MinWindowWidth ]
-var breakpoints_height = [ 0, PPRES_MinWindowHeight ]
-for ( var i = 2; i <= PPRES_Magnification_Max ; i++ ) {
+Breakpoints_Width = [ 0, PPRES_MinWindowWidth ]
+Breakpoints_Height = [ 0, PPRES_MinWindowHeight ]
+for ( var i = 2; i <= PPRES_Magnification_Max; i++ ) {
 	//By default, the breakpoints are when the window the minumum over the ideal 
-	breakpoints_width[i] = PPRES_IdealWidth + PPRES_MinWidth * ( i-1 );
-	breakpoints_height[i] = PPRES_IdealHeight + PPRES_MinHeight * ( i-1 );
+	Breakpoints_Width[i] = PPRES_IdealWidth * ( i-1 ) + PPRES_MinWidth;
+	Breakpoints_Height[i] = PPRES_IdealHeight * ( i-1 ) + PPRES_MinHeight;
 	//If RubberBanding is enabled, breakpoints are only to ideal resolutions
 	if ( PPRES_Magnification_RubberBanding ) {
-		breakpoints_width[i] = PPRES_IdealWidth * i;
-		breakpoints_height[i] = PPRES_IdealWidth * i;
+		Breakpoints_Width[i] = PPRES_IdealWidth * i;
+		Breakpoints_Height[i] = PPRES_IdealWidth * i;
 		};
 	//If the minimum scaling is higher than 1, this will force the breakpoints to match
 	if ( PPRES_Magnification_Min >= i ) {
-		breakpoints_width[i] = PPRES_MinWindowWidth;
-		breakpoints_height[i] = PPRES_MinWindowHeight;
+		Breakpoints_Width[i] = PPRES_MinWindowWidth;
+		Breakpoints_Height[i] = PPRES_MinWindowHeight;
 		};
 	}; #endregion
 
@@ -42,7 +42,7 @@ for ( var i = 2; i <= PPRES_Magnification_Max ; i++ ) {
 	it shouldn't be.
 	If PPRES_Fullscreen_ToggleEnable is false, PPRES_Fullscreen_AtBoot always 
 	determines the result of this, otherwise Options_Fullscreen does.*/
-if ( PPRES_Fullscreen_ToggleEnable ) {
+if PPRES_Fullscreen_ToggleEnable {
 	if ( window_get_fullscreen() != Options_Fullscreen ) {
 		ResolutionSnapNextFrame = true;
 		window_set_fullscreen(Options_Fullscreen);
@@ -58,28 +58,35 @@ else {
 #region Center The Screen
 /*	Centering the screen at the same time as making certain window changes will
 	produce wonky results, by delaying the centering it corrects this behaviour*/
-if ( ResolutionCenterNextFrame ) {
+if ResolutionCenterNextFrame {
 	window_center();
 	ResolutionCenterNextFrame = false;
+	show_debug_message("Event: Window Centering");
 	}; #endregion
 
 #region Snap To Ideal Resolution
 /*	Forces the resolution of the window to seek an ideal resolution */
-if ( ResolutionSnapNextFrame ) {
+if ResolutionSnapNextFrame {
+	show_debug_message("Event: Resolution Snap ["+string(ResolutionSnap_Magnification*PPRES_IdealWidth)+"x"+string(ResolutionSnap_Magnification*PPRES_IdealHeight)+"]");
 	window_set_size( ResolutionSnap_Magnification*PPRES_IdealWidth, ResolutionSnap_Magnification*PPRES_IdealHeight );
 	ResolutionSnapNextFrame = false;
 	ResolutionCenterNextFrame = true;
+	if ( window_get_width() != ResolutionSnap_Magnification*PPRES_IdealWidth or window_get_height() != ResolutionSnap_Magnification*PPRES_IdealHeight ) {
+		show_debug_message("Error: Resolution Snap not correctly registered");
+		ResolutionSnapNextFrame = true;
+		};
+	
 	}; #endregion
 
 #region Update Magnification Level
 /*	Forces the resolution of the window to seek an ideal resolution */
-if ( Options_LockedMagnification ) {
+if Options_LockedMagnification {
 	Resolution_Magnification = Options_Magnification	
 	}
 else {
 	Resolution_Magnification = PPRES_Magnification_Min;
-	for ( var i=1 ; i<=PPRES_Magnification_Max ; i++ ) {
-		if ( window_width >= breakpoints_width[i] and window_height >= breakpoints_height[i] ) {
+	for ( var i=1; i<=PPRES_Magnification_Max; i++ ) {
+		if ( window_width >= Breakpoints_Width[i] and window_height >= Breakpoints_Height[i] ) {
 			Resolution_Magnification = i;
 			};
 		};
@@ -114,7 +121,7 @@ Resolution_PadHeight = Resolution_PlayableHeight - PPRES_IdealHeight;
 /*	If PPRES_Cursor is enabled, this sets the cursor graphic to match the 
 	maginfication size of the screen.
 	[WIP] I may update this with a better solution down the track*/
-if ( PPRES_Cursor ) {
+if PPRES_Cursor {
 	switch ( Resolution_Magnification ) {
 		case 1: 			cursor_sprite = spr_cursor;		break;
 		case 2:				cursor_sprite = spr_cursor_x2;	break;
@@ -139,23 +146,25 @@ else {
 	Resolution_GUIxOffset = 0;
 	Resolution_GUIyOffset = 0;
 	};
-if ( PPRES_GUIScaling < 1 ) {
+if PPRES_GUIScaling < 1 {
+	display_set_gui_size(Resolution_CompleteWidth, Resolution_CompleteHeight);
 	display_set_gui_maximise( Resolution_Magnification, Resolution_Magnification, Resolution_GUIxOffset, Resolution_GUIyOffset );
 	}
 else {
+	display_set_gui_size(Resolution_CompleteWidth, Resolution_CompleteHeight);
 	display_set_gui_maximise( PPRES_GUIScaling, PPRES_GUIScaling, Resolution_GUIxOffset, Resolution_GUIyOffset );
 	};
 #endregion
 
 #region Resize and Reposition View and Camera
 /*	Runs the function that resizes the camera and views */
-ppres_flex_view(0);
+ppres_flex_view(view_current);
 #endregion
 
 #region Resize the application surface
 /*This is important even if you're not using the application surface redraw features */
 if ( !surface_exists(application_surface) ) {  }
 else {
-	//surface_resize( application_surface, Resolution_PlayableWidth, Resolution_PlayableHeight )
+	surface_resize( application_surface, Resolution_PlayableWidth, Resolution_PlayableHeight )
 	};
 #endregion

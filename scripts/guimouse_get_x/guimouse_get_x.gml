@@ -1,12 +1,12 @@
 ///guimouse_get_x();
 /*
 	[PPC][Module:Resolution]
-	>Returns {integer} Mouse x position on the GUI layer 
+	>>Returns {integer} Mouse x position on the GUI layer 
 */
 var output = window_mouse_get_x(); //Default to the Window Position of the mouse
 
-//If GUI Mouse tracking is enabled, divide by oResolutionController.Resolution_Magnification
-if ( PPRES_GUIMouse ) { output = output div oResolutionController.Resolution_Magnification };
+//If GUI Mouse tracking is enabled, divide by Resolution_Magnification
+if ( instance_exists(oResolutionController) ) { output = output div resolution_get_scale() };
 
 return output;
 

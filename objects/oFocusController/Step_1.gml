@@ -1,7 +1,10 @@
+if Setting_ManageDrawLayers { global.inProgress_Step = true };
 /// @desc Reset Focus
 
-//Reset Focus
-FocusCurrent = FocusCheck;	//Upgrade the previous checked focus to active
-FocusCheck = 10;			//Start a new check
 
-setdepth(DEPTHLAYER_GUI,-1,FocusCurrent);
+
+//Reset Focus
+Focus_Current = Focus_NextStep;	//Upgrade the previous checked focus to active
+Focus_NextStep = Setting_Focus_Floor;			//Start a new check
+
+setdepth(eDepthLayer.GUI,1,Focus_Current);

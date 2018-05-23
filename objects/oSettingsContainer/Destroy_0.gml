@@ -1,3 +1,3 @@
-if ( PPSETTINGS_SaveOnExit ) {
+if ( Settings_SaveOnExit ) {
 	ppsettings_save();
 	};
