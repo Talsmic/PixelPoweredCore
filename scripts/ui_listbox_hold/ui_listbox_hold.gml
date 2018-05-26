@@ -25,17 +25,17 @@ switch ( Listbox_Mode ) {
 	case "Icons":
 		if ( !ScrollBeat[0] ) { break };
 		//Scroll Bars		
-		if ( MouseLeft and mouse_in_region( region_bysize( Listbox_X-1,Listbox_Y-2,Listbox_Row_Length*30+6,6 ) ) ) {
+		if ( MouseLeft and _mouseInRegion( _regionBySize( Listbox_X-1,Listbox_Y-2,Listbox_Row_Length*30+6,6 ) ) ) {
 			ui_listbox_command("ScrollUp1")	};
-		if ( MouseLeft and mouse_in_region( region_bysize( Listbox_X-1,Listbox_Y+Listbox_Column_Length*31+4,Listbox_Row_Length*30+6,6 ) ) ) {
+		if ( MouseLeft and _mouseInRegion( _regionBySize( Listbox_X-1,Listbox_Y+Listbox_Column_Length*31+4,Listbox_Row_Length*30+6,6 ) ) ) {
 			ui_listbox_command("ScrollDown1")	};
 		break;
 	case "Words":
 		if ( !ScrollBeat[0] ) { break };
 		//Scroll Bars		
-		if ( MouseLeft and mouse_in_region( region_bysize( Listbox_X-1,Listbox_Y-2,Listbox_Row_Length*Listbox_WordWidth+6,6 ) ) ) {
+		if ( MouseLeft and _mouseInRegion( _regionBySize( Listbox_X-1,Listbox_Y-2,Listbox_Row_Length*Listbox_WordWidth+6,6 ) ) ) {
 			ui_listbox_command("ScrollUp1")	};
-		if ( MouseLeft and mouse_in_region( region_bysize( Listbox_X-1,Listbox_Y+Listbox_Column_Length*10+4,Listbox_Row_Length*Listbox_WordWidth+6,6 ) ) ) {
+		if ( MouseLeft and _mouseInRegion( _regionBySize( Listbox_X-1,Listbox_Y+Listbox_Column_Length*10+4,Listbox_Row_Length*Listbox_WordWidth+6,6 ) ) ) {
 			ui_listbox_command("ScrollDown1")	};
 		break;
 	};

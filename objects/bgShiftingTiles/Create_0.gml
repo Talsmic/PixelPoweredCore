@@ -1,10 +1,10 @@
 // Inherit the parent event
 event_inherited();
 
-BG_Sprite[1] = bg_square;
-BG_Tint[1] = c_shadow_dark;
-AnchorView = true;
-FlatBack_Colour = $ffeaff;
+back_StoredBG_Sprite[1] = bg_square;
+back_StoredBG_Tint[1] = c_shadow_dark;
+set_AnchorToView = true;
+back_Flat_Colour = $ffeaff;
 
 ShiftingTiles_MinRows = 8;
 ShiftingTiles_MaxRows = 26;

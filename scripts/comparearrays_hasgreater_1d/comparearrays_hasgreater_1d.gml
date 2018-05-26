@@ -5,7 +5,7 @@
 /// @arg [required_quantity]	{integer}	(default: UNUSED)
 /// @arg [required_quality]		{real}		(default: UNUSED)
 /*
-	>>Returns	{boolean}
+	<< Returns >>	{boolean}
 */ 
 #region Arguments
 if argument_count < 2 { show_debug_message("ArgError"); return false };//[!Break!]

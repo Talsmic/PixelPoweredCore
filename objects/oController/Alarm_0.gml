@@ -1,3 +1,2 @@
 /// @desc Updates (Every Update Window)
-alarm[0] = global.UpdateWindow;
-setdepth(eDepthLayer.GUI);
+if ( set_EnableUpdates ) { alarm[0] = global.UpdateWindow };

@@ -25,7 +25,7 @@ if argument_count > 5 { spacing = argument[5] };
 var output;
 
 for ( var i=1; i<=rows; i++ ) {
-	output[i] = region_bysize(draw_x,draw_y,width,height[i]);
+	output[i] = _regionBySize(draw_x,draw_y,width,height[i]);
 	draw_x += width[i] + spacing;
 	};
 	

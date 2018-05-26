@@ -1,21 +1,21 @@
 ///simple_sprite_glow(sprite_id,image_id,x,y,{[thickness]},[colour],[alpha],[xscale],[yscale],[rotation]);
-/// @arg sprite_id		{sprite_id}		
-/// @arg image_id		{integer}			
+/// @arg sprite_id		#sprite_id#		
+/// @arg image_id		#image_id#			
 /// @arg x				{real}				
 /// @arg y				{real}				
-/// @arg {[thickness]}	{intger or array}	(default: 1)
-/// @arg [colour]		{c_code}			(default: draw_get_colour())
+/// @arg {[thickness]}	{integer or array}	(default: 1)
+/// @arg [colour]		#c_code#			(default: draw_get_colour())
 /// @arg [alpha]		{real|0..1}			(default: draw_get_alpha())
 /// @arg [x_scale]		{real}				(default: 1)
 /// @arg [y_scale]		{real}				(default: 1)
 /// @arg [rotation]		{integer|0..360}	(default: 0)
 #region Arguments
-if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~>
+if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var sprite_id =	argument[0];
 var image_id =	argument[1];
 var draw_x =	argument[2];	
 var draw_y =	argument[3];
-var thickness =	argument_count > 4 ? fix_array_1d(argument[4],4,4,0,0) : [1,1,1,1];
+var thickness =	argument_count > 4 ? _validateArray(argument[4],4,4,0,0) : [1,1,1,1];
 var colour =	argument_count > 5 ? argument[5] : draw_get_color();
 var alpha =		argument_count > 6 ? argument[6] : draw_get_alpha();
 var x_scale =	argument_count > 7 ? argument[7] : 1;
@@ -25,8 +25,8 @@ var width = sprite_get_width(sprite_id);
 var height = sprite_get_height(sprite_id);
 #endregion
 
-GlowRegion = region_bysprite(draw_x,draw_y,sprite_id);
-GlowRegion = region_adjust(GlowRegion,thickness);
+GlowRegion = _spriteRegion(draw_x,draw_y,sprite_id);
+GlowRegion = _alterRegion(GlowRegion,thickness);
 
 //Create Surface
 GlowSurface = surface_create(GlowRegion[eR.w], GlowRegion[eR.h]);

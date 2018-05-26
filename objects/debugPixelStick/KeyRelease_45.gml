@@ -1,1 +1,1 @@
-DrawMode = toggle(DrawMode);
+DrawMode = _toggle(DrawMode);

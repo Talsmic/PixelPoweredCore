@@ -13,7 +13,7 @@
         "bdcea45b-52c5-4a24-ab1e-88686e1d970a"
     ],
     "filterType": "GMScript",
-    "folderName": "[Module: Resolution]",
+    "folderName": "[Module]: Resolution Control",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

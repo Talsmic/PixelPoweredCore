@@ -2,26 +2,26 @@
 /// @arg x				{real}
 /// @arg y				{real}
 /// @arg text			{string}
-/// @arg [colour]		{c_code}			(default: draw_get_colour())
-/// @arg [colour_ol]	{c_code}			(default: colour_ol)
+/// @arg [colour]		#c_code#			(default: draw_get_colour())
+/// @arg [colour_ol]	#c_code#			(default: colour_ol)
 /// @arg [alpha]		{real|0..1}			(default: draw_get_alpha())
 /// @arg [thickness]	{integer or array}	(default: 1) (add 0.5 for thickened corners)
 /// @arg [thickness2]	{integer or array}	(default: 0) (add 0.5 for thickened corners)
 /// @arg [shadow_alpha]	{real|0..1}			(default: 0.2)
-/// @arg [shadow_tint]	{c_code}			(default: c_black)
+/// @arg [shadow_tint]	#c_code#			(default: c_black)
 /*
-	>>Draws text with an outline
+	[[ Draws ]] text with an outline
 */
 #region Arguments
-if argument_count < 3 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~>
+if argument_count < 3 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var draw_x =		argument[0];
 var draw_y =		argument[1];
 var text =			argument[2];
 var colour =		argument_count > 3 ? argument[3] : draw_get_color();
 var colour_ol =		argument_count > 4 ? argument[4] : c_black;
 var alpha =			argument_count > 5 ? argument[5] : draw_get_alpha();
-var thickness =		argument_count > 6 ? fix_array_1d(argument[6],4,4,0,0) : [1,1,1,1];
-var thickness2 =	argument_count > 7 ? fix_array_1d(argument[7],4,4,0,0) : [0,0,0,0];
+var thickness =		argument_count > 6 ? _validateArray(argument[6],4,4,0,0) : [1,1,1,1];
+var thickness2 =	argument_count > 7 ? _validateArray(argument[7],4,4,0,0) : [0,0,0,0];
 var shadow_alpha =	argument_count > 8 ? argument[8] : 0.2;
 var shadow_tint =	argument_count > 9 ? argument[9] : c_black;
 var thickA, thickB, thick2A, thick2B;
@@ -37,18 +37,18 @@ for ( var t=0 ; t<4 ; t++ ) {
 var shadow_colour = merge_colour(colour_ol, shadow_tint, shadow_alpha);
 #endregion
 
-var text_region = region_bytext(draw_x,draw_y,text);
-text_region = region_adjust(text_region,thick2A);
+var text_region = _textRegion(draw_x,draw_y,text);
+text_region = _alterRegion(text_region,thick2A);
 var stored_align = [global.AlignX,global.AlignY];
-set_align();
+_setAlign();
 
 //Create Surface
-var text_surface = surface_create(text_region[eR.w], text_region[eR.h]);
+var text_surface = surface_create( text_region[eR.w], text_region[eR.h] );
 var surfacedraw_x = thick2A[0];
 var surfacedraw_y = thick2A[1];
 
 //Draw to Surface
-surface_set_target(text_surface) {
+surface_set_target( text_surface ) {
 	
 	draw_clear_alpha(c_white, 0);	
 	var i, j;
@@ -83,7 +83,7 @@ surface_set_target(text_surface) {
 	
 } surface_reset_target();
 //Draw Surface
-set_align(stored_align[0],stored_align[1]);
+_setAlign(stored_align[0],stored_align[1]);
 switch ( global.AlignX ) { 
 	case fa_center: draw_x -= string_width(text) div 2; break; 
 	case fa_right:  draw_x -= string_width(text); break; 

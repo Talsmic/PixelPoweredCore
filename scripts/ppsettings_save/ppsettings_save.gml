@@ -32,4 +32,4 @@ show_debug_message("settings.ini Saved");
 ini_close();
 
 /*[PPC Dependancies]============================================================
-	MUST BE RUN BY [Object] oSettingsContainer
+	MUST BE RUN BY [Object] OptionsContainer

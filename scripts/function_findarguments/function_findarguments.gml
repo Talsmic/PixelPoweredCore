@@ -16,11 +16,11 @@ switch ( function_name ) {
 //-[Drawing]--------------------------------------------------------------------
 	case "draw_simplebox": 
 		//draw_simplebox(x,y,width,height);
-		output = parse_array2d( "integer|x,integer|y,integer|width,integer|height", ",", "|" );
+		output = _arrayFromStringGrid( "integer|x,integer|y,integer|width,integer|height", 0, ",", "|" );
 		break;
 		
 	case "draw_plane_outline":
-		output = parse_array2d( "integer|x,integer|y,integer|width,integer|height,c_code|colour,real|alpha,integer|thickness", ",", "|" );
+		output = _arrayFromStringGrid( "integer|x,integer|y,integer|width,integer|height,c_code|colour,real|alpha,integer|thickness", 0, ",", "|" );
 		break;
 	
 	

@@ -38,12 +38,12 @@
 		  - Scaling: [Keep aspect ratio]
 		  
 	If you want settings.ini to influence the game, make sure an 
-	oSettingsContainer is created at the start of your game.
-	Make sure an oResolutionController is created at the start of your game,
+	OptionsContainer is created at the start of your game.
+	Make sure an ResolutionController is created at the start of your game,
 	after the settings container. 
 	(Both are persistant and only need to be created once)
 
-	Everything should work correctly at this point, and the oResolutionController
+	Everything should work correctly at this point, and the ResolutionController
 	should take over resolution management and drawing the Application Surface.
 	
 	Tweak the settings below to get your desired results.
@@ -57,7 +57,7 @@
 	//Enable/Disable Cursor graphics
 	#macro PPRES_Cursor  				true
 	//[PLEASE LEAVE THIS ENABLED UNLESS YOU ARE AN ADVANCED USER]
-	//When this is enabled, the oResolutionController will sieze control of 
+	//When this is enabled, the ResolutionController will sieze control of 
 	//responsibility for drawing the all important Application Surface.
 	//By default, GMS:2 handle this itself, but many features of this addon 
 	//require slight adjustments to its drawing.
@@ -103,7 +103,7 @@
 /*--[Other Settings]----------------------------------------------------------*/
 	//Enable/Disable fullscreen toggling with Shift+Enter.
 	//You should disable fullscreen switching in the GameMaker options and only
-	//rely on this setting. You can customise the key combo to toggle fullscreen
+	//rely on this setting. You can customise the key combo to _toggle fullscreen
 	//with the key+mod combo
 	#macro PPRES_Fullscreen_ToggleEnable	true
 	#macro PPRES_Fullscreen_ToggleKey		vk_enter 
@@ -127,7 +127,7 @@
 
 /*=[Module Components]==========================================================
 ---[Objects]--------------------------------------------------------------------
-	oResolutionController							[Functional and Documented]
+	ResolutionController							[Functional and Documented]
 	
 ---[Scripts]--------------------------------------------------------------------
 	ppres_setresolution_default([0]);				[Functional and Documented]
@@ -140,7 +140,7 @@
 		
 ===[Dependancies (included)]====================================================
 ---[Scripts]--------------------------------------------------------------------
-	toggle()
+	_toggle()
 ---[Sprites]--------------------------------------------------------------------
 	spr_cursor
 	spr_cursor_x2

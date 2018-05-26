@@ -33,7 +33,7 @@ set_font(ft_EvoTooltip_6_Bold);
 draw_text_flatcolour(box_x+4,box_y+2,"Ideal Sizes:",c_orange,1);
 
 //Draw Table Contents
-set_align(fa_right);
+_setAlign(fa_right);
 draw_array_vertical(box_x+ui_ListBackground_get_width()*0.5-4,box_y+13,col1,c_gray9,1,12);
 if ( col1[0] = window_get_width() ) { draw_text_flatcolour(box_x+ui_ListBackground_get_width()*0.5-4,box_y+13,col1[0],c_shadow_light,1) };
 for ( var i=1; i<array_length_1d(col1); i++ ) {
@@ -41,7 +41,7 @@ for ( var i=1; i<array_length_1d(col1); i++ ) {
 	if ( col1[i-1] < window_get_width() and col1[i] > window_get_width() ) {
 		draw_plane(box_x+2,box_y+11+12*i,ui_ListBackground_get_width()*0.5-3,1,c_shadow_light,1)	};
 	};
-set_align(fa_left);
+_setAlign(fa_left);
 draw_array_vertical(box_x+ui_ListBackground_get_width()*0.5+4,box_y+13,col2,c_gray9,1,12);
 if ( col2[0] = window_get_width() ) { draw_text_flatcolour(box_x+ui_ListBackground_get_width()*0.5+4,box_y+13,col2[0],c_shadow_light,1) };
 for ( var i=1; i<array_length_1d(col2); i++ ) {

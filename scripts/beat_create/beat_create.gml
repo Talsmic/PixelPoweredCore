@@ -3,7 +3,7 @@
 /// @arg [beat_amount]	{real}		(default: 0.05)
 /// @arg [beat_size]	{real}		(default: 1)
 /*
-	>>Returns {array} [beat_value,beat_count,beat_speed,beat_amount,beat_size,beat_direction]
+	<< Returns >> {array} [beat_value,beat_count,beat_speed,beat_amount,beat_size,beat_direction]
 */
 #region Arguments
 var beat_speed =	argument_count > 0 ? argument[0] : 1;

@@ -1,6 +1,6 @@
 // Inherit the parent event
 event_inherited();
-FlatBack = false;
+back_Flat = false;
 
 Grid_Size = 32; //8, 16, 24 or 32
 Grid_Colour = c_white;
@@ -11,11 +11,11 @@ Grid_Draw_CoOrds = false;
 Grid_SquaresX = -1; //-1 for infinite
 Grid_SquaresY = -1; //-1 for infinite
 
-BG_Tile[1,UP] =		false;
-BG_Tile[1,DOWN] =	true;
-BG_Tile[1,LEFT] =	false;
-BG_Tile[1,RIGHT] =	true;
-BG_Tile[1,5] = true; //fill
+back_StoredBG_Tile[1,UP] =		false;
+back_StoredBG_Tile[1,DOWN] =	true;
+back_StoredBG_Tile[1,LEFT] =	false;
+back_StoredBG_Tile[1,RIGHT] =	true;
+back_StoredBG_Tile[1,5] = true; //fill
 
-BG_AnchorH[1] = -1;
-BG_AnchorV[1] = -1;
+back_StoredBG_AnchorX[1] = -1;
+back_StoredBG_AnchorY[1] = -1;

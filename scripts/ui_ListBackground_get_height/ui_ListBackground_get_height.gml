@@ -1,7 +1,7 @@
 ///ui_ListBackground_get_height([ListBackgroundID]);
 /// @arg [ListBackgroundID] {integer}	(default: 0)
 /*
-	>>Returns {integer}: [ListBackgroundID] Predicted Draw Height
+	<< Returns >> {integer}: [ListBackgroundID] Predicted Draw Height
 */
 var ref = 0;
 if argument_count > 0 { ref = argument[0] };

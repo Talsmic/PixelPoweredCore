@@ -21,7 +21,7 @@ var halo_alpha = argument6;
 //State Detection
 if ( halo_state == eSkillButtonState.detect ) {
 	if ( infocus() ) {
-		if ( mouse_in_region( region_bysprite( X,Y,halo_size ) ) ) {
+		if ( _mouseInRegion( _spriteRegion( X,Y,halo_size ) ) ) {
 			if ( mouse_check_button(mb_left) ) {
 				halo_state = eSkillButtonState.pressed
 				}

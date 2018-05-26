@@ -4,33 +4,33 @@ if argument_count > 0 { var type = argument[0] } else { var type = "Complete" };
 var output = window_get_height();
 
  
-if instance_exists(oResolutionController) {
+if instance_exists(ResolutionController) {
 	
 	switch ( type ) {
 	
 		case "Complete":
-			output = oResolutionController.Resolution_CompleteHeight;
+			output = ResolutionController.Resolution_CompleteHeight;
 			break;
 			
 		case "Playable":
-			output = oResolutionController.Resolution_PlayableHeight;
+			output = ResolutionController.Resolution_PlayableHeight;
 			break;
 			
 		case "Padded":
-			output = oResolutionController.Resolution_PadHeight;
+			output = ResolutionController.Resolution_PadHeight;
 			break;
 			
 		case "GUIOffset":
-			output = oResolutionController.Resolution_GUIyOffset;
+			output = ResolutionController.Resolution_GUIyOffset;
 			break;
 			
 		case "FloatingPixels":
-			output = oResolutionController.FloatingPixels_Height;
+			output = ResolutionController.FloatingPixels_Height;
 			break;
 			
 		case "View":
 		case "Camera":
-			output = oResolutionController.Resolution_ViewHeight;
+			output = ResolutionController.Resolution_ViewHeight;
 			break;
 			
 		};

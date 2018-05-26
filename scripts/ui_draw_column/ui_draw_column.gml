@@ -5,7 +5,7 @@
 /// @arg [columnsize] {integer}			(default: 30)
 /// @arg [rowsize] {array|integers}		(default: 10)
 /// @arg [spacing] {integer}			(default: 1)
-/// @arg [colour] {c_code}				(default: c_white)
+/// @arg [colour] #c_code#				(default: c_white)
 /// @arg [alpha] {real|0..1}				(default: 0.2)
 /// @arg [mouseovers] {boolean+}		(default: false)
 var draw_x = 0;
@@ -30,10 +30,10 @@ if argument_count > 8 { mouseovers = argument[8] };
 
 for ( var i=1; i<=rows; i++ ) {
 	draw_plane(draw_x,draw_y,width,height[i],colour,alpha);
-	if ( mouseovers == 1 and mouse_in_region([draw_x,draw_y,draw_x+width,draw_y+height[i]]) ) {
+	if ( mouseovers == 1 and _mouseInRegion([draw_x,draw_y,draw_x+width,draw_y+height[i]]) ) {
 		draw_plane(draw_x,draw_y,width,height[i],c_white,alpha);
 		};
-	if ( mouseovers == 2 and mouse_in_region([draw_x,draw_y,draw_x+width,draw_y+height[i]]) ) {
+	if ( mouseovers == 2 and _mouseInRegion([draw_x,draw_y,draw_x+width,draw_y+height[i]]) ) {
 		draw_plane(draw_x,draw_y,width,height[i],c_white,alpha);
 		};
 	draw_y += height[i] + spacing;

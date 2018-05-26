@@ -2,13 +2,13 @@
 /// @arg x			{real}
 /// @arg y			{real}
 /// @arg array		{array}
-/// @arg [colour]	{c_code}		(default: draw_get_colour();)
+/// @arg [colour]	#c_code#		(default: draw_get_colour();)
 /// @arg [alpha]	{real|0..1}		(default: draw_get_alpha();)
 /// @arg [spacing]	{array|real}	(default: 50)
 /// @arg [clipwidth] {integer}		(default: 45)
 /// @arg [clip_note] {string}		(default: "..")
 #region Arguments
-if argument_count < 3 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~>
+if argument_count < 3 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var draw_x =	argument[0];
 var draw_y =	argument[1];
 var array =		argument[2];
@@ -25,7 +25,7 @@ for ( var i=0 ; i<array_length_1d(array) ; i++ ) {
 	array[i] = string(array[i]);
 	if ( array[i] == "" ) { continue };
 	
-	if clipwidth { array[i] = string_clip(array[i],clipwidth,clip_note); };
+	if clipwidth { array[i] = _stringClip(array[i],clipwidth,clip_note); };
 	draw_text_flatcolour(draw_x,draw_y,string(array[i]),colour,alpha);
 	draw_x += spacing;
 	

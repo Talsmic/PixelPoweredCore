@@ -15,12 +15,12 @@ var col1 = ["_Fullscreen",
 			"_Vsync",
 			"_ResolutionSnap"
 			];
-var col2 = [oResolutionController.Options_Fullscreen,
-			oResolutionController.Options_ResolutionSnap,
-			oResolutionController.Options_Magnification,
-			oResolutionController.Options_LockedMagnification,
-			oResolutionController.Options_Vsync,
-			oResolutionController.Options_ResolutionSnap
+var col2 = [ResolutionController.Options_Fullscreen,
+			ResolutionController.Options_ResolutionSnap,
+			ResolutionController.Options_Magnification,
+			ResolutionController.Options_LockedMagnification,
+			ResolutionController.Options_Vsync,
+			ResolutionController.Options_ResolutionSnap
 			];
 
 //Draw Box
@@ -36,6 +36,6 @@ draw_text_flatcolour(box_x+4,box_y+2,"[oResCon] Options_",c_orange,1);
 
 //Draw Table Contents
 draw_array_vertical(box_x+4,box_y+13,col1,c_nature_light,1,12);
-set_align(fa_right);
+_setAlign(fa_right);
 draw_array_vertical(box_x+ui_ListBackground_get_width()-4,box_y+13,col2,c_gray9,1,12);
-set_align(fa_left);
+_setAlign(fa_left);

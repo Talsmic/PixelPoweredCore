@@ -6,8 +6,8 @@
 /// @arg [corner_array]	{array|booleans}	(default: [0,0,0,0]}
 /// @arg [trim_array]	{array|booleans}	(default: [0,1,1,1,1,1,1,1,1,1]}
 /*
-	>>Returns a region of the ui box dimensions
-	>>Draws a ui box of [width],[height] at [x],[y], with optional sharp corners
+	<< Returns >> a region of the ui box dimensions
+	[[ Draws ]] a ui box of [width],[height] at [x],[y], with optional sharp corners
 	Uses the spr_plainbox_4v4 sprite
 	Optionally, of [spriteset], [colour] and [alpha]
 	
@@ -17,13 +17,13 @@
 		[7/12][   8   ][9/13]
 */
 #region Arguments
-if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~>
+if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var draw_x =	argument[0]; 
 var draw_y =	argument[1];
 var width =		argument[2]; 
 var height =	argument[3];
 var corner_a =	argument_count > 4 ? argument[4] : [0,0,0,0];
-var trim_array = argument_count > 5 ? fix_array_1d(argument[5],9,9,false) : [0,1,1,1,1,1,1,1,1,1];
+var trim_array = argument_count > 5 ? _validateArray(argument[5],9,9,false) : [0,1,1,1,1,1,1,1,1,1];
 #endregion
 
 draw_tilebox(draw_x,draw_y,width,height,c_black,0.8,spr_plainbox_4v4,corner_a,trim_array);

@@ -3,17 +3,17 @@
 /// @arg y			{real}
 /// @arg width		{real}
 /// @arg height		{real}
-/// @arg [colour]	{c_code}			(default: draw_get_color())
+/// @arg [colour]	#c_code#			(default: draw_get_color())
 /// @arg [alpha]	{real|0..1}			(default: draw_get_alpha())
 /// @arg [outline]	{boolean+}			(default: false) [false, true&thickness]
 /// @arg [rotation]	{integer|0..360}	(default: 0)
 /*
-	>>Draws a rectangle at [x],[y] of [width] and [height]
+	[[ Draws ]] a rectangle at [x],[y] of [width] and [height]
 	Optionally, of [colour], [alpha] and [rotation]
 	[outline] 0: flat colour fill, 1+: outline of [outline] thickness
 */
 #region Arguments
-if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~>
+if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var draw_x =	argument[0];
 var draw_y =	argument[1];
 var width =		argument[2];

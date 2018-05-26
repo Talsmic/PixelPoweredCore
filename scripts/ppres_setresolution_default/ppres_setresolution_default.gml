@@ -2,7 +2,7 @@
 /// @arg [usesettings] {boolean}	(default: PPC_SETTINGS_Enable)
 /*
 	[PPC][Module:Resolution]
-	Creates all the variables that oResolutionController needs to function, 
+	Creates all the variables that ResolutionController needs to function, 
 	setting them to their defaults.
 */
 #region Arguments
@@ -10,17 +10,17 @@ var usesettings = argument_count > 0 ? argument[0] : true;
 #endregion
 
 //Options Variables will be changed if a settings.ini is loaded
-if ( !usesettings or !instance_exists(oSettingsContainer) ) {
+if ( !usesettings or !instance_exists(OptionsContainer) ) {
 	Options_Fullscreen =			PPRES_Fullscreen_AtBoot;
 	Options_Magnification =			PPRES_Magnification_AtBoot;
 	Options_LockedMagnification =	PPRES_Magnification_Lock;
 	Options_Vsync =					PPRES_VsyncAtBoot;
 	};	
 else {
-	Options_Fullscreen =			oSettingsContainer.Options_Fullscreen;
-	Options_Magnification =			oSettingsContainer.Options_Magnification;
-	Options_LockedMagnification =	oSettingsContainer.Options_LockedMagnification;
-	Options_Vsync =					oSettingsContainer.Options_Vsync;
+	Options_Fullscreen =			OptionsContainer.Options_Fullscreen;
+	Options_Magnification =			OptionsContainer.Options_Magnification;
+	Options_LockedMagnification =	OptionsContainer.Options_LockedMagnification;
+	Options_Vsync =					OptionsContainer.Options_Vsync;
 	};
 Options_ResolutionSnap		= PPRES_Magnification_RubberBanding; //Should the game snap resolution every frame?
 
@@ -48,5 +48,5 @@ Breakpoints_Width			= [0,0,0,0];
 Breakpoints_Height			= [0,0,0,0];
 
 /*=[Notes]======================================================================
-	-	This function can be run at any time to reset a oResolutionController, 
+	-	This function can be run at any time to reset a ResolutionController, 
 		but make sure you run it through the instance of the object.

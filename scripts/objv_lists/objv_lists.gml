@@ -1,8 +1,8 @@
 ///objv_lists([instance]);
 /// @arg [instance]			{instance_id}	(default: id)
 /*
-	>>Returns {2d array}
-	>>Stores sorted lists
+	<< Returns >> {2d array}
+	>> Stores << sorted lists
 	Populates lists with all the variables in the instance, sorted in to 
 	groups based on name [BuiltIn][Alarms] [Core][Settings][Other]
 */ 

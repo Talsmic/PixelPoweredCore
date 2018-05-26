@@ -1,5 +1,5 @@
 ///find_colour(colour);
-/// @arg colour	{c_code}
+/// @arg colour	#c_code#
 #region Arguments
 var colour = string(argument0);
 //Sanitise Input

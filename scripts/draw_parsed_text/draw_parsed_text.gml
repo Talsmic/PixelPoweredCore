@@ -4,28 +4,30 @@
 /// @arg [text_array]		{array|strings}	(default: global.ParsedText)
 /// @arg [colour_array]		{array|c_codes}	(default: global.ParsedText_Colour)
 /// @arg [format_array]		{array|c_codes}	(default: global.ParsedText_Format)
-/// @arg [default_colour]	{c_code}		(default: draw_get_colour())
+/// @arg [default_colour]	#c_code#		(default: draw_get_colour())
 /// @arg [alpha]			{real|0..1}		(default: draw_get_alpha())
 /// @arg [max_width]		{integer}		(default: -1)
 /// @arg [spacing]			{integer}		(default: string_height("|"))
 /// @arg [line_breaks]		{array|strings}	(default: ["#"])
-/// @arg [default_colour]	{c_code}		(default: draw_get_colour())
+/// @arg [default_colour]	#c_code#		(default: draw_get_colour())
 /*
-	>>Draws the text outputted by a parse_text command, complete with colour codes
+	[[ Draws ]] the text outputted by a parse_text command, complete with colour codes
 	!USE parse_text FIRST!
 */
 #region Arguments
-if argument_count < 2 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~>
+if argument_count < 2 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var draw_x =		argument[0];		
 var draw_y =		argument[1];		
-var text_array =	argument_count > 2 ? as_array(argument[2]) : as_array(global.ParsedText);
-var colour_array =	argument_count > 3 ? as_array(argument[3]) : as_array(global.ParsedText_Colour);
-var format_array =	argument_count > 4 ? as_array(argument[4]) : as_array(global.ParsedText_Format);
+var text_array =	argument_count > 2 ? _validateArray(argument[2]) : _validateArray(global.ParsedText);
+var colour_array =	argument_count > 3 ? _validateArray(argument[3]) : _validateArray(global.ParsedText_Colour);
+var format_array =	argument_count > 4 ? _validateArray(argument[4]) : _validateArray(global.ParsedText_Format);
 var default_colour =argument_count > 5 ? argument[5] : draw_get_colour();
 var alpha =			argument_count > 6 ? argument[6] : draw_get_alpha();
 var max_width =		argument_count > 7 ? argument[7] : -1;
 var spacing =		argument_count > 8 ? argument[8] : string_height("|");
 var line_breaks =	argument_count > 9 ? argument[9] : ["#"];
+var stored_align = [global.AlignX,global.AlignY];
+_setAlign();
 #endregion
 
 var posA, stored_posA, breaks_ref, cutsize, i, j, draw_colour, draw_format;
@@ -35,8 +37,8 @@ var y_position = draw_y;
 //Draw Loop
 for ( i=1 ; i<array_length_1d(text_array) ; i++ ) {
 	
-	draw_colour = from_array_tocap_1d(colour_array,i) > 0 ? from_array_tocap_1d(colour_array,i) : default_colour;
-	draw_format = from_array_tocap_1d(format_array,i);
+	draw_colour = _arrayValue(colour_array,i) > 0 ? _arrayValue(colour_array,i) : default_colour;
+	draw_format = _arrayValue(format_array,i);
 	
 	#region Check the position of line breaks (default: ["#"])
 	stored_posA = 0; breaks_ref = 0;
@@ -71,3 +73,5 @@ for ( i=1 ; i<array_length_1d(text_array) ; i++ ) {
 	if ( draw_format != -1 ) { set_font_style() };	
 	
 	};
+
+_setAlign(stored_align[0],stored_align[1]);

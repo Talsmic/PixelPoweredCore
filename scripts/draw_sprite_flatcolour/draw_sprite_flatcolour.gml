@@ -1,13 +1,13 @@
 ///draw_sprite_flatcolour([sprite_id],[image_id],[x],[y],[colour],[alpha]);
-/// @arg [sprite_id] {SpriteID}		 (default: sprite_index)
-/// @arg [image_id]	{integer}		 (default: image_index)
-/// @arg [x]		{real}			 (default: x)
-/// @arg [y]		{real}			 (default: y)
-///	@arg [colour]	{c_code}		 (default: draw_get_color())
-/// @arg [alpha]	{real|0..1}		 (default: draw_get_alpha())
-/// @arg [x_scale]	{real}			 (default: 1)
-/// @arg [y_scale]	{real}			 (default: 1)
-/// @arg [rotation]	{integer|0..360} (default: 0)
+/// @arg [sprite_id]	#sprite_id#		 (default: sprite_index)
+/// @arg [image_id]		#image_id#		 (default: image_index)
+/// @arg [x]			{real}			 (default: x)
+/// @arg [y]			{real}			 (default: y)
+///	@arg [colour]		#c_code#		 (default: draw_get_color())
+/// @arg [alpha]		{real|0..1}		 (default: draw_get_alpha())
+/// @arg [x_scale]		{real}			 (default: 1)
+/// @arg [y_scale]		{real}			 (default: 1)
+/// @arg [rotation]		{integer|0..360} (default: 0)
 #region Arguments
 var sprite_id =	argument_count > 0 ? argument[0] : sprite_index;
 var image_id =	argument_count > 1 ? argument[1] : image_index;

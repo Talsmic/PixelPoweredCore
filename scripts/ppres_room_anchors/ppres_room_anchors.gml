@@ -3,7 +3,7 @@
 /*
 	[PPC][Module:Resolution]
 	Checks for room specific resolution anchors
-	>>Returns {array} = [anchors_exist,anchor_x,anchor_y];
+	<< Returns >> {array} = [anchors_exist,anchor_x,anchor_y];
 */
 #region Arguments
 var check_room =	argument_count > 0 ? argument[0] : room;

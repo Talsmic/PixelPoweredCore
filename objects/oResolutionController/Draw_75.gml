@@ -1,1 +1,0 @@
-global.GUI_Drawing = false;

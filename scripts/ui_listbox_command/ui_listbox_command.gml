@@ -20,8 +20,8 @@ switch ( command ) {
 	case "scrolltop":		Listbox_Row_Starting = 1;															break;
 	case "scrollbottom":	Listbox_Row_Starting = ceil( Listbox_List_Length / Listbox_Row_Length ) + 1 - Listbox_Column_Length;	break;
 			
-	case "togglescrollloop":		Listbox_ScrollLoop = toggle( Listbox_ScrollLoop );		break;
-	case "toggleids":				Listbox_ShowID = toggle( Listbox_ShowID );				break;
+	case "_togglescrollloop":		Listbox_ScrollLoop = _toggle( Listbox_ScrollLoop );		break;
+	case "_toggleids":				Listbox_ShowID = _toggle( Listbox_ShowID );				break;
 	
 	case "scrollloop":
 		var rowcount = ceil( Listbox_List_Length / Listbox_Row_Length ) + 1;

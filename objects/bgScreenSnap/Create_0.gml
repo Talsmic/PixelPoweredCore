@@ -1,11 +1,11 @@
 event_inherited();
 
-AnchorView = true;
+set_AnchorToView = true;
 
-bgid = 1;
-BG_Sprite[bgid] = bg_sample;
-BG_Frame[bgid] = 1;
-BG_AnchorV[bgid] = fa_bottom;
-BG_Tint[bgid] = c_purple;
-BG_Alpha[bgid] = 0.5;
-BG_Tile[bgid,UP] = false;
+bgID = 1;
+back_StoredBG_Sprite[bgID] = bg_sample;
+back_StoredBG_Frame[bgID] = 1;
+back_StoredBG_AnchorY[bgID] = fa_bottom;
+back_StoredBG_Tint[bgID] = c_purple;
+back_StoredBG_Alpha[bgID] = 0.5;
+back_StoredBG_Tile[bgID,UP] = false;

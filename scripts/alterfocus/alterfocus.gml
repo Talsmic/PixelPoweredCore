@@ -6,18 +6,18 @@
 	[PixelPowered Module: Focus]
 	Alters the currently being checked Focus Level based on this object's value
 */
-if !instance_exists(oFocusController) exit;//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
-if !oFocusController.Setting_ManageFocus exit;//[!Break!]~~~~~~~~~~~~~~~~~~~~~~>
+if !instance_exists(FocusController) exit;//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
+if !FocusController.Setting_ManageFocus exit;//[!Break!]~~~~~~~~~~~~~~~~~~~~~~>
 #region Arguments
 //Defaults < InstanceVariables < Parameters
-var focus_layer =	argument_count > 0 ? argument[0] : objv("Layer_Focus",oFocusController.Setting_Focus_Floor);
+var focus_layer =	argument_count > 0 ? argument[0] : objv("foc_FocusLevel",FocusController.Setting_Focus_Floor);
 var can_increase =	argument_count > 1 ? argument[1] : objv("FocusFixer",false);
 var can_decrease =	argument_count > 2 ? argument[2] : objv("FocusSetter",true);
 #endregion
 
 //Check and change focus level
-if ( focus_layer < oFocusController.Focus_NextStep and can_decrease ) { oFocusController.Focus_NextStep = focus_layer; return true };
-if ( focus_layer > oFocusController.Focus_NextStep and can_increase ) { oFocusController.Focus_NextStep = focus_layer; return true };
+if ( focus_layer < FocusController.Focus_NextStep and can_decrease ) { FocusController.Focus_NextStep = focus_layer; return true };
+if ( focus_layer > FocusController.Focus_NextStep and can_increase ) { FocusController.Focus_NextStep = focus_layer; return true };
 return false;
 
 /*=[Notes]======================================================================

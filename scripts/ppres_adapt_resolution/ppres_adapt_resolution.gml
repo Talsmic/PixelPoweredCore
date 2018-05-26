@@ -93,7 +93,7 @@ else {
 	}; #endregion
 	
 #region Update Stored Dimensions
-/*	You can access these variables through the oResolutionController and they 
+/*	You can access these variables through the ResolutionController and they 
 	are incredibly useful for sizing and placing UIs on the screen.
 	[Resolution_CompleteWidth/Height] store the entire window size in pixels, 
 	  before scaling 

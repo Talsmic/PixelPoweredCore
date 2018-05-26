@@ -5,8 +5,8 @@
 /// @arg [spacing]			{integer}		(default: string_height("|"))
 /// @arg [line_breaks]		{array|strings}	(default: ["#"])
 #region Arguments
-var text_array =	argument_count > 0 ? as_array(argument[0]) : as_array(global.ParsedText);
-var format_array =	argument_count > 1 ? as_array(argument[1]) : as_array(global.ParsedText_Format);
+var text_array =	argument_count > 0 ? _validateArray(argument[0]) : _validateArray(global.ParsedText);
+var format_array =	argument_count > 1 ? _validateArray(argument[1]) : _validateArray(global.ParsedText_Format);
 var max_width =		argument_count > 2 ? argument[2] : -1;
 var spacing =		argument_count > 3 ? argument[3] : string_height("|");
 var line_breaks =	argument_count > 4 ? argument[4] : ["#"];
@@ -19,7 +19,7 @@ var y_position = 0;
 //Draw Loop
 for ( i=1 ; i<array_length_1d(text_array) ; i++ ) {
 	
-	draw_format = from_array_tocap_1d(format_array,i);
+	draw_format = _arrayValue(format_array,i);
 	
 	#region Check the position of line breaks (default: ["#"])
 	stored_posA = 0; breaks_ref = 0;
@@ -30,7 +30,7 @@ for ( i=1 ; i<array_length_1d(text_array) ; i++ ) {
 	#endregion
 	
 	#region Natural Linebreaks
-	if ( x_position + string_width(text_array[i]) > max_width and max_width > 0 ) {
+	if ( x_position + string_width(string_replace_all(text_array[i]," ", "" )) > max_width and max_width > 0 ) {
 		x_position = 0; //Reset x
 		y_position += spacing; //Increase y
 		};

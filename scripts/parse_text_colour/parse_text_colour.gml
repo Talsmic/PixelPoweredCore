@@ -1,6 +1,6 @@
 ///parse_text_colour(text,[default_colour],[punctuation_breaks],[space_breaks]);
 /// @arg text					{string}
-/// @arg [default_colour]		{c_code}		(default: draw_get_colour())
+/// @arg [default_colour]		#c_code#		(default: draw_get_colour())
 /// @arg [punctuation_breaks]	{array|strings}	(default: [".",",","!","?","#",":",";"])
 /// @arg [space_breaks]			{array|strings}	(default: [" "])
 /// @arg [colour_breaks]		{array|strings}	(default: ["|"])
@@ -9,7 +9,7 @@
 	Converts a string of text into an array of words with unique colour codes
 */ 
 #region Arguments
-if argument_count < 1 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~>
+if argument_count < 1 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var input =			argument[0];
 var default_colour = argument_count > 1 ? argument[1] : c_orange;
 var punctuation =	argument_count > 2 ? argument[2] : [".",",","!","?","#",":",";"];

@@ -1,15 +1,14 @@
 /// @desc Variables for a Background Layer
 
-BG_Sprite[bgid] = bg_default;
-BG_Frame[bgid] = 1;
-BG_AnchorH[bgid] = fa_center;
-BG_AnchorV[bgid] = fa_center;
-BG_Tint[bgid] = c_white;
-BG_Alpha[bgid] = 1;
-BG_ScaleX[bgid] = 1;
-BG_ScaleY[bgid] = 1;
-BG_Tile[bgid,UP] = true;
-BG_Tile[bgid,DOWN] = true;
-BG_Tile[bgid,LEFT] = true;
-BG_Tile[bgid,RIGHT] = true;
-BG_Tile[bgid,5] = true; //Fill
+back_StoredBG_Draw[bgID] =		true;
+back_StoredBG_DrawID[bgID] =	false;
+
+back_StoredBG_Sprite[bgID] =	bg_default;
+back_StoredBG_Frame[bgID] =		1;
+back_StoredBG_AnchorX[bgID] =	fa_center;
+back_StoredBG_AnchorY[bgID] =	fa_center;
+back_StoredBG_Tint[bgID] =		c_white;
+back_StoredBG_Alpha[bgID] =		1;
+back_StoredBG_ScaleX[bgID] =	1;
+back_StoredBG_ScaleY[bgID] =	1;
+back_StoredBG_Tile[bgID] =		[1,1,1,1,1]; //[(fill?), LEFT, UP, RIGHT, DOWN] 

@@ -15,9 +15,9 @@ var boxB_col1 = [""], boxB_col2 = [""], boxB_col3 = [""];
 
 #region Green Values (built in)
 //Persistent
-rA++; boxA_col1[rA] = "persistent"; boxA_col2[rA] = "boolean"; boxA_col3[rA] = boolean_string(instance_ref.persistent);
+rA++; boxA_col1[rA] = "persistent"; boxA_col2[rA] = "boolean"; boxA_col3[rA] = _booleanString(instance_ref.persistent);
 //Visible
-rA++; boxA_col1[rA] = "visible"; boxA_col2[rA] = "boolean"; boxA_col3[rA] = boolean_string(instance_ref.visible);
+rA++; boxA_col1[rA] = "visible"; boxA_col2[rA] = "boolean"; boxA_col3[rA] = _booleanString(instance_ref.visible);
 rA++; boxA_col1[rA] = "x, y"; boxA_col2[rA] = "real"; boxA_col3[rA] = string(instance_ref.x)+", "+string(instance_ref.y);
 if ( instance_ref.visible ) {
 	rA++; boxA_col1[rA] = "depth, layer"; boxA_col2[rA] = "integer"; boxA_col3[rA] = string(instance_ref.depth)+", "+string(instance_ref.layer);
@@ -28,7 +28,7 @@ if ( instance_ref.visible ) {
 #region //Blue Values (local)
 if ( variable_instance_exists(instance_ref,"Hidden") ) { 
 	if ( instance_ref.IsSlave ) { 
-		rB++; boxB_col1[rB] = "IsSlave"; boxB_col2[rB] = "boolean"; boxB_col3[rB] = boolean_string(instance_ref.IsSlave)
+		rB++; boxB_col1[rB] = "IsSlave"; boxB_col2[rB] = "boolean"; boxB_col3[rB] = _booleanString(instance_ref.IsSlave)
 		if ( variable_instance_exists(instance_ref,"Master") ) { 
 			rB++; boxB_col1[rB] = "Master"; boxB_col2[rB] = "InstanceID"; boxB_col3[rB] = "["+string(instance_ref.Master)+"]"
 			rB++; boxB_col1[rB] = ""; boxB_col2[rB] = ""; boxB_col3[rB] = object_get_name(instance_ref.object_index) };
@@ -47,12 +47,12 @@ if ( variable_instance_exists(instance_ref,"Hidden") ) {
 			rB++; boxB_col1[rB] = "WindowAnchor_Y"; boxB_col2[rB] = "real"; boxB_col3[rB] = instance_ref.WindowAnchor_Y };
 		};
 	};
-if ( variable_instance_exists(instance_ref,"Layer_Focus") ) { 
-	rB++; boxB_col1[rB] = "Layer_Focus"; boxB_col2[rB] = "real"; boxB_col3[rB] = instance_ref.Layer_Focus };
+if ( variable_instance_exists(instance_ref,"foc_FocusLevel") ) { 
+	rB++; boxB_col1[rB] = "foc_FocusLevel"; boxB_col2[rB] = "real"; boxB_col3[rB] = instance_ref.foc_FocusLevel };
 if ( variable_instance_exists(instance_ref,"FocusFixer") ) { 
-	rB++; boxB_col1[rB] = "FocusFixer"; boxB_col2[rB] = "boolean"; boxB_col3[rB] = boolean_string(instance_ref.FocusFixer) };
+	rB++; boxB_col1[rB] = "FocusFixer"; boxB_col2[rB] = "boolean"; boxB_col3[rB] = _booleanString(instance_ref.FocusFixer) };
 if ( variable_instance_exists(instance_ref,"FocusSetter") ) { 
-	rB++; boxB_col1[rB] = "FocusSetter"; boxB_col2[rB] = "boolean"; boxB_col3[rB] = boolean_string(instance_ref.FocusSetter) };
+	rB++; boxB_col1[rB] = "FocusSetter"; boxB_col2[rB] = "boolean"; boxB_col3[rB] = _booleanString(instance_ref.FocusSetter) };
 #endregion
 
 //Box Dimensions
@@ -77,18 +77,18 @@ ui_ListBackground_draw();
 
 set_font(ft_EvoTooltip_6_Condensed);
 //Draw Table Contents
-set_align(fa_right);
+_setAlign(fa_right);
 draw_array_vertical(box_x+82,box_y+ListBackground_Pad_Top[0],boxA_col1,c_black,1,12,78);
 draw_array_vertical(box_x+82,box_y+ListBackground_Pad_Top[0]+12*rA,boxB_col1,c_black,1,12,78);
 draw_array_vertical(box_x+82,box_y+ListBackground_Pad_Top[0]-1,boxA_col1,c_nature,1,12,78);
 draw_array_vertical(box_x+82,box_y+ListBackground_Pad_Top[0]+12*rA,boxB_col1,c_water,1,12,78);
-set_align(fa_center);
+_setAlign(fa_center);
 draw_array_vertical(box_x+108,box_y+ListBackground_Pad_Top[0],boxA_col2,c_gray9,1,12);
 draw_array_vertical(box_x+108,box_y+ListBackground_Pad_Top[0]+12*rA,boxB_col2,c_gray9,1,12);
-set_align(fa_left);
+_setAlign(fa_left);
 set_font(ft_EvoTooltip_6_Condensed);
 draw_array_vertical(box_x+136,box_y+ListBackground_Pad_Top[0],boxA_col3,c_white,1,12,48);
 draw_array_vertical(box_x+136,box_y+ListBackground_Pad_Top[0]+12*rA,boxB_col3,c_white,1,12,48);
 //Draw MouseOvers
-if ( mouse_in_region_array2d_column(LastListRegions,3) )
-	draw_plane_byregion(mouse_in_region_array2d_column(LastListRegions,3),c_white,1)
+if ( _mouseInRegion_array2d_column(LastListRegions,3) )
+	draw_plane_byregion(_mouseInRegion_array2d_column(LastListRegions,3),c_white,1)

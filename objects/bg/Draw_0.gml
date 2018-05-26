@@ -7,39 +7,39 @@ draw_space_width = resolution_get_width("Playable");
 draw_space_height = resolution_get_height("Playable");
 var windowX = 0;
 var windowY = 0;
-if AnchorView {
+if set_AnchorToView {
 	var windowX = camera_get_view_x(view_camera[view_current]);
 	var windowY = camera_get_view_y(view_camera[view_current]);
 	};
 
 //Draw Flat Colour
-if FlatBack { 
-	draw_plane(draw_space_x,draw_space_y,draw_space_width,draw_space_height,FlatBack_Colour,FlatBack_Alpha);
+if back_Flat { 
+	draw_plane(draw_space_x,draw_space_y,draw_space_width,draw_space_height,back_Flat_Colour,back_Flat_Alpha);
 	};
 
-for ( bgid=1; bgid<=Backgrounds; bgid++ ) {
+for ( bgID=1; bgID<=back_StoredBGs; bgID++ ) {
 	
 	//Find Dimensions
-	var width = sprite_get_width(BG_Sprite[bgid])*BG_ScaleX[bgid];
-	var height = sprite_get_height(BG_Sprite[bgid])*BG_ScaleY[bgid];
+	var width = sprite_get_width(back_StoredBG_Sprite[bgID])*back_StoredBG_ScaleX[bgID];
+	var height = sprite_get_height(back_StoredBG_Sprite[bgID])*back_StoredBG_ScaleY[bgID];
 
 	//Find Anchors
 	var anchorX = x;
 	var anchorY = y;
-	switch ( BG_AnchorH[bgid] ) {
-		case fa_left: 		if AnchorView { anchorX = draw_space_x } 
+	switch ( back_StoredBG_AnchorX[bgID] ) {
+		case fa_left: 		if set_AnchorToView { anchorX = draw_space_x } 
 									 else { anchorX = 0 };										break;
-		case fa_center:		if AnchorView { anchorX = (draw_space_width - width) div 2 } 
+		case fa_center:		if set_AnchorToView { anchorX = (draw_space_width - width) div 2 } 
 									 else { anchorX = (room_width - width) div 2 };		break;
-		case fa_right: 		if AnchorView { anchorX = draw_space_width - width } 
+		case fa_right: 		if set_AnchorToView { anchorX = draw_space_width - width } 
 									 else { anchorX = room_width - width };						break;		
 		};	
-	switch ( BG_AnchorV[bgid] ) {
-		case fa_top: 		if AnchorView { anchorY = draw_space_y } 
+	switch ( back_StoredBG_AnchorY[bgID] ) {
+		case fa_top: 		if set_AnchorToView { anchorY = draw_space_y } 
 									 else { anchorY = 0 };										break;
-		case fa_center:		if AnchorView { anchorY = (draw_space_height - height) div 2 } 
+		case fa_center:		if set_AnchorToView { anchorY = (draw_space_height - height) div 2 } 
 									 else { anchorY = (room_height - height) div 2 };	break;
-		case fa_bottom: 	if AnchorView { anchorY = draw_space_height - height } 
+		case fa_bottom: 	if set_AnchorToView { anchorY = draw_space_height - height } 
 									 else { anchorY = room_height - height };					break;
 		};
 	if DrawAnchor { draw_plane(anchorX-1,anchorY-1,2,2,c_red,0.8) };
@@ -54,14 +54,14 @@ for ( bgid=1; bgid<=Backgrounds; bgid++ ) {
 	var draw_x = width;
 	
 	//TILE UP
-	if BG_Tile[bgid,UP] {
+	if back_StoredBG_Tile[bgID,UP] {
 		for ( var i=1; draw_y+height>0; i++ ) {
 			draw_y = anchorY - height * i
 			DrawX = windowX+anchorX; DrawIDX = 0;
 			DrawY = windowY+draw_y; DrawIDY = i;
 			event_user(1);
 			draw_x = width;
-			if ( BG_Tile[bgid,LEFT] and BG_Tile[bgid,5] ) {
+			if ( back_StoredBG_Tile[bgID,LEFT] and back_StoredBG_Tile[bgID,5] ) {
 				for ( var j=1; draw_x+width>0; j++ ) {
 					draw_x = anchorX - width * j;
 					DrawX = windowX+draw_x; DrawIDX = -j;
@@ -69,7 +69,7 @@ for ( bgid=1; bgid<=Backgrounds; bgid++ ) {
 					};
 				};
 			draw_x = width;
-			if ( BG_Tile[bgid,RIGHT] and BG_Tile[bgid,5] ) {
+			if ( back_StoredBG_Tile[bgID,RIGHT] and back_StoredBG_Tile[bgID,5] ) {
 				for ( var j=1; draw_x<draw_space_width; j++ ) {
 					draw_x = anchorX + width * j
 					DrawX = windowX+draw_x; DrawIDX = j;
@@ -82,14 +82,14 @@ for ( bgid=1; bgid<=Backgrounds; bgid++ ) {
 	//TILE DOWN
 	draw_y = height;
 	draw_x = width;
-	if BG_Tile[bgid,DOWN] {
+	if back_StoredBG_Tile[bgID,DOWN] {
 		for ( var i=1; draw_y<draw_space_y+draw_space_height; i++ ) {
 			draw_y = anchorY + height * i
 			DrawX = windowX+anchorX; DrawIDX = 0;
 			DrawY = windowY+draw_y; DrawIDY = -i;
 			event_user(1);
 			draw_x = width;
-			if ( BG_Tile[bgid,LEFT] and BG_Tile[bgid,5] ) {
+			if ( back_StoredBG_Tile[bgID,LEFT] and back_StoredBG_Tile[bgID,5] ) {
 				for ( var j=1; draw_x+width>0; j++ ) {
 					draw_x = anchorX - width * j;
 					DrawX = windowX+draw_x; DrawIDX = -j;
@@ -97,7 +97,7 @@ for ( bgid=1; bgid<=Backgrounds; bgid++ ) {
 					};
 				};
 			draw_x = width;	
-			if ( BG_Tile[bgid,RIGHT] and BG_Tile[bgid,5] ) {
+			if ( back_StoredBG_Tile[bgID,RIGHT] and back_StoredBG_Tile[bgID,5] ) {
 				for ( var j=1; draw_x<draw_space_x+draw_space_width; j++ ) {
 					draw_x = anchorX + width * j
 					DrawX = windowX+draw_x; DrawIDX = j;
@@ -108,7 +108,7 @@ for ( bgid=1; bgid<=Backgrounds; bgid++ ) {
 		};
 		
 	//TILE LEFT
-	if BG_Tile[bgid,LEFT] {
+	if back_StoredBG_Tile[bgID,LEFT] {
 		draw_x = width;
 		for ( var j=1; draw_x+width>0; j++ ) {
 			draw_x = anchorX - width * j;
@@ -119,7 +119,7 @@ for ( bgid=1; bgid<=Backgrounds; bgid++ ) {
 		};
 		
 	//TILE RIGHT
-	if BG_Tile[bgid,RIGHT] {
+	if back_StoredBG_Tile[bgID,RIGHT] {
 		draw_x = width;
 		for ( var j=1; draw_x<draw_space_x+draw_space_width; j++ ) {
 			draw_x = anchorX + width * j

@@ -5,21 +5,21 @@ draw_space_width = resolution_get_width();
 draw_space_height = resolution_get_height();
 var windowX = 0;
 var windowY = 0;
-if ( AnchorView ) {
+if ( set_AnchorToView ) {
 	var windowX = camera_get_view_x(view_camera[view_current]);
 	var windowY = camera_get_view_y(view_camera[view_current]);
 	};
 
 //Draw Flat Colour
-if ( FlatBack ) { 
-	draw_plane(draw_space_x,draw_space_y,draw_space_width,draw_space_height,FlatBack_Colour,FlatBack_Alpha);
+if ( back_Flat ) { 
+	draw_plane(draw_space_x,draw_space_y,draw_space_width,draw_space_height,back_Flat_Colour,back_Flat_Alpha);
 	};
 
-for ( bgid=1; bgid<=Backgrounds; bgid++ ) {
+for ( bgID=1; bgID<=back_StoredBGs; bgID++ ) {
 	
 	//Find Dimensions
-	var width = sprite_get_width(BG_Sprite[bgid])*BG_ScaleX[bgid];
-	var height = sprite_get_height(BG_Sprite[bgid])*BG_ScaleY[bgid];
+	var width = sprite_get_width(back_StoredBG_Sprite[bgID])*back_StoredBG_ScaleX[bgID];
+	var height = sprite_get_height(back_StoredBG_Sprite[bgID])*back_StoredBG_ScaleY[bgID];
 	
 	//Tile
 	var draw_y = height;
@@ -34,9 +34,9 @@ for ( bgid=1; bgid<=Backgrounds; bgid++ ) {
 			draw_y = -3 + draw_space_height - height * row;
 			DrawX = windowX+draw_x; DrawIDX = row;
 			DrawY = windowY+draw_y; DrawIDY = col;
-			BG_Alpha[bgid] = (ShiftingTiles_ColumnHeight[col]-row)*ShiftingTiles_AlphaFalloff;
-			if ( BG_Alpha[bgid] > (ShiftingTiles_MaxRows-row)*ShiftingTiles_AlphaClimb ) {
-				BG_Alpha[bgid] = (ShiftingTiles_MaxRows-row)*ShiftingTiles_AlphaClimb };
+			back_StoredBG_Alpha[bgID] = (ShiftingTiles_ColumnHeight[col]-row)*ShiftingTiles_AlphaFalloff;
+			if ( back_StoredBG_Alpha[bgID] > (ShiftingTiles_MaxRows-row)*ShiftingTiles_AlphaClimb ) {
+				back_StoredBG_Alpha[bgID] = (ShiftingTiles_MaxRows-row)*ShiftingTiles_AlphaClimb };
 			event_user(1);
 			};
 		if ( ShiftingTiles_Backgrounding ) {
@@ -46,7 +46,7 @@ for ( bgid=1; bgid<=Backgrounds; bgid++ ) {
 				draw_y = -3 + draw_space_height - height * row;
 				DrawX = windowX+draw_x; DrawIDX = row;
 				DrawY = windowY+draw_y; DrawIDY = col;
-				BG_Alpha[bgid] = 0.02;
+				back_StoredBG_Alpha[bgID] = 0.02;
 				event_user(1);
 				};
 			};

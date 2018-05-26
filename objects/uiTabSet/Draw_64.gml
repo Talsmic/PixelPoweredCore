@@ -1,6 +1,6 @@
 /// @desc Draw Tabs
 if Hidden exit;//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>
 
-TabSet_X[1] = GUI_X;
-TabSet_Y[1] = GUI_Y;
-ui_TabSet_draw(1);
+Tabset_X[1] = GUI_X;
+Tabset_Y[1] = GUI_Y;
+uiTabset_draw(1);

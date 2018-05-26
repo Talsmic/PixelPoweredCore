@@ -7,27 +7,26 @@
 
 //Required variables:
 global.UpdateWindow = 10;
+//General Controller
 global.GameBeat = 0;
 global.ScrollBeat = 0;
 
 global.GUI_MouseX = 0; 
 global.GUI_MouseY = 0;
 
-global.AlignX = fa_left;
-global.AlignY = fa_top;
-global.Font = ft_EvoTooltip_6;
-global.BaseFont = ft_EvoTooltip_6;
 
-
-global.DepthLayer = eDepthLayer.standard;
-global.inProgress_Draw = false;
-global.inProgress_DrawGUI = false;
-global.inProgress_Step = false;
+global.AlignX =		fa_left;
+global.AlignY =		fa_top;
+global.AlignXo =	fa_left;
+global.AlignYo =	fa_top;
+global.Font =		ft_EvoTooltip_6;
+global.BaseFont =	ft_EvoTooltip_6;
 
 //=[Create Controllers for PPC Modules]=========================================
+if ( !instance_exists(GeneralController) ) { instance_create_depth(-1,-1,-1,GeneralController) }
 //Enable the Focus system
-if ( PPC_FOCUS_OnIntitialise ) { if ( !instance_exists(oFocusController) ) {instance_create_depth(-1,-1,-1,oFocusController) }	};
+if ( OnIntitialise_CreateFocusController ) { if ( !instance_exists(FocusController) ) { instance_create_depth(-1,-1,-1,FocusController) } };
 //Create a settings container
-if ( PPSETTINGS_OnIntitialise ) { if ( !instance_exists(oSettingsContainer) ) {instance_create_depth(-1,-1,-1,oSettingsContainer) }	};
+if ( PPSETTINGS_OnIntitialise ) { if ( !instance_exists(OptionsContainer) ) { instance_create_depth(-1,-1,-1,OptionsContainer) } };
 //Enable the Resolution system
-if ( PPRES_OnIntitialise ) { if ( !instance_exists(oResolutionController) ) {instance_create_depth(-1,-1,-1,oResolutionController) }	};
+if ( PPRES_OnIntitialise ) { if ( !instance_exists(ResolutionController) ) { instance_create_depth(-1,-1,-1,ResolutionController) }	};

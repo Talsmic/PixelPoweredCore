@@ -1,6 +1,6 @@
-/// @desc Create TabSet
+/// @desc Create Tabset
 
 // Inherit the parent event
 event_inherited();
 
-ui_TabSet_create(1,1,GUI_X,GUI_Y);
+uiTabset_Create(1,1,GUI_X,GUI_Y);

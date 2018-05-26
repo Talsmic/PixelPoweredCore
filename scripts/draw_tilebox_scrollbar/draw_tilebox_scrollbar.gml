@@ -2,17 +2,17 @@
 /// @arg x				{real}
 ///	@arg y				{real}
 /// @arg length			{real}
-/// @arg bar_side		{eDirection}
-/// @arg [state]		{eButtonState}	(default: eButtonState.detect)
-///	@arg [colour]		{c_code}		(default: draw_get_color())
+/// @arg bar_side		#eDirection#
+/// @arg [state]		#eButtonState#	(default: eButtonState.detect)
+///	@arg [colour]		#c_code#		(default: draw_get_color())
 /// @arg [alpha]		{real|0..1}		(default: draw_get_alpha())
-/// @arg [spriteset]	{Sprite_ID}		(default: spr_tilebox_4x4)
+/// @arg [spriteset]	#sprite_id#		(default: spr_tilebox_4x4)
 /// @arg [thickness]	{real}			(default: spriteset height)
 /*	
-	>>Draws a scrollbar that matches a tilebox
+	[[ Draws ]] a scrollbar that matches a tilebox
 */
 #region Arguments
-if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~>
+if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var draw_x =	argument[0]; 
 var draw_y =	argument[1];
 var length =	argument[2]; 
@@ -34,28 +34,28 @@ switch ( bar_side ) {
 	case TOP: 
 		if ( thickness < th ) thickness = th;
 		var extra = thickness - th;
-		var draw_region = region_bysize(draw_x,draw_y,thickness,length);
+		var draw_region = _regionBySize(draw_x,draw_y,thickness,length);
 		var corners = [0,0,1,1];
 		break;
 		
 	case BOTTOM:
 		if ( thickness < th ) thickness = th;
 		var extra = thickness - th;
-		var draw_region = region_bysize(draw_x,draw_y-thickness,thickness,length);
+		var draw_region = _regionBySize(draw_x,draw_y-thickness,thickness,length);
 		var corners = [1,1,0,0];
 		break;
 		
 	case LEFT:
 		if ( thickness < tw ) thickness = tw;
 		var extra = thickness - tw;
-		var draw_region = region_bysize(draw_x,draw_y,length,thickness);
+		var draw_region = _regionBySize(draw_x,draw_y,length,thickness);
 		var corners = [0,1,0,1];
 		break;
 		
 	case RIGHT:
 		if ( thickness < tw ) thickness = tw;
 		var extra = thickness - tw;
-		var draw_region = region_bysize(draw_x-thickness,draw_y,length,thickness);
+		var draw_region = _regionBySize(draw_x-thickness,draw_y,length,thickness);
 		var corners = [1,0,1,0];
 		break;
 		
@@ -63,7 +63,7 @@ switch ( bar_side ) {
 #endregion
 		
 #region State Adjustments
-if state == eButtonState.detect { state = checkstate_withregion(draw_region) };
+if ( state == eButtonState.detect ) { state = checkstate_withregion(draw_region) };
 var offset_icon = 0;
 var offset_sprite = 0;
 var overlay_colour = c_white;

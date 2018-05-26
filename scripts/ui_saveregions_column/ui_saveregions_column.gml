@@ -6,7 +6,7 @@
 /// @arg [rowsize] {array|integers}		(default: 10)
 /// @arg [spacing] {integer}			(default: 1)
 /*
-	>>Returns {array|array|regions}
+	<< Returns >> {array|array|regions}
 */
 var draw_x = 0;
 var draw_y = 0;
@@ -27,7 +27,7 @@ if ( !rows ) { return 0 };
 var output;
 
 for ( var i=1; i<=rows; i++ ) {
-	output[i] = region_bysize(draw_x,draw_y,width,height[i]);
+	output[i] = _regionBySize(draw_x,draw_y,width,height[i]);
 	draw_y += height[i] + spacing;
 	};
 	

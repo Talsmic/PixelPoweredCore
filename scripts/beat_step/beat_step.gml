@@ -7,7 +7,7 @@
 /// @arg [mouseresets]		{array}		(default: false)
 /// @arg [reset_size]		{array}		(default: 0)
 #region Arguments
-if argument_count < 1 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~>
+if argument_count < 1 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var beat =				argument[0];
 var loop =				argument_count > 1 ? argument[1] : false;
 var fixed_direction =	argument_count > 2 ? argument[2] : false;

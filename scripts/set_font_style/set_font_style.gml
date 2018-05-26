@@ -1,6 +1,6 @@
 ///set_font_style([style],[font]);
-/// @arg [style]	{eFontStyle}		(default: eFontStyle.normal)
-/// @arg [font]		{font_id}			(default: global.Font)
+/// @arg [style]	#eFontStyle#		(default: eFontStyle.normal)
+/// @arg [font]		#font_id#			(default: global.Font)
 #region Arguments
 var style =	argument_count > 0 ? argument[0] : eFontStyle.normal;
 var font =	argument_count > 1 ? argument[1] : global.Font;

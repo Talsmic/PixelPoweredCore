@@ -4,13 +4,13 @@
     "mvc": "1.1",
     "name": "78ce3679-f860-49f5-8ff0-fe879c9eb08f",
     "children": [
-        "2dc376b6-11d2-4bb9-be5d-268f691a9c7e",
-        "f55cfc08-a2b7-4940-aef8-868b84e81fde",
-        "d89cd3c8-d860-44b7-88cb-71ba8c599cfd",
-        "41202952-7351-4d0e-b4db-ff281280902d"
+        "d25485c8-13f6-44cd-9c70-38e5ff4ee617",
+        "f759f99d-f0d8-491c-94da-81da7bd0f9f4",
+        "b54499e1-01ec-443d-aec3-742080d22e79",
+        "e7cb5eb3-fbaf-402e-b706-1a99870c4de1"
     ],
     "filterType": "GMScript",
-    "folderName": "[PPX][PixelPowered: Plugin Modules]",
+    "folderName": "[PPDK][PixelPowered DevKit]",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

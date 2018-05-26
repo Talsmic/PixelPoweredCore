@@ -1,1 +1,0 @@
-if Setting_ManageDrawLayers { global.inProgress_Draw = true; global.DepthLayer = eDepthLayer.standard };

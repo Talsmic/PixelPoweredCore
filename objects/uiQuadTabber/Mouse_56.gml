@@ -1,6 +1,6 @@
-/// @desc TabSet Left Click
+/// @desc Tabset Left Click
 
-ui_TabSet_leftclick(1);
-ui_TabSet_leftclick(2);
-ui_TabSet_leftclick(3);
-ui_TabSet_leftclick(4);
+uiTabset_leftclick(1);
+uiTabset_leftclick(2);
+uiTabset_leftclick(3);
+uiTabset_leftclick(4);

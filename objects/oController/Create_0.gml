@@ -1,3 +1,7 @@
 /// @desc Controller defaults
 
-Interaction_Layer = eDepthLayer.debug;
+set_EnableUpdates = true;
+
+foc_InteractionLayer = eFocusLayer.debug;
+
+if ( set_EnableUpdates ) { alarm[0] = global.UpdateWindow };

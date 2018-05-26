@@ -26,7 +26,7 @@
 
 	- Category suffixes and prefixes are great ways to sort information
 	- Try to use sensible underscoring that seperates categories where possible
-		( draw_textbutton_ext is more useful than draw_text_button_ext)
+		( draw_button_text_ext is more useful than draw_text_button_ext)
 	- Order names in ways that make sense, based on the order you need to gather 
 	  the information as you read it.
 -[Variables]--------------------------------------------------------------------

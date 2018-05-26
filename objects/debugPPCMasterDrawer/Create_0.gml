@@ -20,18 +20,18 @@ var max_drawcommandarguments = 8;
 var max_storedarguments = 5;
 
 #region Create UI Elements
-//[Slave[1]] TabSet
-Slave[1] = instance_create_as_slave(x,y,uiTabSet);
-	with (Slave[1]) { ui_TabSet_alter_tabs(1,1+max_drawcommands,[11,48,1]) };
+//[Slave[1]] Tabset
+Slave[1] = instance_create_as_slave(x,y,uiTabset);
+	with (Slave[1]) { uiTabset_alter_tabs(1,1+max_drawcommands,[11,48,1]) };
 	Slave[1].WindowAnchor_X = fa_left;
 	Slave[1].WindowAnchor_X_pad = 2;
 	Slave[1].WindowAnchor_Y = fa_bottom;
-	Slave[1].TabSet_AttachToSide[1] = TOP;
-	Slave[1].TabSet_Tab_Name[1,1] = "Adjust";
+	Slave[1].Tabset_AttachToSide[1] = TOP;
+	Slave[1].Tabset_Tab_Name[1,1] = "Adjust";
 	Slave[1].Pointer_Tabset[1] = 2;
 	for ( var i=1; i<=max_drawcommands; i++ ) {
-		Slave[1].TabSet_Tab_Width[1,i+1] = 68;
-		Slave[1].TabSet_Tab_Name[1,i+1] = "Function "+string(i);
+		Slave[1].Tabset_Tab_Width[1,i+1] = 68;
+		Slave[1].Tabset_Tab_Name[1,i+1] = "Function "+string(i);
 		};
 	
 //[Slave[2]] FunctionBox

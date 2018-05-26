@@ -14,7 +14,7 @@ switch ( Listbox_Mode ) {
 	case "Icons":
 		var _x = Listbox_X+18; var _y = Listbox_Y+20; 
 		for ( var i=range_start; i<=range_end; i++ ) {
-			if ( mouse_in_region( region_bysprite( _x, _y, 24 ) ) ) {
+			if ( _mouseInRegion( _spriteRegion( _x, _y, 24 ) ) ) {
 				Listbox_Position = i;
 				};
 			_x += 30;
@@ -25,7 +25,7 @@ switch ( Listbox_Mode ) {
 		var _x = Listbox_X+4; var _y = Listbox_Y+6; 
 		//Draw List
 		for ( var i=range_start; i<=range_end; i++ ) {
-			if ( mouse_in_region( region_bysize( _x,_y,Listbox_WordWidth,10 ) ) ) {
+			if ( _mouseInRegion( _regionBySize( _x,_y,Listbox_WordWidth,10 ) ) ) {
 				Listbox_Position = i;
 				};
 			_x += Listbox_WordWidth;
@@ -38,18 +38,18 @@ switch ( Listbox_Mode ) {
 switch ( Listbox_Mode ) {
 	case "Icons":
 		//Up Scroll
-		if ( mouse_in_region( region_bysize( Listbox_X-1,Listbox_Y-2,Listbox_Row_Length*30+6,6 ) ) ) {
+		if ( _mouseInRegion( _regionBySize( Listbox_X-1,Listbox_Y-2,Listbox_Row_Length*30+6,6 ) ) ) {
 			ui_listbox_command("ScrollUp")	};
 		//Down Scroll
-		if ( mouse_in_region( region_bysize( Listbox_X-1,Listbox_Y+Listbox_Column_Length*31+4,Listbox_Row_Length*30+6,6 ) ) ) {
+		if ( _mouseInRegion( _regionBySize( Listbox_X-1,Listbox_Y+Listbox_Column_Length*31+4,Listbox_Row_Length*30+6,6 ) ) ) {
 			ui_listbox_command("ScrollDown")	};
 		break;
 	case "Words":
 		//Up Scroll
-		if ( mouse_in_region( region_bysize( Listbox_X-1,Listbox_Y-2,Listbox_Row_Length*Listbox_WordWidth+6,6 ) ) ) {
+		if ( _mouseInRegion( _regionBySize( Listbox_X-1,Listbox_Y-2,Listbox_Row_Length*Listbox_WordWidth+6,6 ) ) ) {
 			ui_listbox_command("ScrollUp")	};
 		//Down Scroll
-		if ( mouse_in_region( region_bysize( Listbox_X-1,Listbox_Y+Listbox_Column_Length*10+4,Listbox_Row_Length*Listbox_WordWidth+6,6 ) ) ) {
+		if ( _mouseInRegion( _regionBySize( Listbox_X-1,Listbox_Y+Listbox_Column_Length*10+4,Listbox_Row_Length*Listbox_WordWidth+6,6 ) ) ) {
 			ui_listbox_command("ScrollDown")	};
 		break;
 	};

@@ -1,5 +1,5 @@
 ///get_base_font(font);
-/// @arg font		{font_id}	
+/// @arg font		#font_id#
 #region Arguments
 var font = argument0;
 var output;

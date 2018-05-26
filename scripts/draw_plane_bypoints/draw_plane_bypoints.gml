@@ -3,16 +3,16 @@
 /// @arg y1			{real}		
 /// @arg x2			{real}		
 /// @arg y2			{real}		
-/// @arg [colour]	{c_code}			(default: draw_get_color())
+/// @arg [colour]	#c_code#			(default: draw_get_color())
 /// @arg [alpha]	{real|0..1}			(default: draw_get_alpha())
 /// @arg [outline]	{boolean+}			(default: false) [false, true&thickness]
 /// @arg [rotation]	{integer|0..360}	(default: 0)
 /*
-	>>Draws a rectangle at [x1],[y1] to [x2],[y2]
+	[[ Draws ]] a rectangle at [x1],[y1] to [x2],[y2]
 	Optionally, of [colour], [alpha] and [rotation]
 */
 #region Arguments
-if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~>
+if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 if ( argument[0] < argument[2] ) { var draw_x = argument[0]; var x2 = argument[2] };
 							else { var draw_x = argument[2]; var x2 = argument[0] };
 if ( argument[1] < argument[3] ) { var draw_y = argument[1]; var y2 = argument[3] };

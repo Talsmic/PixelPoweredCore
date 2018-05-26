@@ -1,7 +1,7 @@
 ///draw_anchor([x],[y],[colour]);
 /// @arg [x]		{real}		(default: x)
 /// @arg [y]		{real}		(default: y)
-/// @arg [colour]	{c_code}	(default: c_red)
+/// @arg [colour]	#c_code#	(default: c_red)
 #region Arguments
 var draw_x =	argument_count > 0 ? argument[0] : x;
 var draw_y =	argument_count > 1 ? argument[1] : y;

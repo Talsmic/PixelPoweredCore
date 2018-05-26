@@ -3,14 +3,14 @@
 ///	@arg y				{real}
 /// @arg width			{real}
 /// @arg height			{real}
-///	@arg [colour]		{c_code}			(default: draw_get_color())
+///	@arg [colour]		#c_code#			(default: draw_get_color())
 /// @arg [alpha]		{real|0..1}			(default: draw_get_alpha())
 /// @arg [spriteset]	{Sprite_ID}			(default: spr_tilebox_4x4)
-/// @arg [corner_array]	{array|booleans}	(default: [1,1,1,1]}
+/// @arg [corner_array]	{array|booleans}	(default: [0,0,0,0]}
 /// @arg [trim_array]	{array|booleans}	(default: [0,1,1,1,1,1,1,1,1,1]}
 /*
-	>>Returns a region of the ui box dimensions
-	>>Draws a ui box of [width],[height] at [x],[y], with optional sharp corners
+	<< Returns >> a region of the ui box dimensions
+	[[ Draws ]] a ui box of [width],[height] at [x],[y], with optional sharp corners
 	Optionally, of [spriteset], [colour] and [alpha]
 	
 	Spritesets use the image_index format of:
@@ -19,7 +19,7 @@
 		[7/12][   8   ][9/13]
 */
 #region Arguments
-if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~>
+if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var draw_x =	argument[0]; 
 var draw_y =	argument[1];
 var width =		argument[2]; 
@@ -27,8 +27,8 @@ var height =	argument[3];
 var colour =	argument_count > 4 ? argument[4] : draw_get_color();
 var alpha =		argument_count > 5 ? argument[5] : draw_get_alpha();
 var spriteset =	argument_count > 6 ? argument[6] : spr_tilebox_4x4;
-var corner_a =	argument_count > 7 ? fix_array_1d(argument[7],4,4,false) : [1,1,1,1];
-var trim_array = argument_count > 8 ? fix_array_1d(argument[8],9,9,false) : [0,1,1,1,1,1,1,1,1,1];
+var corner_a =	argument_count > 7 ? _validateArray(argument[7],4,4,false) : [0,0,0,0];
+var trim_array = argument_count > 8 ? _validateArray(argument[8],9,9,false) : [0,1,1,1,1,1,1,1,1,1];
 var tw = sprite_get_width(spriteset);
 var th = sprite_get_height(spriteset);
 #endregion

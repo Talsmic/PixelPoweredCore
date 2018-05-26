@@ -4,33 +4,33 @@ if argument_count > 0 { var type = argument[0] } else { var type = "Complete" };
 var output = window_get_width();
 
  
-if instance_exists(oResolutionController) {
+if instance_exists(ResolutionController) {
 	
 	switch ( type ) {
 	
 		case "Complete":
-			output = oResolutionController.Resolution_CompleteWidth;
+			output = ResolutionController.Resolution_CompleteWidth;
 			break;
 			
 		case "Playable":
-			output = oResolutionController.Resolution_PlayableWidth;
+			output = ResolutionController.Resolution_PlayableWidth;
 			break;
 			
 		case "Padded":
-			output = oResolutionController.Resolution_PadWidth;
+			output = ResolutionController.Resolution_PadWidth;
 			break;
 			
 		case "GUIOffset":
-			output = oResolutionController.Resolution_GUIxOffset;
+			output = ResolutionController.Resolution_GUIxOffset;
 			break;
 			
 		case "FloatingPixels":
-			output = oResolutionController.FloatingPixels_Width;
+			output = ResolutionController.FloatingPixels_Width;
 			break;
 			
 		case "View":
 		case "Camera":
-			output = oResolutionController.Resolution_ViewWidth;
+			output = ResolutionController.Resolution_ViewWidth;
 			break;
 			
 		};

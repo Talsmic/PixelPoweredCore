@@ -1,7 +1,7 @@
 ///ui_ListBackground_get_width([ListBackgroundID]);
 /// @arg [ListBackgroundID] {integer}	(default: 0)
 /*
-	>>Returns {integer}: [ListBackgroundID] Predicted Draw Width
+	<< Returns >> {integer}: [ListBackgroundID] Predicted Draw Width
 */
 var ref = 0;
 if argument_count > 0 { ref = argument[0] };
