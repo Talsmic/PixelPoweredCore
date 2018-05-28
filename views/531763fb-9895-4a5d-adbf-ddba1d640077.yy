@@ -4,10 +4,7 @@
     "mvc": "1.1",
     "name": "531763fb-9895-4a5d-adbf-ddba1d640077",
     "children": [
-        "2f058ca7-cf62-4ee1-ba34-ed78a7cbed2f",
-        "f94b2916-a9fe-44af-bdcf-fa30bc932695",
-        "e102c8e3-8a1b-4fcb-9e78-e1eb16ef2275",
-        "17c61be5-94b0-454e-83ee-aff0d519b833"
+        
     ],
     "filterType": "GMScript",
     "folderName": "Buttons",

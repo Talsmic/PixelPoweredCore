@@ -37,20 +37,20 @@ if ( state == eButtonState.detect ) { state = checkstate_withregion(button_regio
 
 //Draw
 if state = eButtonState.disabled {
-	draw_text_flatcolour( draw_x+1, draw_y, text, c_gray2, 0.8 );
-	draw_text_flatcolour( draw_x, draw_y, text, c_gray7, 0.8 );
+	_drawText( draw_x+1, draw_y, text, c_gray2, 0.8 );
+	_drawText( draw_x, draw_y, text, c_gray7, 0.8 );
 	}
 else if state = eButtonState.pressed {
-	draw_text_flatcolour( draw_x+1, draw_y, text, colour_ol, 0.8 );
-	draw_text_flatcolour( draw_x, draw_y, text, colour, alpha );
+	_drawText( draw_x+1, draw_y, text, colour_ol, 0.8 );
+	_drawText( draw_x, draw_y, text, colour, alpha );
 	}
 else {
 	if pop { 
 		for ( var i=1 ; i<=pop ; i++ ) {	
-			draw_text_flatcolour( draw_x, draw_y-i+1, text, colour_ol, alpha ) 
-			draw_text_flatcolour( draw_x+1, draw_y-i+1, text, colour_ol, alpha ) 
+			_drawText( draw_x, draw_y-i+1, text, colour_ol, alpha ) 
+			_drawText( draw_x+1, draw_y-i+1, text, colour_ol, alpha ) 
 			};
 		};
-	draw_text_flatcolour( draw_x, draw_y-pop, text, colour, alpha );
-	if state = eButtonState.mouseover { for ( var i=1 ; i<=pop ; i++ ) { draw_text_flatcolour( draw_x, draw_y-pop, text, colour_mo, alpha*0.5 ) } };
+	_drawText( draw_x, draw_y-pop, text, colour, alpha );
+	if state = eButtonState.mouseover { for ( var i=1 ; i<=pop ; i++ ) { _drawText( draw_x, draw_y-pop, text, colour_mo, alpha*0.5 ) } };
 	};

@@ -2,6 +2,7 @@
 alarm[0] = global.UpdateWindow;
 setdepth(eFocusLayer.GUI);
 
+/*
 //Update Mode from tabs
 switch ( Pointer_Tabset[1] ) {
 	

@@ -19,8 +19,8 @@ switch ( function_name ) {
 	
 //=[PPC Functions]==============================================================
 //-[Drawing]--------------------------------------------------------------------
-	case "draw_simplebox": 
-		draw_simplebox(x+arg[0],y+arg[1],arg[2],arg[3]);
+	case "drawSimplebox": 
+		drawSimplebox(x+arg[0],y+arg[1],arg[2],arg[3]);
 		break;
 		
 	case "draw_plane":

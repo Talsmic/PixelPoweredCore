@@ -2,8 +2,7 @@
 	#macro POSITIVE		1
 	#macro NEGATIVE		-1
 	
-	enum eBeat {	
-		value, count, speed, amount, size, direction	};
+	
 
 //Directions and Angles
 	#macro NONE			0

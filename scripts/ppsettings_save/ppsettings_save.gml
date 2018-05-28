@@ -7,10 +7,10 @@ ini_open("settings.ini");
 
 //=[Video Settings]==================================================
 ini_section_delete("video");
-ini_write_real("video", "fullscreen", Options_Fullscreen);
-ini_write_real("video", "scale", Options_Magnification);
-ini_write_real("video", "lockedscale", Options_LockedMagnification);
-ini_write_real("video", "vsync", Options_Vsync);
+ini_write_real("video", "fullscreen", opt_res_Fullscreen);
+ini_write_real("video", "scale", opt_res_Magnification);
+ini_write_real("video", "lockedscale", opt_res_Magnification_Locked);
+ini_write_real("video", "vsync", opt_res_Vsync);
 //===================================================================
 
 //=[Sound Settings]==================================================

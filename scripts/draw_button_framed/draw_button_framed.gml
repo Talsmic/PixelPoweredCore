@@ -48,25 +48,25 @@ surface_set_target( surface ) {
 	//Draw Flat Colour	
 	draw_plane(offset[0],offset[1],sprite_get_width(button_sprite),sprite_get_height(button_sprite),button_colour);
 	//Draw Icon
-	draw_sprite_flatcolour(button_sprite,button_image,anchor[0],anchor[1],button_colour);
+	_drawSprite(anchor[0],anchor[1],button_sprite,button_image,button_colour);
 	//Draw Blender
-	draw_sprite_flatcolour(button_frame,4,anchor[0],anchor[1],button_colour);
+	_drawSprite(anchor[0],anchor[1],button_frame,4,button_colour);
 	//Clipping Mask
 	if button_mask > 0 {
 		gpu_set_blendmode(bm_subtract);
-		draw_sprite_flatcolour(button_mask,0,anchor[0],anchor[1],c_white);
+		_drawSprite(anchor[0],anchor[1],button_mask,0,c_white);
 		gpu_set_blendmode(bm_normal);	
 		};
 	//Draw Frame
 	switch state {
 		 case eButtonState.disabled: case eButtonState.pressed:
-			draw_sprite_flatcolour(button_frame,0,anchor[0],anchor[1],frame_colour);	draw_y++;	break;
+			_drawSprite(anchor[0],anchor[1],button_frame,0,frame_colour);	draw_y++;	break;
 		default: case eButtonState.enabled: case eButtonState.mouseover:
-			draw_sprite_flatcolour(button_frame,1,anchor[0],anchor[1],frame_colour);				break;
+			_drawSprite(anchor[0],anchor[1],button_frame,1,frame_colour);				break;
 		};
 	//Mouseover
-	if ( state == eButtonState.mouseover ) { draw_sprite_flatcolour(button_frame, 2, anchor[0], anchor[1], c_white) };
-	if ( state == eButtonState.pressed   ) { draw_sprite_flatcolour(button_frame, 3, anchor[0], anchor[1], c_white) };
+	if ( state == eButtonState.mouseover ) { _drawSprite(anchor[0],anchor[1],button_frame, 2, c_white) };
+	if ( state == eButtonState.pressed   ) { _drawSprite(anchor[0],anchor[1],button_frame, 3, c_white) };
 	
 } surface_reset_target();
 
@@ -80,6 +80,6 @@ if ( text[0] != "" ) {
 	var saved_align = _storeAlign();
 	_setAlign(text_align);
 	var text_draw = _positionInRegion(button_region, text_align);
-	draw_text_flatcolour(button_region[eR.x1] + text_draw[0], button_region[eR.y1] + text_draw[1], text[0], text[1], text[2]);
+	_drawText(button_region[eR.x1] + text_draw[0], button_region[eR.y1] + text_draw[1], text[0], text[1], text[2]);
 	_setAlign(saved_align);
 	};

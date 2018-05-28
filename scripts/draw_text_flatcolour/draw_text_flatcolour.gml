@@ -1,4 +1,4 @@
-///draw_text_flatcolour(x,y,text,[colour],[alpha]);
+///_drawText(x,y,text,[colour],[alpha]);
 /// @arg x				{real}
 /// @arg y				{real}
 /// @arg text			{string}

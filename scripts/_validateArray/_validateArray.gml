@@ -14,7 +14,7 @@ if argument_count < 1 { show_debug_message("_argArray requires an input"); exit 
 var input =				is_array(argument[0]) ? argument[0] : [argument[0]];
 var min_length =		argument_count > 1 ? argument[1] : 1;
 var max_length =		argument_count > 2 ? argument[2] : 100;
-var default_input =		argument_count > 3 ? argument[3] : [0];
+var default_input =		argument_count > 3 ? (is_array(argument[3]) ? argument[3] : [argument[3]]) : [0];
 var fill_event =		argument_count > 4 ? argument[4] : "loop";
 var input_length =		array_length_1d(input);
 var default_length =	array_length_1d(default_input);

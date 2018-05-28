@@ -56,12 +56,12 @@ surface_set_target( text_surface ) {
 	if ( comparearrays_hasgreater_1d(thickness2,thickness) ) {
 		for ( i=-thick2A[0] ; i<=thick2A[2] ; i++ ) {
 			for ( j=-thick2B[1] ; j<=thick2B[3] ; j++ ) {
-				draw_text_flatcolour(surfacedraw_x+i,surfacedraw_y+j,text,shadow_colour,1);
+				_drawText(surfacedraw_x+i,surfacedraw_y+j,text,shadow_colour,1);
 				};
 			};
 		for ( j=-thick2A[1] ; j<=thick2A[3] ; j++ ) {
 			for ( i=-thick2B[0] ; i<=thick2B[2] ; i++ ) {
-				draw_text_flatcolour(surfacedraw_x+i,surfacedraw_y+j,text,shadow_colour,1);
+				_drawText(surfacedraw_x+i,surfacedraw_y+j,text,shadow_colour,1);
 				};
 			};
 		};
@@ -69,17 +69,17 @@ surface_set_target( text_surface ) {
 	//Outline
 	for ( i=-thickA[0] ; i<=thickA[2] ; i++ ) {
 		for ( j=-thickB[1] ; j<=thickB[3] ; j++ ) {
-			draw_text_flatcolour(surfacedraw_x+i,surfacedraw_y+j,text,colour_ol,1);
+			_drawText(surfacedraw_x+i,surfacedraw_y+j,text,colour_ol,1);
 			};
 		};
 	for ( j=-thickA[1] ; j<=thickA[3] ; j++ ) {
 		for ( i=-thickB[0] ; i<=thickB[2] ; i++ ) {
-			draw_text_flatcolour(surfacedraw_x+i,surfacedraw_y+j,text,colour_ol,1);
+			_drawText(surfacedraw_x+i,surfacedraw_y+j,text,colour_ol,1);
 			};
 		};
 		
 	//Normal Text
-	draw_text_flatcolour(surfacedraw_x,surfacedraw_y,text,colour,1);
+	_drawText(surfacedraw_x,surfacedraw_y,text,colour,1);
 	
 } surface_reset_target();
 //Draw Surface

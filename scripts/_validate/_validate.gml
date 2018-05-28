@@ -8,7 +8,7 @@
 	Useful for validating arguments
 */ 
 #region Arguments
-enum	eDataType { 
+enum eDataType { 
 	_any, _string, _real, _integer, _boolean, _array, _array1d, _array2d };
 if argument_count < 1 { show_debug_message("_arg requires an input"); exit };//[!Break!]~~~~~~~~~~~>
 var input =				argument[0];

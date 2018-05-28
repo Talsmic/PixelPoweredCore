@@ -1,18 +1,17 @@
 /// @desc Resolution Correction
 
 //Correct Resolution
-if ( Options_ResolutionSnap ) { ResolutionSnapNextFrame = true };
-ppres_adapt_resolution();
+resolutionAdapt();
 
 //Refresh next step if required
-if ( ResolutionSnapNextFrame or ResolutionCenterNextFrame ) {
+if ( NextEvent_SnapResolution or NextEvent_ResolutionCenter ) {
 	alarm[1] = 1;
 	return;
 	};
 
 //Resume normal refresh rate, if enabled
-if ( PPRES_RefreshRate > 0 ) {
-	alarm[1] = PPRES_RefreshRate;
+if ( RES_RefreshRate > 0 ) {
+	alarm[1] = RES_RefreshRate;
 	return;
 	};
 	

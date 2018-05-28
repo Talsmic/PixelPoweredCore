@@ -1,4 +1,4 @@
-///ppres_
+///ppPPRes_
 /*
 ===[Overview]===================================================================
 	The Pixel Powered Resolution Module is a powerful but unintrusive controller
@@ -51,11 +51,11 @@
 ===[Settings]===================================================================
 ---[Core Systems]-------------------------------------------------------------*/
 	//Enable/Disable the entire Resolution module
-	#macro PPRES_OnIntitialise			true
+	#macro PPRes_OnIntitialise			true
 	//Enable/Disable GUI Mouse tracking corrections
-	#macro PPRES_GUIMouse				true
+	#macro PPRes_GUIMouse				true
 	//Enable/Disable Cursor graphics
-	#macro PPRES_Cursor  				true
+	#macro PPRes_Cursor  				true
 	//[PLEASE LEAVE THIS ENABLED UNLESS YOU ARE AN ADVANCED USER]
 	//When this is enabled, the ResolutionController will sieze control of 
 	//responsibility for drawing the all important Application Surface.
@@ -63,78 +63,78 @@
 	//require slight adjustments to its drawing.
 	//If you are already controlling the drawing of the surface you may want to 
 	//disable this. If you do, please look at the adjustments the function
-	//ppres_draw_gamesurface(); makes and account for them in your own code.
-	#macro PPRES_AppSurfaceHijack		true	
+	//drawGameSurface(); makes and account for them in your own code.
+	#macro PPRes_AppSurfaceHijack		true	
 	
 /*--[Refresh Triggers]--------------------------------------------------------*/
 	//How often the controller adapts resolution sizes
 	//Set to 0 to disable periodic adjustion to just rely on window size triggers,
 	//beware this can cause failures to adapt.
-	#macro PPRES_RefreshRate 			60 //every X steps
+	#macro PPRes_RefreshRate 			60 //every X steps
 	//Enable/Disable to check every step for window size changes and force an
 	//adapt resolution trigger
-	#macro PPRES_RefreshOnWindowResize	true
+	#macro PPRes_RefreshOnWindowResize	true
 	
 /*--[Resolution Sizes]--------------------------------------------------------*/	
 	//Ideal Width & Height is the resolution your game is designed to use
-	#macro PPRES_IdealWidth				384 //pixels
-	#macro PPRES_IdealHeight			288 //pixels
+	#macro PPRes_IdealWidth				384 //pixels
+	#macro PPRes_IdealHeight			288 //pixels
 	//Minimums before scaling is shifted
-	#macro PPRES_MinWidth				192 //pixels
-	#macro PPRES_MinHeight				192 //pixels
+	#macro PPRes_MinWidth				192 //pixels
+	#macro PPRes_MinHeight				192 //pixels
 	//Maximum screen sizes before margins are added
 	//If these are 0 or below, there is no maximum screen size
-	#macro PPRES_MaxWidth				960 //pixels
-	#macro PPRES_MaxHeight				960 //pixels
+	#macro PPRes_MaxWidth				960 //pixels
+	#macro PPRes_MaxHeight				960 //pixels
 	//Minimum window can be resized to
 	// -1 to disable any minimum window sizing
-	#macro PPRES_MinWindowWidth			384 //pixels
-	#macro PPRES_MinWindowHeight		288 //pixels
+	#macro PPRes_MinWindowWidth			384 //pixels
+	#macro PPRes_MinWindowHeight		288 //pixels
 	
 /*--[GUI Layer]---------------------------------------------------------------*/	
-	//Set PPRES_GUIScaling to 0 or below to enable adaptable GUI scaling, 
+	//Set PPRes_GUIScaling to 0 or below to enable adaptable GUI scaling, 
 	//forcing it to match the resolution magnification level
-	//Otherwise, PPRES_GUIScaling is the fixed scaling of the GUI layer, 
+	//Otherwise, PPRes_GUIScaling is the fixed scaling of the GUI layer, 
 	//if you want it to always have a fixed magnification [NOT RECOMMENDED] 
-	#macro PPRES_GUIScaling				0 //adaptable enabled
+	#macro PPRes_GUIScaling				0 //adaptable enabled
 	//Enable this to lock the GUI layer inside the margins
-	#macro PPRES_GUISnap				false
+	#macro PPRes_GUISnap				false
 	
 /*--[Other Settings]----------------------------------------------------------*/
 	//Enable/Disable fullscreen toggling with Shift+Enter.
 	//You should disable fullscreen switching in the GameMaker options and only
 	//rely on this setting. You can customise the key combo to _toggle fullscreen
 	//with the key+mod combo
-	#macro PPRES_Fullscreen_ToggleEnable	true
-	#macro PPRES_Fullscreen_ToggleKey		vk_enter 
-	#macro PPRES_Fullscreen_ToggleModifier	vk_alt // 0 to disable
+	#macro PPRes_Fullscreen_ToggleEnable	true
+	#macro PPRes_Fullscreen_ToggleKey		vk_enter 
+	#macro PPRes_Fullscreen_ToggleModifier	vk_alt // 0 to disable
 	//Should the game boot in fullscreen mode?
-	#macro PPRES_Fullscreen_AtBoot			false
+	#macro PPRes_Fullscreen_AtBoot			false
 	//What magnification level should the game boot with?
-	#macro PPRES_Magnification_AtBoot		2		
+	#macro PPRes_Magnification_AtBoot		2		
 	//The range of scalings the controller can access
-	#macro PPRES_Magnification_Min			1 //Minimum 1		
-	#macro PPRES_Magnification_Max			6		
+	#macro PPRes_Magnification_Min			1 //Minimum 1		
+	#macro PPRes_Magnification_Max			6		
 	//Enable/Disable players to change magnfication level by scaling the screen
-	#macro PPRES_Magnification_Lock			false	
+	#macro PPRes_Magnification_Lock			false	
 	//Enable/Disable if the resolution always attempts to snap to an ideal
 	//after a player has adjusted it
-	#macro PPRES_Magnification_RubberBanding	false	
+	#macro PPRes_Magnification_RubberBanding	false	
 	//Enable/Disable vsync
-	#macro PPRES_VsyncAtBoot				false
+	#macro PPRes_VsyncAtBoot				false
 	//Margin Colours
-	#macro PPRES_MarginColours				c_gray //colourcode
+	#macro PPRes_MarginColours				c_gray //colourcode
 
 /*=[Module Components]==========================================================
 ---[Objects]--------------------------------------------------------------------
 	ResolutionController							[Functional and Documented]
 	
 ---[Scripts]--------------------------------------------------------------------
-	ppres_setresolution_default([0]);				[Functional and Documented]
-	ppres_adapt_resolution();						[Functional and Documented]
-	ppres_flex_view([0],[1]);						[Functional and Documented]
-	ppres_room_anchors([0]);						[Functional and Documented]
-	ppres_draw_gamesurface();						[Undocumented]
+	ppPPRes_setresolution_default([0]);				[Functional and Documented]
+	resolutionAdapt();						[Functional and Documented]
+	ppPPRes_flex_view([0],[1]);						[Functional and Documented]
+	ppPPRes_room_anchors([0]);						[Functional and Documented]
+	drawGameSurface();						[Undocumented]
 	guimouse_get_[x/y]();							[Functional and Documented]
 	window_get_[width/height]_safe();				[Functional and Documented]
 		

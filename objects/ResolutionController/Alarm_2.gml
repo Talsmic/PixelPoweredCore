@@ -1,9 +1,9 @@
 /// @desc Floating Pixel Correction
 
 if ( FloatingPixels_Width or FloatingPixels_Height ) {
-	if ( !Options_Fullscreen) {
+	if ( !opt_res_Fullscreen) {
 		show_debug_message("Event: Floating Pixel Correction");
-		window_set_size(Resolution_CompleteWidth*Resolution_Magnification, Resolution_CompleteHeight*Resolution_Magnification);
+		window_set_size(res_CompleteWidth*res_Magnification, res_CompleteHeight*res_Magnification);
 		alarm[1] = 1; //prepare the Resolution Correction event 
 		};
 	};

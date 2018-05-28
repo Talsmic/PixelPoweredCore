@@ -4,14 +4,10 @@
 ==============================================================================*/	
 
 /*=[Controller Settings (Defaults)]===========================================*/
-	SettingsChanged = false;
-	Settings_SaveOnExit = PPSETTINGS_SaveOnExit;
-	Settings_UpdateWindow = 20;
+	OptionsChanged = false;
+	set_Options_SaveOnExit = PPSETTINGS_SaveOnExit;
+	set_Options_UpdateWindow = 20;
 /*============================================================================*/
 
 //Load Options from settings.ini
 if ( PPSETTINGS_LoadOnOpen ) { ppsettings_load() };
-
-//Intialise global beats
-global.GameBeat = beat_create();
-global.ScrollBeat = beat_create();

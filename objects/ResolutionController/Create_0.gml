@@ -6,28 +6,23 @@
 	ppres_();
 ==============================================================================*/	
 event_inherited();
-
-//Create all the Instance level variables and sets them to defaults
-ppres_setresolution_default();
-
-//Set the window colour
-window_set_colour(Resolution_MarginColour);
-
-//Apply Resolution Settings
-ResolutionSnap_Magnification = Options_Magnification;
-ResolutionSnapNextFrame = true;
-display_reset(0, Options_Vsync);
-event_perform(ev_alarm,1); //call the Resolution Correction event
+resolutionDefaults();
 
 //Enforce Minimum Window Sizes
-if PPRES_MinWindowWidth { window_set_min_width( PPRES_MinWindowWidth ) };
-if PPRES_MinWindowHeight { window_set_min_height( PPRES_MinWindowHeight ) };
+if ( RES_MinWindowWidth )  { window_set_min_width( RES_MinWindowWidth ) };
+if ( RES_MinWindowHeight ) { window_set_min_height( RES_MinWindowHeight ) };
 
 //Sieze control of Application Surface
-if PPRES_AppSurfaceHijack { application_surface_draw_enable(false) };
+if ( RES_DrawGameSurface ) { application_surface_draw_enable(false) };
 
 //Store WindowSize for comparison
-if PPRES_RefreshOnWindowResize {
-	WindowSizeX = window_get_width_safe();
-	WindowSizeY = window_get_height_safe();
+if RES_RefreshOnWindowResize {
+	WindowSizeX = _windowWidth();
+	WindowSizeY = _windowHeight();
 	};
+
+//Set the window colour
+window_set_colour(c_orange);
+
+//Apply Resolution Settings
+event_perform(ev_alarm,1); //call the Resolution Correction event

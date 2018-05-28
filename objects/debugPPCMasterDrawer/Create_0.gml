@@ -46,7 +46,7 @@ Slave[2] = instance_create_as_slave(x,y,uiFunctionBox);
 #region Create Function & Argument Storage
 //Create the array for Functions
 for ( var i=1; i<=max_drawcommands; i++ ) {
-	FunctionName[i] = "draw_simplebox";
+	FunctionName[i] = "drawSimplebox";
 	FunctionArguments[i] = [10*i,10*i,10*i,10*i];
 	for ( var j=0; j<max_drawcommandarguments; j++ ) {
 		FunctionArgumentClass[i,j] = "integer";

@@ -29,4 +29,3 @@ Listbox_ShiftTabArray = array_create(2,"ToggleIDs");
 Listbox_ShiftTabArray[0] = 1;	//Pointer
 Listbox_ScrollSize = 1;
 Listbox_ScrollLoop = false;
-ScrollBeat = beat_create(5,1);

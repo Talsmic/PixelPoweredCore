@@ -15,11 +15,11 @@ var col1 = ["_Fullscreen",
 			"_Vsync",
 			"_ResolutionSnap"
 			];
-var col2 = [ResolutionController.Options_Fullscreen,
+var col2 = [ResolutionController.opt_res_Fullscreen,
 			ResolutionController.Options_ResolutionSnap,
-			ResolutionController.Options_Magnification,
-			ResolutionController.Options_LockedMagnification,
-			ResolutionController.Options_Vsync,
+			ResolutionController.opt_res_Magnification,
+			ResolutionController.opt_res_Magnification_Locked,
+			ResolutionController.opt_res_Vsync,
 			ResolutionController.Options_ResolutionSnap
 			];
 
@@ -32,7 +32,7 @@ ui_ListBackground_draw();
 
 //Draw Header
 set_font(ft_EvoTooltip_6_Bold);
-draw_text_flatcolour(box_x+4,box_y+2,"[oResCon] Options_",c_orange,1);
+_drawText(box_x+4,box_y+2,"[oResCon] Options_",c_orange,1);
 
 //Draw Table Contents
 draw_array_vertical(box_x+4,box_y+13,col1,c_nature_light,1,12);

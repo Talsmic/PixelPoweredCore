@@ -29,4 +29,4 @@ if ( OnIntitialise_CreateFocusController ) { if ( !instance_exists(FocusControll
 //Create a settings container
 if ( PPSETTINGS_OnIntitialise ) { if ( !instance_exists(OptionsContainer) ) { instance_create_depth(-1,-1,-1,OptionsContainer) } };
 //Enable the Resolution system
-if ( PPRES_OnIntitialise ) { if ( !instance_exists(ResolutionController) ) { instance_create_depth(-1,-1,-1,ResolutionController) }	};
+if ( RES_OnIntitialise ) { if ( !instance_exists(ResolutionController) ) { instance_create_depth(-1,-1,-1,ResolutionController) }	};

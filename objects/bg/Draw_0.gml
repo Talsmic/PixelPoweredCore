@@ -3,8 +3,8 @@ if !DrawNormal { return };
 //Find Dimensions
 var draw_space_x = camera_get_view_x(view_camera[view_current]);
 var draw_space_y = camera_get_view_y(view_camera[view_current]);
-draw_space_width = resolution_get_width("Playable");
-draw_space_height = resolution_get_height("Playable");
+draw_space_width = _resolutionGetWidth("Playable");
+draw_space_height = _resolutionGetHeight("Playable");
 var windowX = 0;
 var windowY = 0;
 if set_AnchorToView {

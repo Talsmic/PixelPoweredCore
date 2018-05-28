@@ -24,7 +24,7 @@ var range_end = range_start + Listbox_Row_Length * Listbox_Column_Length - 1;
 if ( range_end > Listbox_List_Length ) { range_end = Listbox_List_Length };
 
 //Draw Box
-draw_simplebox(Listbox_X,Listbox_Y,box_width,box_height);
+drawSimplebox(Listbox_X,Listbox_Y,box_width,box_height);
 //Draw Scrollbars
 if ( Listbox_List_Length > Listbox_Row_Length * Listbox_Column_Length ) {	
 	if ( Listbox_Row_Starting == 1 and !Listbox_ScrollLoop ) {	
@@ -84,12 +84,12 @@ switch ( Listbox_Mode ) {
 			var drawstring = Listbox_ListWords[i];
 			if ( Listbox_ShowID ) { 	
 				if ( string_width(drawstring) > Listbox_WordWidth - 30 ) { drawstring = string_delete(drawstring,14,100)+"...";}; //Clip Extra long words
-				draw_text_flatcolour(_x,_y,"["+string(i)+"]:",c_gray9,1);
-				draw_text_flatcolour(_x+30,_y,drawstring,find_colour(Listbox_ListColour[i]),1);
+				_drawText(_x,_y,"["+string(i)+"]:",c_gray9,1);
+				_drawText(_x+30,_y,drawstring,find_colour(Listbox_ListColour[i]),1);
 				};	
 			else { 
 				if ( string_width(drawstring) > Listbox_WordWidth ) { drawstring = string_delete(drawstring,18,100)+"...";}; //Clip Extra long words
-				draw_text_flatcolour(_x,_y,drawstring,find_colour(Listbox_ListColour[i]),1);
+				_drawText(_x,_y,drawstring,find_colour(Listbox_ListColour[i]),1);
 				};		
 			//Progress Locations		
 			_x += Listbox_WordWidth;

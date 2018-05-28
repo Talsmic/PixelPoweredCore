@@ -9,15 +9,15 @@ var box_columns = 2;
 var box_rows = 4;
 
 //Values
-var col1 = ["PPRES_Ideal",
-			"PPRES_Min",
-			"PPRES_Max",
-			"PPRES_MinWindow",
+var col1 = ["RES_Ideal",
+			"RES_Min",
+			"RES_Max",
+			"RES_MinWindow",
 			];
-var col2 = [string(PPRES_IdealWidth)+", "+string(PPRES_IdealHeight), 
-			string(PPRES_MinWidth)+", "+string(PPRES_MinHeight), 
-			string(PPRES_MaxWidth)+", "+string(PPRES_MaxHeight), 
-			string(PPRES_MinWindowWidth)+", "+string(PPRES_MinWindowHeight), 
+var col2 = [string(RES_IdealWidth)+", "+string(RES_IdealHeight), 
+			string(RES_MinWidth)+", "+string(RES_MinHeight), 
+			string(RES_MaxWidth)+", "+string(RES_MaxHeight), 
+			string(RES_MinWindowWidth)+", "+string(RES_MinWindowHeight), 
 			];
 			
 //Draw Box
@@ -29,7 +29,7 @@ ui_ListBackground_draw();
 
 //Draw Header
 set_font(ft_EvoTooltip_6_Bold);
-draw_text_flatcolour(box_x+4,box_y+2,"[oResCon] Macros",c_orange,1);
+_drawText(box_x+4,box_y+2,"[oResCon] Macros",c_orange,1);
 
 //Draw Table Contents
 draw_array_vertical(box_x+4,box_y+13,col1,c_fire_light,1,12);

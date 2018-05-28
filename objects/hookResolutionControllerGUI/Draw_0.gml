@@ -1,8 +1,8 @@
 /// @desc Draw Screen Framing
 var x1 = camera_get_view_x( view_camera[view_current] );
-var x2 = x1 + resolution_get_width();
+var x2 = x1 + _resolutionGetWidth();
 var y1 = camera_get_view_y( view_camera[view_current] );
-var y2 = y1 + resolution_get_height();
+var y2 = y1 + _resolutionGetHeight();
 var w = x2 - x1;
 var h = y2 - y1;
 

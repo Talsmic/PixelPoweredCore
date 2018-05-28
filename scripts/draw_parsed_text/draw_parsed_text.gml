@@ -59,7 +59,7 @@ for ( i=1 ; i<array_length_1d(text_array) ; i++ ) {
 	if ( stored_posA ) {
 		cutsize = string_length(line_breaks[breaks_ref]);
 		text_array[i] = string_delete(text_array[i], stored_posA, cutsize);
-		draw_text_flatcolour( x_position, y_position, text_array[i], draw_colour, alpha );
+		_drawText( x_position, y_position, text_array[i], draw_colour, alpha );
 		x_position = draw_x; //Reset x
 		y_position += spacing+1; //Increase y
 		continue;
@@ -68,7 +68,7 @@ for ( i=1 ; i<array_length_1d(text_array) ; i++ ) {
 	
 	//Draw Text
 	if ( draw_format != -1 ) { set_font_style(draw_format) };	
-	draw_text_flatcolour( x_position, y_position, text_array[i], draw_colour, alpha );
+	_drawText( x_position, y_position, text_array[i], draw_colour, alpha );
 	x_position += string_width(text_array[i]); //Increase x
 	if ( draw_format != -1 ) { set_font_style() };	
 	

@@ -50,8 +50,8 @@ ui_ListBackground_draw();
 set_font(ft_EvoTooltip_6_Bold);
 function_nameA = _stringClip(function_nameA,ui_ListBackground_get_width()-8,"...");
 var function_nameB = _stringClip(function_name,ui_ListBackground_get_width()-8,"...");
-draw_text_flatcolour(box_x+4,box_y+2,function_nameA,c_gray9,1);
-draw_text_flatcolour(box_x+4,box_y+2,function_nameB,c_orange,1);
+_drawText(box_x+4,box_y+2,function_nameA,c_gray9,1);
+_drawText(box_x+4,box_y+2,function_nameB,c_orange,1);
 
 //Draw Table Contents
 _setAlign(fa_center);

@@ -1,4 +1,4 @@
-///draw_blackbox(x,y,width,height,[{corner_array}],[{trim_array}]);
+///drawBlackbox(x,y,width,height,[{corner_array}],[{trim_array}]);
 /// @arg x				{real}
 ///	@arg y				{real}
 /// @arg width			{real}
@@ -8,7 +8,7 @@
 /*
 	<< Returns >> a region of the ui box dimensions
 	[[ Draws ]] a ui box of [width],[height] at [x],[y], with optional sharp corners
-	Uses the spr_plainbox_4v4 sprite
+	Uses the spr_plainbox_4x4 sprite
 	Optionally, of [spriteset], [colour] and [alpha]
 	
 	Spritesets use the image_index format of:
@@ -26,6 +26,6 @@ var corner_a =	argument_count > 4 ? argument[4] : [0,0,0,0];
 var trim_array = argument_count > 5 ? _validateArray(argument[5],9,9,false) : [0,1,1,1,1,1,1,1,1,1];
 #endregion
 
-draw_tilebox(draw_x,draw_y,width,height,c_black,0.8,spr_plainbox_4v4,corner_a,trim_array);
+draw_tilebox(draw_x,draw_y,width,height,c_black,0.8,spr_plainbox_4x4,corner_a,trim_array);
 
 return [draw_x,draw_y,draw_x+width,draw_y+height,width,height];

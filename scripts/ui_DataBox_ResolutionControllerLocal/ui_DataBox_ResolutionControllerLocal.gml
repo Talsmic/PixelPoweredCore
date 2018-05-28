@@ -16,13 +16,13 @@ var col1 = ["_Magnification",
 			"_GUIOffset", 
 			"_FloatingPixels"
 			];
-var col2 = [resolution_get_scale(), 
-			string(resolution_get_width())+", "+string(resolution_get_height()), 
-			string(resolution_get_width("Playable"))+", "+string(resolution_get_height("Playable")), 
-			string(resolution_get_width("Padded"))+", "+string(resolution_get_height("Padded")), 
-			string(resolution_get_width("View"))+", "+string(resolution_get_height("View")), 
-			string(resolution_get_width("GUIOffset"))+", "+string(resolution_get_height("GUIOffset")), 
-			string(resolution_get_width("FloatingPixels"))+", "+string(resolution_get_height("FloatingPixels"))
+var col2 = [_resolutionGetScale(), 
+			string(_resolutionGetWidth())+", "+string(_resolutionGetHeight()), 
+			string(_resolutionGetWidth("Playable"))+", "+string(_resolutionGetHeight("Playable")), 
+			string(_resolutionGetWidth("Padded"))+", "+string(_resolutionGetHeight("Padded")), 
+			string(_resolutionGetWidth("View"))+", "+string(_resolutionGetHeight("View")), 
+			string(_resolutionGetWidth("GUIOffset"))+", "+string(_resolutionGetHeight("GUIOffset")), 
+			string(_resolutionGetWidth("FloatingPixels"))+", "+string(_resolutionGetHeight("FloatingPixels"))
 			];
 
 //Draw Box
@@ -34,7 +34,7 @@ ui_ListBackground_draw();
 
 //Draw Header
 set_font(ft_EvoTooltip_6_Bold);
-draw_text_flatcolour(box_x+4,box_y+2,"[oResCon] Resolution_",c_orange,1);
+_drawText(box_x+4,box_y+2,"[oResCon] res_",c_orange,1);
 
 //Draw Table Contents
 draw_array_vertical(box_x+4,box_y+13,col1,c_water_light,1,12);

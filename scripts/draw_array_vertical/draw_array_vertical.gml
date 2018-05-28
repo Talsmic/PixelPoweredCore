@@ -26,7 +26,7 @@ for ( var i=0 ; i<array_length_1d(array) ; i++ ) {
 	if ( array[i] == "" ) { continue };
 	
 	if clipwidth { array[i] = _stringClip(array[i],clipwidth,clip_note); };
-	draw_text_flatcolour(draw_x,draw_y,string(array[i]),colour,alpha);
+	_drawText(draw_x,draw_y,string(array[i]),colour,alpha);
 	draw_y += spacing;
 	
 	};

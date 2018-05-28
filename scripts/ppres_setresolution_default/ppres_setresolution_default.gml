@@ -11,41 +11,41 @@ var usesettings = argument_count > 0 ? argument[0] : true;
 
 //Options Variables will be changed if a settings.ini is loaded
 if ( !usesettings or !instance_exists(OptionsContainer) ) {
-	Options_Fullscreen =			PPRES_Fullscreen_AtBoot;
-	Options_Magnification =			PPRES_Magnification_AtBoot;
-	Options_LockedMagnification =	PPRES_Magnification_Lock;
-	Options_Vsync =					PPRES_VsyncAtBoot;
+	opt_res_Fullscreen =			RES_Fullscreen_AtBoot;
+	opt_res_Magnification =			RES_Magnification_AtBoot;
+	opt_res_Magnification_Locked =	RES_Magnification_Lock;
+	opt_res_Vsync =					RES_VsyncAtBoot;
 	};	
 else {
-	Options_Fullscreen =			OptionsContainer.Options_Fullscreen;
-	Options_Magnification =			OptionsContainer.Options_Magnification;
-	Options_LockedMagnification =	OptionsContainer.Options_LockedMagnification;
-	Options_Vsync =					OptionsContainer.Options_Vsync;
+	opt_res_Fullscreen =			OptionsContainer.opt_res_Fullscreen;
+	opt_res_Magnification =			OptionsContainer.opt_res_Magnification;
+	opt_res_Magnification_Locked =	OptionsContainer.opt_res_Magnification_Locked;
+	opt_res_Vsync =					OptionsContainer.opt_res_Vsync;
 	};
-Options_ResolutionSnap		= PPRES_Magnification_RubberBanding; //Should the game snap resolution every frame?
+opt_res_ResolutionSnap_Locked		= RES_Magnification_RubberBanding; //Should the game snap resolution every frame?
 
-Resolution_Magnification	= 3;
+res_Magnification	= 3;
 
-Resolution_CompleteWidth	= 480;
-Resolution_CompleteHeight	= 270;
-Resolution_PlayableWidth	= 480;
-Resolution_PlayableHeight	= 270;
-Resolution_PadWidth			= 0;
-Resolution_PadHeight		= 0;
-Resolution_ViewWidth		= 0;
-Resolution_ViewHeight		= 0;
-Resolution_GUIxOffset		= 0;
-Resolution_GUIyOffset		= 0;
-Resolution_MarginColour		= PPRES_MarginColours;
+res_CompleteWidth	= 480;
+res_CompleteHeight	= 270;
+res_PlayableWidth	= 480;
+res_PlayableHeight	= 270;
+res_PadWidth			= 0;
+res_PadHeight		= 0;
+res_ViewWidth		= 0;
+res_ViewHeight		= 0;
+res_GUIxOffset		= 0;
+res_GUIyOffset		= 0;
+res_MarginColour		= RES_MarginColours;
 FloatingPixels_Width		= 0;
 FloatingPixels_Height		= 0;
 
-ResolutionSnapNextFrame = true; //Should the resolution snap at the next frame?
-ResolutionCenterNextFrame = false;
-ResolutionSnap_Magnification = Options_Magnification; //Default Zoom
+NextEvent_SnapResolution = true; //Should the resolution snap at the next frame?
+NextEvent_ResolutionCenter = false;
+NextEvent_SnapResolution_Scale = opt_res_Magnification; //Default Zoom
 
-Breakpoints_Width			= [0,0,0,0];
-Breakpoints_Height			= [0,0,0,0];
+_breakpointsX			= [0,0,0,0];
+_breakpointsY			= [0,0,0,0];
 
 /*=[Notes]======================================================================
 	-	This function can be run at any time to reset a ResolutionController, 

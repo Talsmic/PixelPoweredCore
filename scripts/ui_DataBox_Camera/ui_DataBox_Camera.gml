@@ -11,9 +11,9 @@ var box_columns = 2;
 var box_rows = 6;
 
 var x1 = camera_get_view_x( view_camera[0] );
-var x2 = x1 + resolution_get_width();
+var x2 = x1 + _resolutionGetWidth();
 var y1 = camera_get_view_y( view_camera[0] );
-var y2 = y1 + resolution_get_height();
+var y2 = y1 + _resolutionGetHeight();
 var col1 = ["_Width/Height",
 			"_Virtual_Size", 
 			"_GUI_Width/Height", 
@@ -22,7 +22,7 @@ var col1 = ["_Width/Height",
 			"",
 			];
 var col2 = [string(window_get_width())+", "+string(window_get_height()), 
-			string(resolution_get_width()*resolution_get_scale())+", "+string(resolution_get_height()*resolution_get_scale()), 
+			string(_resolutionGetWidth()*_resolutionGetScale())+", "+string(_resolutionGetHeight()*_resolutionGetScale()), 
 			string(display_get_gui_width())+", "+string(display_get_gui_height()), 
 			string(camera_get_view_width(view_camera[0]))+", "+string(camera_get_view_height(view_camera[0])),
 			string(x1)+", "+string(y1), 
@@ -38,7 +38,7 @@ ui_ListBackground_draw();
 
 //Draw Header
 set_font(ft_EvoTooltip_6_Bold);
-draw_text_flatcolour(box_x+4,box_y+2,"[GML] View Camera",c_orange,1);
+_drawText(box_x+4,box_y+2,"[GML] View Camera",c_orange,1);
 
 //Draw Table Contents
 draw_array_vertical(box_x+4,box_y+13,col1,c_orange,1,12);

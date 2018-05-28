@@ -15,7 +15,7 @@ Tabset_Y[3] = _y+5;
 Tabset_X[4] = _x+5;
 Tabset_Y[4] = _y+height;
 
-draw_simplebox(_x,_y,width,height);
+drawSimplebox(_x,_y,width,height);
 
 uiTabset_draw(1);
 uiTabset_draw(2);

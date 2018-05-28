@@ -14,8 +14,8 @@ switch ( function_name ) {
 	
 //=[PPC Functions]==============================================================
 //-[Drawing]--------------------------------------------------------------------
-	case "draw_simplebox": 
-		//draw_simplebox(x,y,width,height);
+	case "drawSimplebox": 
+		//drawSimplebox(x,y,width,height);
 		output = _arrayFromStringGrid( "integer|x,integer|y,integer|width,integer|height", 0, ",", "|" );
 		break;
 		

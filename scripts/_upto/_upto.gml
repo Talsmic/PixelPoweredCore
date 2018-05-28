@@ -2,7 +2,7 @@
 /// @arg input				{real}		
 /// @arg cap				{real}			
 /// @arg [increment]		{real}		(default: 1)
-/// @arg [overflow_event]	{string}	(default: "stop")
+/// @arg [overflow_event]	#eUpto#	(default: eUpto.stop)
 /*
 	<< Returns >>	{integer}
 	Increases [input] by [increment] but only if it won't go over [cap]
@@ -10,31 +10,35 @@
 		"stop"		returns input unchanged
 		"cap"		returns cap
 		"zero"		returns 0
-		"loop"		returns the overflow amount
+		"loop"		loops until a value is under cap
 		"allow"		returns input+increment, but only if input was lower than cap before _upto
 */
-#region Arguments
+enum eUpto {
+	stop, cap, zero, loop, allow, first };
+#region Arguments & Variables
 if argument_count < 2 { show_debug_message("_upto requires an input and cap"); return argument[0] };//[!Break!]
-var input =			 argument[0];
-var cap =			 argument[1];
-var increment =		 argument_count > 2 ? argument[2] : 1;
-var overflow_event = argument_count > 3 ? argument[3] : "stop";
-var output;
+//Arguments
+var _input =		argument[0];
+var _cap =			argument[1];
+var _increment =	argument_count > 2 ? argument[2] : 1;
+var _event =		argument_count > 3 ? argument[3] : eUpto.stop;
+//Other Variables
+var _output;
 #endregion
 
-output = input + increment;
+_output = _input + _increment;
 
-if ( output > cap ) {
-	switch ( overflow_event ) {
-		
-		default:
-		case "stop":		return input;
-		case "cap":			return cap;
-		case "zero":		return 0;
-		case "loop":		return output-input;
-		case "allow":		return input > cap ? input : output ;
+if ( _output > _cap ) {
 	
+	switch ( _event ) {		
+		default:
+		case eUpto.stop:		return _input;
+		case eUpto.cap:			return _cap;
+		case eUpto.zero:		return 0;
+		case eUpto.allow:		return _input > _cap ? _input : _output ;	
+		case eUpto.loop:		do { _output -= _cap } until ( _cap > _output );  break;
 		};
+		
 	};
 
-return output;
+return _output;

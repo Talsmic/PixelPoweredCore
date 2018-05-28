@@ -16,8 +16,9 @@
 	[[ Draws ]]		[desc]
 	Function Description
 */ 
-#region Arguments
+#region Arguments & Variables
 if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
+//Arguments
 var a0 =	argument_count > 0 ? argument[0] : 0;
 var a1 =	argument_count > 1 ? argument[1] : 0;
 var a2 =	argument_count > 2 ? argument[2] : 0;
@@ -28,11 +29,12 @@ var a6 =	argument_count > 6 ? argument[6] : 0;
 var a7 =	argument_count > 7 ? argument[7] : 0;
 var a8 =	argument_count > 8 ? argument[8] : 0;
 var a9 =	argument_count > 9 ? argument[9] : 0;
-var output;
+//Other Variables
+var _output;
 #endregion
 
 //Return
-return output;
+return _output;
 
 /*==[Notes]=========================================================================================
 	-	[Return] a return from the script

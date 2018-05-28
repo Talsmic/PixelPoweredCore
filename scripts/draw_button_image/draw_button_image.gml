@@ -38,16 +38,16 @@ if ( state == eButtonState.detect ) { state = checkstate_withregion(button_regio
 
 //Draw
 if ( pop ) { 
-	draw_sprite_flatcolour(sprite_id, image_id, draw_x, draw_y, colour, alpha); 
-	draw_sprite_flatcolour(sprite_id, image_id, draw_x, draw_y, c_black, alpha*0.5); 
+	_drawSprite(draw_x, draw_y, sprite_id, image_id, colour, alpha); 
+	_drawSprite(draw_x, draw_y, sprite_id, image_id, c_black, alpha*0.5); 
 	};
-draw_sprite_flatcolour(sprite_id, image_id, draw_x, draw_y-pop, colour, alpha); 
+_drawSprite(draw_x, draw_y-pop, sprite_id, image_id, colour, alpha); 
 switch ( state ) {	
 	case eButtonState.disabled:		
-		draw_sprite_flatcolour(sprite_id, image_id, draw_x, draw_y-pop, c_gray7, alpha*0.3); break;
+		_drawSprite(draw_x, draw_y-pop, sprite_id, image_id, c_gray7, alpha*0.3); break;
 	case eButtonState.pressed:
 	case eButtonState.mouseover:
-		draw_sprite_flatcolour(sprite_id, image_id, draw_x, draw_y-pop, c_white, alpha*0.3); break;			
+		_drawSprite(draw_x, draw_y-pop, sprite_id, image_id, c_white, alpha*0.3); break;			
 	};
 	
 //Text
@@ -55,7 +55,7 @@ if ( text[0] != "" ) {
 	var saved_align = _storeAlign();
 	_setAlign(text_align);
 	var text_draw = _positionInRegion(button_region, text_align);
-	draw_text_flatcolour(button_region[eR.x1] + text_draw[0], button_region[eR.y1] + text_draw[1], text[0], text[1], text[2]);
+	_drawText(button_region[eR.x1] + text_draw[0], button_region[eR.y1] + text_draw[1], text[0], text[1], text[2]);
 	_setAlign(saved_align);
 	};
 	

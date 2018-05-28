@@ -125,7 +125,7 @@ for ( var i=row_start; i<=row_count; i++ ) {
 
 #region Draw
 //Draw Box
-draw_simplebox(box_x,box_y,box_width,box_height);
+drawSimplebox(box_x,box_y,box_width,box_height);
 //Draw Columns
 var draw_x = box_x + padding[LEFT];
 var draw_y = box_y + padding[TOP];

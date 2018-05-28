@@ -1,3 +1,3 @@
-if ( Settings_SaveOnExit ) {
+if ( set_Options_SaveOnExit ) {
 	ppsettings_save();
 	};

@@ -1,1 +1,0 @@
-draw_button_image(20,20,ico_web);

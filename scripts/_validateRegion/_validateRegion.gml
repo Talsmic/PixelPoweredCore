@@ -27,7 +27,7 @@ if ( is_array(input) )  { //You gave an array, plugging it's values into the cor
 	var input_array = argument[0]
 	
 	for ( i=0 ; i<6 ; i++ ) {
-		if ( array_length_1d(input_array) < i ) break;
+		if ( array_length_1d(input_array) <= i ) break;
 		input_array[i] = input[i];
 		};
 	};
