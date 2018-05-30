@@ -6,7 +6,7 @@ if ( set_GlobalAlignment_Track ) {
 	
 //Reset Fonts
 if ( set_GlobalAlignment_Track ) {
-	if ( set_GlobalAlignment_Carryover ) { set_font( global.Font ) }; 
-	else								 { set_font( set_GlobalFont_DefaultFont ) };	
+	if ( set_GlobalAlignment_Carryover ) { _setFont( global.Font ) }; 
+	else								 { _setFont( set_GlobalFont_DefaultFont ) };	
 	};
 	

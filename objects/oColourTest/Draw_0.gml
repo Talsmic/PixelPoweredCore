@@ -1,17 +1,17 @@
 var c = 1;
 repeat 6 {
 	var yy = 42;
-	draw_plane(c*40-5,yy,10,32,find_colour_shadowed(c));
+	_drawPlane(c*40-5,yy,10,32,find_colour_shadowed(c));
 	yy += 16;
-	draw_button_framed(c*40-20,yy,spr_icon_24_frame,spr_icon_24,55,find_colour_shadowed(c),find_colour_shadowed(c),1,-1);
+	buttonFramed(c*40-20,yy,spr_icon_24_frame,spr_icon_24,55,find_colour_shadowed(c),find_colour_shadowed(c),1,-1);
 	yy += 16;
-	draw_plane(c*40-5,yy,10,32,find_colour(c));
+	_drawPlane(c*40-5,yy,10,32,find_colour(c));
 	yy += 16;
-	draw_button_framed(c*40-20,yy,spr_icon_24_frame,spr_icon_24,55,find_colour(c),find_colour(c),1,-1);
+	buttonFramed(c*40-20,yy,spr_icon_24_frame,spr_icon_24,55,find_colour(c),find_colour(c),1,-1);
 	yy += 16;
-	draw_plane(c*40-5,yy,10,32,find_colour_light(c));
+	_drawPlane(c*40-5,yy,10,32,find_colour_light(c));
 	yy += 16;
-	draw_button_framed(c*40-20,yy,spr_icon_24_frame,spr_icon_24,55,find_colour_light(c),find_colour_light(c),1,-1);
+	buttonFramed(c*40-20,yy,spr_icon_24_frame,spr_icon_24,55,find_colour_light(c),find_colour_light(c),1,-1);
 	c++;
 	}; 
 	
@@ -19,16 +19,16 @@ repeat 6 {
 var c = 1;
 repeat 5 {
 	var yy = 182;
-	draw_plane(c*40-5,yy,10,32,find_colour_dark(c+10));
+	_drawPlane(c*40-5,yy,10,32,find_colour_dark(c+10));
 	yy += 16;
-	draw_button_framed(c*40-20,yy,spr_icon_24_frame,spr_icon_24,55,find_colour_dark(c+10),find_colour_dark(c+10),1,-1);
+	buttonFramed(c*40-20,yy,spr_icon_24_frame,spr_icon_24,55,find_colour_dark(c+10),find_colour_dark(c+10),1,-1);
 	yy += 16;
-	draw_plane(c*40-5,yy,10,32,find_colour(c+10));
+	_drawPlane(c*40-5,yy,10,32,find_colour(c+10));
 	yy += 16;
-	draw_button_framed(c*40-20,yy,spr_icon_24_frame,spr_icon_24,55,find_colour(c+10),find_colour(c+10),1,-1);
+	buttonFramed(c*40-20,yy,spr_icon_24_frame,spr_icon_24,55,find_colour(c+10),find_colour(c+10),1,-1);
 	yy += 16;
-	draw_plane(c*40-5,yy,10,32,find_colour_light(c+10));
+	_drawPlane(c*40-5,yy,10,32,find_colour_light(c+10));
 	yy += 16;
-	draw_button_framed(c*40-20,yy,spr_icon_24_frame,spr_icon_24,55,find_colour_light(c+10),find_colour_light(c+10),1,-1);
+	buttonFramed(c*40-20,yy,spr_icon_24_frame,spr_icon_24,55,find_colour_light(c+10),find_colour_light(c+10),1,-1);
 	c++;
 	}; 

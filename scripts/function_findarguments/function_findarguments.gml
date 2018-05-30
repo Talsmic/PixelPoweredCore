@@ -19,7 +19,7 @@ switch ( function_name ) {
 		output = _arrayFromStringGrid( "integer|x,integer|y,integer|width,integer|height", 0, ",", "|" );
 		break;
 		
-	case "draw_plane_outline":
+	case "_drawPlane_outline":
 		output = _arrayFromStringGrid( "integer|x,integer|y,integer|width,integer|height,c_code|colour,real|alpha,integer|thickness", 0, ",", "|" );
 		break;
 	

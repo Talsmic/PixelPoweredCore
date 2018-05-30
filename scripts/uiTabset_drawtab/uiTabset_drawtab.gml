@@ -31,7 +31,7 @@ switch ( Tabset_AttachToSide[ref] ) {
 #region State Alternations
 	 if ( !Tabset_Tab_Enabled[ref,tabref] )	{ state = eButtonState.disabled }; 
 else if ( Pointer_Tabset[ref] == tabref )	{ state = eButtonState.focus };
-else if ( state == eButtonState.detect )	{ state = checkstate_withregion(draw_region) };
+else if ( state == eButtonState.detect )	{ state = buttonStateInRegion(draw_region) };
 
 var text_colour = Tabset_Colour_Text[ref];
 var tab_colour = Tabset_Colour_Tab[ref];
@@ -80,7 +80,7 @@ if ( Tabset_Rotation[ref] ) {
 	draw_text_transformed( text_point[0], text_point[1], Tabset_Tab_Name[ref,tabref], 1, 1, Tabset_Rotation[ref]) 
 	}
 else {
-	_drawText( text_point[0], text_point[1], Tabset_Tab_Name[ref,tabref], text_colour, 1 ) 
+	drawText( text_point[0], text_point[1], Tabset_Tab_Name[ref,tabref], text_colour, 1 ) 
 	};
 #endregion
 		

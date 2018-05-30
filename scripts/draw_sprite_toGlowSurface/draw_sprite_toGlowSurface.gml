@@ -1,13 +1,13 @@
 ///draw_sprite_toGlowSurface(sprite_id,[image_id],[thickness],[alpha],[xscale],[yscale],[rotation],[x],[y],);
 /// @arg sprite_id		#sprite_id#		
-/// @arg [image_id]		#image_id#			(default: 0)
-/// @arg [thickness]	{integer or array}	(default: 1)
-/// @arg [alpha]		{real|0..1}			(default: 1)
-/// @arg [x_scale]		{real}				(default: 1)
-/// @arg [y_scale]		{real}				(default: 1)
-/// @arg [rotation]		{integer|0..360}	(default: 0)
-/// @arg [x]			{real}				(default: SEE NOTES)
-/// @arg [y]			{real}				(default: SEE NOTES)
+/// @arg [image_id]		#image_id#				(default: 0)
+/// @arg [thickness]	{integer} OR {array}	(default: 1)
+/// @arg [alpha]		{real|0..1}				(default: 1)
+/// @arg [x_scale]		{real}					(default: 1)
+/// @arg [y_scale]		{real}					(default: 1)
+/// @arg [rotation]		{integer|0..360}		(default: 0)
+/// @arg [x]			{real}					(default: SEE NOTES)
+/// @arg [y]			{real}					(default: SEE NOTES)
 #region Arguments
 /* 
 !Important notes on arguments for this function!
@@ -43,8 +43,8 @@ surface_set_target(GlowSurface) {
 	
 	//Draw Glow
 	var i, j;
-	for ( var i=-thickness[0] ; i<=thickness[2] ; i++ ) {
-		for ( var j=-thickness[1] ; j<=thickness[3] ; j++ ) {
+	for ( var i=-thickness[0] ; i<=thickness[2] ; ++i ) {
+		for ( var j=-thickness[1] ; j<=thickness[3] ; ++j ) {
 			draw_sprite_general(sprite_id,image_id,0,0,width,height,surfacedraw_x+i,surfacedraw_y+j,1,1,0,c_white,c_white,c_white,c_white,1);
 			draw_sprite_general(sprite_id,image_id,0,0,width,height,surfacedraw_x+i,surfacedraw_y+j,x_scale,y_scale,rotation,c_white,c_white,c_white,c_white,alpha);
 			};

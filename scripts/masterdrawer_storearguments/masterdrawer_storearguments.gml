@@ -2,7 +2,7 @@
 /// @arg count {integer}
 var count = argument0;
 
-for ( var i=0; i<count; i++ ) {
+for ( var i=0; i<count; ++i ) {
 	Arg_Integer[i] = i;
 	Arg_Real[i] = i+0.5;
 	Arg_String[i] = "Test String #"+string(i)+string(i)+string(i);

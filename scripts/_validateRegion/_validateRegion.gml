@@ -26,7 +26,7 @@ if ( is_string(input) )  { input = _arrayFromStringList(input) }; //I really hop
 if ( is_array(input) )  { //You gave an array, plugging it's values into the correct positions	
 	var input_array = argument[0]
 	
-	for ( i=0 ; i<6 ; i++ ) {
+	for ( i=0 ; i<6 ; ++i ) {
 		if ( array_length_1d(input_array) <= i ) break;
 		input_array[i] = input[i];
 		};
@@ -36,7 +36,7 @@ else if ( is_real(input) )   {  //You gave a single value, so I assume it's x1, 
 	input_array[1] = input; 
 	};				
 #endregion
-for ( i=1 ; i<argument_count ; i++ ) { if ( argument[i] != "" ) { input_array[i-1] = argument[i] } };
+for ( i=1 ; i<argument_count ; ++i ) { if ( argument[i] != "" ) { input_array[i-1] = argument[i] } };
 #endregion
 
 //Solve Missing Corners

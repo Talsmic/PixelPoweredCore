@@ -5,7 +5,7 @@ if ( set_GlobalBeats ) {
 
 	global.GameBeat = _beat(global.GameBeat);
 	
-	for ( var i=0 ; i<array_length_1d(set_ScrollKeys) ; i++ ) {
+	for ( var i=0 ; i<array_length_1d(set_ScrollKeys) ; ++i ) {
 		if ( keyboard_check_released(set_ScrollKeys[i]) ) { global.ScrollBeat = _beat(global.ScrollBeat, false, true) };
 		};
 		

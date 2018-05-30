@@ -28,11 +28,11 @@ ui_ListBackground_create(0,box_x,box_y,180,-1,box_columns,box_rows);
 ui_ListBackground_draw();
 
 //Draw Header
-set_font(ft_EvoTooltip_6_Bold);
-_drawText(box_x+4,box_y+2,"[oResCon] Macros",c_orange,1);
+_setFont(ft_EvoTooltip_6_Bold);
+drawText(box_x+4,box_y+2,"[oResCon] Macros",c_orange,1);
 
 //Draw Table Contents
-draw_array_vertical(box_x+4,box_y+13,col1,c_fire_light,1,12);
+_arrayDrawVertical(box_x+4,box_y+13,col1,c_fire_light,1,12);
 _setAlign(fa_right);
-draw_array_vertical(box_x+ui_ListBackground_get_width()-4,box_y+13,col2,c_gray9,1,12);
+_arrayDrawVertical(box_x+ui_ListBackground_get_width()-4,box_y+13,col2,c_gray9,1,12);
 _setAlign(fa_left);

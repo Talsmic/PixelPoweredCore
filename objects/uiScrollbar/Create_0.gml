@@ -1,0 +1,1 @@
+ScrollBar = createScrollBar(x, y, 100, 20, eDirection.up, true, spr_scrollbar, c_white);

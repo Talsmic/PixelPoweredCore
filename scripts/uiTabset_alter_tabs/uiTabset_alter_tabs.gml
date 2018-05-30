@@ -24,8 +24,8 @@ if argument_count > 2 {
 
 if ( is_array(tabs) ) { var tabcount = tabs[0] } else { var tabcount = tabs };
 
-set_font(ft_EvoTooltip_6_Bold);
-for ( var i=1; i<=tabcount; i++ ) {
+_setFont(ft_EvoTooltip_6_Bold);
+for ( var i=1; i<=tabcount; ++i ) {
 	Tabset_Tab_Name[ref, i] = "Tab"+string(i);
 	if ( is_array(tabs) ) { Tabset_Tab_Name[ref, i] = tabs[i] };
 	Tabset_Tab_Width[ref, i] = string_width(Tabset_Tab_Name[ref, i]) + 6;

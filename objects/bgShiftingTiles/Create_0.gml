@@ -9,7 +9,7 @@ back_Flat_Colour = $ffeaff;
 ShiftingTiles_MinRows = 8;
 ShiftingTiles_MaxRows = 26;
 ShiftingTiles_Columns = 60;
-for ( var i=0; i<ShiftingTiles_Columns; i++) {
+for ( var i=0; i<ShiftingTiles_Columns; ++i ) {
 	ShiftingTiles_ColumnHeight[i] = ShiftingTiles_MaxRows//irandom_range(ShiftingTiles_MinRows,ShiftingTiles_MaxRows-5);
 	};
 ShiftingTiles_AlphaFalloff = 0.10;

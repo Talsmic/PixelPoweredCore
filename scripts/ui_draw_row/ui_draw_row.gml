@@ -29,13 +29,13 @@ if argument_count > 7 { alpha = argument[7] };
 if argument_count > 8 { mouseovers = argument[8] };
 
 
-for ( var i=1; i<=columns; i++ ) {
-	draw_plane(draw_x,draw_y,width[i],height,colour,alpha);
+for ( var i=1; i<=columns; ++i ) {
+	_drawPlane(draw_x,draw_y,width[i],height,colour,alpha);
 	if ( mouseovers == 1 and _mouseInRegion([draw_x,draw_y,draw_x+width[i],draw_y+height]) ) {
-		draw_plane(draw_x,draw_y,width[i],height,c_white,alpha);
+		_drawPlane(draw_x,draw_y,width[i],height,c_white,alpha);
 		};
 	if ( mouseovers == 2 and _mouseInRegion([draw_x,draw_y,draw_x+width[i],draw_y+height]) ) {
-		draw_plane(draw_x,draw_y,width[i],height,c_white,alpha);
+		_drawPlane(draw_x,draw_y,width[i],height,c_white,alpha);
 		};
 	draw_x += width[i] + spacing;
 	};

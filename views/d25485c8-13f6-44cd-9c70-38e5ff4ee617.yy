@@ -10,7 +10,8 @@
         "573efe5d-d982-4f24-ad56-d9a88ad4b9de",
         "2ae4d39f-e73a-4734-a873-067b58537b09",
         "b739dc16-34f2-4903-af47-80bc9baeca49",
-        "8b1e07d8-8919-4f41-9786-4ee0a2004c83"
+        "8b1e07d8-8919-4f41-9786-4ee0a2004c83",
+        "a3f98b61-7c7e-40e4-b94d-a15585383afe"
     ],
     "filterType": "GMScript",
     "folderName": "[Utility Snippets]",

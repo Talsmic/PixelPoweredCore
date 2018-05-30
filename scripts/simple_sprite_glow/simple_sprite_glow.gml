@@ -3,7 +3,7 @@
 /// @arg image_id		#image_id#			
 /// @arg x				{real}				
 /// @arg y				{real}				
-/// @arg {[thickness]}	{integer or array}	(default: 1)
+/// @arg {[thickness]}	{integer} OR {array}	(default: 1)
 /// @arg [colour]		#c_code#			(default: draw_get_colour())
 /// @arg [alpha]		{real|0..1}			(default: draw_get_alpha())
 /// @arg [x_scale]		{real}				(default: 1)
@@ -41,8 +41,8 @@ surface_set_target(GlowSurface) {
 	
 	//Draw Glow
 	var i, j;
-	for ( var i=-thickness[0] ; i<=thickness[2] ; i++ ) {
-		for ( var j=-thickness[1] ; j<=thickness[3] ; j++ ) {
+	for ( var i=-thickness[0] ; i<=thickness[2] ; ++i ) {
+		for ( var j=-thickness[1] ; j<=thickness[3] ; ++j ) {
 			draw_sprite_general(sprite_id,image_id,0,0,width,height,surfacedraw_x+i,surfacedraw_y+j,1,1,0,c_white,c_white,c_white,c_white,1);
 			};
 		};

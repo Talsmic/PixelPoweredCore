@@ -1,4 +1,4 @@
-///draw_plane(x,y,width,height,[colour],[alpha],[outline],[rotation]);
+///_drawPlane(x,y,width,height,[colour],[alpha],[outline],[rotation]);
 /// @arg x			{real}
 /// @arg y			{real}
 /// @arg width		{real}
@@ -44,7 +44,7 @@ else {
 		draw_rectangle().
 	-	I find it easier to say "I need a 50x5 rectangle at x,y" than "I need a 
 		rectangle between x,y and x2,y2". If you prefer	using 2 sets of co-ords 
-		than width and height, I've included draw_plane_bypoints() to do that.
+		than width and height, I've included _drawPlane_bypoints() to do that.
 		Use what you prefer.
 	-	The outline option lets you draw boxes rather than real planes
 	

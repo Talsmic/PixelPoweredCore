@@ -1,5 +1,5 @@
 /// @desc LeftClick
-if !infocus() exit;
+if !inFocus() exit;
 if Hidden exit;//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>
 
 ui_listbox_leftclick();

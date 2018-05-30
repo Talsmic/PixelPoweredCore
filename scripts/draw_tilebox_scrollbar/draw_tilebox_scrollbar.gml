@@ -63,7 +63,7 @@ switch ( bar_side ) {
 #endregion
 		
 #region State Adjustments
-if ( state == eButtonState.detect ) { state = checkstate_withregion(draw_region) };
+if ( state == eButtonState.detect ) { state = buttonStateInRegion(draw_region) };
 var offset_icon = 0;
 var offset_sprite = 0;
 var overlay_colour = c_white;

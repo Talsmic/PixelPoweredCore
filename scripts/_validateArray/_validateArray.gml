@@ -1,9 +1,9 @@
 ///_validateArray(input,[min_length],[max_length],[default_input],[fill_event]);
 /// @arg input					{any}
 /// @arg [min_length]			{integer}	(default: 1)
-/// @arg [max_length]			{integer}	(default: 100)
+/// @arg [max_length]			{integer}	(default: -1)
 /// @arg [default_input]		{array}		(default: [0])
-/// @arg [fill_event]			{string}	(default "loop")
+/// @arg [fill_event]			{string}	(default eUpto.loop)
 /*
 	<< Returns >>	{array_1d}
 	Forces the input to return as an array of the correct length
@@ -15,7 +15,7 @@ var input =				is_array(argument[0]) ? argument[0] : [argument[0]];
 var min_length =		argument_count > 1 ? argument[1] : 1;
 var max_length =		argument_count > 2 ? argument[2] : 100;
 var default_input =		argument_count > 3 ? (is_array(argument[3]) ? argument[3] : [argument[3]]) : [0];
-var fill_event =		argument_count > 4 ? argument[4] : "loop";
+var fill_event =		argument_count > 4 ? argument[4] : eUpto.loop;
 var input_length =		array_length_1d(input);
 var default_length =	array_length_1d(default_input);
 var fill = 0;
@@ -25,7 +25,7 @@ var output = [0];
 if ( input_length >= min_length and input_length <= max_length ) return input;//Array is already perfect[!Break!]
 
 //Add [input]'s values to [output]
-for ( var i=0 ; i<input_length ; i++ ) {
+for ( var i=0 ; i<input_length ; ++i ) {
 	
 	if ( max_length > 1 and i >= max_length ) break;
 	output[i] = input[i];
@@ -34,7 +34,7 @@ for ( var i=0 ; i<input_length ; i++ ) {
 	};
 
 //Add filler
-for ( i=i ; i<=min_length-1 ; i++ ) {
+for ( i=i ; i<=min_length-1 ; ++i ) {
 	
 	output[i] = default_input[fill];
 	fill = _upto(fill, default_length-1, 1, fill_event);

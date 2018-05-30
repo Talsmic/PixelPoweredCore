@@ -1,4 +1,4 @@
-///_drawText(x,y,text,[colour],[alpha]);
+///drawText(x,y,text,[colour],[alpha]);
 /// @arg x				{real}
 /// @arg y				{real}
 /// @arg text			{string}

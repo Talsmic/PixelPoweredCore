@@ -9,18 +9,18 @@ var h = y2 - y1;
 if ( DrawFrame ) {
 	draw_set_color(c_black);
 	//Top Left
-	draw_plane(x1+2,y1+2,10,2);
-	draw_plane(x1+2,y1+2,2,10);
+	_drawPlane(x1+2,y1+2,10,2);
+	_drawPlane(x1+2,y1+2,2,10);
 	//Top Right
-	draw_plane(x2-12,y1+2,10,2);
-	draw_plane(x2-4,y1+2,2,10);
+	_drawPlane(x2-12,y1+2,10,2);
+	_drawPlane(x2-4,y1+2,2,10);
 	//Bottom Left
-	draw_plane(x1+2,y2-4,10,2);
-	draw_plane(x1+2,y2-12,2,10);
+	_drawPlane(x1+2,y2-4,10,2);
+	_drawPlane(x1+2,y2-12,2,10);
 	//Bottom Right
-	draw_plane(x2-12,y2-4,10,2);
-	draw_plane(x2-4,y2-12,2,10);
-	set_font(ft_EvoTooltip_6_Bold);
+	_drawPlane(x2-12,y2-4,10,2);
+	_drawPlane(x2-4,y2-12,2,10);
+	_setFont(ft_EvoTooltip_6_Bold);
 	draw_text(x1+6,y1+5,string(x1)+", "+string(y1));
 	draw_text(x1+6,y2-14,string(x1)+", "+string(y2));
 	_setAlign(fa_right);

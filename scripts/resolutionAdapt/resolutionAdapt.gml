@@ -19,7 +19,7 @@ var _window_height = _windowHeight();
 	which will tell the controller to use opt_res_Magnification to dictate scaling instead.*/
 var _breakpointsX = [ 0, RES_MinWindowWidth ]
 var _breakpointsY = [ 0, RES_MinWindowHeight ]
-for ( var i = 2; i <= RES_Magnification_Max; i++ ) {
+for ( var i = 2; i <= RES_Magnification_Max; ++i ) {
 	//By default, the breakpoints are when the window the minumum over the ideal 
 	_breakpointsX[i] = RES_IdealWidth * ( i-1 ) + RES_MinWidth;
 	_breakpointsY[i] = RES_IdealHeight * ( i-1 ) + RES_MinHeight;
@@ -84,7 +84,7 @@ if opt_res_Magnification_Locked {
 	}
 else {
 	res_Magnification = RES_Magnification_Min;
-	for ( var i=1; i<=RES_Magnification_Max; i++ ) {
+	for ( var i=1; i<=RES_Magnification_Max; ++i ) {
 		if ( _window_width >= _breakpointsX[i] and _window_height >= _breakpointsY[i] ) {
 			res_Magnification = i;
 			};

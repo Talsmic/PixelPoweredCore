@@ -15,7 +15,7 @@ var region_array = 0;
 var m_x = mouse_layer ? global.GUI_MouseX : mouse_x;
 var m_y = mouse_layer ? global.GUI_MouseY : mouse_y;
 
-for ( var i=0; i<array_height_2d(array_of_regions); i++ ) {
+for ( var i=0; i<array_height_2d(array_of_regions); ++i ) {
 	if array_length_2d(region_array,i) <= column continue;
 	region_array = array_of_regions[i,column]
 	if is_array(region_array) {

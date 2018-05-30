@@ -8,7 +8,7 @@ var _input = argument0;
 #endregion
 
 var _output = _input[0];
-for ( var i=1 ; i<array_length_1d(_input) ; i++) {
+for ( var i=1 ; i<array_length_1d(_input) ; ++i ) {
 	if ( _input[i] > _output ) { _output = _input[i] };
 	}; 
 	

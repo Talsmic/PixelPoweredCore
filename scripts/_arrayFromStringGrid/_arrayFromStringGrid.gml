@@ -40,10 +40,10 @@ do {
 
 //Parse Length
 var i,j,temp_array;
-for ( i=1 ; i<array_height_2d(output) ;  i++ ) {
+for ( i=1 ; i<array_height_2d(output) ;  ++i ) {
 	
 	temp_array = _arrayFromStringList(output[i,0], length_spacers);
-	for ( j=1 ; j<array_length_1d(temp_array) ;  j++ ) {
+	for ( j=1 ; j<array_length_1d(temp_array) ;  ++j ) {
 		
 		output[i,j] = temp_array[j];
 		

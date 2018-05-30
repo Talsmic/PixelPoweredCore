@@ -29,7 +29,7 @@ Slave[1] = instance_create_as_slave(x,y,uiTabset);
 	Slave[1].Tabset_AttachToSide[1] = TOP;
 	Slave[1].Tabset_Tab_Name[1,1] = "Adjust";
 	Slave[1].Pointer_Tabset[1] = 2;
-	for ( var i=1; i<=max_drawcommands; i++ ) {
+	for ( var i=1; i<=max_drawcommands; ++i ) {
 		Slave[1].Tabset_Tab_Width[1,i+1] = 68;
 		Slave[1].Tabset_Tab_Name[1,i+1] = "Function "+string(i);
 		};
@@ -45,10 +45,10 @@ Slave[2] = instance_create_as_slave(x,y,uiFunctionBox);
 
 #region Create Function & Argument Storage
 //Create the array for Functions
-for ( var i=1; i<=max_drawcommands; i++ ) {
+for ( var i=1; i<=max_drawcommands; ++i ) {
 	FunctionName[i] = "drawSimplebox";
 	FunctionArguments[i] = [10*i,10*i,10*i,10*i];
-	for ( var j=0; j<max_drawcommandarguments; j++ ) {
+	for ( var j=0; j<max_drawcommandarguments; ++j ) {
 		FunctionArgumentClass[i,j] = "integer";
 		FunctionArgumentSubClass[i,j] = "x";
 		FunctionArgumentReference[i,j] = i;

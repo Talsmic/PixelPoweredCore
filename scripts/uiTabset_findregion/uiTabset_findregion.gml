@@ -33,7 +33,7 @@ switch ( Tabset_AttachToSide[ref] ) {
 //State Detection
 var state = eButtonState.detect;
 if argument_count > 4 { state = argument[4] };
-if ( state == eButtonState.detect ) { state = checkstate_withregion(output) };
+if ( state == eButtonState.detect ) { state = buttonStateInRegion(output) };
 if ( !Tabset_Tab_Enabled[ref,tabref] ) { state = eButtonState.disabled }; 
 if ( Pointer_Tabset[ref] == tabref ) { state = eButtonState.focus };
 	

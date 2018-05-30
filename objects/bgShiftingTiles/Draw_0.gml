@@ -14,10 +14,10 @@ if ( set_AnchorToView ) {
 
 //Draw Flat Colour
 if ( back_Flat ) { 
-	draw_plane(draw_space_x,draw_space_y,draw_space_width,draw_space_height,back_Flat_Colour,back_Flat_Alpha);
+	_drawPlane(draw_space_x,draw_space_y,draw_space_width,draw_space_height,back_Flat_Colour,back_Flat_Alpha);
 	};
 
-for ( bgID=1; bgID<=back_StoredBGs; bgID++ ) {
+for ( bgID=1; bgID<=back_StoredBGs; ++bgID ) {
 	
 	//Find Dimensions
 	var width = sprite_get_width(back_StoredBG_Sprite[bgID])*back_StoredBG_ScaleX[bgID];
@@ -30,8 +30,8 @@ for ( bgID=1; bgID<=back_StoredBGs; bgID++ ) {
 	ShiftingTiles_Columns = ceil(draw_space_width/width)+1;
 	
 	//TILE UP
-	for ( var col=0; col<array_length_1d(ShiftingTiles_ColumnHeight); col++) {
-		for ( var row=0; row<ShiftingTiles_ColumnHeight[col]; row++) {
+	for ( var col=0; col<array_length_1d(ShiftingTiles_ColumnHeight); ++col ) {
+		for ( var row=0; row<ShiftingTiles_ColumnHeight[col]; ++row ) {
 			draw_x = -3 + width * col;
 			draw_y = -3 + draw_space_height - height * row;
 			DrawX = windowX+draw_x; DrawIDX = row;
@@ -43,14 +43,14 @@ for ( bgID=1; bgID<=back_StoredBGs; bgID++ ) {
 			};
 		if ( ShiftingTiles_Backgrounding ) {
 			var rowheight = ceil(draw_space_height/height)+1;
-			for ( var row=ShiftingTiles_ColumnHeight[col]; row<rowheight; row++) {
+			for ( var row=ShiftingTiles_ColumnHeight[col]; row<rowheight; ++row ) {
 				draw_x = -3 + width * col;
 				draw_y = -3 + draw_space_height - height * row;
 				DrawX = windowX+draw_x; DrawIDX = row;
 				DrawY = windowY+draw_y; DrawIDY = col;
 				back_StoredBG_Alpha[bgID] = 0.02;
 				event_user(1);
-				};
+				};	
 			};
 		};
 		

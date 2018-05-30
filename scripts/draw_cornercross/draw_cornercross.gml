@@ -11,7 +11,7 @@ var state = argument3;
 
 //State Detection
 if ( state == eSkillButtonState.detect ) {
-	if ( infocus() ) {
+	if ( inFocus() ) {
 		if ( _mouseInRegion( _regionBySize( X-sprite_get_width(sprite),Y,sprite_get_width(sprite),sprite_get_height(sprite) ) ) ) {
 			if ( mouse_check_button(mb_left) ) {
 				state = eSkillButtonState.pressed

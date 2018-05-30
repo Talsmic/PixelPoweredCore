@@ -16,7 +16,7 @@ ListBackground_Height[ref] = -1;		if argument_count > 4 { ListBackground_Height[
 ListBackground_ColumnCount[ref] = 1;	if argument_count > 5 { ListBackground_ColumnCount[ref] = argument[5] };
 ListBackground_RowCount[ref] = 1;		if argument_count > 6 { ListBackground_RowCount[ref] = argument[6] };
 
-for ( var i=0; i<=ListBackground_ColumnCount[ref]; i++ ) {
+for ( var i=0; i<=ListBackground_ColumnCount[ref]; ++i ) {
 	ListBackground_ColumnSize[ref, i] = -1; 
 	if ( i mod 2 > 0 ) { ListBackground_ColumnColour[ref, i] = c_white	}
 				  else { ListBackground_ColumnColour[ref, i] = c_gray9 };
@@ -28,7 +28,7 @@ for ( var i=0; i<=ListBackground_ColumnCount[ref]; i++ ) {
 ListBackground_ColumnSpace[ref] = 1; 
 ListBackground_HeaderColumn[ref] = false; 
 
-for ( var i=0; i<=ListBackground_RowCount[ref]; i++ ) {
+for ( var i=0; i<=ListBackground_RowCount[ref]; ++i ) {
 	ListBackground_RowSize[ref, i] = -1; 
 	if ( i mod 2 > 0 ) { ListBackground_RowColour[ref, i] = c_white	}
 				  else { ListBackground_RowColour[ref, i] = c_gray9 };

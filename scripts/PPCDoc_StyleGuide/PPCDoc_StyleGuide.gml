@@ -39,11 +39,11 @@
 	bg_background
 -[Functions / Scripts]----------------------------------------------------------
 	typeoffuntion_category_functionality(arguments);
-	 (eg draw_text_outline)							draw[Type of Function]
+	 (eg drawTextOutlined)							draw[Type of Function]
 													_text[Category]
 													_outline[Functionality]
 	question(arguments);
-		Use question format for common queries like infocus()
+		Use question format for common queries like inFocus()
 -[Fonts]------------------------------------------------------------------------
 	ft_FontName_6_Style
 -[Objects]----------------------------------------------------------------------

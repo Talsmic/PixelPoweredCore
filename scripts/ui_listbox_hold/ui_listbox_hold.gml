@@ -1,6 +1,6 @@
 ///ui_listbox_hold()
 ui_listbox_command("scrollloop");
-if !infocus() exit;
+if !inFocus() exit;
 
 var KeyLeft = keyboard_check(vk_left);
 var KeyRight = keyboard_check(vk_right);

@@ -20,7 +20,7 @@ var pos = 0;
 var pos_count = 0;
 var pos_id, pos_string, pos_length, check_pos, i;
 
-for ( i=0 ; i<array_length_1d(substring_array) ; i++ ) {
+for ( i=0 ; i<array_length_1d(substring_array) ; ++i ) {
 	
 	check_pos = string_pos( substring_array[i], input_string );
 	

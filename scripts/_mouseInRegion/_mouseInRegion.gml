@@ -1,6 +1,6 @@
-///_mouseInRegion(region_array,[override_mouse_layer]);
-/// @arg region_array			#region#
-/// @arg override_mouse_layer	{boolean}	(default: detect) (false: normal, true: gui mouse]
+///_mouseInRegion(region_array,[gui_layer]);
+/// @arg region_array	#region#
+/// @arg gui_layer		{boolean}	(default: detects)
 /*
 	<< Returns >> {boolean}
 */

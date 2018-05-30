@@ -1,4 +1,4 @@
-///infocus([object]);
+///inFocus([object]);
 /// @arg [object] {ObjectID}	(default: id)
 /*
 	[PixelPowered Module: Focus]
@@ -24,5 +24,5 @@ return true;
 	-	This event only includes parameters so you can check if other objects 
 		are in focus, for most cases, leave it blank.
 	-	For general use in events:
-			if ( !infocus() ) { return }; //Focus Check
+			if ( !inFocus() ) { return }; //Focus Check
 		This will cancel any event if an object is out of focus.

@@ -26,7 +26,7 @@ if ( !rows ) { return 0 };
 
 var output;
 
-for ( var i=1; i<=rows; i++ ) {
+for ( var i=1; i<=rows; ++i ) {
 	output[i] = _regionBySize(draw_x,draw_y,width,height[i]);
 	draw_y += height[i] + spacing;
 	};

@@ -6,8 +6,8 @@
 	<< Returns >> {string}: Clipped [input]
 */
 #region Arguments
-if argument_count < 2 { show_debug_message("ArgError"); return argument[0] };//[!Break!]
-var input =  string(argument[0]);
+if argument_count < 2 { show_debug_message("ArgError _stringClip"); return argument[0] };//[!Break!]
+var input =			string(argument[0]);
 var max_length =	argument[1] > 10 ? argument[1] : 10;
 var clip_note =		argument_count > 2 ? argument[2] : "-";
 var output = input;

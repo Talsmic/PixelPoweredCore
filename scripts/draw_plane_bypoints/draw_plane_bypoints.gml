@@ -1,4 +1,4 @@
-///draw_plane_bypoints(x1,y1,x2,y2,[colour],[alpha],[outline],[rotation]);
+///_drawPlane_bypoints(x1,y1,x2,y2,[colour],[alpha],[outline],[rotation]);
 /// @arg x1			{real}		
 /// @arg y1			{real}		
 /// @arg x2			{real}		
@@ -43,6 +43,6 @@ else {
 	-	This function cheats, by stretching a 1x1 sprite to fill the required 
 		area you achieve the same effect but without the scaling issues of 
 		draw_rectangle().
-	-	The provided function draw_plane() provides	a similar functionality 
+	-	The provided function _drawPlane() provides	a similar functionality 
 		but asks for width and height instead of ending	points. 
 		Use what you prefer.

@@ -4,7 +4,7 @@
 	<< Returns >>	#align# {array} [align_x, align_y, offset_x, offsey_y]
 	Generates an alignment array with whatever values you put in
 */
-if ( argument_count == 0 ) { return [ global.Align_X, global.Align_Y, global.Align_Xo, global.Align_Yo ] };//[!Break!]
+if ( argument_count == 0 ) { return [ global.AlignX, global.AlignY, global.AlignXo, global.AlignYo ] };//[!Break!]
 
 var output = _validateArray(argument[0],4,4,[fa_left, fa_right, 0, 0]);
 
@@ -18,5 +18,5 @@ return output;
 
 /*==[Notes]=========================================================================================
 	-	Giving no input returns an #align# of:
-		[global.Align_X, global.Align_Y, global.Align_Xo, global.Align_Yo]
+		[global.AlignX, global.AlignY, global.AlignXo, global.AlignYo]
 		Use this to save the current alignment if you want to change it and set it back later

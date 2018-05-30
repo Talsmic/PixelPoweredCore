@@ -13,7 +13,7 @@ var region_array = 0;
 var m_x = mouse_layer ? global.GUI_MouseX : mouse_x;
 var m_y = mouse_layer ? global.GUI_MouseY : mouse_y;
 
-for ( var i=0; i<array_length_1d(array_of_regions); i++ ) {
+for ( var i=0; i<array_length_1d(array_of_regions); ++i ) {
 	region_array = array_of_regions[i]
 	if is_array(region_array) {
 		if point_in_rectangle(m_x, m_y, region_array[eR.x1], region_array[eR.y1], region_array[eR.x2], region_array[eR.y2]) {

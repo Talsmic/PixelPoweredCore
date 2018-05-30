@@ -31,10 +31,10 @@
 ====================================================================================================
 	
 ===[Global Variable]================[IsArray]==[Contains]===========================================	
-	global.Align_X 					|		|	{integer} Contains the horizontal alignment
-	global.Align_Y 					|		|	{integer} Contains the horizontal alignment
-	global.Align_Xo 				|		|	{real}	
-	global.Align_Yo					|		|	{real}		
+	global.AlignX 					|		|	{integer} Contains the horizontal alignment
+	global.AlignY 					|		|	{integer} Contains the horizontal alignment
+	global.AlignXo 				|		|	{real}	
+	global.AlignYo					|		|	{real}		
 	global.GUI_MouseX
 	global.GUI_MouseY
 	global.UpdateWindow

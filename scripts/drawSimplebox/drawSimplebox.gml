@@ -28,6 +28,6 @@ if ( _corners[1] ) { _tiles[1] = 11 };
 if ( _corners[2] ) { _tiles[2] = 12 };
 if ( _corners[3] ) { _tiles[3] = 13 };
 
-_drawTilebox(_box,spr_plainbox_4x4,_colour,_alpha,_tiles);
+drawTilebox(_box,spr_plainbox_4x4,_colour,_alpha,_tiles);
 
 return _box;

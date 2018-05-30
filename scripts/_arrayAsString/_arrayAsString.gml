@@ -10,7 +10,7 @@ var spacer = argument_count > 1 ? argument[1] : "|";
 var output = "";
 #endregion
 
-for ( var i=1; i<array_length_1d(array); i++ ) {
+for ( var i=1; i<array_length_1d(array); ++i ) {
 	if i > 1 { output += "|" };
     output += string(array[i]);
 	};

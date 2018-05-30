@@ -14,10 +14,10 @@ if set_AnchorToView {
 
 //Draw Flat Colour
 if back_Flat { 
-	draw_plane(draw_space_x,draw_space_y,draw_space_width,draw_space_height,back_Flat_Colour,back_Flat_Alpha);
+	_drawPlane(draw_space_x,draw_space_y,draw_space_width,draw_space_height,back_Flat_Colour,back_Flat_Alpha);
 	};
 
-for ( bgID=1; bgID<=back_StoredBGs; bgID++ ) {
+for ( bgID=1; bgID<=back_StoredBGs; ++bgID ) {
 	
 	//Find Dimensions
 	var width = sprite_get_width(back_StoredBG_Sprite[bgID])*back_StoredBG_ScaleX[bgID];
@@ -42,7 +42,7 @@ for ( bgID=1; bgID<=back_StoredBGs; bgID++ ) {
 		case fa_bottom: 	if set_AnchorToView { anchorY = draw_space_height - height } 
 									 else { anchorY = room_height - height };					break;
 		};
-	if DrawAnchor { draw_plane(anchorX-1,anchorY-1,2,2,c_red,0.8) };
+	if DrawAnchor { _drawPlane(anchorX-1,anchorY-1,2,2,c_red,0.8) };
 
 	//Draw Center
 	DrawX = windowX+anchorX; DrawIDX = 0;
@@ -55,14 +55,14 @@ for ( bgID=1; bgID<=back_StoredBGs; bgID++ ) {
 	
 	//TILE UP
 	if back_StoredBG_Tile[bgID,UP] {
-		for ( var i=1; draw_y+height>0; i++ ) {
+		for ( var i=1; draw_y+height>0; ++i ) {
 			draw_y = anchorY - height * i
 			DrawX = windowX+anchorX; DrawIDX = 0;
 			DrawY = windowY+draw_y; DrawIDY = i;
 			event_user(1);
 			draw_x = width;
 			if ( back_StoredBG_Tile[bgID,LEFT] and back_StoredBG_Tile[bgID,5] ) {
-				for ( var j=1; draw_x+width>0; j++ ) {
+				for ( var j=1; draw_x+width>0; ++j ) {
 					draw_x = anchorX - width * j;
 					DrawX = windowX+draw_x; DrawIDX = -j;
 					event_user(1);
@@ -70,7 +70,7 @@ for ( bgID=1; bgID<=back_StoredBGs; bgID++ ) {
 				};
 			draw_x = width;
 			if ( back_StoredBG_Tile[bgID,RIGHT] and back_StoredBG_Tile[bgID,5] ) {
-				for ( var j=1; draw_x<draw_space_width; j++ ) {
+				for ( var j=1; draw_x<draw_space_width; ++j ) {
 					draw_x = anchorX + width * j
 					DrawX = windowX+draw_x; DrawIDX = j;
 					event_user(1);
@@ -83,14 +83,14 @@ for ( bgID=1; bgID<=back_StoredBGs; bgID++ ) {
 	draw_y = height;
 	draw_x = width;
 	if back_StoredBG_Tile[bgID,DOWN] {
-		for ( var i=1; draw_y<draw_space_y+draw_space_height; i++ ) {
+		for ( var i=1; draw_y<draw_space_y+draw_space_height; ++i ) {
 			draw_y = anchorY + height * i
 			DrawX = windowX+anchorX; DrawIDX = 0;
 			DrawY = windowY+draw_y; DrawIDY = -i;
 			event_user(1);
 			draw_x = width;
 			if ( back_StoredBG_Tile[bgID,LEFT] and back_StoredBG_Tile[bgID,5] ) {
-				for ( var j=1; draw_x+width>0; j++ ) {
+				for ( var j=1; draw_x+width>0; ++j ) {
 					draw_x = anchorX - width * j;
 					DrawX = windowX+draw_x; DrawIDX = -j;
 					event_user(1);
@@ -98,7 +98,7 @@ for ( bgID=1; bgID<=back_StoredBGs; bgID++ ) {
 				};
 			draw_x = width;	
 			if ( back_StoredBG_Tile[bgID,RIGHT] and back_StoredBG_Tile[bgID,5] ) {
-				for ( var j=1; draw_x<draw_space_x+draw_space_width; j++ ) {
+				for ( var j=1; draw_x<draw_space_x+draw_space_width; ++j ) {
 					draw_x = anchorX + width * j
 					DrawX = windowX+draw_x; DrawIDX = j;
 					event_user(1);
@@ -110,7 +110,7 @@ for ( bgID=1; bgID<=back_StoredBGs; bgID++ ) {
 	//TILE LEFT
 	if back_StoredBG_Tile[bgID,LEFT] {
 		draw_x = width;
-		for ( var j=1; draw_x+width>0; j++ ) {
+		for ( var j=1; draw_x+width>0; ++j ) {
 			draw_x = anchorX - width * j;
 			DrawX = windowX+draw_x; DrawIDX = -j;
 			DrawY = windowY+anchorY; DrawIDY = 0;
@@ -121,7 +121,7 @@ for ( bgID=1; bgID<=back_StoredBGs; bgID++ ) {
 	//TILE RIGHT
 	if back_StoredBG_Tile[bgID,RIGHT] {
 		draw_x = width;
-		for ( var j=1; draw_x<draw_space_x+draw_space_width; j++ ) {
+		for ( var j=1; draw_x<draw_space_x+draw_space_width; ++j ) {
 			draw_x = anchorX + width * j
 			DrawX = windowX+draw_x; DrawIDX = j;
 			DrawY = windowY+anchorY; DrawIDY = 0;

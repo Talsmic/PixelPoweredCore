@@ -8,4 +8,4 @@ var draw_y =	argument_count > 1 ? argument[1] : y;
 var colour =	argument_count > 2 ? argument[2] : c_red;
 #endregion
 
-draw_plane(draw_x-1,draw_y-1,2,2,colour,1)
+_drawPlane(draw_x-1,draw_y-1,2,2,colour,1)

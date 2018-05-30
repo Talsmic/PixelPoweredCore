@@ -10,4 +10,4 @@ var region_array = _validateRegion(argument0);
 #endregion
 
 //Draw the plane
-draw_plane(region_array[eR.x1], region_array[eR.y1], region_array[eR.w], region_array[eR.h], c_orange, 0.8, 2);
+_drawPlane(region_array[eR.x1], region_array[eR.y1], region_array[eR.w], region_array[eR.h], c_water, 0.4, 2);

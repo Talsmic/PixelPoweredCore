@@ -20,7 +20,7 @@ if ( variable_instance_exists(id,"ListBackground_Pad_Right") ) { padding[RIGHT] 
 if ( variable_instance_exists(id,"ListBackground_ColumnSpace") ) { spacing[0] = ListBackground_ColumnSpace[ref] };
 //Column Data
 var column_size = array_create(column_count+1,-1);
-for ( var i=0; i<=column_count; i++ ) {
+for ( var i=0; i<=column_count; ++i ) {
 	if ( variable_instance_exists(id,"ListBackground_ColumnSize") ) { column_size[i] = ListBackground_ColumnSize[ref,i] };
 	};
 var header_column = false;
@@ -35,7 +35,7 @@ if ( box_width == -1 ) {
 	//+Padding
 	box_width = padding[LEFT] + padding[RIGHT];
 	//+Column Widths
-	for ( var i=col_start; i<=column_count; i++ ) {
+	for ( var i=col_start; i<=column_count; ++i ) {
 		if ( column_size[i] != -1 ) { box_width += column_size[i] } else { box_width += default_columnsize };
 		};
 	if ( column_count+1-col_start > 1 ) { box_width += spacing[0] * (column_count-col_start) };

@@ -23,8 +23,8 @@ switch ( function_name ) {
 		drawSimplebox(x+arg[0],y+arg[1],arg[2],arg[3]);
 		break;
 		
-	case "draw_plane":
-		draw_plane(x+arg[0],y+arg[1],arg[2],arg[3],arg[4],arg[5],arg[6]);
+	case "_drawPlane":
+		_drawPlane(x+arg[0],y+arg[1],arg[2],arg[3],arg[4],arg[5],arg[6]);
 		break;
 	
 	};

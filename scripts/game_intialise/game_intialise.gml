@@ -17,8 +17,9 @@ global.GUI_MouseY = 0;
 
 global.AlignX =		fa_left;
 global.AlignY =		fa_top;
-global.AlignXo =	fa_left;
-global.AlignYo =	fa_top;
+global.AlignXo =	0;
+global.AlignYo =	0;
+
 global.Font =		ft_EvoTooltip_6;
 global.BaseFont =	ft_EvoTooltip_6;
 

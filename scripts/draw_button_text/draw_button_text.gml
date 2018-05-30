@@ -15,42 +15,42 @@
 */
 #region Arguments
 if argument_count < 3 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
-var draw_x =	argument[0];
-var draw_y =	argument[1];
-var text =		argument[2];
-var colour =	argument_count > 3 ? argument[3] : c_shadow;
-var colour_ol =	argument_count > 4 ? argument[4] : c_shadow_dark;
-var colour_mo =	argument_count > 5 ? argument[5] : c_white;
-var alpha =		argument_count > 6 ? argument[6] : draw_get_alpha();
-var pop =		argument_count > 7 ? argument[7] : 1;
-var outline =	argument_count > 8 ? argument[8] : 0;
-var padding =	argument_count > 9 ? argument[9] : 0;
-var state =		argument_count > 10 ? argument[10] : eButtonState.detect;
+var _x =	argument[0];
+var _y =	argument[1];
+var _text =		argument[2];
+var _colour =	argument_count > 3 ? argument[3] : c_shadow;
+var _colour2 =	argument_count > 4 ? argument[4] : c_shadow_dark;
+var _colour3 =	argument_count > 5 ? argument[5] : c_white;
+var _alpha =		argument_count > 6 ? argument[6] : draw_get_alpha();
+var _pop =		argument_count > 7 ? argument[7] : 1;
+var _outline =	argument_count > 8 ? argument[8] : 0;
+var _padding =	argument_count > 9 ? argument[9] : 0;
+var _state =		argument_count > 10 ? argument[10] : eButtonState.detect;
 #endregion
 
 //Find Region
-var button_region = _textRegion( draw_x, draw_y, "text" );
-if padding { button_region = _alterRegion(button_region,padding+outline) };
+var button_region = _textRegion( _x, _y, "_text" );
+if _padding { button_region = _alterRegion(button_region,_padding+_outline) };
 
 //State Detection
-if ( state == eButtonState.detect ) { state = checkstate_withregion(button_region) };
+if ( _state == eButtonState.detect ) { _state = buttonStateInRegion(button_region) };
 
 //Draw
-if state = eButtonState.disabled {
-	_drawText( draw_x+1, draw_y, text, c_gray2, 0.8 );
-	_drawText( draw_x, draw_y, text, c_gray7, 0.8 );
+if _state = eButtonState.disabled {
+	drawText( _x+1, _y, _text, c_gray2, 0.8 );
+	drawText( _x,   _y, _text, c_gray7, 0.8 );
 	}
-else if state = eButtonState.pressed {
-	_drawText( draw_x+1, draw_y, text, colour_ol, 0.8 );
-	_drawText( draw_x, draw_y, text, colour, alpha );
+else if _state = eButtonState.pressed {
+	drawText( _x+1, _y, _text, _colour2, 0.8 );
+	drawText( _x,   _y, _text, _colour, _alpha );
 	}
 else {
-	if pop { 
-		for ( var i=1 ; i<=pop ; i++ ) {	
-			_drawText( draw_x, draw_y-i+1, text, colour_ol, alpha ) 
-			_drawText( draw_x+1, draw_y-i+1, text, colour_ol, alpha ) 
+	if _pop { 
+		for ( var i=1 ; i<=_pop ; ++i ) {	
+			drawText( _x,   _y-i+1, _text, _colour2, _alpha ) 
+			drawText( _x+1, _y-i+1, _text, _colour2, _alpha ) 
 			};
 		};
-	_drawText( draw_x, draw_y-pop, text, colour, alpha );
-	if state = eButtonState.mouseover { for ( var i=1 ; i<=pop ; i++ ) { _drawText( draw_x, draw_y-pop, text, colour_mo, alpha*0.5 ) } };
+	drawText( _x, _y-_pop, _text, _colour, _alpha );
+	if _state = eButtonState.mouseover { for ( var i=1 ; i<=_pop ; ++i ) { drawText( _x, _y-_pop, _text, _colour3, _alpha*0.5 ) } };
 	};

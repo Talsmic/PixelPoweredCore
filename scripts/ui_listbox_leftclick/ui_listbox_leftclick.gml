@@ -1,5 +1,5 @@
 ///ui_listbox_leftclick();
-if !infocus() exit;
+if !inFocus() exit;
 		
 //Find Correct List Length
 ui_listbox_command("ListLength");
@@ -13,7 +13,7 @@ if ( range_end > Listbox_List_Length ) { range_end = Listbox_List_Length };
 switch ( Listbox_Mode ) {
 	case "Icons":
 		var _x = Listbox_X+18; var _y = Listbox_Y+20; 
-		for ( var i=range_start; i<=range_end; i++ ) {
+		for ( var i=range_start; i<=range_end; ++i ) {
 			if ( _mouseInRegion( _spriteRegion( _x, _y, 24 ) ) ) {
 				Listbox_Position = i;
 				};
@@ -24,7 +24,7 @@ switch ( Listbox_Mode ) {
 	case "Words":
 		var _x = Listbox_X+4; var _y = Listbox_Y+6; 
 		//Draw List
-		for ( var i=range_start; i<=range_end; i++ ) {
+		for ( var i=range_start; i<=range_end; ++i ) {
 			if ( _mouseInRegion( _regionBySize( _x,_y,Listbox_WordWidth,10 ) ) ) {
 				Listbox_Position = i;
 				};

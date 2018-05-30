@@ -127,7 +127,7 @@ switch ( command ) {
 		Listbox_ListWords = 0;
 		Listbox_ListColour = 0;
 		with ( PlayerID ) {
-			for ( var i=1; i<=storage_lastentry(id); i++ ) {
+			for ( var i=1; i<=storage_lastentry(id); ++i ) {
 				if ( !Stored_Status[i] ) { 
 					other.Listbox_ListIcon[i] = 0;
 					other.Listbox_ListWords[i] = " ";
@@ -157,7 +157,7 @@ switch ( command ) {
 		Listbox_ListWords = 0;
 		Listbox_ListColour = 0;
 		with ( PlayerID ) {
-			for ( var i=1; i<=party_lastentry(id); i++ ) {
+			for ( var i=1; i<=party_lastentry(id); ++i ) {
 				if ( !Party_Status[i] ) { 
 					other.Listbox_ListIcon[i] = 0;
 					other.Listbox_ListWords[i] = " ";
