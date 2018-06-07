@@ -14,9 +14,7 @@
 	[[ Draws ]] a ui box of [width],[height] at [x],[y]
 	Optionally, of [spriteset], [colour] and [alpha]
 */
-//enum eTb { 
-//	TL, T, TR, L, M, R, BL, B, BR  };
-#region Arguments
+#region Arguments & Variables
 if argument_count < 1 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var _box =			_validateRegion(argument[0]);
 var _spriteset =	argument_count > 1 ? argument[1] : spr_tilebox_4x4;
@@ -27,8 +25,8 @@ var _tile_stretch =	argument_count > 5 ? _validateArray(argument[5],9,9,[0,1,0,1
 var _output;
 #endregion
 
-var _bw = floor(_box[eR.w]);				//Box Width
-var _bh = floor(_box[eR.h]);				//Box Height
+var _bw = floor(_box[aR.w]);				//Box Width
+var _bh = floor(_box[aR.h]);				//Box Height
 if ( _bh == 0 or _bw == 0 ) { exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>
 var _sw = sprite_get_width(_spriteset);		//Tile Sprite Height
 var _sh = sprite_get_height(_spriteset);	//Tile Sprite Width
@@ -82,8 +80,8 @@ switch ( _rows ) {
 #endregion
 
 #region Draw 
-var _x = _box[eR.x1]; 
-var _y = _box[eR.y1];
+var _x = _box[aR.x1]; 
+var _y = _box[aR.y1];
 var _align;
 for ( var i=0; i<9 ; i+=3 ) { 
 	
@@ -101,7 +99,7 @@ for ( var i=0; i<9 ; i+=3 ) {
 			};		
 			
 		};
-	_x = _box[eR.x1]; 
+	_x = _box[aR.x1]; 
 	_y += _tile_h[j-1];
 	};
 #endregion

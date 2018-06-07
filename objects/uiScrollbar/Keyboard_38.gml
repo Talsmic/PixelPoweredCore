@@ -1,2 +1,2 @@
-ScrollBar[@ eScrollbar.value] = clamp(ScrollBar[eScrollbar.value]+1, 0, ScrollBar[eScrollbar.max_value]);
-//ScrollBar[eScrollbar.value]++
+ScrollBar[@ aScrollbar.value] = clamp(ScrollBar[aScrollbar.value]-1, 0, ScrollBar[aScrollbar.max_value]);
+//ScrollBar[aScrollbar.value]++

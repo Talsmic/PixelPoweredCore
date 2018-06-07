@@ -6,7 +6,7 @@
 /// @arg [alpha]			{real|0..1}		(default: draw_get_alpha())
 /// @arg [stretch]			{boolean}		(default: true) (will tile to fit the region if not stretched)
 /// @arg [align_array]		{array}			(default: [fa_left,fa_right])
-#region Arguments
+#region Arguments & Variables
 var _sprite =	argument_count > 1 ? argument[1] : sprite_index;
 var _image =	argument_count > 2 ? argument[2] : image_index;
 var _draw =		argument_count > 0 ? _validateRegion(argument[0]) : [x,y,x+sprite_get_width(_sprite),y+sprite_get_height(_sprite),sprite_get_width(_sprite),sprite_get_height(_sprite)];
@@ -18,15 +18,15 @@ var _align =	argument_count > 6 ? _validateArray(argument[6],2,2,argument[6]) : 
 var _sprite_height = sprite_get_height(_sprite);
 var _sprite_width =  sprite_get_width(_sprite);
 //var _sprite_offset = [sprite_get_xoffset(_sprite), sprite_get_yoffset(_sprite)];
-var _tiles_x = _draw[eR.w] div _sprite_width;
-var _tiles_y = _draw[eR.h] div _sprite_height;
-var _extra_x = floor(_draw[eR.w] mod _sprite_width);
-var _extra_y = floor(_draw[eR.h] mod _sprite_height);
-var _x = _draw[eR.x1];
-var _y = _draw[eR.y1];
+var _tiles_x = _draw[aR.w] div _sprite_width;
+var _tiles_y = _draw[aR.h] div _sprite_height;
+var _extra_x = floor(_draw[aR.w] mod _sprite_width);
+var _extra_y = floor(_draw[aR.h] mod _sprite_height);
+var _x = _draw[aR.x1];
+var _y = _draw[aR.y1];
 #endregion
 
-if ( _stretch ) {	drawSprite_Stretched(_x, _y, _sprite, _image, _colour[0], _alpha, _draw[eR.w], _draw[eR.h])	}
+if ( _stretch ) {	drawSprite_Stretched(_x, _y, _sprite, _image, _colour[0], _alpha, _draw[aR.w], _draw[aR.h])	}
 else {	//Tile
 	
 	for ( var i=1; i<=_tiles_y; ++i ) {
@@ -35,14 +35,14 @@ else {	//Tile
 			_x += _sprite_width;
 			};
 		
-		_x = _draw[eR.x1];
+		_x = _draw[aR.x1];
 		_y += _sprite_height;
 		};	
 	
 	//Leftovers
 	if ( _extra_x ) { 
-		_x = _draw[eR.x2]-_extra_x;
-		_y = _draw[eR.y1];		
+		_x = _draw[aR.x2]-_extra_x;
+		_y = _draw[aR.y1];		
 		for ( var i=1; i<=_tiles_y; ++i ) { 
 			var _offset_x = _align[0] = fa_left ? 0 : ( _align[0] = fa_center ? (_sprite_width-_extra_x) div 2 : _sprite_width-_extra_x);
 			draw_sprite_general( _sprite, _image, _offset_x, 0, _extra_x, _sprite_height, _x, _y, 1, 1, 0, _colour[0], _colour[1], _colour[2], _colour[3], _alpha );
@@ -50,8 +50,8 @@ else {	//Tile
 			}; 
 		};
 	if ( _extra_y ) { 
-		_x = _draw[eR.x1];
-		_y = _draw[eR.y2]-_extra_y;				
+		_x = _draw[aR.x1];
+		_y = _draw[aR.y2]-_extra_y;				
 		for ( var j=1; j<=_tiles_x; ++j ) { 
 			var _offset_y = _align[1] = fa_top ? 0 : ( _align[1] = fa_middle ? (_sprite_height-_extra_y) div 2 : _sprite_height-_extra_y);
 			draw_sprite_general( _sprite, _image, 0, _offset_y, _sprite_width, _extra_y,  _x, _y, 1, 1, 0, _colour[0], _colour[1], _colour[2], _colour[3], _alpha ); 
@@ -59,8 +59,8 @@ else {	//Tile
 			}; 
 		};
 	if ( _extra_x and _extra_y ) { 
-		_x = _draw[eR.x2]-_extra_x;
-		_y = _draw[eR.y2]-_extra_y;		
+		_x = _draw[aR.x2]-_extra_x;
+		_y = _draw[aR.y2]-_extra_y;		
 		_offset_x = _align[0] = fa_left ? 0 : ( _align[0] = fa_center ? (_sprite_width-_extra_x) div 2 : _sprite_width-_extra_x);
 		_offset_y = _align[1] = fa_top ? 0 : ( _align[1] = fa_middle ? (_sprite_height-_extra_y) div 2 : _sprite_height-_extra_y);			
 		draw_sprite_general( _sprite, _image, _offset_x, _offset_y, _extra_x, _extra_y,  _x, _y, 1, 1, 0, _colour[0], _colour[1], _colour[2], _colour[3], _alpha ); 

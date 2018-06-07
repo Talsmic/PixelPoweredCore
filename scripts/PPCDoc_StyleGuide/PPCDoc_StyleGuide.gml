@@ -30,7 +30,7 @@
 	- Order names in ways that make sense, based on the order you need to gather 
 	  the information as you read it.
 -[Variables]--------------------------------------------------------------------
-	var objvariable			all lower case
+	var _objvariable			all lower case
 	InstanceVariable			Start with a capital, new captial ForEachWord
 	global.GlobalVariable		As with InstanceVariables	
 	MACROS						ALL CAPITALS
@@ -39,7 +39,7 @@
 	bg_background
 -[Functions / Scripts]----------------------------------------------------------
 	typeoffuntion_category_functionality(arguments);
-	 (eg drawTextOutlined)							draw[Type of Function]
+	 (eg drawText_Outlined)							draw[Type of Function]
 													_text[Category]
 													_outline[Functionality]
 	question(arguments);

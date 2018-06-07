@@ -42,7 +42,7 @@ switch ( Listbox_Mode ) {
 	
 	case "Icons": #region
 		var _x = Listbox_X+18; var _y = Listbox_Y+21; 
-		_setFont(ft_EvoTooltip_6_Bold);
+		_setFont(ft_Pixis07_Bold);
 		_setAlign(fa_right);
 		for ( var i=range_start; i<=range_end; ++i ) {
 			//Replace missing colours
@@ -61,7 +61,7 @@ switch ( Listbox_Mode ) {
 			//Draw Focus
 			if ( i == Listbox_Position ) { draw_icon_halo(_x,_y,24,c_orange,icon_rarity,eSkillButtonState.detect,0.75) };		
 			//Draw ID
-			if ( Listbox_ShowID ) { drawTextOutlined(_x+14,_y+6,i,c_gray9,c_gray2) };	
+			if ( Listbox_ShowID ) { drawText_Outlined(_x+14,_y+6,i,c_gray9,c_gray2) };	
 			//Progress Locations
 			_x += 30;
 			if ( _x > Listbox_X+Listbox_Row_Length*30 ) { _x = Listbox_X+18; _y += 31 };
@@ -71,25 +71,25 @@ switch ( Listbox_Mode ) {
 		
 	case "Words": #region
 		var _x = Listbox_X+4; var _y = Listbox_Y+6; 
-		_setFont(ft_EvoTooltip_6_Bold);
+		_setFont(ft_Pixis07_Bold);
 		for ( var i=range_start; i<=range_end; ++i ) {
 			//Replace missing colours
 			if ( array_length_1d(Listbox_ListColour) < i ) { Listbox_ListColour[i] = c_white };		
 			//Draw Focus
 			if ( i == Listbox_Position ) {	
-				_drawPlane(_x-4,_y-1,Listbox_WordWidth+6,11,c_gray7,0.3);
-				_drawPlane(_x-4,_y,Listbox_WordWidth+6,9,c_gray2,1); 
+				drawPlane(_x-4,_y-1,Listbox_WordWidth+6,11,c_gray7,0.3);
+				drawPlane(_x-4,_y,Listbox_WordWidth+6,9,c_gray2,1); 
 				};
 			//Clip strings and Draw List
 			var drawstring = Listbox_ListWords[i];
 			if ( Listbox_ShowID ) { 	
 				if ( string_width(drawstring) > Listbox_WordWidth - 30 ) { drawstring = string_delete(drawstring,14,100)+"...";}; //Clip Extra long words
 				drawText(_x,_y,"["+string(i)+"]:",c_gray9,1);
-				drawText(_x+30,_y,drawstring,find_colour(Listbox_ListColour[i]),1);
+				drawText(_x+30,_y,drawstring,findColour(Listbox_ListColour[i]),1);
 				};	
 			else { 
 				if ( string_width(drawstring) > Listbox_WordWidth ) { drawstring = string_delete(drawstring,18,100)+"...";}; //Clip Extra long words
-				drawText(_x,_y,drawstring,find_colour(Listbox_ListColour[i]),1);
+				drawText(_x,_y,drawstring,findColour(Listbox_ListColour[i]),1);
 				};		
 			//Progress Locations		
 			_x += Listbox_WordWidth;

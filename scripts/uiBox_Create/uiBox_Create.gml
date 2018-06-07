@@ -25,14 +25,14 @@ _output[? "Box_Offset"] =			[0,0];
 
 _output[? "Heading_Draw"] =			false;
 _output[? "Heading_Text"] =			"uiBox";
-_output[? "Heading_Font"] =			ft_EvoTooltip_6_Bold;
+_output[? "Heading_Font"] =			ft_Pixis07_Bold;
 _output[? "Heading_Colour"] =		c_orange;
 _output[? "Heading_Alpha"] =		1;
 _output[? "Heading_Offset"] =		[0,0];
 _output[? "Heading_Padding"] =		2;
 
 _output[? "Body_Draw"] =			true;
-_output[? "Body_Font"] =			ft_EvoTooltip_6;
+_output[? "Body_Font"] =			ft_Pixis07;
 _output[? "Body_Colour"] =			[c_gray13, c_gray12];
 _output[? "Body_Alpha"] =			1;
 _output[? "Body_Offset"] =			[0,0];
@@ -86,7 +86,7 @@ var ui_heading_draw =			_dsMapValue("Heading_Draw",						false);
 if ( ui_heading_draw ) {
 	
 //var ui_heading_text =			_dsMapValue("Heading_Text",						"uiBox");
-//var ui_heading_font =			_dsMapValue("Heading_Font",						ft_EvoTooltip_6_Bold);
+//var ui_heading_font =			_dsMapValue("Heading_Font",						ft_Pixis07_Bold);
 //var ui_heading_colour =			_dsMapValue("Heading_Colour",					c_orange);
 //var ui_heading_alpha =			_dsMapValue("Heading_Alpha",					1);
 //var ui_heading_offset =			_dsMapValue("Heading_Offset",					[0,0]);
@@ -100,7 +100,7 @@ var ui_body_draw =				_dsMapValue(_ui_settings,"Body_Draw",			true);
 #region Body Data
 if ( ui_body_draw ) { 
 	
-//var ui_body_font =				_dsMapValue(_ui_settings,"Body_Font",			ft_EvoTooltip_6);
+//var ui_body_font =				_dsMapValue(_ui_settings,"Body_Font",			ft_Pixis07);
 //var ui_body_colour =			_dsMapValue(_ui_settings,"Body_Colour",			[c_gray13]);
 //var ui_body_alpha =				_dsMapValue(_ui_settings,"Body_Alpha",			1);
 //var ui_body_offset =			_dsMapValue(_ui_settings,"Body_Offset",			[0,0]);

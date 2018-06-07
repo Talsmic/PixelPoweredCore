@@ -1,4 +1,4 @@
-///uiBox_drawDSMap(x,y,ds_map,[ui_settings],[rows],[starting_row]);
+///uiBox_DrawDSMap(x,y,ds_map,[ui_settings],[rows],[starting_row]);
 /// @arg x				{real}
 /// @arg y				{real}
 /// @arg ds_map			#ds_map#		
@@ -41,7 +41,7 @@ var ui_heading_draw =			_dsMapValue(_ui_settings,"Heading_Draw",		true);
 if ( ui_heading_draw ) {
 	
 var ui_heading_text =			_dsMapValue(_ui_settings,"Heading_Text",		"dsMap["+string(_dsmap)+"] Contents:");
-var ui_heading_font =			_dsMapValue(_ui_settings,"Heading_Font",		ft_EvoTooltip_6_Bold);
+var ui_heading_font =			_dsMapValue(_ui_settings,"Heading_Font",		ft_Pixis07_Bold);
 var ui_heading_colour =			_dsMapValue(_ui_settings,"Heading_Colour",		c_orange);
 var ui_heading_alpha =			_dsMapValue(_ui_settings,"Heading_Alpha",		1);
 var ui_heading_offset =			_dsMapValue(_ui_settings,"Heading_Offset",		[0,0]);
@@ -55,7 +55,7 @@ var ui_body_draw =				_dsMapValue(_ui_settings,"Body_Draw",			true);
 #region Body Data
 if ( ui_body_draw ) { 
 	
-var ui_body_font =				_dsMapValue(_ui_settings,"Body_Font",			ft_EvoTooltip_6);
+var ui_body_font =				_dsMapValue(_ui_settings,"Body_Font",			ft_Pixis07);
 var ui_body_colour =			_dsMapValue(_ui_settings,"Body_Colour",			[c_gray13]);
 var ui_body_alpha =				_dsMapValue(_ui_settings,"Body_Alpha",			1);
 var ui_body_offset =			_dsMapValue(_ui_settings,"Body_Offset",			[0,0]);
@@ -161,8 +161,8 @@ if ( ui_body_draw ) {
 	_y += ui_body_offset[1];
 	_setFont(ui_body_font);
 	//Draw Columns
-	_drawPlanes(_x, _y, 1, _rows, ui_row_header_width, ui_row_height, _table_spacing, ui_row_header_colour, ui_row_alpha, 0);
-	_drawPlanes(_x+_table_spacing[0]+ui_row_header_width, _y, 1, _rows, ui_column_width, ui_row_height, _table_spacing, ui_column_colour, ui_column_alpha, 0);
+	drawPlanes(_x, _y, 1, _rows, ui_row_header_width, ui_row_height, _table_spacing, ui_row_header_colour, ui_row_alpha, 0);
+	drawPlanes(_x+_table_spacing[0]+ui_row_header_width, _y, 1, _rows, ui_column_width, ui_row_height, _table_spacing, ui_column_colour, ui_column_alpha, 0);
 	//Draw Values
 	_drawDSMap(_x, _y, _dsmap, ui_body_colour, ui_body_alpha, _rows, _starting_row, [ui_row_header_width, ui_column_width[0]], ui_row_height, _table_spacing);
 	};

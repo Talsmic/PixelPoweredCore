@@ -1,3 +1,3 @@
 /// @desc Tabset Left Click
 
-uiTabset_leftclick(1);
+uiTabset_LeftClick(1);

@@ -7,21 +7,21 @@ if Minimised {
 	exit;
 	}
 else {
-	_drawPlane(0,0,_resolutionGetWidth(),12,c_black,0.8)
-	_setFont(ft_EvoTooltip_6_Bold);
+	drawPlane(0,0,_resolutionGetWidth(),12,c_black,0.8)
+	_setFont(ft_Pixis07_Bold);
 	drawText(2,2,"PixelPowered DevKit",c_orange,1);
 	drawBlackbox(-4,12,22,12,[1,1,0,0]);
 	draw_sprite(spr_scrollarrow,0,8,17);
 	};
 
 	
-uiTabset_draw(1);
+uiTabset_Draw(1);
 
 
 switch ( Mode ) {
 	
 	case "Instances":
-		uiTabset_draw(2);
+		uiTabset_Draw(2);
 		switch ( SubMode ) {
 			
 			case "Settings": break;

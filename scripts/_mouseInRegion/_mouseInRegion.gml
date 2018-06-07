@@ -4,7 +4,7 @@
 /*
 	<< Returns >> {boolean}
 */
-#region Arguments
+#region Arguments & Variables
 if argument_count < 1 { show_debug_message("ArgError"); return false };//[!Break!]~~~~~>
 var region_array =	_validateRegion(argument[0]);
 var mouse_layer =	argument_count > 1 ? argument[1] : _useGUIMouse();
@@ -13,7 +13,7 @@ var mouse_layer =	argument_count > 1 ? argument[1] : _useGUIMouse();
 var m_x = mouse_layer ? global.GUI_MouseX : mouse_x;
 var m_y = mouse_layer ? global.GUI_MouseY : mouse_y;
 
-if ( point_in_rectangle(m_x, m_y, region_array[eR.x1], region_array[eR.y1], region_array[eR.x2], region_array[eR.y2]) ) {
+if ( point_in_rectangle(m_x, m_y, region_array[aR.x1], region_array[aR.y1], region_array[aR.x2], region_array[aR.y2]) ) {
 	return true;
 	};
 	

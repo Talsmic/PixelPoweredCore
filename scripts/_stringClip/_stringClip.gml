@@ -5,7 +5,7 @@
 /*
 	<< Returns >> {string}: Clipped [input]
 */
-#region Arguments
+#region Arguments & Variables
 if argument_count < 2 { show_debug_message("ArgError _stringClip"); return argument[0] };//[!Break!]
 var input =			string(argument[0]);
 var max_length =	argument[1] > 10 ? argument[1] : 10;

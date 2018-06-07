@@ -1,4 +1,4 @@
-_setFont(ft_EvoTooltip_6_Bold);
+_setFont(ft_Pixis07_Bold);
 
-drawTextOutlined(global.GUI_MouseX+5,global.GUI_MouseY+20,string(mouse_x)+","+string(mouse_y),c_nature);
-drawTextOutlined(global.GUI_MouseX+5,global.GUI_MouseY+10,string(global.GUI_MouseX)+","+string(global.GUI_MouseY),c_shadow);
+drawText_Outlined(global.GUI_MouseX+5, global.GUI_MouseY+20, string(mouse_x)+","+string(mouse_y), c_nature);
+drawText_Outlined(global.GUI_MouseX+5, global.GUI_MouseY+10, string(global.GUI_MouseX)+","+string(global.GUI_MouseY), c_shadow);

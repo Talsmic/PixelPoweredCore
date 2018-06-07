@@ -1,1 +1,1 @@
-ScrollBar = createScrollBar(x, y, 100, 20, eDirection.up, true, spr_scrollbar, c_white);
+ScrollBar = uiScrollBar_Create([x,y,x+100,y+100,100,100], 40, RIGHT, true, spr_scrollbar, c_white);

@@ -7,13 +7,13 @@
 */
 if !instance_exists(FocusController) return true;//[!Break!]~~~~~~~~~~~~~~~~~~>
 if !FocusController.Setting_ManageFocus return true;//[!Break!]~~~~~~~~~~~~~~~>
-#region Arguments
+#region Arguments & Variables
 var object_id =	argument_count > 0 ? argument[0] : id;
 #endregion
 
 //If Focus isn't being tracked on the object, it can be interacted with no 
 //matter what, so return true
-if !has_objv("foc_FocusLevel",object_id) return true;//[!Break!]~~~~~~~~~~~~~~~~~~>
+if !_objvExists("foc_FocusLevel", object_id) return true;//[!Break!]~~~~~~~~~~~~~~~~~~>
 
 //If Focus is being tracked and is too low for the object, return false, it 
 //can't be interacted with

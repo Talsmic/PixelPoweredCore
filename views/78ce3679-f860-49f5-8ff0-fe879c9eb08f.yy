@@ -7,7 +7,8 @@
         "d25485c8-13f6-44cd-9c70-38e5ff4ee617",
         "f759f99d-f0d8-491c-94da-81da7bd0f9f4",
         "b54499e1-01ec-443d-aec3-742080d22e79",
-        "e7cb5eb3-fbaf-402e-b706-1a99870c4de1"
+        "e7cb5eb3-fbaf-402e-b706-1a99870c4de1",
+        "0c299c87-8139-43ad-b8fb-ce114908d645"
     ],
     "filterType": "GMScript",
     "folderName": "[PPDK][PixelPowered DevKit]",

@@ -6,7 +6,7 @@
 /*
 	<< Returns >> {string}: Clipped [input]
 */
-#region Arguments
+#region Arguments & Variables
 if argument_count < 1 { show_debug_message("ArgError _stringHeight"); exit };//[!Break!]
 var _string =		string(argument[0]);
 var _font =			argument_count > 1 ? argument[1] : -1;

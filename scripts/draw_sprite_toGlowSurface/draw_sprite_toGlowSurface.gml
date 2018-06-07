@@ -8,7 +8,7 @@
 /// @arg [rotation]		{integer|0..360}		(default: 0)
 /// @arg [x]			{real}					(default: SEE NOTES)
 /// @arg [y]			{real}					(default: SEE NOTES)
-#region Arguments
+#region Arguments & Variables
 /* 
 !Important notes on arguments for this function!
 	

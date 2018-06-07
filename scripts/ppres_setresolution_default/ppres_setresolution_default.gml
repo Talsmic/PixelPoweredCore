@@ -5,7 +5,7 @@
 	Creates all the variables that ResolutionController needs to function, 
 	setting them to their defaults.
 */
-#region Arguments
+#region Arguments & Variables
 var usesettings = argument_count > 0 ? argument[0] : true;
 #endregion
 

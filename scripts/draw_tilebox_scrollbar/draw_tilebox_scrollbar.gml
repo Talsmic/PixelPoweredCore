@@ -11,7 +11,7 @@
 /*	
 	[[ Draws ]] a scrollbar that matches a tilebox
 */
-#region Arguments
+#region Arguments & Variables
 if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var draw_x =	argument[0]; 
 var draw_y =	argument[1];
@@ -82,56 +82,56 @@ switch ( state ) {
 		
 	case eButtonState.mouseover:
 		overlay_alpha = 0.2;
-		offset_icon = global.GameBeat*2 -1;
+		offset_icon = global.GamaBeat*2 -1;
 		break;
 		
 	};
 #endregion
 
 #region Draw
-draw_tilebox( draw_region[eR.x1], draw_region[eR.x1], draw_region[eR.x1], draw_region[eR.x1], colour, alpha, spriteset, corners );
-draw_tilebox( draw_region[eR.x1], draw_region[eR.x1], draw_region[eR.x1], draw_region[eR.x1], overlay_colour, overlay_alpha, spriteset, corners );
+__draw_tilebox( draw_region[aR.x1], draw_region[aR.x1], draw_region[aR.x1], draw_region[aR.x1], colour, alpha, spriteset, corners );
+__draw_tilebox( draw_region[aR.x1], draw_region[aR.x1], draw_region[aR.x1], draw_region[aR.x1], overlay_colour, overlay_alpha, spriteset, corners );
 switch ( bar_side ) {
 	
-	case TOP:		draw_sprite(spr_scrollarrow, 0+offset_sprite, draw_region[eR.x1] + (length div 2), draw_region[eR.y1] + (thickness div 2) - offset_icon); break;
-	case RIGHT:		draw_sprite(spr_scrollarrow, 2+offset_sprite, draw_region[eR.x1] + (length div 2) + offset_icon, draw_region[eR.y1] + (thickness div 2)); break;
-	case BOTTOM:	draw_sprite(spr_scrollarrow, 4+offset_sprite, draw_region[eR.x1] + (length div 2), draw_region[eR.y1] + (thickness div 2) + offset_icon); break;
-	case LEFT:		draw_sprite(spr_scrollarrow, 6+offset_sprite, draw_region[eR.x1] + (length div 2) - offset_icon, draw_region[eR.y1] + (thickness div 2)); break;
+	case TOP:		draw_sprite(spr_scrollarrow, 0+offset_sprite, draw_region[aR.x1] + (length div 2), draw_region[aR.y1] + (thickness div 2) - offset_icon); break;
+	case RIGHT:		draw_sprite(spr_scrollarrow, 2+offset_sprite, draw_region[aR.x1] + (length div 2) + offset_icon, draw_region[aR.y1] + (thickness div 2)); break;
+	case BOTTOM:	draw_sprite(spr_scrollarrow, 4+offset_sprite, draw_region[aR.x1] + (length div 2), draw_region[aR.y1] + (thickness div 2) + offset_icon); break;
+	case LEFT:		draw_sprite(spr_scrollarrow, 6+offset_sprite, draw_region[aR.x1] + (length div 2) - offset_icon, draw_region[aR.y1] + (thickness div 2)); break;
 	/*
 	case TOP:
-		draw_sprite_ext(				spriteset, 1, draw_region[eR.x1],			draw_region[eR.y1],    1,		  1, 0,  colour, 1);
-		draw_sprite_stretched_ext(		spriteset, 2, draw_region[eR.x1]+tw,		draw_region[eR.y1],	   length-tw, th,    colour, 1);
-		draw_sprite_ext(				spriteset, 3, draw_region[eR.x1]+length-tw, draw_region[eR.y1],	   1,		  1, 0,  colour, 1);
+		draw_sprite_ext(				spriteset, 1, draw_region[aR.x1],			draw_region[aR.y1],    1,		  1, 0,  colour, 1);
+		draw_sprite_stretched_ext(		spriteset, 2, draw_region[aR.x1]+tw,		draw_region[aR.y1],	   length-tw, th,    colour, 1);
+		draw_sprite_ext(				spriteset, 3, draw_region[aR.x1]+length-tw, draw_region[aR.y1],	   1,		  1, 0,  colour, 1);
 		if ( extra ) {
-			draw_sprite_stretched_ext(	spriteset, 4, draw_region[eR.x1],			draw_region[eR.y1]+th, tw,		  extra, colour, 1);
-			draw_sprite_stretched_ext(	spriteset, 5, draw_region[eR.x1]+tw,		draw_region[eR.y1]+th, length-tw, extra, colour, 1);
-			draw_sprite_stretched_ext(	spriteset, 6, draw_region[eR.x1]+length-tw,	draw_region[eR.y1]+th, tw,		  extra, colour, 1);
+			draw_sprite_stretched_ext(	spriteset, 4, draw_region[aR.x1],			draw_region[aR.y1]+th, tw,		  extra, colour, 1);
+			draw_sprite_stretched_ext(	spriteset, 5, draw_region[aR.x1]+tw,		draw_region[aR.y1]+th, length-tw, extra, colour, 1);
+			draw_sprite_stretched_ext(	spriteset, 6, draw_region[aR.x1]+length-tw,	draw_region[aR.y1]+th, tw,		  extra, colour, 1);
 			};
-		draw_sprite(spr_scrollarrow, 0+offset_sprite, draw_region[eR.x1] + (length div 2), draw_region[eR.y1] + (thickness div 2) - offset_icon);
+		draw_sprite(spr_scrollarrow, 0+offset_sprite, draw_region[aR.x1] + (length div 2), draw_region[aR.y1] + (thickness div 2) - offset_icon);
 		break;
 		
 	case BOTTOM:
-		draw_sprite_ext(				spriteset, 7, draw_region[eR.x1],			draw_region[eR.y1],    1,		  1, 0,  colour, 1);
-		draw_sprite_stretched_ext(		spriteset, 8, draw_region[eR.x1]+tw,		draw_region[eR.y1],	   length-tw, th,    colour, 1);
-		draw_sprite_ext(				spriteset, 9, draw_region[eR.x1]+length-tw, draw_region[eR.y1],	   1,		  1, 0,  colour, 1);
+		draw_sprite_ext(				spriteset, 7, draw_region[aR.x1],			draw_region[aR.y1],    1,		  1, 0,  colour, 1);
+		draw_sprite_stretched_ext(		spriteset, 8, draw_region[aR.x1]+tw,		draw_region[aR.y1],	   length-tw, th,    colour, 1);
+		draw_sprite_ext(				spriteset, 9, draw_region[aR.x1]+length-tw, draw_region[aR.y1],	   1,		  1, 0,  colour, 1);
 		if ( extra ) {
-			draw_sprite_stretched_ext(	spriteset, 4, draw_region[eR.x1],			draw_region[eR.y1]+th, tw,		  extra, colour, 1);
-			draw_sprite_stretched_ext(	spriteset, 5, draw_region[eR.x1]+tw,		draw_region[eR.y1]+th, length-tw, extra, colour, 1);
-			draw_sprite_stretched_ext(	spriteset, 6, draw_region[eR.x1]+length-tw,	draw_region[eR.y1]+th, tw,		  extra, colour, 1);
+			draw_sprite_stretched_ext(	spriteset, 4, draw_region[aR.x1],			draw_region[aR.y1]+th, tw,		  extra, colour, 1);
+			draw_sprite_stretched_ext(	spriteset, 5, draw_region[aR.x1]+tw,		draw_region[aR.y1]+th, length-tw, extra, colour, 1);
+			draw_sprite_stretched_ext(	spriteset, 6, draw_region[aR.x1]+length-tw,	draw_region[aR.y1]+th, tw,		  extra, colour, 1);
 			};
-		draw_sprite(spr_scrollarrow, 4+offset_sprite, draw_region[eR.x1] + (length div 2), draw_region[eR.y1] + (thickness div 2) + offset_icon);
+		draw_sprite(spr_scrollarrow, 4+offset_sprite, draw_region[aR.x1] + (length div 2), draw_region[aR.y1] + (thickness div 2) + offset_icon);
 		break;
 		
 	case LEFT:
-		draw_sprite_ext(				spriteset, 1, draw_region[eR.x1],			draw_region[eR.y1],    1,		  1, 0,  colour, 1);
-		draw_sprite_stretched_ext(		spriteset, 4, draw_region[eR.x1]+tw,		draw_region[eR.y1],	   length-tw, th,    colour, 1);
-		draw_sprite_ext(				spriteset, 7, draw_region[eR.x1]+length-tw, draw_region[eR.y1],	   1,		  1, 0,  colour, 1);
+		draw_sprite_ext(				spriteset, 1, draw_region[aR.x1],			draw_region[aR.y1],    1,		  1, 0,  colour, 1);
+		draw_sprite_stretched_ext(		spriteset, 4, draw_region[aR.x1]+tw,		draw_region[aR.y1],	   length-tw, th,    colour, 1);
+		draw_sprite_ext(				spriteset, 7, draw_region[aR.x1]+length-tw, draw_region[aR.y1],	   1,		  1, 0,  colour, 1);
 		if ( extra ) {
-			draw_sprite_stretched_ext(	spriteset, 3, draw_region[eR.x1],			draw_region[eR.y1]+th, tw,		  extra, colour, 1);
-			draw_sprite_stretched_ext(	spriteset, 5, draw_region[eR.x1]+tw,		draw_region[eR.y1]+th, length-tw, extra, colour, 1);
-			draw_sprite_stretched_ext(	spriteset, 8, draw_region[eR.x1]+length-tw,	draw_region[eR.y1]+th, tw,		  extra, colour, 1);
+			draw_sprite_stretched_ext(	spriteset, 3, draw_region[aR.x1],			draw_region[aR.y1]+th, tw,		  extra, colour, 1);
+			draw_sprite_stretched_ext(	spriteset, 5, draw_region[aR.x1]+tw,		draw_region[aR.y1]+th, length-tw, extra, colour, 1);
+			draw_sprite_stretched_ext(	spriteset, 8, draw_region[aR.x1]+length-tw,	draw_region[aR.y1]+th, tw,		  extra, colour, 1);
 			};
-		draw_sprite(spr_scrollarrow, 0+offset_sprite, draw_region[eR.x1] + (length div 2), draw_region[eR.y1] + (thickness div 2) - offset_icon);
+		draw_sprite(spr_scrollarrow, 0+offset_sprite, draw_region[aR.x1] + (length div 2), draw_region[aR.y1] + (thickness div 2) - offset_icon);
 		break;*/
 		
 	};

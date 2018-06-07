@@ -1,12 +1,12 @@
 //Check Keypress
 var MoveLeft =	keyboard_check( ord("A") );
-var MoveRight = keyboard_check( ord("D") );
+var MovaRight = keyboard_check( ord("D") );
 var MoveUp =	keyboard_check( ord("W") );
 var MoveDown =	keyboard_check( ord("S") );
 
 //Move
 if ( MoveLeft )		{	x -= MovementSpeed; image_angle = 90;	};
-if ( MoveRight )	{	x += MovementSpeed; image_angle = 270;	};
+if ( MovaRight )	{	x += MovementSpeed; image_angle = 270;	};
 if ( MoveUp )		{	y -= MovementSpeed; image_angle = 0;	};
 if ( MoveDown )		{	y += MovementSpeed; image_angle = 180;	};
 

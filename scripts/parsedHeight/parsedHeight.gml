@@ -4,7 +4,7 @@
 /// @arg [max_width]		{integer}		(default: -1)
 /// @arg [spacing]			{integer}		(default: string_height("|"))
 /// @arg [line_breaks]		{array|strings}	(default: ["#"])
-#region Arguments
+#region Arguments & Variables
 var text_array =	argument_count > 0 ? _validateArray(argument[0]) : _validateArray(global.ParsedText);
 var format_array =	argument_count > 1 ? _validateArray(argument[1]) : _validateArray(global.ParsedText_Format);
 var max_width =		argument_count > 2 ? argument[2] : -1;

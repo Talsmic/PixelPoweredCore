@@ -17,7 +17,7 @@ Tabset_Y[4] = _y+height;
 
 drawSimplebox(_x,_y,width,height);
 
-uiTabset_draw(1);
-uiTabset_draw(2);
-uiTabset_draw(3);
-uiTabset_draw(4);
+uiTabset_Draw(1);
+uiTabset_Draw(2);
+uiTabset_Draw(3);
+uiTabset_Draw(4);

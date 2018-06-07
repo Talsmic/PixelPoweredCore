@@ -75,7 +75,7 @@ ui_ListBackground_draw();
 
 //Draw Header
 
-_setFont(ft_EvoTooltip_6_Condensed);
+_setFont(ft_Pixis07_Condensed);
 //Draw Table Contents
 _setAlign(fa_right);
 _arrayDrawVertical(box_x+82,box_y+ListBackground_Pad_Top[0],boxA_col1,c_black,1,12,78);
@@ -86,9 +86,9 @@ _setAlign(fa_center);
 _arrayDrawVertical(box_x+108,box_y+ListBackground_Pad_Top[0],boxA_col2,c_gray9,1,12);
 _arrayDrawVertical(box_x+108,box_y+ListBackground_Pad_Top[0]+12*rA,boxB_col2,c_gray9,1,12);
 _setAlign(fa_left);
-_setFont(ft_EvoTooltip_6_Condensed);
+_setFont(ft_Pixis07_Condensed);
 _arrayDrawVertical(box_x+136,box_y+ListBackground_Pad_Top[0],boxA_col3,c_white,1,12,48);
 _arrayDrawVertical(box_x+136,box_y+ListBackground_Pad_Top[0]+12*rA,boxB_col3,c_white,1,12,48);
 //Draw MouseOvers
-if ( _mouseInRegion_array2d_column(LastListRegions,3) )
-	_drawRegion(_mouseInRegion_array2d_column(LastListRegions,3),c_white,1)
+if ( _mouseInRegions_Array2DColumn(LastListRegions,3) )
+	drawRegion(_mouseInRegions_Array2DColumn(LastListRegions,3),c_white,1)

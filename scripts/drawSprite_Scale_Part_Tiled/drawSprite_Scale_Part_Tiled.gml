@@ -11,7 +11,7 @@
 /// @arg [clip_region]	#region#		 (default: [0,0,5,5,5,5])
 /// @arg [tiles_x]		{integer}		 (default: 1)
 /// @arg [tiles_y]		{integer}		 (default: 1)
-#region Arguments
+#region Arguments & Variables
 var _x =		argument_count > 0 ? argument[0] : x;
 var _y =		argument_count > 1 ? argument[1] : y;
 var _sprite =	argument_count > 2 ? argument[2] : sprite_index;
@@ -28,10 +28,10 @@ var _tiles_y =	argument_count > 11 ? argument[11] : 1;
 
 for ( var i=1; i<=_tiles_y; ++i ) {
 	for ( var j=1; j<=_tiles_x; ++j ) {
-		draw_sprite_general( _sprite, _image, _clip[eR.x1], _clip[eR.y1], _clip[eR.w], _clip[eR.h], _x, _y, _scalex, _scaley, _rotation, _colour[0], _colour[1], _colour[2], _colour[3], _alpha );
-		_x += _clip[eR.w];
+		draw_sprite_general( _sprite, _image, _clip[aR.x1], _clip[aR.y1], _clip[aR.w], _clip[aR.h], _x, _y, _scalex, _scaley, _rotation, _colour[0], _colour[1], _colour[2], _colour[3], _alpha );
+		_x += _clip[aR.w];
 		};
 	_x = argument_count > 2 ? argument[2] : x;
-	_y += _clip[eR.h];
+	_y += _clip[aR.h];
 	};
 		

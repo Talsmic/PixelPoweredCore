@@ -10,7 +10,7 @@
         "a0cc3130-f37f-4b66-9c3e-aa920a28885a"
     ],
     "filterType": "GMScript",
-    "folderName": "dsmap",
+    "folderName": "dsMap",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

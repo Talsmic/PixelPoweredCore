@@ -1,6 +1,6 @@
 ///_stringPosFromArray(input_string,substring_array);
 /// @arg input_string		{string}
-/// @arg substring_array	{array} or {string}
+/// @arg substring_array	{array} OR {string}
 /*
 	<< Returns >>	{array} [pos, pos_id, pos_string, pos_length, pos_count];
 	Returns an array of information about the location of a substring in the target array
@@ -11,7 +11,7 @@
 		pos_length	{integer} the length of the substring
 		pos_count	{integer} how many substrings found a position	
 */ 
-#region Arguments
+#region Arguments & Variables
 var input_string =		argument0;
 var substring_array =	_validateArray(argument1);
 #endregion

@@ -18,7 +18,7 @@ var h = surface_get_height(GlowSurface);
 var c = c_white;
 ///drawto_sprite_glow_ext(sprite_index,[image_index],[x],[y],[padding],[alpha],[xscale],[yscale],[rotation]);
 /// @arg [a0]		{datatype}		(default: )
-#region Arguments
+#region Arguments & Variables
 if argument_count < 1 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var sprite_id =	argument[0];
 var image_id =	argument_count > 1 ? argument[1] : 0;

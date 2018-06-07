@@ -12,7 +12,7 @@
 /*
 	[[ Draws ]] a basic button from a single frame of a sprite
 */
-#region Arguments
+#region Arguments & Variables
 if argument_count < 3 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var draw_x =	argument[0];
 var draw_y =	argument[1];
@@ -40,7 +40,7 @@ if ( text[0] != "" ) {
 	var saved_align = _storeAlign();
 	_setAlign(text_align);
 	var text_draw = _positionInRegion(button_region, text_align);
-	drawText(button_region[eR.x1] + text_draw[0], button_region[eR.y1] + text_draw[1], text[0], text[1], text[2]);
+	drawText(button_region[aR.x1] + text_draw[0], button_region[aR.y1] + text_draw[1], text[0], text[1], text[2]);
 	_setAlign(saved_align);
 	};	
 	

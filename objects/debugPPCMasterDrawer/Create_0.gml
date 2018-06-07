@@ -22,7 +22,7 @@ var max_storedarguments = 5;
 #region Create UI Elements
 //[Slave[1]] Tabset
 Slave[1] = instance_create_as_slave(x,y,uiTabset);
-	with (Slave[1]) { uiTabset_alter_tabs(1,1+max_drawcommands,[11,48,1]) };
+	with (Slave[1]) { uiTabset_AlterTabs(1,1+max_drawcommands,[11,48,1]) };
 	Slave[1].WindowAnchor_X = fa_left;
 	Slave[1].WindowAnchor_X_pad = 2;
 	Slave[1].WindowAnchor_Y = fa_bottom;

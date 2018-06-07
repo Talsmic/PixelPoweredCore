@@ -3,7 +3,7 @@
 /// @arg column			{integer}			
 /// @arg [first_value]	{integer}	
 /// @arg [last_value]	{integer}
-#region Arguments & Variables
+#region Arguments & Variables & Variables
 var _array =		argument[0];
 var _column =		argument[1];
 var _first_value =	argument_count > 2 ? argument[2] : 0;

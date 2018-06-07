@@ -5,7 +5,7 @@
 /*
 	[[ Draws ]]		Game Surface
 */ 
-#region Arguments & Variables
+#region Arguments & Variables & Variables
 //Arguments
 var _width =	argument_count > 0 ? argument[0] : res_PlayableWidth;
 var _height =	argument_count > 1 ? argument[1] : res_PlayableHeight;

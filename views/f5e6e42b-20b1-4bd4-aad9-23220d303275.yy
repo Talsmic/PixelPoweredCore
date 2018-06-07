@@ -11,7 +11,7 @@
         "a673862b-79f6-4f15-9b10-aba1f04fe8bf"
     ],
     "filterType": "GMScript",
-    "folderName": "Colour",
+    "folderName": " Colour Management",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

@@ -8,7 +8,7 @@ for ( var i=0; i<count; ++i ) {
 	Arg_String[i] = "Test String #"+string(i)+string(i)+string(i);
 	Arg_Boolean[i] = false;
 	
-	Arg_ColourCode[i] = find_colour(i);
+	Arg_ColourCode[i] = findColour(i);
 	
 	Arg_Integer_X[i] = 20+20*i;
 	Arg_Integer_Y[i] = 20+20*i;

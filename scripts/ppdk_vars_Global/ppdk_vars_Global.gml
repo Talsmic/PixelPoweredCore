@@ -10,24 +10,28 @@
 	{real}			|	alpha {real|0..1}
 	{string}		|
 ===[Special Arrays]====[Usage]======================================================================
-	#region#		|	  [eR.x1, eR.y1, eR.x2, eR.y2, eR.w, eR.height];
+	#region#		|	  [aR.x1, aR.y1, aR.x2, aR.y2, aR.w, aR.height];
 					|		A special array type that defines a certain rectangle.
-					|		You can use the eR enum to refer to the correct section in a 
-					|		region_array (eg. region_array[eR.h] will give the region's height)
+					|		You can use the aR enum to refer to the correct section in a 
+					|		region_array (eg. region_array[aR.h] will give the region's height)
 	#align#			|	  [align_x, align_y] 
 					|	++[, offset_x, offsey_y]
 					|		A special array type that defines x and y alignment.
-	#beat#			|	  [eBeat.value, eBeat.v_min, eBeat.max, eBeat.increment, eBeat.rate]
+	#beat#			|	  [aBeat.value, aBeat.v_min, aBeat.max, aBeat.increment, aBeat.rate]
 ===[IDs]===============[Usage]======================================================================
 	#sprite_id#		|	ID of a Sprite Resource
 	#image_id#		|	image_index of a Sprite Resource
 	#font_id#		|	ID of a Font Resource
 ===[enums]=======[Remember]:[You can get info on any enum by highlighting it and hitting F1]========
+	#eDirection#	
+	#eAngle#	
 	#eButtonState#		
 	#eDataType#
-	#eDirection#	
 	#eFocusLayer#		
 	#eFontStyle#	
+	
+	#aR# / #aRegion#	Accessors for 
+	#aScrollbar#
 ====================================================================================================
 	
 ===[Global Variable]================[IsArray]==[Contains]===========================================	
@@ -38,7 +42,7 @@
 	global.GUI_MouseX
 	global.GUI_MouseY
 	global.UpdateWindow
-	global.GameBeat					|
+	global.GamaBeat					|
 	global.ScrollBeat
 	global.Font
 	global.BaseFont

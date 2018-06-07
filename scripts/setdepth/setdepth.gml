@@ -11,12 +11,12 @@
 */
 if !instance_exists(FocusController) return depth;//[!Break!]~~~~~~~~~~~~~~~~~>
 if !FocusController.Setting_ManageDepth return depth;//[!Break!]~~~~~~~~~~~~~~>
-#region Arguments
+#region Arguments & Variables
 //Defaults < InstanceVariables < Parameters
-if has_objv("foc_InteractionLayer") and !has_objv("Layer_Depth") { Layer_Depth = foc_InteractionLayer };
-var depth_layer =	argument_count > 0 ? argument[0] : objv("Layer_Depth",eFocusLayer.standard);
-var depth_offset =	argument_count > 1 ? argument[1] : objv("Layer_Depth_Offset",0);
-var focus_layer =	argument_count > 2 ? argument[2] : objv("foc_FocusLevel",FocusController.Setting_Focus_Floor);
+if _objvExists("foc_InteractionLayer") and !_objvExists("Layer_Depth") { Layer_Depth = foc_InteractionLayer };
+var depth_layer =	argument_count > 0 ? argument[0] : _objv("Layer_Depth",eFocusLayer.standard);
+var depth_offset =	argument_count > 1 ? argument[1] : _objv("Layer_Depth_Offset",0);
+var focus_layer =	argument_count > 2 ? argument[2] : _objv("foc_FocusLevel",FocusController.Setting_Focus_Floor);
 var output = depth;
 #endregion
 

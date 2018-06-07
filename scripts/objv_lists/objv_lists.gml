@@ -1,4 +1,4 @@
-///objv_lists([instance]);
+///_objv_lists([instance]);
 /// @arg [instance]			{instance_id}	(default: id)
 /*
 	<< Returns >> {2d array}
@@ -6,7 +6,7 @@
 	Populates lists with all the variables in the instance, sorted in to 
 	groups based on name [BuiltIn][Alarms] [Core][Settings][Other]
 */ 
-#region Arguments
+#region Arguments & Variables
 var instance = argument_count > 0 ? argument[0] : id;
 #endregion
 

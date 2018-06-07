@@ -13,7 +13,7 @@
 /*
 	[[ Draws ]] a text button with a user defined region
 */
-#region Arguments
+#region Arguments & Variables
 if argument_count < 3 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var draw_x =	argument[0];
 var draw_y =	argument[1];

@@ -11,7 +11,7 @@
 /// @arg [text_align]	#align#			(default: [global.AlignX, global.AlignY, global.AlignXo, global.AlignYo]);
 /// @arg [button_mask]	#sprite_id#		(default: -1)
 /// @arg [state]		#eButtonState#	(default: eButtonState.detect)
-#region Arguments
+#region Arguments & Variables
 if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var draw_x =		argument[0];
 var draw_y =		argument[1];
@@ -30,15 +30,15 @@ var state =			argument_count > 11 ? argument[11] : eButtonState.detect;
 //Find Region
 var button_region = _spriteRegion( draw_x, draw_y, button_frame );
 var anchor = [ sprite_get_xoffset(button_frame), sprite_get_xoffset(button_frame) ];
-var offset = [	(button_region[eR.w]-sprite_get_width(button_sprite)) div 2, 
-				(button_region[eR.h]-sprite_get_height(button_sprite)) div 2, 
+var offset = [	(button_region[aR.w]-sprite_get_width(button_sprite)) div 2, 
+				(button_region[aR.h]-sprite_get_height(button_sprite)) div 2, 
 				];
 
 //State Detection
 if ( state == eButtonState.detect ) { state = buttonStateInRegion(button_region) };
 
 //Create Surface
-var surface = surface_create( button_region[eR.w], button_region[eR.h] );
+var surface = surface_create( button_region[aR.w], button_region[aR.h] );
 
 //Draw to Surface
 surface_set_target( surface ) {
@@ -46,7 +46,7 @@ surface_set_target( surface ) {
 	draw_clear_alpha(c_white, 0);	
 	
 	//Draw Flat Colour	
-	_drawPlane(offset[0],offset[1],sprite_get_width(button_sprite),sprite_get_height(button_sprite),button_colour);
+	drawPlane(offset[0],offset[1],sprite_get_width(button_sprite),sprite_get_height(button_sprite),button_colour);
 	//Draw Icon
 	drawSprite(anchor[0],anchor[1],button_sprite,button_image,button_colour);
 	//Draw Blender
@@ -80,6 +80,6 @@ if ( text[0] != "" ) {
 	var saved_align = _storeAlign();
 	_setAlign(text_align);
 	var text_draw = _positionInRegion(button_region, text_align);
-	drawText(button_region[eR.x1] + text_draw[0], button_region[eR.y1] + text_draw[1], text[0], text[1], text[2]);
+	drawText(button_region[aR.x1] + text_draw[0], button_region[aR.y1] + text_draw[1], text[0], text[1], text[2]);
 	_setAlign(saved_align);
 	};

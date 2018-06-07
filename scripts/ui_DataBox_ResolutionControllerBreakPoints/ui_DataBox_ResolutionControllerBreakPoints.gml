@@ -19,7 +19,7 @@ ui_ListBackground_create(0,box_x,box_y,84,-1,box_columns,box_rows);
 ui_ListBackground_draw();
 
 //Draw Header
-_setFont(ft_EvoTooltip_6_Bold);
+_setFont(ft_Pixis07_Bold);
 drawText(box_x+4,box_y+2,"Breakpoints:",c_orange,1);
 
 //Draw Table Contents

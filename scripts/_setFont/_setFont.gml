@@ -5,7 +5,7 @@
 	It's impossible to track font without storing the font_id to a variable 
 	yourself, so this function is meant to replace draw_set_font();
 */
-#region Arguments
+#region Arguments & Variables
 var font = argument0;
 #endregion
 

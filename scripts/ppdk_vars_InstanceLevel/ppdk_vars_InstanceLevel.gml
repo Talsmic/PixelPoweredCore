@@ -3,7 +3,7 @@
 Note:	This should list any object level variable in a class, but won't list every single variable 
 		ever used in an object.
 		
-		objv functions should interact with or cater to all of these
+		_objv functions should interact with or cater to all of these
 ===[Variable]=======================[IsArray]==[Datatype]==========[Associated Classes]=============
 ---[Common]-----------------------------------------------------------------------------------------
 	GUI_X							|		|					|
@@ -24,13 +24,13 @@ Note:	This should list any object level variable in a class, but won't list ever
 	set_Options_SaveOnExit			|		|	{boolean}		|	
 	set_Options_UpdateWindow		|		|	{integer|steps}	|	
 	set_AnchorToView				|		|					|	bg, 
-	set_GlobalAlignment_Track		|		|					|	GeneralController
-	set_GlobalAlignment_Carryover	|		|					|	GeneralController		
-	set_GlobalFont_Track			|		|					|	GeneralController
-	set_GlobalFont_Carryover		|		|					|	GeneralController
-	set_GlobalFont_DefaultFont		|		|					|	GeneralController
-	set_GlobalBeats					|		|					|	GeneralController
-	set_ScrollKeys					|		|					|	GeneralController
+	setting_GlobalAlignment_Track		|		|					|	GeneralController
+	setting_GlobalAlignment_Carryover	|		|					|	GeneralController		
+	setting_GlobalFont_Track			|		|					|	GeneralController
+	setting_GlobalFont_Carryover		|		|					|	GeneralController
+	setting_GlobalFont_DefaultFont		|		|					|	GeneralController
+	setting_GlobalBeats					|		|					|	GeneralController
+	setting_ScrollKeys					|		|					|	GeneralController
 
 ---{opt_}-[Options]---------------------------------------------------------------------------------	
 	OptionsChanged

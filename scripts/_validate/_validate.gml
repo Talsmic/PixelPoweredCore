@@ -7,9 +7,11 @@
 	if _validated was provided
 	Useful for validating arguments
 */ 
-#region Arguments
+#region Arguments & Variables
+#region Special Enumerator: #eDataType#
 enum eDataType { 
 	_any, _string, _real, _integer, _boolean, _array, _array1d, _array2d };
+#endregion
 if argument_count < 1 { show_debug_message("_arg requires an input"); exit };//[!Break!]~~~~~~~~~~~>
 var input =				argument[0];
 var required_datatype =	argument_count > 1 ? argument[1] : 0;

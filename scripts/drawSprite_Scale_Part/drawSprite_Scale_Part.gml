@@ -9,7 +9,7 @@
 /// @arg [y_scale]		{real}			 (default: 1)
 /// @arg [rotation]		{integer|0..360} (default: 0)
 /// @arg [clip_region]	#region#		 (default: [0,0,5,5,5,5])
-#region Arguments
+#region Arguments & Variables
 var _x =		argument_count > 0 ? argument[0] : x;
 var _y =		argument_count > 1 ? argument[1] : y;
 var _sprite =	argument_count > 2 ? argument[2] : sprite_index;
@@ -22,4 +22,4 @@ var _rotation =	argument_count > 8 ? argument[8] : 0;
 var _clip =		argument_count > 9 ? _validateRegion(argument[9]) : [0,0,5,5,5,5];
 #endregion
 
-draw_sprite_general( _sprite, _image, _clip[eR.x1], _clip[eR.y1], _clip[eR.w], _clip[eR.h], _x, _y, _scalex, _scaley, _rotation, _colour[0], _colour[1], _colour[2], _colour[3], _alpha );
+draw_sprite_general( _sprite, _image, _clip[aR.x1], _clip[aR.y1], _clip[aR.w], _clip[aR.h], _x, _y, _scalex, _scaley, _rotation, _colour[0], _colour[1], _colour[2], _colour[3], _alpha );

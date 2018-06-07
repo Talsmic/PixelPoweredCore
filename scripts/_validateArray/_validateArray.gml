@@ -9,7 +9,7 @@
 	Forces the input to return as an array of the correct length
 	Useful for when you need an array of X values but are happy to default the later values if they aren't provided
 */ 
-#region Arguments
+#region Arguments & Variables
 if argument_count < 1 { show_debug_message("_argArray requires an input"); exit };//[!Break!]~~~~~~>
 var input =				is_array(argument[0]) ? argument[0] : [argument[0]];
 var min_length =		argument_count > 1 ? argument[1] : 1;

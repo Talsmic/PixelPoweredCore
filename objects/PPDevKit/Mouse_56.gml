@@ -5,13 +5,13 @@ if _mouseInRegion([0,0,24,24]) { Minimised = _toggle(Minimised) }
 if Minimised exit;
 
 //Mode Tabset
-if uiTabset_leftclick(1) { event_perform(ev_alarm,0) };
+if uiTabset_LeftClick(1) { event_perform(ev_alarm,0) };
 
 
 switch ( Mode ) {
 	
 	case "Instances":
-	uiTabset_leftclick(2);
+	uiTabset_LeftClick(2);
 	
 		switch ( SubMode ) {
 			

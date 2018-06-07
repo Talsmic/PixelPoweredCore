@@ -47,7 +47,7 @@ ui_ListBackground_create(0,box_x,box_y,-1,-1,box_columns,box_rows);
 ui_ListBackground_draw();
 
 //Draw Header
-_setFont(ft_EvoTooltip_6_Bold);
+_setFont(ft_Pixis07_Bold);
 function_nameA = _stringClip(function_nameA,ui_ListBackground_get_width()-8,"...");
 var function_nameB = _stringClip(function_name,ui_ListBackground_get_width()-8,"...");
 drawText(box_x+4,box_y+2,function_nameA,c_gray9,1);
@@ -56,7 +56,7 @@ drawText(box_x+4,box_y+2,function_nameB,c_orange,1);
 //Draw Table Contents
 _setAlign(fa_center);
 _arrayDrawVertical(box_x+12,box_y+1,col0,c_white,1,12);
-_setFont(ft_EvoTooltip_6_Condensed);
+_setFont(ft_Pixis07_Condensed);
 _arrayDrawVertical(box_x+48,box_y+1,col2,c_gray9,1,12);
 _arrayDrawVertical(box_x+92,box_y+1,col1,c_gray9,1,12);
 _setAlign(fa_right);

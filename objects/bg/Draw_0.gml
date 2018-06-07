@@ -14,7 +14,7 @@ if set_AnchorToView {
 
 //Draw Flat Colour
 if back_Flat { 
-	_drawPlane(draw_space_x,draw_space_y,draw_space_width,draw_space_height,back_Flat_Colour,back_Flat_Alpha);
+	drawPlane(draw_space_x,draw_space_y,draw_space_width,draw_space_height,back_Flat_Colour,back_Flat_Alpha);
 	};
 
 for ( bgID=1; bgID<=back_StoredBGs; ++bgID ) {
@@ -42,7 +42,7 @@ for ( bgID=1; bgID<=back_StoredBGs; ++bgID ) {
 		case fa_bottom: 	if set_AnchorToView { anchorY = draw_space_height - height } 
 									 else { anchorY = room_height - height };					break;
 		};
-	if DrawAnchor { _drawPlane(anchorX-1,anchorY-1,2,2,c_red,0.8) };
+	if DrawAnchor { drawPlane(anchorX-1,anchorY-1,2,2,c_red,0.8) };
 
 	//Draw Center
 	DrawX = windowX+anchorX; DrawIDX = 0;

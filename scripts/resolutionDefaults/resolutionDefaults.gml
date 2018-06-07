@@ -1,7 +1,7 @@
 ///resolutionDefaults();
 
 #region [Core Systems]------------------------------------------------------------------------------
-	//Create a ResolutionController in gameIntialise();
+	//Create a ResolutionController in ppdkInitialise();
 	#macro RES_OnIntitialise		true
 	//Enable Manual gameSurface Drawing
 	#macro RES_DrawGameSurface		true	

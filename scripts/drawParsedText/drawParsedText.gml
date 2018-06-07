@@ -14,7 +14,7 @@
 	[[ Draws ]] the text outputted by a parseText command, complete with colour codes
 	!USE parseText FIRST!
 */
-#region Arguments
+#region Arguments & Variables
 if argument_count < 2 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var draw_x =		argument[0];		
 var draw_y =		argument[1];		

@@ -7,7 +7,7 @@
 /*
 	<< Returns >>	{boolean}
 */ 
-#region Arguments & Variables
+#region Arguments & Variables & Variables
 if argument_count < 2 { show_debug_message("_arrayCompare requires 2 arrays"); return false };//[!Break!]
 //Arguments
 var _arrayA =			_validateArray(argument[0]);

@@ -10,7 +10,7 @@
 	<< Returns >> a region of the ui box dimensions
 	[[ Draws ]] a ui box of [width],[height] at [x],[y], with optional sharp corners
 */
-#region Arguments
+#region Arguments & Variables
 if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var _x =		argument[0]; 
 var _y =		argument[1];

@@ -1,1 +1,1 @@
-ScrollBar[@ eScrollbar.dir] = eDirection.down
+ScrollBar[@ aScrollbar.dir] = eDirection.down

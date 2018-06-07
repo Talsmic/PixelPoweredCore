@@ -9,7 +9,7 @@
         "02f50f33-ec94-4531-a35a-9a3712f36eb9"
     ],
     "filterType": "GMScript",
-    "folderName": "[ScrollBar]",
+    "folderName": "ScrollBar",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

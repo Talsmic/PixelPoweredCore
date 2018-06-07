@@ -8,7 +8,7 @@
 /// @arg [x_scale]		{real}			 (default: 1)
 /// @arg [y_scale]		{real}			 (default: 1)
 /// @arg [rotation]		{integer|0..360} (default: 0)
-#region Arguments
+#region Arguments & Variables
 var _x =		argument_count > 0 ? argument[0] : x;
 var _y =		argument_count > 1 ? argument[1] : y;
 var _sprite =	argument_count > 2 ? argument[2] : sprite_index;

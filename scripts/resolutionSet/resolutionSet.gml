@@ -2,7 +2,7 @@
 /// @arg width	{integer}		
 /// @arg height	{integer}
 /// @arg scale	{real}	
-#region Arguments & Variables
+#region Arguments & Variables & Variables
 //Arguments
 var _width =	argument0;
 var _height =	argument1;

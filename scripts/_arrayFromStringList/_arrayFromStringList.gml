@@ -1,12 +1,12 @@
 ///_arrayFromStringList(input_string,[datatype],[spacer_array]);
 /// @arg input_string	{string}	
 /// @arg [datatype]		#eDataType#				(default: eDataType.string)
-/// @arg [spacer_array]	{string} or {array}		(default: ["|", ", ", ","])
+/// @arg [spacer_array]	{string} OR {array}		(default: ["|", ", ", ","])
 /*
 	<< Returns >> {array}
 	Converts a string of text into a list, breaking it in to chunks at the defined spacers
 */
-#region Arguments
+#region Arguments & Variables
 if argument_count < 1 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var input_string =	argument[0];
 var datatype =		argument_count > 1 ? argument[1] : eDataType._string;

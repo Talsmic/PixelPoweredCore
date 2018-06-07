@@ -6,7 +6,7 @@
 /*
 	<< Returns >> #region#
 */
-#region Arguments
+#region Arguments & Variables
 var x1 = argument0;
 var y1 = argument1;
 var w =  argument2;

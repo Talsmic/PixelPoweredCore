@@ -11,7 +11,7 @@
 		eUpto.zero		returns 0
 		eUpto.loop		loops through the array to find a value
 */
-#region Arguments & Variables
+#region Arguments & Variables & Variables
 if argument_count < 1 { show_debug_message("_upto requires an input and cap"); return argument[0] };//[!Break!]
 //Arguments
 var _input_array =	argument[0];

@@ -13,8 +13,10 @@
 		eUpto.loop		loops until a value is under cap
 		eUpto.allow		returns input+increment, but only if input was lower than cap before _upto
 */
+#region Special Enumerator: #eUpto# (for overflow events)
 enum eUpto {
 	stop, cap, zero, loop, allow, first };
+#endregion
 #region Arguments & Variables
 if argument_count < 2 { show_debug_message("_upto requires an input and cap"); return argument[0] };//[!Break!]
 //Arguments

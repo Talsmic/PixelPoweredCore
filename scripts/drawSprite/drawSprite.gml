@@ -5,7 +5,7 @@
 /// @arg [image_id]		#image_id#		 (default: image_index)
 ///	@arg [colour]		#c_code#		 (default: draw_get_color())
 /// @arg [alpha]		{real|0..1}		 (default: draw_get_alpha())
-#region Arguments
+#region Arguments & Variables
 var _x =		argument_count > 0 ? argument[0] : x;
 var _y =		argument_count > 1 ? argument[1] : y;
 var _sprite =	argument_count > 2 ? argument[2] : sprite_index;

@@ -9,7 +9,7 @@
 /// @arg [x_scale]		{real}				(default: 1)
 /// @arg [y_scale]		{real}				(default: 1)
 /// @arg [rotation]		{integer|0..360}	(default: 0)
-#region Arguments
+#region Arguments & Variables
 if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var sprite_id =	argument[0];
 var image_id =	argument[1];
@@ -29,7 +29,7 @@ GlowRegion = _spriteRegion(draw_x,draw_y,sprite_id);
 GlowRegion = _alterRegion(GlowRegion,thickness);
 
 //Create Surface
-GlowSurface = surface_create(GlowRegion[eR.w], GlowRegion[eR.h]);
+GlowSurface = surface_create(GlowRegion[aR.w], GlowRegion[aR.h]);
 var surfacedraw_x = thickness[0];
 var surfacedraw_y = thickness[1];
 //Draw to Surface

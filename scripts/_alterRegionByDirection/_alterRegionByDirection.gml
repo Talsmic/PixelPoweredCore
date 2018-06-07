@@ -8,7 +8,7 @@
 	Expands the region by [growth]
 	Moves the region by [move]
 */
-#region Arguments
+#region Arguments & Variables
 if argument_count < 1 { show_debug_message("_alignRegion requires a region"); exit };//[!Break!]~~~>
 var input_array =	_validateRegion(argument[0]);
 var growth =		argument_count > 1 ? argument[1] : 0;
@@ -18,17 +18,17 @@ var _direction =	argument_count > 3 ? argument[3] : false;
 
 switch ( _direction ) {
 	default:
-	case LEFT:		input_array[eR.x1] -= movement - growth;	
-					input_array[eR.x2] -= movement;	
+	case LEFT:		input_array[aR.x1] -= movement - growth;	
+					input_array[aR.x2] -= movement;	
 					break;
-	case TOP: 		input_array[eR.y1] -= movement - growth;	
-					input_array[eR.y2] -= movement;	
+	case TOP: 		input_array[aR.y1] -= movement - growth;	
+					input_array[aR.y2] -= movement;	
 					break;
-	case RIGHT:		input_array[eR.x1] += movement;	
-					input_array[eR.y2] += movement + growth;	
+	case RIGHT:		input_array[aR.x1] += movement;	
+					input_array[aR.y2] += movement + growth;	
 					break;
-	case BOTTOM:	input_array[eR.y1] += movement;	
-					input_array[eR.x2] += movement + growth;	
+	case BOTTOM:	input_array[aR.y1] += movement;	
+					input_array[aR.x2] += movement + growth;	
 					break;
 	};
 	

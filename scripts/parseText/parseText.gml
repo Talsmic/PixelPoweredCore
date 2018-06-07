@@ -7,7 +7,7 @@
 	[Edited 24/4/2018]
 	Converts a string of text into an array of words with unique colour codes
 */ 
-#region Arguments
+#region Arguments & Variables
 if argument_count < 1 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var input =			argument[0];
 var punctuation =	argument_count > 1 ? argument[1] : [".",",","!","?","#",":",";"];
@@ -99,7 +99,7 @@ for ( j=0 ; j<array_length_1d(ParsedText) ;  ++j ) {
 				ParsedText_Format[j] = eFontStyle.squished; break;			
 			
 			default: //Assume it's a colourcode
-				ParsedText_Colour[j] = find_colour(found_formatting[i]);
+				ParsedText_Colour[j] = findColour(found_formatting[i]);
 				break;			
 			};
 			

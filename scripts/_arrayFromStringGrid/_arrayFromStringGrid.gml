@@ -1,13 +1,13 @@
 ///_arrayFromStringGrid(input_string,[datatype],[height_spacers],[length_spacers]);
 /// @arg input_string		{string}	
 /// @arg [datatype]			#eDataType#				(default: eDataType.string)
-/// @arg [height_spacers]	{string} or {array}		(default: [", ", ","])
-/// @arg [length_spacers]	{string} or {array}		(default: ["|"])
+/// @arg [height_spacers]	{string} OR {array}		(default: [", ", ","])
+/// @arg [length_spacers]	{string} OR {array}		(default: ["|"])
 /*
 	<< Returns >> {array}
 	Converts a string of text into a list, breaking it in to chunks at the defined spacers
 */
-#region Arguments
+#region Arguments & Variables
 if argument_count < 1 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var input_string =		argument[0];
 var datatype =			argument_count > 1 ? argument[1] : eDataType._string;

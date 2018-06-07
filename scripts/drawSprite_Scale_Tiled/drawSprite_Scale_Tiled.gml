@@ -10,7 +10,7 @@
 /// @arg [rotation]		{integer|0..360} (default: 0)
 /// @arg [tiles_x]		{integer}		 (default: 1)
 /// @arg [tiles_y]		{integer}		 (default: 1)
-#region Arguments & Variables
+#region Arguments & Variables & Variables
 //Arguments
 var _x =		argument_count > 0 ? argument[0] : x;
 var _y =		argument_count > 1 ? argument[1] : y;

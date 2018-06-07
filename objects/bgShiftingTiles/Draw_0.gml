@@ -14,7 +14,7 @@ if ( set_AnchorToView ) {
 
 //Draw Flat Colour
 if ( back_Flat ) { 
-	_drawPlane(draw_space_x,draw_space_y,draw_space_width,draw_space_height,back_Flat_Colour,back_Flat_Alpha);
+	drawPlane(draw_space_x,draw_space_y,draw_space_width,draw_space_height,back_Flat_Colour,back_Flat_Alpha);
 	};
 
 for ( bgID=1; bgID<=back_StoredBGs; ++bgID ) {

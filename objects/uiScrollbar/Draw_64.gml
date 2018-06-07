@@ -1,1 +1,1 @@
-drawScrollBar(ScrollBar);
+uiScrollBar_Draw(ScrollBar);

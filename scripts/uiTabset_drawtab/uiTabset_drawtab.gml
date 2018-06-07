@@ -1,10 +1,10 @@
-///uiTabset_drawtab([TabsetID],[TabID],[x],[y],[state]);
+///uiTabset_DrawTab([TabsetID],[TabID],[x],[y],[state]);
 /// @arg [TabsetID] {integer}		(default: 0)
 /// @arg [TabID]	{integer}		(default: 1)
 /// @arg [x]		{real}				
 /// @arg [y]		{real}					
 /// @arg [state]	#eButtonState#	(default: eButtonState.detect)
-#region Arguments
+#region Arguments & Variables
 var ref =		argument_count > 0 ? argument[0] : 0;
 var tabref =	argument_count > 1 ? argument[1] : 1;
 var anchor_x =	argument_count > 2 ? argument[2] : Tabset_X[ref]+tabref*40;
@@ -70,7 +70,7 @@ switch ( state ) {
 #endregion
 	
 #region Draw
-draw_tilebox(draw_region[0],draw_region[1],draw_region[4],draw_region[5],tab_colour,tab_alpha,Tabset_Tileset[ref],Corners);
+__draw_tilebox(draw_region[0],draw_region[1],draw_region[4],draw_region[5],tab_colour,tab_alpha,Tabset_Tileset[ref],Corners);
 
 //Draw Text
 var text_point = [ draw_region[0] + ( tabwidth div 2 ), draw_region[1] + ( tabheight div 2 ) ];

@@ -4,16 +4,18 @@
 /// @arg [reset]			{boolean}	(default: false)
 /// @arg [acceleration]		{real}		(default: 0)
 /*
-	<< Returns >> {array} [eBeat.value, eBeat.v_min, eBeat.max, eBeat.increment, eBeat.rate]
+	<< Returns >> {array} [aBeat.value, aBeat.v_min, aBeat.max, aBeat.increment, aBeat.rate]
 	Increases a beat, with many optional behaviors
 		[loop]			if [loop] = true, as soon as the beat exceeds the maximum it wraps back around to the minimum and starts going up again
 						if [loop] = false, the beat revereses and counts back down to the minimum
 		[reset]			if [reset] = true, the beat will reset to the minimum value		
 		[acceleration]  if [acceleration] != 0, the beat's increment rate will change after the beat changes
 */
-enum eBeat { 
+#region Special Enumerator: #aBeat# (for Array IDs)
+enum aBeat { 
 	value, v_min, v_max, increment, rate, steps };
-#region Arguments
+#endregion
+#region Arguments & Variables
 if argument_count < 1 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var beat =				_validateArray(argument[0],6,6,[0,1,10,1,1,0]);
 var loop =				argument_count > 1 ? argument[1] : false;
@@ -23,43 +25,43 @@ var acceleration =		argument_count > 3 ? argument[3] : 0;
 
 //[Optional] [reset]	
 if ( reset ) {
-	beat[eBeat.value] = beat[eBeat.v_min]; 
-	beat[eBeat.steps] = 0; 
+	beat[aBeat.value] = beat[aBeat.v_min]; 
+	beat[aBeat.steps] = 0; 
 	return beat;
 	};
 	
 //Increase step count
-beat[eBeat.steps]++;			
+beat[aBeat.steps]++;			
 
 //If steps is high enough, beat
-if ( beat[eBeat.steps] <= beat[eBeat.rate] ) {
-	beat[eBeat.value] += beat[eBeat.increment]; 
-	beat[eBeat.steps] = 0;			
+if ( beat[aBeat.steps] <= beat[aBeat.rate] ) {
+	beat[aBeat.value] += beat[aBeat.increment]; 
+	beat[aBeat.steps] = 0;			
 	};
 
 //If exceeding max
-if ( beat[eBeat.value] >= beat[eBeat.v_max] ) {
+if ( beat[aBeat.value] >= beat[aBeat.v_max] ) {
 	if ( loop ) { 
-		beat[eBeat.value] = beat[eBeat.value] - beat[eBeat.v_max]	+ beat[eBeat.v_min];
+		beat[aBeat.value] = beat[aBeat.value] - beat[aBeat.v_max]	+ beat[aBeat.v_min];
 		} 	
 	else { 
-		beat[eBeat.value] = beat[eBeat.v_max];
-		beat[eBeat.increment] = -beat[eBeat.increment];
+		beat[aBeat.value] = beat[aBeat.v_max];
+		beat[aBeat.increment] = -beat[aBeat.increment];
 		} ;
 	};
 	
 //[Optional] [acceleration]	
 if ( acceleration != 0 ) {
-	beat[eBeat.increment] += acceleration;
+	beat[aBeat.increment] += acceleration;
 	};
 	
 return beat;
 
 /*=[Notes]======================================================================
-	[eBeat.value, eBeat.min, eBeat.max, eBeat.increment, eBeat.rate]
-		eBeat.value			|	current beat value
-		eBeat.min 			|	minimum beat value
-		eBeat.max			|	maximum beat value
-		eBeat.increment		|	amount to increase value
-		eBeat.rate			|	# of steps between increments	(default: 1)
-		eBeat.steps			|	# of steps since last increment	(default: 1)
+	[aBeat.value, aBeat.min, aBeat.max, aBeat.increment, aBeat.rate]
+		aBeat.value			|	current beat value
+		aBeat.min 			|	minimum beat value
+		aBeat.max			|	maximum beat value
+		aBeat.increment		|	amount to increase value
+		aBeat.rate			|	# of steps between increments	(default: 1)
+		aBeat.steps			|	# of steps since last increment	(default: 1)

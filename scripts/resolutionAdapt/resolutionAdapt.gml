@@ -157,7 +157,7 @@ else {
 
 #region Resize and Reposition View and Camera
 /*	Runs the function that resizes the camera and views */
-ppres_flex_view(view_current);
+resolutionAdjustView(view_current);
 #endregion
 
 #region Resize the application surface

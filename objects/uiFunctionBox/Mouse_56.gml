@@ -1,5 +1,5 @@
 
-var colcheck = _mouseInRegion_array2d_column(ClickCells,3);
+var colcheck = _mouseInRegions_Array2DColumn(ClickCells,3);
 
 if ( colcheck ) {
 	Master.InputArgument = colcheck;

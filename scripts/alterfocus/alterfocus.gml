@@ -8,11 +8,11 @@
 */
 if !instance_exists(FocusController) exit;//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 if !FocusController.Setting_ManageFocus exit;//[!Break!]~~~~~~~~~~~~~~~~~~~~~~>
-#region Arguments
+#region Arguments & Variables
 //Defaults < InstanceVariables < Parameters
-var focus_layer =	argument_count > 0 ? argument[0] : objv("foc_FocusLevel",FocusController.Setting_Focus_Floor);
-var can_increase =	argument_count > 1 ? argument[1] : objv("FocusFixer",false);
-var can_decrease =	argument_count > 2 ? argument[2] : objv("FocusSetter",true);
+var focus_layer =	argument_count > 0 ? argument[0] : _objv("foc_FocusLevel",FocusController.Setting_Focus_Floor);
+var can_increase =	argument_count > 1 ? argument[1] : _objv("FocusFixer",false);
+var can_decrease =	argument_count > 2 ? argument[2] : _objv("FocusSetter",true);
 #endregion
 
 //Check and change focus level

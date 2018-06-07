@@ -4,7 +4,7 @@ for ( var i=1; i<array_length_1d(FunctionName); ++i ) {
 	};
 
 
-if DrawAnchor { _drawPlane(x-1,y-1,2,2,c_red,0.8) };
+if DrawAnchor { drawPlane(x-1,y-1,2,2,c_red,0.8) };
 
 /*
 //Loop through all stored DrawCommands

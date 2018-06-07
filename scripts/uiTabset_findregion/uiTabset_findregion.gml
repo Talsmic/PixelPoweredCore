@@ -1,4 +1,4 @@
-///uiTabset_findregion(TabsetID],[TabID],[x],[y],[state]);
+///uiTabset_FindRegion(TabsetID],[TabID],[x],[y],[state]);
 /// @arg [TabsetID] {integer}		(default: 0)
 /// @arg [TabID]	{integer}		(default: 1)
 /// @arg [x]		{real}				
@@ -7,7 +7,7 @@
 /*
 	<< Returns >> {region_ext} [x1,y1,x2,y2,width,height,state,mousein,mouseinGUI];
 */
-#region Arguments
+#region Arguments & Variables
 var ref = 0;				if argument_count > 0 { ref = argument[0] };
 var tabref = 1;				if argument_count > 1 { tabref = argument[1] };
 var anchor_x = Tabset_X[ref];	if argument_count > 2 { anchor_x = argument[2] };

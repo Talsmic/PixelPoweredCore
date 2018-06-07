@@ -1,7 +1,7 @@
 
-uiTabset_leftclick(1);
+uiTabset_LeftClick(1);
 
-var colcheck = _mouseInRegion_array2d_column(ClickCells,3);
+var colcheck = _mouseInRegions_Array2DColumn(ClickCells,3);
 if ( colcheck ) {
 	Master.InputArgument = colcheck;
 	Master.alarm[2] = 1;

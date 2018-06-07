@@ -104,7 +104,7 @@ for ( var i=col_start; i<=column_count; ++i ) {
 		if ( !slots_to_fill ) column_size[i] += availible_space;		
 		};
 	};
-//TrueRowSize
+//TruaRowSize
 slots_to_fill = row_count+1-row_start;
 availible_space = box_height - padding[TOP] - padding[BOTTOM];
 if ( row_count+1-row_start > 1 ) { availible_space -= spacing[1] * (row_count-1) };
@@ -132,7 +132,7 @@ var draw_y = box_y + padding[TOP];
 if ( header_row ) { draw_y += row_size[0] + spacing[1] };
 for ( var i=col_start; i<=column_count; ++i ) {
 	//Draw the column
-	ui_draw_column(draw_x,draw_y,row_count,column_size[i],row_size,spacing[1],column_colour[i],column_alpha[i],column_mouseovers[i]);
+	__ui_draw_column(draw_x,draw_y,row_count,column_size[i],row_size,spacing[1],column_colour[i],column_alpha[i],column_mouseovers[i]);
 	//Find Column as 1D Array
 	var col = ui_saveregions_column(draw_x,draw_y,row_count,column_size[i],row_size,spacing[1]);
 	//Save Cells to 2D Array
@@ -148,7 +148,7 @@ draw_y = box_y + padding[TOP];
 if ( header_column ) { draw_x += column_size[0] + spacing[0]};
 for ( var i=row_start; i<=row_count; ++i ) {
 	//Draw the Row
-	ui_draw_row(draw_x,draw_y,column_count,column_size,row_size[i],spacing[0],row_colour[i],row_alpha[i],row_mouseovers[i]);
+	__ui_draw_row(draw_x,draw_y,column_count,column_size,row_size[i],spacing[0],row_colour[i],row_alpha[i],row_mouseovers[i]);
 	//Move Draw Point
 	draw_y += row_size[i] + spacing[1];
 	};

@@ -1,6 +1,6 @@
 ///_resolutionGetWidth([type]);
 /// @arg [type]
-#region Arguments & Variables
+#region Arguments & Variables & Variables
 //Arguments
 var _type =	argument_count > 0 ? argument[0] : "Complete";
 //Other Variables
