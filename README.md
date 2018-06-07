@@ -2,8 +2,19 @@
 Version 0.2.0 - \_utility Edition
 
 ## Index
-### [\[Core\]: \_utility Library](#_utility)
-* [align and font](#align and font) 
+### [\[Core\]: \_utility Library](#core-_utility-library-1)
+#### Datatype Functions
+* [array](#array) 
+* [boolean](#boolean) 
+* [number](#number) 
+* [string](#string) 
+#### DataStructure Functions
+* [dsMap](#dsMap) 
+#### Other Functions
+* [align and font](#align--font) 
+* [beat](#beat) 
+* [objv](#objv) 
+* [...misc](#misc) 
 
 ## \[Core\]: \_utility Library
 
@@ -49,6 +60,15 @@ Expanding your options with strings
 | `_stringHeight` <br> `_stringWidth` | **Alternatives to string_get_height / string_get_width** Allows you to check the height or width of a string with a specific font |
 | `_stringPosFromArray` | Finds the position of the first substring in an array when given an array of substrings, and returns an array of useful information about the winning substring |
 
+### dsMap
+Extra options for working with DSMap data structures.
+
+| Function Name | Description |
+| --- | --- |
+| `_dsMapCreate` | Create a new DSMap and add whatever values you want to it |
+| `_dsMapValue` | Retrieve the value from a DSMap, with the option of a defined default value if it doesn't exist in the DSMap |
+| `_dsMapAddValues` | Add or change a list of values within a DSMap |
+| `_drawDSMap` | Draws the values of a DSMap as strings, with lots of options |
 ### align | font
 These functions, working with the \_globalController object, add global tracking to text aligment and font that GMS2 doesn't offer easy access to. This then enables additional functions that play around with them. Align functions use the standard GMS2 alignment definitions of fa_left|fa_top, fa_center|fa_middle, fa_right|fa_bottom.  
 A lot of my functions ask for an align_array, this takes the format of  `[h_align, v_align, x_offset (optional), y_offset (optional)]` 
@@ -70,16 +90,6 @@ Beat arrays use the format: `[eBeat.value, eBeat.min, eBeat.max, eBeat.increment
 | --- | --- |
 | `_beat` | Increment a beat |
 | `_beatArray` | Creates a new beat array to be used with \_beat |
-
-### dsmap
-Extra options for working with DSMap data structures.
-
-| Function Name | Description |
-| --- | --- |
-| `_dsMapCreate` | Create a new DSMap and add whatever values you want to it |
-| `_dsMapValue` | Retrieve the value from a DSMap, with the option of a defined default value if it doesn't exist in the DSMap |
-| `_dsMapAddValues` | Add or change a list of values within a DSMap |
-| `_drawDSMap` | Draws the values of a DSMap as strings, with lots of options |
 
 ### region
 Regions are a special array format that defines a rectangle.
