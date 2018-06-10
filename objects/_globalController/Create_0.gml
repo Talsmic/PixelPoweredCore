@@ -1,4 +1,4 @@
-event_inherited();
+_class_Controller();
 
 //	Global Alignment Tracking
 //	Resets the global.Align variables at the start of each draw step
@@ -10,8 +10,6 @@ GlobalTracking_Alignment_Carryover	= false;
 GlobalTracking_Font					= true;
 GlobalTracking_Font_Carryover		= true;
 GlobalTracking_Font_DefaultFont		= ft_Pixis07;
-
-
 
 //	Global Beats
 GlobalTracking_Beats				= true;

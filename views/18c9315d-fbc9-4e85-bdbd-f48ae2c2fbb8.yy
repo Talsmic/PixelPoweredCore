@@ -9,7 +9,7 @@
         "8ee2f308-1294-4ff7-bcfb-1cbfe4b229e4"
     ],
     "filterType": "GMScript",
-    "folderName": "Tileboxes",
+    "folderName": "drawTilebox",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

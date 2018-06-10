@@ -36,8 +36,8 @@ switch ( Mode ) {
 			case "Focus": #region
 				
 				if ( _mouseInRegion([18,26,38,46]) ) {
-					if ( instance_exists(FocusController) ) { instance_destroy(FocusController) };
-					else { instance_create_depth(0,0,0,FocusController) };
+					if ( instance_exists(_focusController) ) { instance_destroy(_focusController) };
+					else { instance_create_depth(0,0,0,_focusController) };
 					};
 		
 				break; #endregion

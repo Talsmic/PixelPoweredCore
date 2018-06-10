@@ -1,5 +1,5 @@
 ///ui_listbox_leftclick();
-if !inFocus() exit;
+if !_inFocus() exit;
 		
 //Find Correct List Length
 ui_listbox_command("ListLength");

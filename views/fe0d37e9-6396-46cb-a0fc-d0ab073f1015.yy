@@ -9,10 +9,11 @@
         "e360a46a-69b5-4170-8e51-ef278e426965",
         "531763fb-9895-4a5d-adbf-ddba1d640077",
         "18c9315d-fbc9-4e85-bdbd-f48ae2c2fbb8",
-        "eff14db6-edf0-46bf-9369-8958f7388aef"
+        "eff14db6-edf0-46bf-9369-8958f7388aef",
+        "8a1d4d05-bd9d-47dc-9ed6-7a2912f1349d"
     ],
     "filterType": "GMScript",
-    "folderName": "[Core]: Expanded Drawing",
+    "folderName": "[ drawMore ]",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

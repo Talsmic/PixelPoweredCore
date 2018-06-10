@@ -19,7 +19,7 @@ var col1 = ["_Width/Height",
 			"WindowPoints",
 			"",
 			];
-var col2 = [string(window_get_width())+", "+string(window_get_height()), 
+var col2 = [string(_windowWidth())+", "+string(_windowHeight()), 
 			string(_resolutionGetWidth()*_resolutionGetScale())+", "+string(_resolutionGetHeight()*_resolutionGetScale()), 
 			string(display_get_gui_width())+", "+string(display_get_gui_height()), 
 			string(camera_get_view_width(view_camera[0]))+", "+string(camera_get_view_height(view_camera[0])),

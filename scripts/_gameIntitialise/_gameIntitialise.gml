@@ -14,5 +14,11 @@ global.ScrollBeat = 0;
 global.Font =		ft_Pixis07;
 global.BaseFont =	ft_Pixis07;
 
-//Create _globalController
-instance_create_depth(0,0,0,_globalController);
+global.PrimaryCamera =	-1;
+global.RoomCamera =		-1;
+global.PrimaryView =	0;
+
+//Create Controllers
+instance_create_depth(0, 0, 0, _globalController);
+instance_create_depth(0, 0, 0, _focusController);
+instance_create_depth(0, 0, 0, _resolutionController);

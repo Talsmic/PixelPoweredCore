@@ -86,14 +86,14 @@ if ( _bar_orientation == VERTICAL ) {
 		
 		//Draw Arrows
 		if ( _arrows ) { 		
-			if ( _knob_offset != (_bar_region[aR.h]-_knob_h) ) { buttonImage(_bar_region[aR.x1], _bar_region[aR.y1]-_knob_h-1,  _spriteset, 7, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_increase) }
-														  else { buttonImage(_bar_region[aR.x1], _bar_region[aR.y1]-_knob_h-1,  _spriteset, 7, _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };
-			if ( _knob_offset != 0 )						   { buttonImage(_bar_region[aR.x1], _bar_region[aR.y2]+1,			_spriteset, 8, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_decrease) }	
-														  else { buttonImage(_bar_region[aR.x1], _bar_region[aR.y2]+1,			_spriteset, 8, _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };	
+			if ( _knob_offset != (_bar_region[aR.h]-_knob_h) ) { drawButton_Image(_bar_region[aR.x1], _bar_region[aR.y1]-_knob_h-1,  _spriteset, 7, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_increase) }
+														  else { drawButton_Image(_bar_region[aR.x1], _bar_region[aR.y1]-_knob_h-1,  _spriteset, 7, _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };
+			if ( _knob_offset != 0 )						   { drawButton_Image(_bar_region[aR.x1], _bar_region[aR.y2]+1,			_spriteset, 8, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_decrease) }	
+														  else { drawButton_Image(_bar_region[aR.x1], _bar_region[aR.y2]+1,			_spriteset, 8, _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };	
 			};	
 			
 		//Draw Knob
-		buttonImage(_bar_region[aR.x1], _bar_region[aR.y2]-_knob_offset-_knob_h, _spriteset, 0, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_knob);			
+		drawButton_Image(_bar_region[aR.x1], _bar_region[aR.y2]-_knob_offset-_knob_h, _spriteset, 0, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_knob);			
 			
 		};
 		
@@ -105,14 +105,14 @@ if ( _bar_orientation == VERTICAL ) {
 		
 		//Draw Arrows
 		if ( _arrows ) { 		
-			if ( _knob_offset != 0 )						   { buttonImage(_bar_region[aR.x1], _bar_region[aR.y1]-_knob_h-1,  _spriteset, 7, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_decrease) }
-														  else { buttonImage(_bar_region[aR.x1], _bar_region[aR.y1]-_knob_h-1,  _spriteset, 7, _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };
-			if ( _knob_offset != (_bar_region[aR.h]-_knob_h) ) { buttonImage(_bar_region[aR.x1], _bar_region[aR.y2]+1,			_spriteset, 8, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_increase) }	
-														  else { buttonImage(_bar_region[aR.x1], _bar_region[aR.y2]+1,			_spriteset, 8, _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };	
+			if ( _knob_offset != 0 )						   { drawButton_Image(_bar_region[aR.x1], _bar_region[aR.y1]-_knob_h-1,  _spriteset, 7, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_decrease) }
+														  else { drawButton_Image(_bar_region[aR.x1], _bar_region[aR.y1]-_knob_h-1,  _spriteset, 7, _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };
+			if ( _knob_offset != (_bar_region[aR.h]-_knob_h) ) { drawButton_Image(_bar_region[aR.x1], _bar_region[aR.y2]+1,			_spriteset, 8, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_increase) }	
+														  else { drawButton_Image(_bar_region[aR.x1], _bar_region[aR.y2]+1,			_spriteset, 8, _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };	
 			};	
 			
 		//Draw Knob
-		buttonImage(_bar_region[aR.x1], _bar_region[aR.y1]+_knob_offset, _spriteset, 0, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_knob);			
+		drawButton_Image(_bar_region[aR.x1], _bar_region[aR.y1]+_knob_offset, _spriteset, 0, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_knob);			
 			
 		};
 	
@@ -141,14 +141,14 @@ else {
 		
 		//Draw Arrows
 		if ( _arrows ) { 		
-			if ( _knob_offset != (_bar_region[aR.w]-_knob_h) ) { buttonImage(_bar_region[aR.x1]-_knob_w-1, _bar_region[aR.y1],  _spriteset, 9,  _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_increase) }
-														  else { buttonImage(_bar_region[aR.x1]-_knob_w-1, _bar_region[aR.y1],  _spriteset, 9,  _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };
-			if ( _knob_offset != 0 )						   { buttonImage(_bar_region[aR.x2]+1, _bar_region[aR.y1],			_spriteset, 10, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_decrease) }	
-														  else { buttonImage(_bar_region[aR.x2]+1, _bar_region[aR.y1],			_spriteset, 10, _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };	
+			if ( _knob_offset != (_bar_region[aR.w]-_knob_h) ) { drawButton_Image(_bar_region[aR.x1]-_knob_w-1, _bar_region[aR.y1],  _spriteset, 9,  _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_increase) }
+														  else { drawButton_Image(_bar_region[aR.x1]-_knob_w-1, _bar_region[aR.y1],  _spriteset, 9,  _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };
+			if ( _knob_offset != 0 )						   { drawButton_Image(_bar_region[aR.x2]+1, _bar_region[aR.y1],			_spriteset, 10, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_decrease) }	
+														  else { drawButton_Image(_bar_region[aR.x2]+1, _bar_region[aR.y1],			_spriteset, 10, _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };	
 			};	
 			
 		//Draw Knob
-		buttonImage(_bar_region[aR.x2]-_knob_offset-_knob_h, _bar_region[aR.y1], _spriteset, 0, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_knob);			
+		drawButton_Image(_bar_region[aR.x2]-_knob_offset-_knob_h, _bar_region[aR.y1], _spriteset, 0, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_knob);			
 			
 		};
 		
@@ -160,14 +160,14 @@ else {
 		
 		//Draw Arrows
 		if ( _arrows ) { 		
-			if ( _knob_offset != 0 )						   { buttonImage(_bar_region[aR.x1]-_knob_w-1, _bar_region[aR.y1],  _spriteset, 9,  _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_decrease) }
-														  else { buttonImage(_bar_region[aR.x1]-_knob_w-1, _bar_region[aR.y1],  _spriteset, 9,  _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };
-			if ( _knob_offset != (_bar_region[aR.w]-_knob_h) ) { buttonImage(_bar_region[aR.x2]+1, _bar_region[aR.y1],			_spriteset, 10, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_increase) }	
-														  else { buttonImage(_bar_region[aR.x2]+1, _bar_region[aR.y1],			_spriteset, 10, _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };	
+			if ( _knob_offset != 0 )						   { drawButton_Image(_bar_region[aR.x1]-_knob_w-1, _bar_region[aR.y1],  _spriteset, 9,  _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_decrease) }
+														  else { drawButton_Image(_bar_region[aR.x1]-_knob_w-1, _bar_region[aR.y1],  _spriteset, 9,  _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };
+			if ( _knob_offset != (_bar_region[aR.w]-_knob_h) ) { drawButton_Image(_bar_region[aR.x2]+1, _bar_region[aR.y1],			_spriteset, 10, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_increase) }	
+														  else { drawButton_Image(_bar_region[aR.x2]+1, _bar_region[aR.y1],			_spriteset, 10, _colour, 1, "", [0,0], 1, 0, eButtonState.disabled) };	
 			};	
 			
 		//Draw Knob
-		buttonImage(_bar_region[aR.x1]+_knob_offset, _bar_region[aR.y1], _spriteset, 0, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_knob);			
+		drawButton_Image(_bar_region[aR.x1]+_knob_offset, _bar_region[aR.y1], _spriteset, 0, _colour, 1, "", [0,0], 1, 0, eButtonState.detect, _keys_knob);			
 			
 		};
 		

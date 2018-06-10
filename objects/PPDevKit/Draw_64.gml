@@ -52,8 +52,8 @@ switch ( Mode ) {
 				
 			//case "Focus": 
 				draw_sprite(ico_controller,0,18,26);
-				drawText(38,26,"FocusController",c_orange,1);
-				if ( instance_exists( FocusController ) ) {
+				drawText(38,26,"_focusController",c_orange,1);
+				if ( instance_exists( _focusController ) ) {
 					drawText(42,35,"ENABLED",c_nature,1);
 					drawSimplebox(28,38,100,20);
 					}

@@ -16,7 +16,7 @@
         "3a97acc7-ba11-4bf4-ac49-4d247ed21aed"
     ],
     "filterType": "GMScript",
-    "folderName": "Sprites",
+    "folderName": "drawSprite",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

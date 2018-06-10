@@ -1,7 +1,7 @@
 /// @desc Manage Focus
 
 //Manage Focus
-if !Hidden alterfocus();
+if !Hidden _effectFocus();
 
 //Update Anchors
 switch ( WindowAnchor_X ) {

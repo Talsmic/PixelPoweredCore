@@ -5,7 +5,7 @@
 /*
 	<< Returns >> #eButtonState#
 */
-if !inFocus() { return eButtonState.disabled }//[!Break!]~~~~~~~~~~~~~~~~~~~~~~>
+if !_inFocus() { return eButtonState.disabled }//[!Break!]~~~~~~~~~~~~~~~~~~~~~~>
 #region Arguments & Variables
 if argument_count < 1 { show_debug_message("ArgError"); return false };//[!Break!]~>
 var _region =		_validateRegion(argument[0]);

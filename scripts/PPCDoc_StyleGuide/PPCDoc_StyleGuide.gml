@@ -43,7 +43,7 @@
 													_text[Category]
 													_outline[Functionality]
 	question(arguments);
-		Use question format for common queries like inFocus()
+		Use question format for common queries like _inFocus()
 -[Fonts]------------------------------------------------------------------------
 	ft_FontName_6_Style
 -[Objects]----------------------------------------------------------------------

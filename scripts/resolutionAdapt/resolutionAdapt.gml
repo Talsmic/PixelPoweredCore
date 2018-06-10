@@ -9,8 +9,10 @@
 	  -	Snaps to an ideal resolution (as required)
 	
 */
-var _window_width = _windowWidth();
-var _window_height = _windowHeight();
+var _window_width =		_windowWidth();
+var _window_height =	_windowHeight();
+var _ideal_width =		IdealWidth  ? IdealWidth  : round(IdealHeight*_aspectRatio());
+var _ideal_height =		IdealHeight ? IdealHeight : round(IdealWidth*_aspectRatio());
 
 #region Define Scaling Breakpoints
 /*	These dictate how the controller decides what what resoution magnification level to use, and can 
@@ -70,7 +72,7 @@ if NextEvent_SnapResolution {
 	window_set_size( NextEvent_SnapResolution_Scale*RES_IdealWidth, NextEvent_SnapResolution_Scale*RES_IdealHeight );
 	NextEvent_SnapResolution = false;
 	NextEvent_ResolutionCenter = true;
-	if ( window_get_width() != NextEvent_SnapResolution_Scale*RES_IdealWidth or window_get_height() != NextEvent_SnapResolution_Scale*RES_IdealHeight ) {
+	if ( _windowWidth() != NextEvent_SnapResolution_Scale*RES_IdealWidth or _windowHeight() != NextEvent_SnapResolution_Scale*RES_IdealHeight ) {
 		show_debug_message("Error: Resolution Snap not correctly registered");
 		NextEvent_SnapResolution = true;
 		};

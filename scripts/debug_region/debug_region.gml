@@ -6,8 +6,8 @@
 	[outline] 0: flat colour fill, 1+: outline of [outline] thickness
 */
 #region Arguments & Variables
-var region_array = _validateRegion(argument0);
+var _region =	_validateRegion(argument0);
 #endregion
 
 //Draw the plane
-drawPlane(region_array[aR.x1], region_array[aR.y1], region_array[aR.w], region_array[aR.h], c_water, 0.4, 2);
+drawPlane(_region[aR.x1], _region[aR.y1], _region[aR.w], _region[aR.h], c_water, 0.4, 2);

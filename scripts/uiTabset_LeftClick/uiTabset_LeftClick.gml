@@ -15,7 +15,7 @@ var changed = false;
 //Buttons
 for ( var i=1; i<array_length_2d(Tabset_Tab_Name,ref); i++ ) {
 	var regioncheck = uiTabset_FindRegion(ref,i,anchor_x,anchor_y);
-	if ( inFocus() and regioncheck[8] and Tabset_Tab_Enabled[ref,i] and Pointer_Tabset[ref] != i ) {
+	if ( _inFocus() and regioncheck[8] and Tabset_Tab_Enabled[ref,i] and Pointer_Tabset[ref] != i ) {
 		Pointer_Tabset[ref] = i;
 		changed = true;
 		};

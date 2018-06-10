@@ -20,7 +20,7 @@ var _text =			argument[2];
 var _colourA =		argument_count > 3 ? argument[3] : draw_get_color();
 var _colourB =		argument_count > 4 ? argument[4] : c_black;
 var _alpha =		argument_count > 5 ? argument[5] : draw_get_alpha();
-var _thicknessA =	argument_count > 6 ? _validateArray(argument[6], 4, 4, 0, 0) : [1, 1, 1, 1];
+var _thicknessA =	argument_count > 6 ? _validateArray(argument[6], 4, 4, 0, 0) : [1.5, 1.5, 1.5, 1.5];
 var _thicknessB =	argument_count > 7 ? _validateArray(argument[7], 4, 4, 0, 0) : [0, 0, 0, 0];
 var _alphaB =		argument_count > 8 ? argument[8] : 0.2;
 var _colourC =		argument_count > 9 ? argument[9] : c_black;
@@ -41,7 +41,6 @@ var _region = _textRegion(_x, _y, _text);
 _region = _alterRegion(_region, _shadowA);
 var _align = _storeAlign();
 _setAlign();
-debug_region(_region);
 
 //Create Surface
 var _surface = surface_create(_region[aR.w], _region[aR.h]);
@@ -87,11 +86,12 @@ surface_set_target( _surface ) {
 _setAlign(_align);
 switch ( global.AlignX ) { 
 	case fa_center: _x -= string_width(_text) div 2; break; 
-	case fa_right:  _x -= string_width(_text); break; 
+	case fa_right:  _x -= string_width(_text)-1; break; 
 	};
 switch ( global.AlignY ) { 
 	case fa_center: _y -= string_height(_text) div 2; break; 
 	case fa_right:  _y -= string_height(_text); break; 
-	};
+	};	
+//debug_region( _regionBySize(_x-_thickA[0], _y-_thickA[1], _region[aR.w], _region[aR.h]) );
 draw_surface_ext(_surface, _x-_thickA[0], _y-_thickA[1], 1, 1, 0, c_white, _alpha);
 surface_free(_surface);

@@ -10,7 +10,7 @@
         "51f50464-be2b-4ef5-909a-2c8533e71eb5"
     ],
     "filterType": "GMScript",
-    "folderName": "Planes",
+    "folderName": "drawPlane",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

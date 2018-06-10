@@ -22,7 +22,7 @@
 			|					|	 -	Options are controlled by the OptionsContainer if it exists,
 			|					|		Settings are not
 ------------|-------------------|-------------------------------------------------------------------	
-	foc_	|	Focus			|	FocusController related
+	foc_	|	Focus			|	_focusController related
 			|					|	
 			|					|	
 			|					|	

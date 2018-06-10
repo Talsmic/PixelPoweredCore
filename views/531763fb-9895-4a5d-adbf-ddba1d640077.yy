@@ -11,7 +11,7 @@
         "d178201d-a00e-48b1-a930-fcbb96e18592"
     ],
     "filterType": "GMScript",
-    "folderName": "Buttons",
+    "folderName": "drawButtons",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
