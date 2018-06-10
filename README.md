@@ -57,7 +57,7 @@ Expanding your options with strings
 | Function Name | Description |
 | --- | --- |
 | `_stringClip` | Reduces the length of the string to the requested length, adding an optional marker if it changed in size |
-| `_stringHeight` <br> `_stringWidth` | **Alternatives to string_get_height / string_get_width** Allows you to check the height or width of a string with a specific font |
+| `_stringHeight` <br> `_stringWidth` | **Alternatives to string_get_height() / string_get_width()** Allows you to check the height or width of a string with a specific font |
 | `_stringPosFromArray` | Finds the position of the first substring in an array when given an array of substrings, and returns an array of useful information about the winning substring |
 
 ### dsMap
@@ -75,9 +75,9 @@ A lot of my functions ask for an align_array, this takes the format of  `[h_alig
 
 | Function Name | Description | |
 | --- | --- |--- |
-| `_setAlign` | **Replacement for draw_set_halign / draw_set_valign** Sets the alignment and updates the alignment global tracking |
+| `_setAlign` | **Replacement for draw_set_halign() / draw_set_valign()** Sets the alignment and updates the alignment global tracking |
 | `_storeAlign` | Returns an alignment array containing either the provided values, or the global values if nothing was provided |
-| `_setFont` | **Replacement for draw_set_font** Sets the font and updates the font global tracking |
+| `_setFont` | **Replacement for draw_set_font()** Sets the font and updates the font global tracking |
 | `_setFontStyle` | Allows you to change a font style on the fly | !Edit this function to add your own fonts! |
 | `_baseFont` | Returns the font family of the font | !Edit this function to add your own fonts! |
 
@@ -91,6 +91,16 @@ Beat arrays use the format: `[eBeat.value, eBeat.min, eBeat.max, eBeat.increment
 | `_beat` | Increment a beat |
 | `_beatArray` | Creates a new beat array to be used with \_beat |
 
+### instance | objv
+Ease of referencing variables in object instances
+
+| Function Name | Description |
+| --- | --- |
+| `_destroy` |**Alternative to destroy_instance()** |
+| `_objv` | Retrieve the value of a variable from an object instance, with the option to define the default value should it not exist |
+| `_objvExists` | Check if a variable exists in an object instance |
+| `_singletonEnforce_Instance` <br> `_singletonEnforce_Object` | Force limit a single instance of an object |
+
 ### region
 Regions are a special array format that defines a rectangle.
 These functions use this predefined format in creative ways to make regions a highly useful time saver.
@@ -100,8 +110,6 @@ Regions use the format: `[aRegion.x1, aRegion.y1, aRegion.x2, aRegion.y2, aRegio
 | --- | --- |
 | `_validateRegion` | Makes sure the array given is a complete region, generally by calculating missing values |
 | `_regionBySize` | Returns a region when given an x, y, width and height |
-| `_textRegion` | Returns the region text would fill if it was drawn at x,y (accounts for alignment) |
-| `_spriteRegion` | Returns the region a sprite would fill if it was drawn |
 | `_alignRegion` | Moves a region based on alignment, an x,y anchor, or both |
 | `_alterRegion` | Resize, move and/or pivot a region |
 | `_alterRegionByDirection` | Resize, move and/or pivot a region if given a direction (LEFT, RIGHT, UP, DOWN) |
@@ -109,13 +117,18 @@ Regions use the format: `[aRegion.x1, aRegion.y1, aRegion.x2, aRegion.y2, aRegio
 | `_mouseInRegion` | Checks if the mouse is in a region, can use the gui mouse position |
 | `_mouseInRegions_Array1D` <br> `_mouseInRegions_Array2DRow` <br> `_mouseInRegions_Array2DColumn` | Finds which region the mouse is in when given an array of regions |
 
-### objv
-Ease of referencing variables in object instances
+There are also a number of functions that can quickly create a region from a resource or element.
 
 | Function Name | Description |
 | --- | --- |
-| `_objv` | Retrieve the value of a variable from an object instance, with the option to define the default value should it not exist |
-| `_objvExists` | Check if a variable exists in an object instance |
+| `_textRegion` | Returns the region text would fill if it was drawn at x,y (accounts for alignment) |
+| `_spriteRegion` | Returns the region a sprite would fill if it was drawn at x,y (accounts for the sprite's origin point) |
+| `_roomRegion` | Returns the region the currently active room occupies |
+| `_viewRegion` | Returns the region of a view (defaulting to view_current) |
+| `_cameraRegion` | Returns the region of a camera (defaulting to view_camera\[view_current)\] |
+| `_displayRegion` | Returns the region of the display |
+| `_windowRegion` | Returns the region the window occupies on the screen |
+| `_surfaceRegion` | Returns the region of a surface (defaulting to the application_surface) |
 
 ### ...misc
 Extra functions that don't fit a category
