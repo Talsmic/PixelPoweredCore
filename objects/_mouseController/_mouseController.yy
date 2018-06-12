@@ -33,6 +33,26 @@
             "enumb": 72,
             "eventtype": 8,
             "m_owner": "01de25ad-6fd4-42a5-976a-9e27a99195b3"
+        },
+        {
+            "id": "ab03c36c-0f95-4f7c-b93a-a0e8ce025401",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 64,
+            "eventtype": 8,
+            "m_owner": "01de25ad-6fd4-42a5-976a-9e27a99195b3"
+        },
+        {
+            "id": "4d2ce663-268a-4561-8b6c-a8cb16a9ce14",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
+            "m_owner": "01de25ad-6fd4-42a5-976a-9e27a99195b3"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -51,7 +71,36 @@
     "physicsShape": 1,
     "physicsShapePoints": null,
     "physicsStartAwake": true,
-    "properties": null,
+    "properties": [
+        {
+            "id": "42c24fb1-e7fc-4641-853a-d88f0b4bcf6c",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "True",
+            "varName": "DebugDraw",
+            "varType": 3
+        },
+        {
+            "id": "7c53434d-ee50-4fc5-a058-70f85ae31dd6",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "True",
+            "varName": "DebugDrawGUI",
+            "varType": 3
+        }
+    ],
     "solid": false,
     "spriteId": "37db6a13-38fa-4ebc-9568-3b62ef9d19ad",
     "visible": false

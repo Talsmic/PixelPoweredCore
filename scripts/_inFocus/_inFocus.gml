@@ -8,13 +8,10 @@
 var _instance =	argument_count > 0 ? argument[0] : self;
 #endregion
 
-//If the object is "FocusIndependant" or has no Focus Level, this always returns true
-if ( _objv("FocusIndependant", false, _instance) ) { return true };//[!Break!]~~~~~~~~~~~~~~~~~~~~~>
-if ( !_objvExists("_FocusLevel", _instance) )	   { return true };//[!Break!]~~~~~~~~~~~~~~~~~~~~~>
-
 //Get the object's focus level
-var _focus_level = _objv("FocusLevel", 0, _instance);
+if ( _objv("focus_level", -1, _instance) = -1 ) { return true };//[!Break!]~~~~~~~~~~~~~~~~~~~~~>
+var _focus_level = _objv("focus_level", 0, _instance);
 
 //Compare to global and decide on a result
 if ( _focus_level >= global.FocusLevel ) { return true };
-return false
+return false;

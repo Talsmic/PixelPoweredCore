@@ -1,44 +1,54 @@
-///drawButton_Framed(x,y,button_frame,button_sprite,[button_image],[button_colour],[frame_colour],[alpha],[text],[text_align],[button_mask],[state]);
-/// @arg x				{real}	
-/// @arg y				{real}	
+///drawButton_Framed(x,y,button_frame,button_sprite,[button_image],[button_colour],[frame_colour],[alpha],[text],[text_align],[state],[keys]);
+/// @arg x					{real}	
+/// @arg y					{real}	
 /// @arg button_frame		#sprite_id#	
-/// @arg button_sprite	#sprite_id#	
-/// @arg [button_image]	{integer}		(default: 0)
-/// @arg [button_colour]	#c_code#	(default: draw_get_colour())
-/// @arg [frame_colour]	#c_code#		(default: c_white)
-/// @arg [alpha]		{real|0..1}		(default: draw_get_alpha())
-/// @arg [text]			{array}			(default: ""} [string, colour, alpha]
-/// @arg [text_align]	#align#			(default: [global.AlignX, global.AlignY, global.AlignXo, global.AlignYo]);
-/// @arg [button_mask]	#sprite_id#		(default: -1)
-/// @arg [state]		#eButtonState#	(default: eButtonState.detect)
+/// @arg button_sprite		#sprite_id#	
+/// @arg [button_image]		{integer}		(default: 0)
+/// @arg [button_colour]	#c_code#		(default: draw_get_colour())
+/// @arg [frame_colour]		#c_code#		(default: c_white)
+/// @arg [alpha]			{real|0..1}		(default: draw_get_alpha())
+/// @arg [text_array]		{array}			(default: ""} [string, colour, alpha, outline, outline_colour]
+/// @arg [text_align]		#align#			(default: [global.AlignX, global.AlignY, global.AlignXo, global.AlignYo]);
+/// @arg [state]			#eButtonState#	(default: eButtonState.detect)
+/// @arg [keys]				{array}			(default: -1)
+/*
+
+	frame image_index	[0] = disabled
+						[1] = standard
+						[2] = mouseover
+						[4] = pressed
+						[5] = mask (optional)
+						[6] = blender (optional)
+
+*/
 #region Arguments & Variables
 if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
-var draw_x =		argument[0];
-var draw_y =		argument[1];
-var button_frame =	argument[2];
-var button_sprite =	argument[3];
-var button_image =	argument_count > 4 ? argument[4] : 0;
-var button_colour =	argument_count > 5 ? argument[5] : draw_get_colour();
-var frame_colour =	argument_count > 6 ? argument[6] : c_white;
-var alpha =			argument_count > 7 ? argument[7] : draw_get_alpha();
-var text =			argument_count > 8 ? _validateArray(argument[8],3,3,["",c_white,1]) : ["",c_white,1];
-var text_align =	argument_count > 9 ? _storeAlign(argument[9]) : [global.AlignX, global.AlignY, global.AlignXo, global.AlignYo];
-var button_mask =	argument_count > 10 ? argument[10] : -1;
-var state =			argument_count > 11 ? argument[11] : eButtonState.detect;
+var _x =			argument[0];
+var _y =			argument[1];
+var _frame =		argument[2];
+var _sprite =		argument[3];
+var _image =		argument_count > 4 ? argument[4] : 0;
+var _colour =		argument_count > 5 ? argument[5] : draw_get_colour();
+var _colourF =		argument_count > 6 ? argument[6] : c_white;
+var _alpha =		argument_count > 7 ? argument[7] : draw_get_alpha();
+var _text_array =	argument_count > 8 ? _validateArray(argument[8], 5, 5, ["", c_white, 1, 0, c_black]) : ["", c_white, 1, 0, c_black];
+var _text_align =	argument_count > 9 ? _storeAlign(argument[9]) : [global.AlignX, global.AlignY, global.AlignXo, global.AlignYo];
+var _state =		argument_count > 10 ? argument[10] : eButtonState.detect;
+var _keys =			argument_count > 11 ? argument[11] : -1;
 #endregion
 
 //Find Region
-var button_region = _spriteRegion( draw_x, draw_y, button_frame );
-var anchor = [ sprite_get_xoffset(button_frame), sprite_get_xoffset(button_frame) ];
-var offset = [	(button_region[aR.w]-sprite_get_width(button_sprite)) div 2, 
-				(button_region[aR.h]-sprite_get_height(button_sprite)) div 2, 
+var _region = _spriteRegion( _x, _y, _frame );
+var _anchor = [ sprite_get_xoffset(_frame), sprite_get_xoffset(_frame) ];
+var _offset = [	(_region[aR.w]-sprite_get_width(_sprite))  div 2, 
+				(_region[aR.h]-sprite_get_height(_sprite)) div 2, 
 				];
 
 //State Detection
-if ( state == eButtonState.detect ) { state = buttonStateInRegion(button_region) };
+if ( _state == eButtonState.detect ) { _state = buttonStateInRegion(_region, _keys) };
 
 //Create Surface
-var surface = surface_create( button_region[aR.w], button_region[aR.h] );
+var surface = surface_create( _region[aR.w], _region[aR.h] );
 
 //Draw to Surface
 surface_set_target( surface ) {
@@ -46,40 +56,36 @@ surface_set_target( surface ) {
 	draw_clear_alpha(c_white, 0);	
 	
 	//Draw Flat Colour	
-	drawPlane(offset[0],offset[1],sprite_get_width(button_sprite),sprite_get_height(button_sprite),button_colour);
-	//Draw Icon
-	drawSprite(anchor[0],anchor[1],button_sprite,button_image,button_colour);
+	drawPlane(_offset[0], _offset[1], sprite_get_width(_sprite), sprite_get_height(_sprite), _colour);
+	//Draw Sprite
+	drawSprite(_anchor[0], _anchor[1], _sprite, _image, _colour);
 	//Draw Blender
-	drawSprite(anchor[0],anchor[1],button_frame,4,button_colour);
+	if ( sprite_get_number(_frame) > 5 ) { drawSprite(_anchor[0], _anchor[1], _frame, 5, _colour) };
 	//Clipping Mask
-	if button_mask > 0 {
+	if ( sprite_get_number(_frame) > 4 ) {
 		gpu_set_blendmode(bm_subtract);
-		drawSprite(anchor[0],anchor[1],button_mask,0,c_white);
+		drawSprite(_anchor[0], _anchor[1], _frame, 4, c_white);
 		gpu_set_blendmode(bm_normal);	
 		};
 	//Draw Frame
-	switch state {
-		 case eButtonState.disabled: case eButtonState.pressed:
-			drawSprite(anchor[0],anchor[1],button_frame,0,frame_colour);	draw_y++;	break;
-		default: case eButtonState.enabled: case eButtonState.mouseover:
-			drawSprite(anchor[0],anchor[1],button_frame,1,frame_colour);				break;
+	switch _state {		
+		case eButtonState.disabled: 	drawSprite(_anchor[0], _anchor[1], _frame, 0, _colourF);	_y++;	break;			
+		default: 
+		case eButtonState.enabled: 		drawSprite(_anchor[0], _anchor[1], _frame, 1, _colourF);			break;			
+		case eButtonState.mouseover:	drawSprite(_anchor[0], _anchor[1], _frame, 2, _colourF);			break;			
+		case eButtonState.pressed:		drawSprite(_anchor[0], _anchor[1], _frame, 3, _colourF);	_y++;	break;
 		};
-	//Mouseover
-	if ( state == eButtonState.mouseover ) { drawSprite(anchor[0],anchor[1],button_frame, 2, c_white) };
-	if ( state == eButtonState.pressed   ) { drawSprite(anchor[0],anchor[1],button_frame, 3, c_white) };
 	
 } surface_reset_target();
 
 //Draw Surface
-if ( state != eButtonState.disabled ) { draw_surface_ext( surface, draw_x-anchor[0], draw_y-anchor[1], 1, 1, 0, c_white, alpha ) }
-						       else { draw_surface_ext( surface, draw_x-anchor[0], draw_y-anchor[1], 1, 1, 0, c_gray10, alpha ) }
+if ( _state != eButtonState.disabled ) { draw_surface_ext( surface, _x-_anchor[0], _y-_anchor[1], 1, 1, 0, c_white, _alpha ) }
+								  else { draw_surface_ext( surface, _x-_anchor[0], _y-_anchor[1], 1, 1, 0, c_gray10, _alpha ) }
 surface_free( surface );
 
 //Text
-if ( text[0] != "" ) {
-	var saved_align = _storeAlign();
-	_setAlign(text_align);
-	var text_draw = _positionInRegion(button_region, text_align);
-	drawText(button_region[aR.x1] + text_draw[0], button_region[aR.y1] + text_draw[1], text[0], text[1], text[2]);
-	_setAlign(saved_align);
-	};
+if ( _text_array[0] != "" ) {
+	drawText_Outlined_InRegion(_region, _text_array[0], _text_align, _text_array[1], _text_array[4], _text_array[2], _text_array[3], 0, 0, 0 );
+	};	
+	
+return _region;

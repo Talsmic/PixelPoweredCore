@@ -47,12 +47,12 @@ if ( variable_instance_exists(instance_ref,"Hidden") ) {
 			rB++; boxB_col1[rB] = "WindowAnchor_Y"; boxB_col2[rB] = "real"; boxB_col3[rB] = instance_ref.WindowAnchor_Y };
 		};
 	};
-if ( variable_instance_exists(instance_ref,"foc_FocusLevel") ) { 
-	rB++; boxB_col1[rB] = "foc_FocusLevel"; boxB_col2[rB] = "real"; boxB_col3[rB] = instance_ref.foc_FocusLevel };
+if ( variable_instance_exists(instance_ref,"foc_focus_level") ) { 
+	rB++; boxB_col1[rB] = "foc_focus_level"; boxB_col2[rB] = "real"; boxB_col3[rB] = instance_ref.foc_focus_level };
 if ( variable_instance_exists(instance_ref,"FocusFixer") ) { 
 	rB++; boxB_col1[rB] = "FocusFixer"; boxB_col2[rB] = "boolean"; boxB_col3[rB] = _booleanString(instance_ref.FocusFixer) };
-if ( variable_instance_exists(instance_ref,"FocusSetter") ) { 
-	rB++; boxB_col1[rB] = "FocusSetter"; boxB_col2[rB] = "boolean"; boxB_col3[rB] = _booleanString(instance_ref.FocusSetter) };
+if ( variable_instance_exists(instance_ref,"isFocusSetter") ) { 
+	rB++; boxB_col1[rB] = "isFocusSetter"; boxB_col2[rB] = "boolean"; boxB_col3[rB] = _booleanString(instance_ref.isFocusSetter) };
 #endregion
 
 //Box Dimensions

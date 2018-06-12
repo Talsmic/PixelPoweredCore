@@ -1,4 +1,6 @@
-_class_Controller();
+event_inherited();
+
+depth = -101
 
 global.MouseX = 0;
 global.MouseY = 0;

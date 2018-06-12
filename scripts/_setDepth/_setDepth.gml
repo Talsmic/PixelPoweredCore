@@ -1,24 +1,30 @@
 ///_setDepth();
 
-//GUIObject + Background
-if ( _objv("BackgroundObject", false) and _objv("GUIObject", false) ) {
-	depth = 10 + _objv("DepthOffset", 0);
+//isGUIObject + isBackgroundObject
+if ( _objv("isBackgroundObject", false) and _objv("isGUIObject", false) ) {
+	depth = 10 + _objv("depth_offset", 0);
 	exit;
 	};
 
-//GUIObject
-if ( _objv("GUIObject", false) ) {
-	depth = _objv("GUILevel", _objv("FocusLevel", 1) ) + _objv("DepthOffset", 0);
-	exit;
+//isGUIObject
+if ( _objv("isGUIObject", false) ) {
+	if ( _objv("focus_level", 0) == -1 ) { depth = -(100 + _objv("depth_offset", 0)); return depth };
+	depth = -(_objv("focus_level", 0)*10 + _objv("depth_offset", 0));
+	return depth;
 	};
 
-//Background
-if ( _objv("BackgroundObject", false) ) {
-	depth = 0 + _objv("DepthOffset", 0);
-	exit;
+//isBackgroundObject
+if ( _objv("isBackgroundObject", false) ) {
+	depth = 0 + _objv("depth_offset", 0);
+	return depth;
 	};
 	
 //Offset Depth
-if ( _objv("DepthOffset", 0) != 0 ) { depth = _objv("DepthOffset", 0) };
+if ( _objv("depth_offset", 0) != 0 ) { 
+	depth = _objv("depth_offset", 0); 
+	return depth 
+	};
 	
 depth = room_height - y;
+
+return depth

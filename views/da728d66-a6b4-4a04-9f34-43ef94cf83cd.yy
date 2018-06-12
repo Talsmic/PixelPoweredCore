@@ -11,7 +11,7 @@
         "3154aa22-e0e1-46d0-92f2-976d373ab916"
     ],
     "filterType": "GMSprite",
-    "folderName": "Cursor",
+    "folderName": "[ _resolution ] Cursor",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

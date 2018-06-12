@@ -44,7 +44,7 @@ Note:	This should list any object level variable in a class, but won't list ever
 	
 ---{foc_}-[Focus]-----------------------------------------------------------------------------------
 	foc_InteractionLayer			|		|	#eFocusLayer#	|
-	foc_FocusLevel					|		|					|	
+	foc_focus_level					|		|					|	
 	
 ---{res_}-[Resolution]------------------------------------------------------------------------------
 	res_Magnification				|		|	{real}			|	ResolutionController	

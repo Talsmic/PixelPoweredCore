@@ -5,11 +5,11 @@
 */
 
 if ( !instance_exists(_focusController) ) exit;//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>
-if ( !_objv("FocusSetter", true) ) exit;//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>
+if ( !_objv("isFocusSetter", true) ) exit;//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>
 
 #region Arguments
 //Defaults < InstanceVariables < Parameters
-var _focus_level =	argument_count > 0 ? argument[0] : _objv("FocusLevel", 0);
+var _focus_level =	argument_count > 0 ? argument[0] : _objv("focus_level", 0);
 #endregion
 
 //Check and change focus level

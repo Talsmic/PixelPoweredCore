@@ -20,8 +20,8 @@ var _text =			argument[2];
 var _colourA =		argument_count > 3 ? argument[3] : draw_get_color();
 var _colourB =		argument_count > 4 ? argument[4] : c_black;
 var _alpha =		argument_count > 5 ? argument[5] : draw_get_alpha();
-var _thicknessA =	argument_count > 6 ? _validateArray(argument[6], 4, 4, 0, 0) : [1.5, 1.5, 1.5, 1.5];
-var _thicknessB =	argument_count > 7 ? _validateArray(argument[7], 4, 4, 0, 0) : [0, 0, 0, 0];
+var _thicknessA =	argument_count > 6 ? _validateArray(argument[6], 4, 4, argument[6]) : [1.5, 1.5, 1.5, 1.5];
+var _thicknessB =	argument_count > 7 ? _validateArray(argument[7], 4, 4, argument[7]) : [0, 0, 0, 0];
 var _alphaB =		argument_count > 8 ? argument[8] : 0.2;
 var _colourC =		argument_count > 9 ? argument[9] : c_black;
 var _thickA, _thickB, _shadowA, _shadowB;
@@ -37,9 +37,9 @@ for ( var t=0 ; t<4 ; ++t ) {
 var _colourS = merge_colour(_colourB, _colourC, _alphaB);
 #endregion
 
-var _region = _textRegion(_x, _y, _text);
-_region = _alterRegion(_region, _shadowA);
-var _align = _storeAlign();
+var _region =	_textRegion(_x, _y, _text);
+_region =		_alterRegion(_region, _shadowA);
+var _align =	_storeAlign();
 _setAlign();
 
 //Create Surface
@@ -54,27 +54,33 @@ surface_set_target( _surface ) {
 	var i, j;
 	//Shaded Outline
 	if ( _arrayCompare_Greaters(_thicknessB, _thicknessA) ) {
+		draw_set_color(_colourS);
 		for ( i=-_shadowA[0] ; i<=_shadowA[2] ; ++i ) {
 			for ( j=-_shadowB[1] ; j<=_shadowB[3] ; ++j ) {
-				drawText(_surf_x+i, _surf_y+j, _text, _colourS, 1);
+				draw_text(_surf_x+i, _surf_y+j, _text);
+				//drawText(_surf_x+i, _surf_y+j, _text, _colourS, 1);
 				};
 			};
 		for ( j=-_shadowA[1] ; j<=_shadowA[3] ; ++j ) {
 			for ( i=-_shadowB[0] ; i<=_shadowB[2] ; ++i ) {
-				drawText(_surf_x+i, _surf_y+j, _text, _colourS, 1);
+				draw_text(_surf_x+i, _surf_y+j, _text);
+				//drawText(_surf_x+i, _surf_y+j, _text, _colourS, 1);
 				};
 			};
 		};
 		
 	//Outline
+	draw_set_color(_colourB);
 	for ( i=-_thickA[0] ; i<=_thickA[2] ; ++i ) {
 		for ( j=-_thickB[1] ; j<=_thickB[3] ; ++j ) {
-			drawText(_surf_x+i, _surf_y+j, _text, _colourB, 1);
+			draw_text(_surf_x+i, _surf_y+j, _text);
+			//drawText(_surf_x+i, _surf_y+j, _text, _colourB, 1);
 			};
 		};
 	for ( j=-_thickA[1] ; j<=_thickA[3] ; ++j ) {
 		for ( i=-_thickB[0] ; i<=_thickB[2] ; ++i ) {
-			drawText(_surf_x+i, _surf_y+j, _text, _colourB, 1);
+			draw_text(_surf_x+i, _surf_y+j, _text);
+			//drawText(_surf_x+i, _surf_y+j, _text, _colourB, 1);
 			};
 		};
 		
@@ -82,16 +88,16 @@ surface_set_target( _surface ) {
 	drawText(_surf_x, _surf_y, _text, _colourA, 1);
 	
 } surface_reset_target();
-//Draw Surface
+
+//Correct For Alignment
 _setAlign(_align);
-switch ( global.AlignX ) { 
-	case fa_center: _x -= string_width(_text) div 2; break; 
-	case fa_right:  _x -= string_width(_text)-1; break; 
-	};
-switch ( global.AlignY ) { 
-	case fa_center: _y -= string_height(_text) div 2; break; 
-	case fa_right:  _y -= string_height(_text); break; 
-	};	
-//debug_region( _regionBySize(_x-_thickA[0], _y-_thickA[1], _region[aR.w], _region[aR.h]) );
+var _draw = _alignedTextDrawPoint(_x, _y, _text);
+if ( _align[0] = fa_left )		{ _draw[0] += _thicknessB[0] };
+if ( _align[0] = fa_right )		{ _draw[0] -= _thicknessB[1] };
+if ( _align[1] = fa_top )		{ _draw[1] += _thicknessB[2] };
+if ( _align[1] = fa_bottom )	{ _draw[1] -= _thicknessB[3] };
+
+//Draw Surface
+//debug_region( _surfaceRegion(_surface, _x, _y), c_black );
 draw_surface_ext(_surface, _x-_thickA[0], _y-_thickA[1], 1, 1, 0, c_white, _alpha);
 surface_free(_surface);

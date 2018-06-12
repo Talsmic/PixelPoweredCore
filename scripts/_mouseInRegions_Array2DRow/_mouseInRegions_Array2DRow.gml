@@ -12,8 +12,8 @@ var mouse_layer =	argument_count > 1 ? argument[1] : _useGUIMouse();
 var region_array = 0;
 #endregion
 
-var m_x = mouse_layer ? global.GUI_MouseX : mouse_x;
-var m_y = mouse_layer ? global.GUI_MouseY : mouse_y;
+var m_x = mouse_layer ? global.GUIMouseX : mouse_x;
+var m_y = mouse_layer ? global.GUIMouseY : mouse_y;
 
 for ( var i=0; i<array_length_2d(array_of_regions,row); ++i ) {
 	region_array = array_of_regions[i,row]

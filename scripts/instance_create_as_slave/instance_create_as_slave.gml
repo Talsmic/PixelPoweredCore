@@ -14,12 +14,12 @@ var obj_y =			argument[1];
 var object =		argument[2];
 //Defaults < InstanceVariables < Parameters
 var depth_offset =	argument_count > 3 ? _objv("Layer_Depth_Offset",0) + argument[3] : _objv("Layer_Depth_Offset",0);
-var obj_focus =		argument_count > 4 ? _objv("foc_FocusLevel",0) - argument[4] : _objv("foc_FocusLevel",10);
+var obj_focus =		argument_count > 4 ? _objv("foc_focus_level",0) - argument[4] : _objv("foc_focus_level",10);
 var obj_depth = depth+depth_offset;	
 #endregion
 
 var output = instance_create_depth(obj_x,obj_y,obj_depth,object);
-output.foc_FocusLevel = obj_focus;
+output.foc_focus_level = obj_focus;
 output.Layer_Depth_Offset = depth_offset;
 output.IsSlave = true;
 output.Master = id;

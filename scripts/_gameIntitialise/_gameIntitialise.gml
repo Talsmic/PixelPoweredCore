@@ -22,3 +22,4 @@ global.PrimaryView =	0;
 instance_create_depth(0, 0, 0, _globalController);
 instance_create_depth(0, 0, 0, _focusController);
 instance_create_depth(0, 0, 0, _resolutionController);
+instance_create_depth(0, 0, 0, _mouseController);

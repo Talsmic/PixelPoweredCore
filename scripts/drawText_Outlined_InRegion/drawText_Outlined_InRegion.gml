@@ -12,6 +12,7 @@
 /*
 	[[ Draws ]]
 */
+
 #region Arguments & Variables & Variables
 //Arguments
 if argument_count < 2 { show_debug_message("ArgError drawText"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
@@ -21,34 +22,33 @@ var _align =		argument_count > 2 ? _storeAlign(argument[2]): [global.AlignX, glo
 var _colourA =		argument_count > 3 ? argument[3] : draw_get_color();
 var _colourB =		argument_count > 4 ? argument[4] : c_black;
 var _alpha =		argument_count > 5 ? argument[5] : draw_get_alpha();
-var _thicknessA =	argument_count > 6 ? _validateArray(argument[6], 4, 4, 0, 0) : [1, 1, 1, 1];
-var _thicknessB =	argument_count > 7 ? _validateArray(argument[7], 4, 4, 0, 0) : [0, 0, 0, 0];
+var _thicknessA =	argument_count > 6 ? _validateArray(argument[6], 4, 4, argument[6]) : [1.5, 1.5, 1.5, 1.5];
+var _thicknessB =	argument_count > 7 ? _validateArray(argument[7], 4, 4, argument[7]) : [0, 0, 0, 0];
 var _alphaB =		argument_count > 8 ? argument[8] : 0.2;
 var _colourC =		argument_count > 9 ? argument[9] : c_black;
 //Other Variables
 var saved_align = _storeAlign();
-var _x, _y;
+//var _x, _y;
 #endregion
 
-switch ( _align[0] ) {
-	
-	default:
-	case fa_left:	_x = _region[aR.x1]							+ _align[2] + _thicknessA[0];	break;		
-	case fa_center:	_x = _region[aR.x1] + (_region[aR.w] div 2) + _align[2];	break;	
-	case fa_right:	_x = _region[aR.x2]							- _align[2] - _thicknessA[2];	break;	
-		
-	};
-	
-switch ( _align[1] ) {	
-	
-	default:
-	case fa_top:	_y = _region[aR.y1]							+ _align[3] + _thicknessA[1];	break;		
-	case fa_middle:	_y = _region[aR.y1] + (_region[aR.h] div 2) + _align[3];	break;	
-	case fa_bottom:	_y = _region[aR.y2]							- _align[3] - _thicknessA[3];	break;	
-		
-	};
+debug_region( _region );
+
+if		( _align[0] == fa_left   and _align[1] == fa_top )	  {	var _draw = _alignedTextDrawPoint(_region[aR.x1],							_region[aR.y1],							_text, _align) }
+else if ( _align[0] == fa_left   and _align[1] == fa_middle ) {	var _draw = _alignedTextDrawPoint(_region[aR.x1],							_region[aR.y1] + (_region[aR.h] div 2),	_text, _align) }
+else if ( _align[0] == fa_left   and _align[1] == fa_bottom ) {	var _draw = _alignedTextDrawPoint(_region[aR.x1],							_region[aR.y2], 						_text, _align) }
+else if ( _align[0] == fa_center and _align[1] == fa_top )    {	var _draw = _alignedTextDrawPoint(_region[aR.x1] + (_region[aR.w] div 2),	_region[aR.y1], 						_text, _align) }
+else if ( _align[0] == fa_center and _align[1] == fa_middle ) {	var _draw = _alignedTextDrawPoint(_region[aR.x1] + (_region[aR.w] div 2),	_region[aR.y1] + (_region[aR.h] div 2), _text, _align) }
+else if ( _align[0] == fa_center and _align[1] == fa_bottom ) {	var _draw = _alignedTextDrawPoint(_region[aR.x1] + (_region[aR.w] div 2),	_region[aR.y2], 						_text, _align) }
+else if ( _align[0] == fa_right  and _align[1] == fa_top )    {	var _draw = _alignedTextDrawPoint(_region[aR.x2],							_region[aR.y1], 						_text, _align) }
+else if ( _align[0] == fa_right  and _align[1] == fa_middle ) {	var _draw = _alignedTextDrawPoint(_region[aR.x2],							_region[aR.y1] + (_region[aR.h] div 2), _text, _align) }
+else if ( _align[0] == fa_right  and _align[1] == fa_bottom ) {	var _draw = _alignedTextDrawPoint(_region[aR.x2],							_region[aR.y2], 						_text, _align) }
+
+if ( _align[0] == fa_left )   { _draw[0] += floor(_thicknessA[0]) };
+if ( _align[0] == fa_right )  { _draw[0] -= floor(_thicknessA[1]) };
+if ( _align[1] == fa_top )    { _draw[1] += floor(_thicknessA[2]) };
+if ( _align[1] == fa_bottom ) { _draw[1] -= floor(_thicknessA[3]) };
 
 _setAlign(_align);
-drawText_Outlined(_x, _y, _text, _colourA, _colourB, _alpha, _thicknessA, _thicknessB, _alphaB, _colourC);
+drawText_Outlined(_draw[0], _draw[1], _text, _colourA, _colourB, _alpha, _thicknessA, _thicknessB, _alphaB, _colourC);
 _setAlign(saved_align);
 	

@@ -3,8 +3,8 @@
 	/run a calculation every time you need it, which can be many times a draw
 	event. It also limits the check to every step, while drawing can happen
 	much more often than once a step in low res games.*/
-global.GUI_MouseX = _mouseGUI_X();
-global.GUI_MouseY = _mouseGUI_Y();
+global.GUIMouseX = _mouseGUI_X();
+global.GUIMouseY = _mouseGUI_Y();
 
 /*Check For Changes to Window Size
 	Checks if the window size has changed, and if it has, runs the correction 

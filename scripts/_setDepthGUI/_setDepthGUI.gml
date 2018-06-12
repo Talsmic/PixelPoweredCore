@@ -1,3 +1,5 @@
 ///_setDepthGUI();
 
-depth = _objv("GUILevel", _objv("FocusLevel", 1) ) + _objv("DepthOffset", 0);
+if ( _objv("focus_level", 0) == -1 ) { depth = -(100 + _objv("depth_offset", 0)); return depth };
+depth = -(_objv("focus_level", 0)*10 + _objv("depth_offset", 0));
+return depth;

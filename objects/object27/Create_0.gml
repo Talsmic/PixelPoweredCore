@@ -1,3 +1,5 @@
+_align = [fa_top, fa_left, 0, 0]
+
 array1d = [1,2,3,4,5,6,7,8,9,10]
 for ( var i=10 ; i > 0 ; --i ) {
 	for ( var j=10 ; j > 0 ; --j ) {

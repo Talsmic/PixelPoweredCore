@@ -39,8 +39,8 @@
 	global.AlignY 					|		|	{integer} Contains the horizontal alignment
 	global.AlignXo 				|		|	{real}	
 	global.AlignYo					|		|	{real}		
-	global.GUI_MouseX
-	global.GUI_MouseY
+	global.GUIMouseX
+	global.GUIMouseY
 	global.UpdateWindow
 	global.GamaBeat					|
 	global.ScrollBeat

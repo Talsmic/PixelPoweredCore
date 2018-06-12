@@ -1,4 +1,4 @@
-_class_Controller();
+event_inherited();
 
 //	Global Alignment Tracking
 //	Resets the global.Align variables at the start of each draw step

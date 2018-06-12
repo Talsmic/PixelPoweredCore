@@ -4,7 +4,7 @@ alarm[0] = 1; //Turn On Periodic Updates
 GUI_X = 0;
 GUI_Y = 0;
 Hidden = false;
-foc_FocusLevel = 8;
+foc_focus_level = 8;
 foc_InteractionLayer = eFocusLayer.GUI;
 
 //Anchors (-1 disables)

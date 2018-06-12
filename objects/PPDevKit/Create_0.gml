@@ -7,8 +7,8 @@ KeyBind_CommandLine = vk_f11;
 
 Hidden = false;
 Minimised = true;
-foc_FocusLevel = 2;
-FocusSetter = false;
+foc_focus_level = 2;
+isFocusSetter = false;
 
 CommandLine_Input = "";
 

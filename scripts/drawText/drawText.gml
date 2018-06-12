@@ -16,4 +16,4 @@ var _colour =	argument_count > 3 ? _validateArray(argument[3],4,4,argument[3]) :
 var _alpha =	argument_count > 4 ? argument[4] : draw_get_alpha();
 #endregion
 
-draw_text_colour(_x, _y ,_text, _colour[0], _colour[1], _colour[2], _colour[3], _alpha);
+draw_text_colour(_x, _y, _text, _colour[0], _colour[1], _colour[2], _colour[3], _alpha);

@@ -1,4 +1,4 @@
-_class_Controller();
+event_inherited();
 
 //Variables to be found later
 Width =				0;
