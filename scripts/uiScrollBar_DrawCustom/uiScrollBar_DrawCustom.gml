@@ -22,8 +22,8 @@ var _direction =		argument_count > 3 ? argument[3] : RIGHT;
 var _arrows =			argument_count > 4 ? argument[4] : true;
 var _spriteset =		argument_count > 5 ? argument[5] : spr_scrollbar;
 var _colour =			argument_count > 6 ? argument[6] : draw_get_colour();
-var _keys_increase =	argument_count > 7 ? _validateArray(argument[7]) : ( _direction == TOP or _direction == BOTTOM ? [vk_right, ord("D")] : [vk_down, ord("S")] );
-var _keys_decrease =	argument_count > 8 ? _validateArray(argument[8]) : ( _direction == TOP or _direction == BOTTOM ? [vk_left, ord("A")]  : [vk_up, ord("W")] );
+var _keys_increase =	argument_count > 7 ? _asArray(argument[7]) : ( _direction == TOP or _direction == BOTTOM ? [vk_right, ord("D")] : [vk_down, ord("S")] );
+var _keys_decrease =	argument_count > 8 ? _asArray(argument[8]) : ( _direction == TOP or _direction == BOTTOM ? [vk_left,  ord("A")] : [vk_up,   ord("W")] );
 var _bar_flipped =		argument_count > 9 ? argument[9] : false;
 //Other Variables
 var _knob_w =		sprite_get_width(_spriteset);

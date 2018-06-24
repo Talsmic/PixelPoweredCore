@@ -18,17 +18,17 @@ if argument_count < 3 { show_debug_message("ArgError _drawDSMap"); exit };//[!Br
 var _x =			argument[0];
 var _y =			argument[1];
 var _dsmap =		argument[2];
-var _colour =		argument_count > 3 ? _validateArray(argument[3],1,-1,argument[3]) : [draw_get_color()];
+var _colour =		argument_count > 3 ? _asArray(argument[3]) : [draw_get_color()];
 var _alpha =		argument_count > 4 ? argument[4] : draw_get_alpha();
 var _rows =			argument_count > 5 ? argument[5] : -1;
 var _starting_row =	argument_count > 6 ? argument[6] : 0;
-var _column_width =	argument_count > 7 ? _validateArray(argument[7]) : [100];
-var _row_height =	argument_count > 8 ? _validateArray(argument[8]) : [string_height("|")+1];
-var _spacing =		argument_count > 9 ? _validateArray(argument[9],2,2,argument[9]) : [1,1];
+var _column_width =	argument_count > 7 ? _asArray(argument[7]) : [100];
+var _row_height =	argument_count > 8 ? _asArray(argument[8]) : [string_height("|")+1];
+var _spacing =		argument_count > 9 ? _arrayOfLength(argument[9], 2) : [1,1];
 //Other Variables
 var _mapsize =		ds_map_size(_dsmap);
 if ( _mapsize < _rows ) { _rows = _mapsize; _starting_row = 0 };
-var _stored_align = _storeAlign();
+var saved_align = [global.AlignX, global.AlignY, global.AlignXo, global.AlignYo];
 #endregion
 
 var _next = ds_map_find_first( _dsmap );
@@ -79,4 +79,4 @@ while ( !is_undefined( _next ) ) {
 	
 	};
 	
-_setAlign(_stored_align);
+_setAlign(saved_align);

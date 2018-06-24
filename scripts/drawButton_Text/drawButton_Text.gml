@@ -24,15 +24,15 @@ var _colourO =	argument_count > 4 ? argument[4] : c_shadow_dark;
 var _colourM =	argument_count > 5 ? argument[5] : c_white;
 var _alpha =	argument_count > 6 ? argument[6] : draw_get_alpha();
 var _pop =		argument_count > 7 ? argument[7] : 1;
-var _outline =	argument_count > 8 ? argument[8] : 0;
-var _padding =	argument_count > 9 ? argument[9] : 0;
+var _outline =	argument_count > 8 ? _arrayOfLength(argument[8], 4) : 0;
+var _padding =	argument_count > 9 ? _arrayOfLength(argument[9], 4) : 0;
 var _state =	argument_count > 10 ? argument[10] : eButtonState.detect;
 var _keys =		argument_count > 11 ? argument[11] : -1;
 #endregion
 
 //Find Region
 var _region = _textRegion( _x, _y, "_text" );
-if ( _pop )				{ _region = _alterRegion(_region, [0, _pop, 0, 0]) };
+if ( _pop )				{ _region = _alterRegion(_region, [0, _pop]) };
 if ( _padding != -1 )	{ _region = _alterRegion(_region, _padding) };
 
 //State Detection

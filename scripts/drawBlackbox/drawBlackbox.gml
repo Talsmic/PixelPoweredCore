@@ -14,7 +14,7 @@ var _x =		argument[0];
 var _y =		argument[1];
 var _width =	argument[2]; 
 var _height =	argument[3];
-var _corners =	argument_count > 4 ? _validateArray(argument[4], 4, 4, argument[4]) : [0,0,0,0];
+var _corners =	argument_count > 4 ? _arrayOfLength(argument[4], 4) : [0,0,0,0];
 #endregion
 
 var _box = [_x, _y, _x+_width, _y+_height, _width, _height];
@@ -24,6 +24,6 @@ if ( _corners[1] ) { _tiles[1] = 11 };
 if ( _corners[2] ) { _tiles[2] = 12 };
 if ( _corners[3] ) { _tiles[3] = 13 };
 
-drawTilebox(_box, spr_plainbox_4x4, c_black, 0.8, _tiles);
+drawTilebox_Region(_box, spr_plainbox_4x4, c_black, 0.8, _tiles);
 
 return _box;

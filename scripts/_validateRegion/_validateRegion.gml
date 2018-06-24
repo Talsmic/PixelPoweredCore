@@ -1,11 +1,5 @@
-///_validateRegion([input_array],[input_x1],[input_y1],[input_x2],[input_y2],[input_w],[input_h]);
-/// @arg [input_array]	{any}	
-/// @arg [input_x1]		{any}	
-/// @arg [input_y1]		{any}		
-/// @arg [input_x2]		{any}	
-/// @arg [input_y2]		{any}		
-/// @arg [input_w]		{any}	
-/// @arg [input_h]		{any}	
+///_validateRegion(input_region);
+/// @arg input_region	{any}
 /*
 	<< Returns >> #region# {array} [aR.x1, aR.y1, aR.x2, aR.y2, aR.w, aR.h]
 	This script corrects a region to the format [x1, y1, x2, y2, (w)idth, (h)eight]
@@ -14,12 +8,44 @@
 	if you give it nothing, expect [x, y, x+16, y+16, 16, 16]
 	Provided individual inputs have priority over the intial array
 */
+
 #region Special Enumerator: #aR# / #aRegion# (for Array IDs)
 enum aR { //For Shorthand
 	x1, y1, x2, y2, w, h };	
 enum aRegion {
 	x1, y1, x2, y2, w, h };
 #endregion
+
+var _region = argument0;
+
+//Make sure array is big enough
+switch ( array_length_1d(_region) ) {
+	case 0:		_region[@ aR.x1] = x;						_log("Region Error: x1")
+	case 1:		_region[@ aR.y1] = y;						_log("Region Error: y1")
+	case 2:		_region[@ aR.x2] = _region[aR.x1] + 16;		_log("Region Error: x2")
+	case 3:		_region[@ aR.y2] = _region[aR.y1] + 16;		_log("Region Error: y2")
+	};
+	
+//Make sure x1 and y1 are actually the smallest x and y
+if ( _region[aR.x1] > _region[aR.x2] ) { 
+	var temp =		   _region[aR.x1];
+	_region[@ aR.x1] = _region[aR.x2];	
+	_region[@ aR.x2] = temp;	
+	};
+if ( _region[aR.y1] > _region[aR.y2] ) { 
+	var temp =		   _region[aR.y1];
+	_region[@ aR.y1] = _region[aR.y2];	
+	_region[@ aR.y2] = temp;	
+	};
+
+//Recalculate width and height
+_region[@ aR.w] = _region[aR.x2] - _region[aR.x1];
+_region[@ aR.h] = _region[aR.y2] - _region[aR.y1];
+
+//Return fixed region
+return _region;
+
+/*Old Version
 #region Arguments & Variables
 if ( argument_count == 0 ) { show_debug_message("dirty region"); return [x, y, x+16, y+16, 16, 16] };//[!Break!]
 var df = 16;

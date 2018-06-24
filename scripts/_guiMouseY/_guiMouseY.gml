@@ -1,3 +1,3 @@
 ///_guiMouseY()
 
-return 0;
+return device_mouse_y_to_gui(0); 

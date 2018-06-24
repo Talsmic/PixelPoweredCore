@@ -8,7 +8,7 @@
 /// @arg [frame_colour]		#c_code#		(default: c_white)
 /// @arg [alpha]			{real|0..1}		(default: draw_get_alpha())
 /// @arg [text_array]		{array}			(default: ""} [string, colour, alpha, outline, outline_colour]
-/// @arg [text_align]		#align#			(default: [global.AlignX, global.AlignY, global.AlignXo, global.AlignYo]);
+/// @arg [text_align]		#align#			(default: global.AlignArray);
 /// @arg [state]			#eButtonState#	(default: eButtonState.detect)
 /// @arg [keys]				{array}			(default: -1)
 /*
@@ -31,8 +31,8 @@ var _image =		argument_count > 4 ? argument[4] : 0;
 var _colour =		argument_count > 5 ? argument[5] : draw_get_colour();
 var _colourF =		argument_count > 6 ? argument[6] : c_white;
 var _alpha =		argument_count > 7 ? argument[7] : draw_get_alpha();
-var _text_array =	argument_count > 8 ? _validateArray(argument[8], 5, 5, ["", c_white, 1, 0, c_black]) : ["", c_white, 1, 0, c_black];
-var _text_align =	argument_count > 9 ? _storeAlign(argument[9]) : [global.AlignX, global.AlignY, global.AlignXo, global.AlignYo];
+var _text_array =	argument_count > 8 ? _asArrayOf(argument[8], ["", c_white, 1, 0, c_black]) : ["", c_white, 1, 0, c_black];
+var _text_align =	argument_count > 9 ? _alignArray(argument[9]) : global.AlignArray;
 var _state =		argument_count > 10 ? argument[10] : eButtonState.detect;
 var _keys =			argument_count > 11 ? argument[11] : -1;
 #endregion
@@ -85,7 +85,8 @@ surface_free( surface );
 
 //Text
 if ( _text_array[0] != "" ) {
-	drawText_Outlined_InRegion(_region, _text_array[0], _text_align, _text_array[1], _text_array[4], _text_array[2], _text_array[3], 0, 0, 0 );
+	if ( _text_array[3] ) { drawText_Outlined_InRegion(_region, _text_array[0], _text_align, _text_array[1], _text_array[4], _text_array[2], _text_array[3], 0, 0, 0 ) };
+					else  { drawText_InRegion(_region, _text_array[0], _text_array[1], _text_array[2], _text_align) };
 	};	
 	
 return _region;

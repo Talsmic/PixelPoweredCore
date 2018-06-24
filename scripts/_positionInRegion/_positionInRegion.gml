@@ -1,13 +1,13 @@
 ///_positionInRegion(region_array,[align_array]);
 /// @arg region_array	#region#
-/// @arg [align_array]	#align#			(default: [global.AlignX, global.AlignY, global.AlignXo, global.AlignYo]);
+/// @arg [align_array]	#align#			(default: global.AlignArray);
 /*
 	<< Returns >> {array} [point_in_region{boolean}, x_in_region{real}, y_in_region{real}]
 */
 #region Arguments & Variables
 if argument_count < 1 { show_debug_message("_positionInRegion requires a region"); exit };//[!Break!]~~~>
 var region_array =	_validateRegion(argument[0]);
-var align_array =	argument_count > 1 ? _storeAlign(argument[1]) : [global.AlignX, global.AlignY, global.AlignXo, global.AlignYo];
+var align_array =	argument_count > 1 ? _alignArray(argument[1]) : global.AlignArray;
 #endregion
 
 var x_in_region, y_in_region;

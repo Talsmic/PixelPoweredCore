@@ -5,6 +5,7 @@ global.AlignX =		fa_left;
 global.AlignY =		fa_top;
 global.AlignXo =	0;
 global.AlignYo =	0;
+global.AlignArray = [0, 0, 0, 0];
 
 //Required for [beat]:
 global.GameBeat =	0;

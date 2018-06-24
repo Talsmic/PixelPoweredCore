@@ -12,10 +12,10 @@
 #region Arguments & Variables
 if argument_count < 3 { show_debug_message("ArgError drawText"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 //Arguments
-var _x =		argument[0];
-var _y =		argument[1];
+var _x =		_magicX(argument[0]);
+var _y =		_magicY(argument[1]);
 var _text =		argument[2];
-var _colour =	argument_count > 3 ? _validateArray(argument[3],4,4,argument[3]) : [draw_get_color(), draw_get_color(), draw_get_color(), draw_get_color()];
+var _colour =	argument_count > 3 ? _validateArray(argument[3], 4) : [draw_get_color(), draw_get_color(), draw_get_color(), draw_get_color()];
 var _alpha =	argument_count > 4 ? argument[4] : draw_get_alpha();
 var _font =		argument_count > 5 ? argument[5] : global.Font;
 var _style =	argument_count > 6 ? argument[6] : -1;

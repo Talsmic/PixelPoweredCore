@@ -7,7 +7,7 @@
         "71ef3679-492b-47f0-ad47-5658c4640b11"
     ],
     "filterType": "GMSprite",
-    "folderName": "[PPDK]",
+    "folderName": "[WIP]",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

@@ -1,18 +1,32 @@
 // Inherit the parent event
 event_inherited();
 
-back_StoredBG_Sprite[1] = bg_square;
-back_StoredBG_Tint[1] = c_shadow_dark;
-set_AnchorToView = true;
-back_Flat_Colour = $ffeaff;
+Grid_Height =		32;
+Grid_Width =		60;
 
-ShiftingTiles_MinRows = 8;
-ShiftingTiles_MaxRows = 26;
-ShiftingTiles_Columns = 60;
-for ( var i=0; i<ShiftingTiles_Columns; ++i ) {
-	ShiftingTiles_ColumnHeight[i] = ShiftingTiles_MaxRows//irandom_range(ShiftingTiles_MinRows,ShiftingTiles_MaxRows-5);
+MinColumnLength =	2//8;
+MaxColumnLength =	10//26;
+MinRowLength =		2//8;
+MaxRowLength =		10//26;
+
+StartRow = 0;
+StartCol = 0;
+RefreshRate = 3;
+GrowthRate = 13;
+
+for ( var i=0 ; i<Grid_Width ; ++i ) {
+	Column[i] = irandom_range(MinColumnLength, round(MaxColumnLength*0.75));
 	};
-ShiftingTiles_AlphaFalloff = 0.10;
-ShiftingTiles_AlphaClimb = 0.03;
-ShiftingTiles_Backgrounding = true;
+	
+for ( var i=0 ; i<Grid_Height ; ++i ) {
+	Row[i] = irandom_range(MinColumnLength, round(MaxColumnLength*0.75));
+	};
+	
+AlphaChange_PerTile = 0.04;
+AlphaChange_TowardPeak = 0.25;
+Alpha_Background = 0.05
+
+AlphaGrid[Grid_Width, Grid_Height] = 0;
+//Backgrounding = true;
+
 alarm[0] = 1; //Turn On Periodic Updates

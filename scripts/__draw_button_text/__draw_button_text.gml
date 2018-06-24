@@ -15,17 +15,17 @@
 */
 #region Arguments & Variables
 if argument_count < 3 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
-var _x =	argument[0];
-var _y =	argument[1];
+var _x =		argument[0];
+var _y =		argument[1];
 var _text =		argument[2];
 var _colour =	argument_count > 3 ? argument[3] : c_shadow;
 var _colour2 =	argument_count > 4 ? argument[4] : c_shadow_dark;
 var _colour3 =	argument_count > 5 ? argument[5] : c_white;
-var _alpha =		argument_count > 6 ? argument[6] : draw_get_alpha();
+var _alpha =	argument_count > 6 ? argument[6] : draw_get_alpha();
 var _pop =		argument_count > 7 ? argument[7] : 1;
-var _outline =	argument_count > 8 ? argument[8] : 0;
-var _padding =	argument_count > 9 ? argument[9] : 0;
-var _state =		argument_count > 10 ? argument[10] : eButtonState.detect;
+var _outline =	argument_count > 8 ? _arrayOfLength(argument[9], 4) : 0;
+var _padding =	argument_count > 9 ? _arrayOfLength(argument[9], 4) : 0;
+var _state =	argument_count > 10 ? argument[10] : eButtonState.detect;
 #endregion
 
 //Find Region

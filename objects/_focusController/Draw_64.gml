@@ -1,7 +1,7 @@
 /// @desc Draw Focus Fog
 
 if ( FocusFogEnabled ) {
-	var _alpha =  _arrayValue(FocusFog_Alpha,  global.FocusLevel, eUpto.cap);
-	var _colour = _arrayValue(FocusFog_Colour, global.FocusLevel, eUpto.cap);
+	var _alpha =  _arrayValueToCap(FocusFog_Alpha,  global.FocusLevel);
+	var _colour = _arrayValueToCap(FocusFog_Colour, global.FocusLevel);
 	fillScreen(_colour, _alpha);
 	};

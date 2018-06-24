@@ -9,11 +9,11 @@
 #region Arguments & Variables
 var _sprite =	argument_count > 1 ? argument[1] : sprite_index;
 var _image =	argument_count > 2 ? argument[2] : image_index;
-var _draw =		argument_count > 0 ? _validateRegion(argument[0]) : [x,y,x+sprite_get_width(_sprite),y+sprite_get_height(_sprite),sprite_get_width(_sprite),sprite_get_height(_sprite)];
-var _colour =	argument_count > 3 ? _validateArray(argument[3],4,4,argument[3]) : [draw_get_color(),draw_get_color(),draw_get_color(),draw_get_color()];
+var _draw =		argument_count > 0 ? _asArray(argument[0]) : [x,y,x+sprite_get_width(_sprite),y+sprite_get_height(_sprite),sprite_get_width(_sprite),sprite_get_height(_sprite)];
+var _colour =	argument_count > 3 ? _arrayOfLength(argument[3], 4) : [draw_get_color(), draw_get_color(), draw_get_color(), draw_get_color()];
 var _alpha =	argument_count > 4 ? argument[4] : draw_get_alpha();
 var _stretch =	argument_count > 5 ? argument[5] : true;
-var _align =	argument_count > 6 ? _validateArray(argument[6],2,2,argument[6]) : [fa_left,fa_top];
+var _align =	argument_count > 6 ? argument[6] : [fa_left, fa_top];
 //Other Variables
 var _sprite_height = sprite_get_height(_sprite);
 var _sprite_width =  sprite_get_width(_sprite);

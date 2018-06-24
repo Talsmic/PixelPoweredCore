@@ -1,6 +1,6 @@
 ///_alignRegion(region_array,[align_array],[anchor]);
 /// @arg region_array	#region#
-/// @arg [align_array]	#align#			(default: [global.AlignX, global.AlignY, global.AlignXo, global.AlignYo]);
+/// @arg [align_array]	#align#			(default: global.AlignArray);
 /// @arg [anchor]		{array} [x,y]
 /*
 	<< Returns >> #region#
@@ -9,7 +9,7 @@
 #region Arguments & Variables
 if argument_count < 1 { show_debug_message("_alignRegion requires a region"); exit };//[!Break!]~~~>
 var region_array =	_validateRegion(argument[0]);
-var align_array =	argument_count > 1 ? _storeAlign(argument[1]) : [global.AlignX, global.AlignY, global.AlignXo, global.AlignYo];
+var align_array =	argument_count > 1 ? _alignArrayWithOffset(argument[1]) : global.AlignArray;
 var anchor =		argument_count > 2 ? argument[2] : [region_array[aR.x1], region_array[aR.y1]];
 var output =		region_array;
 #endregion

@@ -5,6 +5,7 @@
 /*
 	<< Returns >> {integer} The first region in the array the mouse is found in
 */
+/*
 #region Arguments & Variables
 var array_of_regions = _validateRegion(argument[0]);
 var row = argument[1];

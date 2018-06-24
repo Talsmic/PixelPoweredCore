@@ -7,7 +7,7 @@
 #region Arguments & Variables
 //Arguments
 var _add_values =	argument_count > 0 ? true : false;
-var _array =	argument_count > 0 ? _validateArray(argument[0]) : 0;
+var _array =		argument_count > 0 ?_asArray(argument[0]) : 0;
 //Other Variables
 var _output;
 #endregion

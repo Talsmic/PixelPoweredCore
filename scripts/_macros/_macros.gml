@@ -56,3 +56,4 @@
 //Other		
 	#macro POSITIVE		1
 	#macro NEGATIVE		-1
+	#macro fa_none		-1

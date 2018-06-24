@@ -12,7 +12,7 @@ var _y =			argument[1];
 var _text_body =	argument[2];
 var _text_header =	argument_count > 3 ? argument[3] : "";
 var _width_max =	argument_count > 4 ? argument[4] : 200;
-var _align =		argument_count > 5 ? _validateArray(argument[5],2,2,[global.AlignX, global.AlignY]) : [global.AlignX, global.AlignY];
+var _align =		argument_count > 5 ? _alignArray(argument[5]) : _alignArray();
 var use_body =		_text_body != "" ? true : false;
 var use_header =	_text_header != "" ? true : false;
 var _width_text =	_width_max-8;
@@ -54,7 +54,7 @@ switch _align[1] {
 	
 //Draw Box
 var _region = [_x, _y, _x+_width, _y+_height, _width, _height];
-drawTilebox(_region, spr_tooltipbox, c_white, 1);
+drawTilebox_Region(_region, spr_tooltipbox, c_white, 1);
 
 //Draw Text
 if use_header and use_body { 

@@ -32,7 +32,7 @@ ButtonFrame_Colour =	c_white;
 
 ButtonPop =				1;
 ButtonPadding =			[0, 0, 0, 0];
-ButtonKeybinds =		argument_count > 1 ? _validateArray(argument[1]) : -1;
+ButtonKeybinds =		argument_count > 1 ? _asArray(argument[1]) : -1;
 
 #endregion
 

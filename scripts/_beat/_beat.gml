@@ -17,7 +17,7 @@ enum aBeat {
 #endregion
 #region Arguments & Variables
 if argument_count < 1 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
-var beat =				_validateArray(argument[0],6,6,[0,1,10,1,1,0]);
+var beat =				_asArrayOf(argument[0], [0,1,10,1,1,0]);
 var loop =				argument_count > 1 ? argument[1] : false;
 var reset =				argument_count > 2 ? argument[2] : false;
 var acceleration =		argument_count > 3 ? argument[3] : 0;

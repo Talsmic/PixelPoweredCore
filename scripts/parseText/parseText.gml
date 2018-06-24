@@ -30,7 +30,7 @@ var space_pos, punctuation_pos, format_pos, j, i, c, found_formatting;
 do {
 	
 	//Check the position of space_breaks (default: [" "])
-	space_pos = _arrayValue(_stringPosFromArray(input, space_breaks));
+	space_pos = _arrayValue(_stringPosFromArray(input, space_breaks), 0);
 	
 	if ( space_pos ) {
 		//Snip @spaces
@@ -38,7 +38,7 @@ do {
 		input = string_delete(input, 1, space_pos);
 		
 		// Check the position of punctuation (default: [".",",","!","?","#",":",";"])
-		punctuation_pos = _arrayValue(_stringPosFromArray(input, punctuation));
+		punctuation_pos = _arrayValue(_stringPosFromArray(input, punctuation), 0);
 		
 		//Snip @punctuation
 		if ( punctuation_pos ) {	
@@ -72,7 +72,7 @@ for ( j=0 ; j<array_length_1d(ParsedText) ;  ++j ) {
 	#region Split Formatting (default: ["|"])
 	do {
 		
-		format_pos = _arrayValue(_stringPosFromArray(input, format_breaks));		
+		format_pos = _arrayValue(_stringPosFromArray(input, format_breaks), 0);		
 		if ( format_pos ) {		
 			space_pos = string_pos( " ", ParsedText[j] );
 			ParsedText[j] = string_replace_all( ParsedText[j], " ", "" );

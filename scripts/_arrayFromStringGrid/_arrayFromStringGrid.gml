@@ -11,8 +11,8 @@
 if argument_count < 1 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var input_string =		argument[0];
 var datatype =			argument_count > 1 ? argument[1] : eDataType._string;
-var height_spacers =	argument_count > 2 ? _validateArray(argument[2]) : [", ", ","];
-var length_spacers =	argument_count > 3 ? _validateArray(argument[3]) : ["|"];
+var height_spacers =	argument_count > 2 ? _asArray(argument[2]) : [", ", ","];
+var length_spacers =	argument_count > 3 ? _asArray(argument[3]) : ["|"];
 var output = [0,0];
 #endregion
 

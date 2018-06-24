@@ -11,8 +11,8 @@
 if argument_count < 3 { show_debug_message("_textRegion requires inputs"); exit };//[!Break!]~~~>
 var _x1 =			argument[0];
 var _y1 =			argument[1];
-var _sprite_id =		argument[2];
-var _padding =		argument_count > 3 ? _validateArray(argument[3],2,2,argument[3]) : [0, 0];
+var _sprite_id =	argument[2];
+var _padding =		argument_count > 3 ? _arrayOfLength(argument[3], 2) : [0, 0];
 #endregion
 
 _x1 -= _padding[0];

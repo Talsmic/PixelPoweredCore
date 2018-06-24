@@ -27,7 +27,7 @@ var height =	argument[3];
 var colour =	argument_count > 4 ? argument[4] : c_black;
 var alpha =		argument_count > 5 ? argument[5] : 0.8;
 var corner_a =	argument_count > 6 ? argument[6] : [0,0,0,0];
-var trim_array = argument_count > 7 ? _validateArray(argument[7],9,9,false) : [0,1,1,1,1,1,1,1,1,1];
+var trim_array = argument_count > 7 ? _validateArray(argument[7], 9, 9, false) : [0,1,1,1,1,1,1,1,1,1];
 #endregion
 
 __draw_tilebox(draw_x,draw_y,width,height,colour,alpha,spr_plainbox_4x4,corner_a,trim_array);

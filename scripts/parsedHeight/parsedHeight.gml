@@ -5,8 +5,8 @@
 /// @arg [spacing]			{integer}		(default: string_height("|"))
 /// @arg [line_breaks]		{array|strings}	(default: ["#"])
 #region Arguments & Variables
-var text_array =	argument_count > 0 ? _validateArray(argument[0]) : _validateArray(global.ParsedText);
-var format_array =	argument_count > 1 ? _validateArray(argument[1]) : _validateArray(global.ParsedText_Format);
+var text_array =	argument_count > 0 ? _asArray(argument[0]) : _asArray(global.ParsedText);
+var format_array =	argument_count > 1 ? _asArray(argument[1]) : _asArray(global.ParsedText_Format);
 var max_width =		argument_count > 2 ? argument[2] : -1;
 var spacing =		argument_count > 3 ? argument[3] : string_height("|");
 var line_breaks =	argument_count > 4 ? argument[4] : ["#"];

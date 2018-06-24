@@ -18,9 +18,9 @@
 if argument_count < 2 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var draw_x =		argument[0];		
 var draw_y =		argument[1];		
-var text_array =	argument_count > 2 ? _validateArray(argument[2]) : _validateArray(global.ParsedText);
-var colour_array =	argument_count > 3 ? _validateArray(argument[3]) : _validateArray(global.ParsedText_Colour);
-var format_array =	argument_count > 4 ? _validateArray(argument[4]) : _validateArray(global.ParsedText_Format);
+var text_array =	argument_count > 2 ? _asArray(argument[2]) : _asArray(global.ParsedText);
+var colour_array =	argument_count > 3 ? _asArray(argument[3]) : _asArray(global.ParsedText_Colour);
+var format_array =	argument_count > 4 ? _asArray(argument[4]) : _asArray(global.ParsedText_Format);
 var default_colour =argument_count > 5 ? argument[5] : draw_get_colour();
 var alpha =			argument_count > 6 ? argument[6] : draw_get_alpha();
 var max_width =		argument_count > 7 ? argument[7] : -1;

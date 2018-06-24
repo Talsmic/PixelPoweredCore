@@ -8,7 +8,7 @@
 #region Arguments & Variables
 //Arguments
 var _add_values =	argument_count > 0 ? true : false;
-var _array =	argument_count > 0 ? _validateArray(argument[0]) : 0;
+var _array =	argument_count > 0 ? _asArray(argument[0]) : 0;
 var _output;
 #endregion
 _dsMapCreate()
@@ -105,7 +105,7 @@ if ( ui_body_draw ) {
 //var ui_body_alpha =				_dsMapValue(_ui_settings,"Body_Alpha",			1);
 //var ui_body_offset =			_dsMapValue(_ui_settings,"Body_Offset",			[0,0]);
 
-//ui_body_colour =				_validateArray(ui_body_colour);
+//ui_body_colour =				_asArray(ui_body_colour);
 //ui_body_offset =				_validateArray(ui_body_offset,2,2,ui_body_offset);
 };
 #endregion
@@ -120,8 +120,8 @@ if ( ui_body_draw ) {
 //var ui_column_header_height =	_dsMapValue(_ui_settings,"Column_HeaderSize",	12);
 //var ui_column_alpha =			_dsMapValue(_ui_settings,"Column_Alpha",		0.4);
 
-//ui_column_width =				_validateArray(ui_column_width);
-//ui_column_colour =				_validateArray(ui_column_colour);
+//ui_column_width =				_asArray(ui_column_width);
+//ui_column_colour =				_asArray(ui_column_colour);
 #endregion
 
 #region Row Data
@@ -134,8 +134,8 @@ if ( ui_body_draw ) {
 //var ui_row_header_width =		_dsMapValue(_ui_settings,"Row_HeaderSize",		150);
 //var ui_row_alpha =				_dsMapValue(_ui_settings,"Row_Alpha",			0.4);
 
-//ui_row_height =					_validateArray(ui_row_height);
-//ui_row_colour =					_validateArray(ui_row_colour);
+//ui_row_height =					_asArray(ui_row_height);
+//ui_row_colour =					_asArray(ui_row_colour);
 #endregion
 
 #endregion

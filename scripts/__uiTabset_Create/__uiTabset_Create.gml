@@ -15,7 +15,7 @@ Tabset_Y[ref] =					argument_count > 3 ? argument[3] : y;
 Tabset_AttachToSide[ref] =		argument_count > 4 ? argument[4] : BOTTOM;
 Tabset_TabFlowDirection[ref] =	argument_count > 5 ? argument[5] : LEFT;
 Tabset_Rotation[ref] =			argument_count > 6 ? argument[6] : ANGLE_UP;
-var tab_array =					argument_count > 7 ? _validateArray(argument[7], 3, 3, [40,11,1]) : [40,11,1];
+var tab_array =					argument_count > 7 ? _asArrayOf(argument[7], [40,11,1]) : [40,11,1];
 var tab_width_min =				tab_array[0];
 Tabset_TabHeight[ref] =			tab_array[1];
 Tabset_TabSpace[ref] =			tab_array[2];
@@ -27,7 +27,7 @@ Tabset_Font[ref] = ft_EvoTooltip_6_Bold;
 Tabset_CycleKey = vk_tab;
 
 Tabset_DrawAnchor[ref] = false;
-Tabset_Tileset[ref] = spr_plainbox_4v4;
+Tabset_Tileset[ref] = spr_plainbox_4x4;
 Tabset_Colour_Tab[ref] =	   c_black;
 Tabset_Colour_TabHover[ref] =  c_gray2;
 Tabset_Colour_TabFocus[ref] =  c_black;

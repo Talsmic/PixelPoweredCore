@@ -9,11 +9,12 @@
 */
 #region Arguments & Variables
 if argument_count < 3 { show_debug_message("ArgError drawText"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
-var _x =		argument[0];
-var _y =		argument[1];
+var _x =		_magicX(argument[0]);
+var _y =		_magicY(argument[1]);
 var _text =		argument[2];
-var _colour =	argument_count > 3 ? _validateArray(argument[3],4,4,argument[3]) : [draw_get_color(), draw_get_color(), draw_get_color(), draw_get_color()];
+var _colour =	argument_count > 3 ? _arrayOfLength(argument[3], 4) : [draw_get_color(), draw_get_color(), draw_get_color(), draw_get_color()];
 var _alpha =	argument_count > 4 ? argument[4] : draw_get_alpha();
 #endregion
+
 
 draw_text_colour(_x, _y, _text, _colour[0], _colour[1], _colour[2], _colour[3], _alpha);

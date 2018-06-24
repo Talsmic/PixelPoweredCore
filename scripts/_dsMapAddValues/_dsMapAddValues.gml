@@ -14,7 +14,7 @@ var _array =	argument1;
 
 //Add values
 for ( var i=0 ; i < array_length_1d(_array) ; i+=2 ) {
-	if ( i+1 < array_length_1d(_array) ) { _dsMap[? _array[i]] = _arrayValue(_array, i+1, eUpto.loop) } else { _dsMap[? _array[i]] = 0 };
+	if ( i+1 < array_length_1d(_array) ) { _dsMap[? _array[i]] = _arrayValue(_array, i+1) } else { _dsMap[? _array[i]] = 0 };
 	};
 
 //Return the dsMap

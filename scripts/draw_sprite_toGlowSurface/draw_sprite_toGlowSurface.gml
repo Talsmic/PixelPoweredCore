@@ -20,7 +20,7 @@ If you're not sure, only provide up to thickness
 if argument_count < 1 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 var sprite_id =	argument[0];
 var image_id =	argument_count > 1 ? argument[1] : 0;
-var thickness =	argument_count > 2 ? _validateArray(argument[2],4,4,0,0) : [1,1,1,1];
+var thickness =	argument_count > 2 ? _arrayOfLength(argument[2],4) : [1,1,1,1];
 var alpha =		argument_count > 3 ? argument[3] : 1;
 var x_scale =	argument_count > 4 ? argument[4] : 1;
 var y_scale =	argument_count > 5 ? argument[5] : 1;

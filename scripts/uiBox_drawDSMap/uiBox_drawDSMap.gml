@@ -15,8 +15,8 @@ var _ui_settings =	argument_count > 3 ? argument[3] : -1;
 var _rows =			argument_count > 4 ? argument[4] : -1;
 var _starting_row =	argument_count > 5 ? argument[5] : 0;
 //Other Variables
-var _max_height = _resolutionGetHeight() - _draw_y;
-var _max_width = _resolutionGetWidth() - _draw_x;
+var _max_height =	_resolutionGetHeight() - _draw_y;
+var _max_width =	_resolutionGetWidth() - _draw_x;
 #endregion
 
 #region Pull from UI dsMap
@@ -30,10 +30,10 @@ var ui_box_tile_array =			_dsMapValue(_ui_settings,"Box_Tile_Array",		[1,2,3,4,5
 var ui_box_stretch_array =		_dsMapValue(_ui_settings,"Box_Stretch_Array",	[0,1,0,1,1,1,0,1,0]);
 var ui_box_offset =				_dsMapValue(_ui_settings,"Box_Offset",			[0,0]);
 
-ui_box_padding =				_validateArray(ui_box_padding,4,4,ui_box_padding);
-ui_box_tile_array =				_validateArray(ui_box_tile_array,9,9,ui_box_tile_array);
-ui_box_stretch_array =			_validateArray(ui_box_stretch_array,9,9,ui_box_stretch_array);
-ui_box_offset =					_validateArray(ui_box_offset,2,2,ui_box_offset);
+ui_box_padding =				_arrayOfLength(ui_box_padding,		4);
+ui_box_tile_array =				_arrayOfLength(ui_box_tile_array,	9);
+ui_box_stretch_array =			_arrayOfLength(ui_box_stretch_array,	9);
+ui_box_offset =					_arrayOfLength(ui_box_offset,		2);
 #endregion
 
 var ui_heading_draw =			_dsMapValue(_ui_settings,"Heading_Draw",		true);
@@ -47,7 +47,7 @@ var ui_heading_alpha =			_dsMapValue(_ui_settings,"Heading_Alpha",		1);
 var ui_heading_offset =			_dsMapValue(_ui_settings,"Heading_Offset",		[0,0]);
 var ui_heading_padding =		_dsMapValue(_ui_settings,"Heading_Padding",		2);
 
-ui_heading_offset =				_validateArray(ui_heading_offset,2,2,ui_heading_offset);
+ui_heading_offset =				_arrayOfLength(ui_heading_offset, 2);
 };
 #endregion
 	
@@ -60,8 +60,8 @@ var ui_body_colour =			_dsMapValue(_ui_settings,"Body_Colour",			[c_gray13]);
 var ui_body_alpha =				_dsMapValue(_ui_settings,"Body_Alpha",			1);
 var ui_body_offset =			_dsMapValue(_ui_settings,"Body_Offset",			[0,0]);
 
-ui_body_colour =				_validateArray(ui_body_colour);
-ui_body_offset =				_validateArray(ui_body_offset,2,2,ui_body_offset);
+ui_body_colour =				_asArray(ui_body_colour);
+ui_body_offset =				_arrayOfLength(ui_body_offset, 2);
 };
 #endregion
 
@@ -75,8 +75,8 @@ var ui_column_header_colour2 =	_dsMapValue(_ui_settings,"Column_HeaderColour2",c
 var ui_column_header_height =	_dsMapValue(_ui_settings,"Column_HeaderSize",	12);
 var ui_column_alpha =			_dsMapValue(_ui_settings,"Column_Alpha",		0.4);
 
-ui_column_width =				_validateArray(ui_column_width);
-ui_column_colour =				_validateArray(ui_column_colour);
+ui_column_width =				_asArray(ui_column_width);
+ui_column_colour =				_asArray(ui_column_colour);
 #endregion
 
 #region Row Data
@@ -89,8 +89,8 @@ var ui_row_header_colour2 =		_dsMapValue(_ui_settings,"Row_HeaderColour2",	c_ora
 var ui_row_header_width =		_dsMapValue(_ui_settings,"Row_HeaderSize",		80);
 var ui_row_alpha =				_dsMapValue(_ui_settings,"Row_Alpha",			0.4);
 
-ui_row_height =					_validateArray(ui_row_height);
-ui_row_colour =					_validateArray(ui_row_colour);
+ui_row_height =					_asArray(ui_row_height);
+ui_row_colour =					_asArray(ui_row_colour);
 #endregion
 
 var _table_spacing = [ui_column_spacing, ui_row_spacing];
@@ -141,7 +141,7 @@ var ui_box_region = [_draw_x+ui_box_offset[0], _draw_y+ui_box_offset[1], _draw_x
 
 #region Draw
 //Box
-drawTilebox(ui_box_region, ui_box_spriteset, ui_box_colour, ui_box_alpha, ui_box_tile_array, ui_box_stretch_array);
+drawTilebox_Region(ui_box_region, ui_box_spriteset, ui_box_colour, ui_box_alpha, ui_box_tile_array, ui_box_stretch_array);
 var _x = _draw_x + ui_box_padding[0];
 var _y = _draw_y + ui_box_padding[1];
 

@@ -30,9 +30,9 @@ enum aTabset {
 //Arguments
 if argument_count < 4 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~~~~~~~~~~~~~~~~~~~~>
 //Arguments
-var _x =				argument[0];
-var _y =				argument[1];
-var _tabs =				_validateArray(argument[2]);
+var _x =		argument[0];
+var _y =		argument[1];
+var _tabs =		_asArray(argument[2]);
 //Variables
 var _tabset;
 #endregion
@@ -72,7 +72,7 @@ var _default_tab = ["Tab",	0,			0,			_stringWidth("Tab", _tabset[aTabset.tab_fon
 				// [name,	offset_x,	offset_y,	width,												height,												enabled,	hidden];
 var _tab;
 for ( var i=1 ; i<10 ; ++i ) {
-	    if ( array_length_1d(_tabs) > i ) { _tab[i] = _validateArray(_tabs[i],0,0,_default_tab) } else { _tab[i] = _default_tab };
+	    if ( array_length_1d(_tabs) > i ) { _tab[i] = _validateArray(_tabs[i], 7, 7, _default_tab) } else { _tab[i] = _default_tab };
 		_tab[aTab.width]  = clamp(_stringWidth(_tab[aTab.name],  _tabset[aTabset.tab_font])+8, _width_min,  _width_max);
 		_tab[aTab.height] = clamp(_stringHeight(_tab[aTab.name], _tabset[aTabset.tab_font])+8, _height_min, _height_max);
 	};

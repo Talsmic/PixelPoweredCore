@@ -9,8 +9,8 @@
 #region Arguments & Variables & Variables
 if argument_count < 2 { show_debug_message("_arrayCompare requires 2 arrays"); return false };//[!Break!]
 //Arguments
-var _arrayA =			_validateArray(argument[0]);
-var _arrayB =			_validateArray(argument[1]);
+var _arrayA =			_asArray(argument[0]);
+var _arrayB =			_asArray(argument[1]);
 var _compare_empties =	argument_count > 2 ? argument[2] : false;
 var compare_quantity =	argument_count > 3 ? true : false;
 if ( compare_quantity ) { var required_quantity = argument[3] };

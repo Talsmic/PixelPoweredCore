@@ -29,8 +29,8 @@ var height =	argument[3];
 var colour =	argument_count > 4 ? argument[4] : draw_get_color();
 var alpha =		argument_count > 5 ? argument[5] : draw_get_alpha();
 var spriteset =	argument_count > 6 ? argument[6] : spr_tilebox_4x4;
-var corner_a =	argument_count > 7 ? _validateArray(argument[7],4,4,false) : [0,0,0,0];
-var trim_array = argument_count > 8 ? _validateArray(argument[8],9,9,false) : [0,1,1,1,1,1,1,1,1,1];
+var corner_a =	argument_count > 7 ? _arrayOfLength(argument[7], 4) : [0,0,0,0];
+var trim_array = argument_count > 8 ? _arrayOfLength(argument[8], 9) : [0,1,1,1,1,1,1,1,1,1];
 var tw = sprite_get_width(spriteset);
 var th = sprite_get_height(spriteset);
 #endregion

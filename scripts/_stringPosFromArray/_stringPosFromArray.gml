@@ -13,7 +13,7 @@
 */ 
 #region Arguments & Variables
 var input_string =		argument0;
-var substring_array =	_validateArray(argument1);
+var substring_array =	_asArray(argument1);
 #endregion
 
 var pos = 0;

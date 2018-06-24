@@ -26,8 +26,8 @@ var _direction =		argument_count > 2 ? argument[2] : RIGHT;
 var _arrows =			argument_count > 3 ? argument[3] : true;
 var _spriteset =		argument_count > 4 ? argument[4] : spr_scrollbar;
 var _colour =			argument_count > 5 ? argument[5] : draw_get_colour();
-var _keys_increase =	argument_count > 6 ? _validateArray(argument[6]) : ( _direction == TOP or _direction == BOTTOM ? [vk_right, ord("D")] : [vk_down, ord("S")] );
-var _keys_decrease =	argument_count > 7 ? _validateArray(argument[7]) : ( _direction == TOP or _direction == BOTTOM ? [vk_left, ord("A")]  : [vk_up, ord("W")] );
+var _keys_increase =	argument_count > 6 ? _asArray(argument[6]) : ( _direction == TOP or _direction == BOTTOM ? [vk_right, ord("D")] : [vk_down, ord("S")] );
+var _keys_decrease =	argument_count > 7 ? _asArray(argument[7]) : ( _direction == TOP or _direction == BOTTOM ? [vk_left, ord("A")]  : [vk_up, ord("W")] );
 #endregion
 
 var _scrollbar = [0, _max_value, _region, _direction, _arrows, _spriteset, _colour, _keys_increase, _keys_decrease];

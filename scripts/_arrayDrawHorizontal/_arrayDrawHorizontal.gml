@@ -12,9 +12,9 @@ if argument_count < 3 { show_debug_message("ArgError"); exit };//[!Break!]~~~~~~
 var _x =				argument[0];
 var _y =				argument[1];
 var _array =			argument[2];
-var _colour_array =		argument_count > 3 ? _validateArray(argument[3]) : [draw_get_colour()];
-var _alpha_array =		argument_count > 4 ? _validateArray(argument[4]) : [draw_get_alpha()];
-var _spacing_array =	argument_count > 5 ? _validateArray(argument[5]) : [50];
+var _colour_array =		argument_count > 3 ? _asArray(argument[3]) : [draw_get_colour()];
+var _alpha_array =		argument_count > 4 ? _asArray(argument[4]) : [draw_get_alpha()];
+var _spacing_array =	argument_count > 5 ? _asArray(argument[5]) : [50];
 var _clipwidth_array =	argument_count > 6 ? _validateArray(argument[6], array_length_1d(_spacing_array)-1, -1, _spacing_array) : _spacing_array;
 var _clip_note =		argument_count > 7 ? argument[7] : "..";
 #endregion

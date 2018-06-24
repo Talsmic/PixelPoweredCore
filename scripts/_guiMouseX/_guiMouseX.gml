@@ -1,3 +1,3 @@
 ///_guiMouseX()
 
-return 0;
+return device_mouse_x_to_gui(0); 
