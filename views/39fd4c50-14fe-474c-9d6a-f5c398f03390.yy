@@ -10,7 +10,7 @@
         "614f36f4-d566-4a0e-bc92-8606d8848e44"
     ],
     "filterType": "GMSprite",
-    "folderName": "[PPDK][PixelPowered DevKit]",
+    "folderName": "[PPDK] [ DevKit Sprites ]",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

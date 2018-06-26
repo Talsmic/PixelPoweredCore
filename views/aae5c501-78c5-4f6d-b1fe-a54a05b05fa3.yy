@@ -11,7 +11,7 @@
         "21042069-a399-48cd-ab1d-312f6b9379f9"
     ],
     "filterType": "GMObject",
-    "folderName": "[PPDK][PixelPowered DevKit]",
+    "folderName": "[PPDK] [ PixelPowered Objects ]",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

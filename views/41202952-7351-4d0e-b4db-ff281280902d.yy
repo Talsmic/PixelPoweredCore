@@ -9,7 +9,7 @@
         "64e09ec1-8561-450f-87c9-8f4d514fc3a9"
     ],
     "filterType": "GMScript",
-    "folderName": "OL",
+    "folderName": "Module: [ UI Structures ]",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

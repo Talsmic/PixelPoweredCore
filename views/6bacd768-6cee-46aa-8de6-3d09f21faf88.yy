@@ -10,7 +10,7 @@
         "3123e471-e1dd-46e8-8ca0-9043f000a7dd"
     ],
     "filterType": "GMScript",
-    "folderName": "[Misc]",
+    "folderName": "[Misc \/ WIP]",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

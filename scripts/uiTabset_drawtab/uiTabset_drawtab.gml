@@ -70,7 +70,7 @@ switch ( state ) {
 #endregion
 	
 #region Draw
-__draw_tilebox(draw_region[0],draw_region[1],draw_region[4],draw_region[5],tab_colour,tab_alpha,Tabset_Tileset[ref],Corners);
+//__draw_tilebox(draw_region[0],draw_region[1],draw_region[4],draw_region[5],tab_colour,tab_alpha,Tabset_Tileset[ref],Corners);
 
 //Draw Text
 var text_point = [ draw_region[0] + ( tabwidth div 2 ), draw_region[1] + ( tabheight div 2 ) ];

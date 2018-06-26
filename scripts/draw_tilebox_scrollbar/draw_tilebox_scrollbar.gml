@@ -89,8 +89,8 @@ switch ( state ) {
 #endregion
 
 #region Draw
-__draw_tilebox( draw_region[aR.x1], draw_region[aR.x1], draw_region[aR.x1], draw_region[aR.x1], colour, alpha, spriteset, corners );
-__draw_tilebox( draw_region[aR.x1], draw_region[aR.x1], draw_region[aR.x1], draw_region[aR.x1], overlay_colour, overlay_alpha, spriteset, corners );
+//__draw_tilebox( draw_region[aR.x1], draw_region[aR.x1], draw_region[aR.x1], draw_region[aR.x1], colour, alpha, spriteset, corners );
+//__draw_tilebox( draw_region[aR.x1], draw_region[aR.x1], draw_region[aR.x1], draw_region[aR.x1], overlay_colour, overlay_alpha, spriteset, corners );
 switch ( bar_side ) {
 	
 	case TOP:		draw_sprite(spr_scrollarrow, 0+offset_sprite, draw_region[aR.x1] + (length div 2), draw_region[aR.y1] + (thickness div 2) - offset_icon); break;
